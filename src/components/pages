@@ -1,0 +1,599 @@
+import { useRouter } from '@/lib/router'
+import { Button } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import {
+  Briefcase,
+  Users,
+  ChartLine,
+  Shield,
+  Code,
+  Rocket,
+  ChartNetwork,
+  FileText,
+  Brain,
+  Cube,
+  Database,
+  GitBranch,
+  MagnifyingGlass,
+  Robot,
+  ArrowRight,
+} from '@phosphor-icons/react'
+
+export function HomePage() {
+  const { navigate } = useRouter()
+
+  return (
+    <div className="min-h-screen">
+      <section className="relative pt-32 pb-24 px-6 lg:px-8 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-transparent pointer-events-none" />
+        
+        <div className="max-w-7xl mx-auto relative">
+          <div className="max-w-4xl">
+            <h1 className="text-5xl lg:text-6xl font-semibold text-foreground leading-tight tracking-tight mb-6">
+              Enterprise AI Implementation Partner
+            </h1>
+            <p className="text-xl text-muted-foreground leading-relaxed mb-10 max-w-3xl">
+              Premium AI consulting, GenAI engineering, and staff augmentation for organizations scaling critical AI initiatives. Trusted delivery partner for enterprise AI programs.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button
+                size="lg"
+                onClick={() => navigate('/contact')}
+                className="bg-primary hover:bg-primary/90 text-base px-8"
+              >
+                Book a Discovery Call
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                onClick={() => navigate('/services')}
+                className="text-base px-8"
+              >
+                Explore Capabilities
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 px-6 lg:px-8 bg-muted/30">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-8">
+            <p className="text-sm font-medium text-muted-foreground tracking-wide uppercase">
+              Built for Enterprise AI Ecosystems
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center opacity-60">
+            <div className="flex items-center gap-2">
+              <Code weight="duotone" className="w-8 h-8 text-primary" />
+              <span className="font-mono text-sm">LLM Applications</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <ChartNetwork weight="duotone" className="w-8 h-8 text-primary" />
+              <span className="font-mono text-sm">AI Architecture</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Robot weight="duotone" className="w-8 h-8 text-primary" />
+              <span className="font-mono text-sm">Agentic Systems</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Database weight="duotone" className="w-8 h-8 text-primary" />
+              <span className="font-mono text-sm">RAG Systems</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-3xl mb-16">
+            <h2 className="text-3xl lg:text-4xl font-semibold text-foreground mb-4">
+              What We Deliver
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Comprehensive AI implementation capabilities for enterprise programs
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="p-8 hover:shadow-lg transition-shadow">
+              <Users className="w-10 h-10 text-accent mb-4" weight="duotone" />
+              <h3 className="text-xl font-semibold text-foreground mb-3">
+                AI Staff Augmentation
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Vetted AI engineers, solution architects, and consultants ready to embed with your teams. Fast access to quality talent for critical initiatives.
+              </p>
+            </Card>
+
+            <Card className="p-8 hover:shadow-lg transition-shadow">
+              <Briefcase className="w-10 h-10 text-accent mb-4" weight="duotone" />
+              <h3 className="text-xl font-semibold text-foreground mb-3">
+                Enterprise AI Consulting
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Strategic AI roadmapping, feasibility assessment, and implementation planning for large-scale enterprise transformations.
+              </p>
+            </Card>
+
+            <Card className="p-8 hover:shadow-lg transition-shadow">
+              <Brain className="w-10 h-10 text-accent mb-4" weight="duotone" />
+              <h3 className="text-xl font-semibold text-foreground mb-3">
+                GenAI & Agentic AI Delivery
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                LLM application development, AI agent orchestration, and custom GenAI solutions for high-value business workflows.
+              </p>
+            </Card>
+
+            <Card className="p-8 hover:shadow-lg transition-shadow">
+              <MagnifyingGlass className="w-10 h-10 text-accent mb-4" weight="duotone" />
+              <h3 className="text-xl font-semibold text-foreground mb-3">
+                RAG & Knowledge Systems
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Enterprise search, retrieval-augmented generation, and knowledge management systems built on your proprietary data.
+              </p>
+            </Card>
+
+            <Card className="p-8 hover:shadow-lg transition-shadow">
+              <GitBranch className="w-10 h-10 text-accent mb-4" weight="duotone" />
+              <h3 className="text-xl font-semibold text-foreground mb-3">
+                AI Workflow Automation
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Intelligent automation of complex business processes using AI agents, APIs, and integration orchestration.
+              </p>
+            </Card>
+
+            <Card className="p-8 hover:shadow-lg transition-shadow">
+              <Cube className="w-10 h-10 text-accent mb-4" weight="duotone" />
+              <h3 className="text-xl font-semibold text-foreground mb-3">
+                LLM Product Engineering
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Full-stack development of production-grade LLM applications with evaluation, observability, and deployment infrastructure.
+              </p>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6 lg:px-8 bg-card border-y border-border">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-3xl mb-16">
+            <h2 className="text-3xl lg:text-4xl font-semibold text-foreground mb-4">
+              Why Premium Organizations Choose Us
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Built for enterprise expectations and serious AI programs
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="flex gap-4">
+              <div className="flex-shrink-0">
+                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
+                  <Rocket className="w-6 h-6 text-accent" weight="duotone" />
+                </div>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-foreground mb-2">
+                  Fast Access to Quality AI Talent
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Pre-vetted engineers and architects available for immediate deployment. No lengthy hiring cycles or quality compromises.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-4">
+              <div className="flex-shrink-0">
+                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
+                  <ChartLine className="w-6 h-6 text-accent" weight="duotone" />
+                </div>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-foreground mb-2">
+                  Outcome-Driven Implementation
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Focus on delivering measurable business results, not billable hours. Clear scoping, milestone tracking, and ownership mindset.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-4">
+              <div className="flex-shrink-0">
+                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
+                  <Code className="w-6 h-6 text-accent" weight="duotone" />
+                </div>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-foreground mb-2">
+                  Strong Technical Depth
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Deep expertise in modern AI stacks: LangChain, LlamaIndex, vector databases, observability tools, and cloud AI services.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-4">
+              <div className="flex-shrink-0">
+                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
+                  <ChartNetwork className="w-6 h-6 text-accent" weight="duotone" />
+                </div>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-foreground mb-2">
+                  Cross-Industry AI Delivery
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Experience delivering AI solutions across retail, finance, healthcare, logistics, and professional services contexts.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-4">
+              <div className="flex-shrink-0">
+                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
+                  <Users className="w-6 h-6 text-accent" weight="duotone" />
+                </div>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-foreground mb-2">
+                  Flexible Engagement Models
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Support for embedded teams, project-based delivery, fractional leadership, and pod-based execution—whatever fits your structure.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-4">
+              <div className="flex-shrink-0">
+                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
+                  <Shield className="w-6 h-6 text-accent" weight="duotone" />
+                </div>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-foreground mb-2">
+                  Enterprise-Grade Execution
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Professional communication, documentation discipline, SOW alignment, and structured delivery governance expected by enterprise teams.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-3xl mb-16">
+            <h2 className="text-3xl lg:text-4xl font-semibold text-foreground mb-4">
+              Engagement Models
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Flexible structures designed for enterprise AI programs
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Card className="p-6 border-2 hover:border-accent/50 transition-colors">
+              <Badge variant="secondary" className="mb-4">Most Popular</Badge>
+              <h3 className="text-lg font-semibold text-foreground mb-2">
+                Dedicated AI Talent
+              </h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Full-time AI engineers and architects embedded with your team for extended engagements.
+              </p>
+              <p className="text-xs text-muted-foreground">
+                Ideal for: Long-term AI initiatives requiring deep integration
+              </p>
+            </Card>
+
+            <Card className="p-6 hover:border-accent/30 transition-colors">
+              <h3 className="text-lg font-semibold text-foreground mb-2 mt-7">
+                Staff Augmentation
+              </h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Flexible AI talent to scale your existing teams during high-demand periods.
+              </p>
+              <p className="text-xs text-muted-foreground">
+                Ideal for: Scaling teams quickly without permanent headcount
+              </p>
+            </Card>
+
+            <Card className="p-6 hover:border-accent/30 transition-colors">
+              <h3 className="text-lg font-semibold text-foreground mb-2 mt-7">
+                Project-Based Delivery
+              </h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Fixed-scope AI projects with defined milestones, deliverables, and outcomes.
+              </p>
+              <p className="text-xs text-muted-foreground">
+                Ideal for: Specific AI initiatives with clear requirements
+              </p>
+            </Card>
+
+            <Card className="p-6 hover:border-accent/30 transition-colors">
+              <h3 className="text-lg font-semibold text-foreground mb-2">
+                Fractional AI Leadership
+              </h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Part-time AI architects and consultants providing strategic guidance and oversight.
+              </p>
+              <p className="text-xs text-muted-foreground">
+                Ideal for: Organizations needing senior AI expertise without full-time roles
+              </p>
+            </Card>
+
+            <Card className="p-6 hover:border-accent/30 transition-colors">
+              <h3 className="text-lg font-semibold text-foreground mb-2">
+                Pod-Based Delivery
+              </h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Complete cross-functional AI teams for enterprise initiatives requiring multiple skillsets.
+              </p>
+              <p className="text-xs text-muted-foreground">
+                Ideal for: Complex AI programs needing full team coverage
+              </p>
+            </Card>
+
+            <Card className="p-6 hover:border-accent/30 transition-colors">
+              <h3 className="text-lg font-semibold text-foreground mb-2">
+                Advisory & Architecture
+              </h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Strategic consulting for AI roadmaps, architecture design, and vendor evaluation.
+              </p>
+              <p className="text-xs text-muted-foreground">
+                Ideal for: Early-stage AI planning and architecture decisions
+              </p>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6 lg:px-8 bg-gradient-to-br from-primary/5 to-transparent">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-3xl mb-16">
+            <h2 className="text-3xl lg:text-4xl font-semibold text-foreground mb-4">
+              Core Capability Areas
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Technical expertise across modern AI implementation stacks
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { title: 'LLM Application Development', desc: 'Production-grade applications using GPT-4, Claude, Llama, and custom models' },
+              { title: 'AI Agents & Orchestration', desc: 'Multi-agent systems, tool calling, and workflow automation' },
+              { title: 'Enterprise Search & RAG', desc: 'Vector databases, embeddings, retrieval pipelines, and knowledge systems' },
+              { title: 'Data Pipelines for AI', desc: 'ETL, data quality, feature engineering, and model data preparation' },
+              { title: 'Evaluation & Observability', desc: 'LLM eval frameworks, monitoring, tracing, and quality measurement' },
+              { title: 'Workflow Automation', desc: 'Intelligent process automation using AI, APIs, and integration platforms' },
+              { title: 'AI Product Engineering', desc: 'Full-stack development, frontend integration, and user experience' },
+              { title: 'Custom Integrations', desc: 'Connecting AI systems to CRMs, ERPs, and enterprise platforms' },
+            ].map((item, index) => (
+              <Card key={index} className="p-6">
+                <h4 className="font-semibold text-foreground mb-2 text-sm">
+                  {item.title}
+                </h4>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  {item.desc}
+                </p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-3xl mb-16">
+            <h2 className="text-3xl lg:text-4xl font-semibold text-foreground mb-4">
+              Cross-Industry Delivery
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              AI capability that travels across sectors while adapting to business context
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              'Retail & E-commerce',
+              'Financial Services',
+              'Logistics & Supply Chain',
+              'Manufacturing',
+              'Healthcare & Pharma',
+              'Professional Services',
+              'Government & Public Sector',
+              'Technology & SaaS',
+            ].map((industry, index) => (
+              <Card key={index} className="p-6 hover:border-accent/50 transition-colors cursor-pointer" onClick={() => navigate('/industries')}>
+                <p className="font-medium text-foreground">{industry}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6 lg:px-8 bg-card border-y border-border">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-3xl mb-16">
+            <h2 className="text-3xl lg:text-4xl font-semibold text-foreground mb-4">
+              Representative Engagement Areas
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Examples of the AI challenges we help enterprise teams solve
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="p-8">
+              <div className="mb-6">
+                <Badge variant="outline" className="mb-3">GenAI Implementation</Badge>
+                <h3 className="text-lg font-semibold text-foreground mb-2">
+                  Customer Support Automation
+                </h3>
+              </div>
+              <div className="space-y-4 text-sm">
+                <div>
+                  <p className="font-medium text-foreground mb-1">Challenge</p>
+                  <p className="text-muted-foreground">Enterprise needed to scale customer support without proportional headcount growth</p>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground mb-1">Solution</p>
+                  <p className="text-muted-foreground">RAG-powered support agent with knowledge base integration and escalation routing</p>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground mb-1">Business Outcome</p>
+                  <p className="text-muted-foreground">Enabled 24/7 first-line support with consistent quality responses</p>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="p-8">
+              <div className="mb-6">
+                <Badge variant="outline" className="mb-3">Staff Augmentation</Badge>
+                <h3 className="text-lg font-semibold text-foreground mb-2">
+                  AI Platform Team Scaling
+                </h3>
+              </div>
+              <div className="space-y-4 text-sm">
+                <div>
+                  <p className="font-medium text-foreground mb-1">Challenge</p>
+                  <p className="text-muted-foreground">Fast-growing AI platform team needed senior engineers during critical launch period</p>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground mb-1">Solution</p>
+                  <p className="text-muted-foreground">Embedded 3 senior AI engineers with LLM and vector database expertise</p>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground mb-1">Business Outcome</p>
+                  <p className="text-muted-foreground">Met launch timeline without compromising on engineering quality</p>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="p-8">
+              <div className="mb-6">
+                <Badge variant="outline" className="mb-3">Enterprise Search</Badge>
+                <h3 className="text-lg font-semibold text-foreground mb-2">
+                  Internal Knowledge System
+                </h3>
+              </div>
+              <div className="space-y-4 text-sm">
+                <div>
+                  <p className="font-medium text-foreground mb-1">Challenge</p>
+                  <p className="text-muted-foreground">Organization struggled with knowledge silos across multiple departments and systems</p>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground mb-1">Solution</p>
+                  <p className="text-muted-foreground">Enterprise RAG system connecting Confluence, SharePoint, and internal documentation</p>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground mb-1">Business Outcome</p>
+                  <p className="text-muted-foreground">Improved information discovery and reduced time spent searching for context</p>
+                </div>
+              </div>
+            </Card>
+          </div>
+
+          <div className="mt-12 text-center">
+            <Button variant="outline" onClick={() => navigate('/case-studies')}>
+              View More Examples
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-3xl mb-16">
+            <h2 className="text-3xl lg:text-4xl font-semibold text-foreground mb-4">
+              AI Talent Quality
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              The AI professionals we provide to enterprise teams
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {[
+              { role: 'AI Engineers', desc: 'Full-stack development of AI applications with modern frameworks' },
+              { role: 'GenAI Engineers', desc: 'Specialists in LLM applications, prompt engineering, and RAG' },
+              { role: 'ML Engineers', desc: 'Model training, deployment, and production ML infrastructure' },
+              { role: 'AI Solution Architects', desc: 'Enterprise AI architecture design and strategic planning' },
+              { role: 'LLM Application Engineers', desc: 'Expert practitioners in LangChain, LlamaIndex, and agent frameworks' },
+              { role: 'Data + AI Engineers', desc: 'Pipeline development, data quality, and ML data preparation' },
+              { role: 'Product-Minded AI Consultants', desc: 'Bridge business requirements with technical implementation' },
+            ].map((talent, index) => (
+              <Card key={index} className="p-6">
+                <h4 className="font-semibold text-foreground mb-2">{talent.role}</h4>
+                <p className="text-sm text-muted-foreground">{talent.desc}</p>
+              </Card>
+            ))}
+          </div>
+
+          <Card className="p-8 bg-muted/30 border-none">
+            <h3 className="text-xl font-semibold text-foreground mb-4">Our Screening Philosophy</h3>
+            <div className="grid md:grid-cols-2 gap-6 text-sm">
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Technical Capability</h4>
+                <p className="text-muted-foreground">Deep assessment of hands-on AI/ML skills, framework knowledge, and problem-solving ability</p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Communication Quality</h4>
+                <p className="text-muted-foreground">Clear technical communication suitable for enterprise stakeholder discussions</p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Ownership Mindset</h4>
+                <p className="text-muted-foreground">Accountability for delivery, proactive problem-solving, and outcome orientation</p>
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">Business Understanding</h4>
+                <p className="text-muted-foreground">Ability to connect technical decisions to business goals and requirements</p>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </section>
+
+      <section className="py-24 px-6 lg:px-8 bg-gradient-to-br from-primary/10 via-accent/5 to-transparent">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl lg:text-4xl font-semibold text-foreground mb-6">
+            Ready to Discuss Your AI Initiative?
+          </h2>
+          <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto">
+            Whether you need AI staff augmentation, project delivery, or strategic consulting—we support enterprise AI programs with the execution quality you expect.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              size="lg"
+              onClick={() => navigate('/contact')}
+              className="bg-primary hover:bg-primary/90 px-8"
+            >
+              Book a Discovery Call
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              onClick={() => navigate('/partner-readiness')}
+              className="px-8"
+            >
+              View Vendor Readiness
+            </Button>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}
