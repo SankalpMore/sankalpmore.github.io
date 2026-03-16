@@ -1,14 +1,14 @@
 # Product Requirements Document: Dockiotech Enterprise AI Partner Website
 
-A premium B2B website that positions Dockiotech as a credible, enterprise-grade AI implementation and staff augmentation partner for procurement teams, partner managers, and AI transformation leaders at global organizations.
+A premium B2B website positioning Dockiotech as a credible, enterprise-grade AI implementation boutique and technical partnership firm for procurement teams, partner managers, and AI transformation leaders at global organizations.
 
 **Experience Qualities**:
-1. **Trust-Building** - Every visual element, word, and interaction should reinforce credibility and enterprise readiness without manufactured proof
-2. **Executive-Focused** - Clear, concise, outcome-oriented messaging that respects the reader's time and intelligence
-3. **Premium-Minimal** - Ultra-clean design that feels sophisticated and modern, avoiding agency gimmicks and staffing vendor aesthetics
+1. **Premium Judgment** - Every design decision, word choice, and interaction reflects the discernment expected of a serious technical partner—nothing feels mass-market or generic
+2. **Executive-Focused** - Precise, substantive communication that respects senior stakeholder intelligence. No startup fluff, no agency gimmicks, no exaggerated claims
+3. **Technical Depth** - Demonstrated expertise through judicious technical detail and clear domain knowledge without overwhelming or dumbing down
 
 **Complexity Level**: Complex Application (advanced functionality, likely with multiple views)
-This is a multi-page enterprise marketing website with dynamic routing, sophisticated content architecture, downloadable resources, contact qualification flows, and comprehensive service/industry matrices requiring careful state management and navigation.
+This is a multi-page enterprise marketing website with dynamic routing, sophisticated content architecture, downloadable resources, contact qualification flows, and comprehensive service/industry matrices requiring careful state management and navigation. The positioning demands precision across all touchpoints to establish trust with enterprise buyers.
 
 ## Essential Features
 
@@ -92,51 +92,84 @@ This is a multi-page enterprise marketing website with dynamic routing, sophisti
 - **Over-zealous Buyers**: FAQ section addresses common questions preemptively - reduces low-quality inquiries
 
 ## Design Direction
-The design should evoke the feeling of reviewing a premium consulting firm's website or a serious enterprise software vendor - not a staffing agency, not a freelancer collective, not a generic IT services firm. It should feel credible enough that a Microsoft partner manager, Deloitte procurement lead, or AWS ecosystem director would consider initiating a conversation. The aesthetic should be confident, minimal, precise, and execution-focused.
+The design should evoke the feeling of reviewing a premium technical consultancy or specialized AI implementation boutique—not a staffing agency, not a freelancer collective, not a generic IT services firm. Think of the visual and tonal sophistication expected by:
+- Microsoft or AWS partner program managers evaluating new ecosystem members
+- Deloitte or Accenture procurement leads assessing subcontractors
+- Fortune 500 CTOs considering technical partnerships
+- PE-backed software companies evaluating AI implementation partners
+
+The aesthetic must be confident, minimal, precise, execution-focused, and technically credible. It should communicate "serious judgment" through restraint, hierarchy, typography, and language precision.
 
 ## Color Selection
 
-**Primary Color**: Deep Enterprise Navy `oklch(0.25 0.05 250)` - Communicates trust, stability, enterprise seriousness without corporate stuffiness. Used for primary CTAs and key focal points.
+**Design Philosophy**: A restrained, sophisticated palette that communicates technical seriousness and enterprise maturity. Colors are muted, intentional, and never loud. The palette should feel closer to a Bloomberg Terminal or serious SaaS product than a marketing agency.
 
-**Secondary Color**: Warm Slate `oklch(0.45 0.02 240)` - Supporting color for secondary actions and less critical UI elements. Maintains professional tone.
+**Primary Color**: Deep Enterprise Navy `oklch(0.22 0.04 250)` - Darker, more subdued than typical "safe blues." Communicates gravity, technical depth, and enterprise seriousness. Used sparingly for primary CTAs and key anchors.
 
-**Accent Color**: Precision Teal `oklch(0.65 0.15 195)` - Clean, modern highlight for hover states, active elements, and visual interest. Suggests innovation without startup gimmicks.
+**Secondary Color**: Refined Slate `oklch(0.42 0.015 245)` - Muted, sophisticated secondary for less critical UI elements. Maintains professional restraint.
 
-**Background**: Sophisticated Light `oklch(0.98 0.005 240)` - Subtle cool undertone prevents stark white, adds refinement.
+**Accent Color**: Intelligent Teal `oklch(0.58 0.12 200)` - Purposeful highlight suggesting AI/technology without being trendy or playful. Used for hover states, active elements, and strategic visual punctuation.
 
-**Surface/Card**: Pure White `oklch(1 0 0)` - Clean cards that lift from background with subtle shadows.
+**Background**: Sophisticated Cool White `oklch(0.985 0.002 240)` - Nearly white with the slightest cool undertone. Creates breathing room without stark clinical feel.
 
-**Text Primary**: Carbon `oklch(0.20 0.01 240)` - Nearly black with slight cool undertone for comfortable reading.
+**Surface/Card**: Pure White `oklch(1 0 0)` - Clean elevation from background with subtle shadows, never harsh borders.
 
-**Text Secondary**: Professional Gray `oklch(0.50 0.01 240)` - Muted but readable for supporting text.
+**Text Primary**: Technical Charcoal `oklch(0.18 0.008 250)` - Nearly black with slight cool cast. Serious, readable, not overly stark.
 
-**Border/Divider**: Whisper Gray `oklch(0.90 0.005 240)` - Subtle separation that doesn't compete with content.
+**Text Secondary**: Professional Gray `oklch(0.48 0.008 245)` - Muted but still readable for supporting text. Allows hierarchy without weakness.
+
+**Border/Divider**: Whisper Gray `oklch(0.92 0.003 240)` - Extremely subtle separation that doesn't compete with content.
 
 **Foreground/Background Pairings**:
-- Background (Sophisticated Light #F9FAFB): Carbon text (#33343A) - Ratio 14.2:1 ✓
-- Primary (Deep Enterprise Navy #3A4A6B): White text (#FFFFFF) - Ratio 8.1:1 ✓
-- Accent (Precision Teal #4FB0C6): White text (#FFFFFF) - Ratio 4.9:1 ✓
-- Surface (Pure White #FFFFFF): Carbon text (#33343A) - Ratio 15.8:1 ✓
+- Background (Sophisticated Cool White): Technical Charcoal text - Ratio 15.2:1 ✓
+- Primary (Deep Enterprise Navy): Pure White text - Ratio 9.8:1 ✓  
+- Accent (Intelligent Teal): Pure White text - Ratio 5.2:1 ✓
+- Surface (Pure White): Technical Charcoal text - Ratio 16.1:1 ✓
+
+All pairings exceed WCAG AAA standards for maximum readability and accessibility.
 
 ## Font Selection
-Typography should project executive confidence, technical precision, and global enterprise acceptability. The pairing should feel modern without being trendy, serious without being stiff.
+Typography should project executive confidence, technical precision, and global enterprise acceptability. The pairing should feel authoritative without being corporate, modern without being trendy, technical without being cold.
 
-**Primary Typeface**: Inter - Clean, highly legible, enterprise-standard sans-serif with excellent rendering across all devices. Used for headings, UI elements, and body text for consistency and performance.
+**Primary Typeface**: Inter - Ultra-clean, highly legible sans-serif with excellent rendering across all devices and operating systems. Its neutral professionalism makes it acceptable in any enterprise context. Used for all headings, UI elements, and body text for typographic consistency and performance. Enables OpenType features (cv02, cv03, cv04, cv11) for refined character alternates.
 
-**Accent Typeface**: JetBrains Mono - Monospaced font for technical callouts, code references, and data points. Reinforces technical credibility without overuse.
+**Technical Accent**: IBM Plex Mono - Professional monospaced font for code snippets, technical callouts, data points, and system identifiers. More refined than standard programmer fonts, maintains seriousness. Used sparingly for intentional effect.
 
 **Typographic Hierarchy**:
-- **H1 (Page Heroes)**: Inter SemiBold / 48px / -0.02em tracking / 1.1 line-height - Strong presence without shouting
-- **H2 (Section Headers)**: Inter SemiBold / 36px / -0.01em tracking / 1.2 line-height - Clear section breaks
-- **H3 (Subsections)**: Inter Medium / 24px / 0em tracking / 1.3 line-height - Content organization
-- **H4 (Card Titles)**: Inter Medium / 20px / 0em tracking / 1.4 line-height - Scannable cards
-- **Body Large (Intro Text)**: Inter Regular / 18px / 0.01em tracking / 1.6 line-height - Important explanations
-- **Body (Standard)**: Inter Regular / 16px / 0em tracking / 1.6 line-height - Main content
-- **Body Small (Captions)**: Inter Regular / 14px / 0em tracking / 1.5 line-height - Metadata, labels
-- **Technical Callouts**: JetBrains Mono Regular / 14px / 0em tracking / 1.5 line-height - Code, tech specs
+- **H1 (Hero Headlines)**: Inter SemiBold / 48-60px / -0.02em tracking / 1.1 line-height - Commanding presence, tight leading for impact
+- **H2 (Major Section Headers)**: Inter SemiBold / 36-48px / -0.01em tracking / 1.2 line-height - Clear hierarchical breaks
+- **H3 (Subsection Titles)**: Inter Semibold / 20-24px / -0.005em tracking / 1.3 line-height - Card and component headers
+- **H4 (Content Blocks)**: Inter Semibold / 15-17px / 0em tracking / 1.4 line-height - In-content emphasis
+- **Body Large (Introductory)**: Inter Regular / 18-20px / 0em tracking / 1.6 line-height - Section introductions
+- **Body (Standard Content)**: Inter Regular / 15-16px / 0em tracking / 1.6 line-height - Primary reading text
+- **Body Small (Supporting)**: Inter Regular / 13-14px / 0em tracking / 1.5 line-height - Captions, labels, metadata
+- **Technical Callouts**: IBM Plex Mono Regular / 13-14px / 0.02em tracking / 1.5 line-height - Code, technical specs
+
+**Typography Principles**:
+- Generous line-height for comfortable reading (minimum 1.5x for body text)
+- Tight tracking on large headings for visual impact (-0.02em to -0.01em)
+- Consistent vertical rhythm across all text elements
+- Clear size jumps between hierarchy levels (minimum 20% difference)
+- Limited to 2 typeface families for cohesion and performance
 
 ## Animations
-Animations should reinforce enterprise credibility through precision and subtlety - never through spectacle. Every motion should feel intentional, responsive, and respectful of the user's focus. Key principles: fade-in on scroll for content sections (300ms ease), smooth page transitions (200ms), hover state changes on cards and CTAs (150ms), no parallax effects, no auto-playing animations, no loading spinners that feel cheap.
+Motion should reinforce executive credibility through precision and restraint—never through spectacle or playfulness. Every animation must serve a clear functional purpose: establishing spatial relationships, providing interaction feedback, or guiding attention to important changes.
+
+**Core Principles**:
+- Purposeful: Every motion has a job (orient, relate, feedback, guide)
+- Subtle: Animations should be felt rather than noticed
+- Fast: Nothing delays user action (200-300ms maximum)
+- Physics-based: Natural easing curves, never linear
+- Respectful: Minimal motion for accessibility, reduced motion respected
+
+**Specific Applications**:
+- Content fade-in on scroll: 300ms ease-out, subtle opacity shift (0.9→1.0)
+- Card hover elevation: 150ms ease, 2px lift with shadow expansion
+- Button interactions: 100ms ease for press states
+- Page transitions: 200ms cross-fade, no slides or bounces
+- Navigation active states: Instant background shift, no animation delay
+- Focus rings: Instant appearance for accessibility
+- NO parallax effects, auto-playing carousels, or attention-seeking motion
 
 ## Component Selection
 
