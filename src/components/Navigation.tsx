@@ -49,7 +49,7 @@ export function Navigation() {
               <span className="text-white font-bold text-lg">D</span>
             </div>
             <span className="text-xl font-semibold text-foreground tracking-[-0.01em]">
-              Dockiotech
+              Dockio
             </span>
           </button>
 
@@ -92,7 +92,7 @@ export function Navigation() {
                       <span className="text-white font-bold text-lg">D</span>
                     </div>
                     <span className="text-xl font-semibold text-foreground tracking-[-0.01em]">
-                      Dockiotech
+                      Dockio
                     </span>
                   </div>
                   <nav className="flex flex-col gap-2">

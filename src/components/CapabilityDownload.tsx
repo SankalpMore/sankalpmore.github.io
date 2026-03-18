@@ -6,7 +6,7 @@ import { toast } from 'sonner'
 export function CapabilityDownload() {
   const handleDownload = () => {
     const capabilityContent = `
-DOCKIOTECH - CAPABILITY STATEMENT
+DOCKIO - CAPABILITY STATEMENT
 Enterprise AI Implementation & Technical Partnership
 
 CORE CAPABILITIES
@@ -56,16 +56,16 @@ INDUSTRIES SERVED
 - Government & Public Sector
 
 CONTACT
-partnerships@dockiotech.com
+partnerships@dockio.com
 
-© ${new Date().getFullYear()} Dockiotech. All rights reserved.
+© ${new Date().getFullYear()} Dockio. All rights reserved.
     `.trim()
 
     const blob = new Blob([capabilityContent], { type: 'text/plain' })
     const url = window.URL.createObjectURL(blob)
     const a = document.createElement('a')
     a.href = url
-    a.download = 'Dockiotech-Capability-Statement.txt'
+    a.download = 'Dockio-Capability-Statement.txt'
     document.body.appendChild(a)
     a.click()
     document.body.removeChild(a)

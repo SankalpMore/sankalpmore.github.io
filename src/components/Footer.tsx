@@ -14,20 +14,20 @@ export function Footer() {
               <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-sm">
                 <span className="text-white font-bold text-lg">D</span>
               </div>
-              <span className="text-xl font-semibold text-foreground tracking-[-0.01em]">Dockiotech</span>
+              <span className="text-xl font-semibold text-foreground tracking-[-0.01em]">Dockio</span>
             </div>
             <p className="text-[15px] text-muted-foreground leading-relaxed mb-7 max-w-xs">
               Enterprise AI implementation partner. Specialized engineering teams and technical leadership for high-stakes AI initiatives.
             </p>
             <div className="flex gap-3">
               <a
-                href="mailto:partnerships@dockiotech.com"
+                href="mailto:partnerships@dockio.com"
                 className="w-11 h-11 rounded-xl bg-muted/50 hover:bg-accent hover:text-accent-foreground transition-all duration-200 flex items-center justify-center border border-border/40 hover:border-accent/40"
               >
                 <EnvelopeSimple className="w-5 h-5" />
               </a>
               <a
-                href="https://linkedin.com/company/dockiotech"
+                href="https://linkedin.com/company/dockio"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-11 h-11 rounded-xl bg-muted/50 hover:bg-accent hover:text-accent-foreground transition-all duration-200 flex items-center justify-center border border-border/40 hover:border-accent/40"
@@ -118,11 +118,11 @@ export function Footer() {
             <ul className="space-y-3.5">
               <li>
                 <a
-                  href="mailto:partnerships@dockiotech.com"
+                  href="mailto:partnerships@dockio.com"
                   className="text-[15px] text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2.5"
                 >
                   <EnvelopeSimple className="w-4 h-4" />
-                  partnerships@dockiotech.com
+                  partnerships@dockio.com
                 </a>
               </li>
               <li>
@@ -148,7 +148,7 @@ export function Footer() {
         <Separator className="my-10" />
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-[14px] text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Dockiotech. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Dockio. All rights reserved.</p>
           <p className="text-[13px]">
             Enterprise AI Implementation & Technical Partnership
           </p>

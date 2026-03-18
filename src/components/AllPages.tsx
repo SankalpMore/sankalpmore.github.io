@@ -27,7 +27,7 @@ export function HomePage() {
               Scale AI Initiatives with <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary via-accent to-primary">Premium Engineering Talent</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed mb-10 max-w-3xl animate-in fade-in duration-700 delay-100">
-              Dockiotech delivers specialized AI engineering teams and technical leadership for enterprise AI programs. Built for the quality standards procurement teams expect.
+              Dockio delivers specialized AI engineering teams and technical leadership for enterprise AI programs. Built for the quality standards procurement teams expect.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 animate-in slide-in-from-bottom-4 duration-700 delay-200">
               <Button
@@ -886,7 +886,7 @@ export function PartnerReadinessPage() {
             Enterprise & Vendor Readiness
           </h1>
           <p className="text-lg text-muted-foreground">
-            Information for procurement teams, partner managers, and organizations evaluating Dockiotech for vendor onboarding, subcontracting, or partnership discussions
+            Information for procurement teams, partner managers, and organizations evaluating Dockio for vendor onboarding, subcontracting, or partnership discussions
           </p>
         </div>
 
@@ -1023,7 +1023,7 @@ export function PartnerReadinessPage() {
               For detailed compliance documentation, insurance certificates, security questionnaires, or capability presentations, please contact us. We're equipped to support standard enterprise vendor onboarding processes.
             </p>
             <Button className="bg-primary hover:bg-primary/90">
-              <a href="mailto:partnerships@dockiotech.com">Contact Partnerships Team</a>
+              <a href="mailto:partnerships@dockio.com">Contact Partnerships Team</a>
             </Button>
           </Card>
 
@@ -1044,7 +1044,7 @@ export function AboutPage() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
         <div className="max-w-3xl mb-16">
           <h1 className="text-4xl lg:text-5xl font-semibold text-foreground mb-4">
-            About Dockiotech
+            About Dockio
           </h1>
           <p className="text-lg text-muted-foreground">
             Enterprise AI implementation partner built for serious programs
@@ -1055,7 +1055,7 @@ export function AboutPage() {
           <Card className="p-8">
             <h2 className="text-2xl font-semibold text-foreground mb-4">Who We Are</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Dockiotech is an AI-first implementation firm focused on helping enterprise organizations execute AI initiatives with quality and speed. We provide both the AI talent and delivery capability that enterprise teams need to move from strategy to production.
+              Dockio is an AI-first implementation firm focused on helping enterprise organizations execute AI initiatives with quality and speed. We provide both the AI talent and delivery capability that enterprise teams need to move from strategy to production.
             </p>
             <p className="text-muted-foreground leading-relaxed">
               We're not a generic staffing vendor or broad IT services firm. We specialize exclusively in modern AI implementation—GenAI applications, LLM development, RAG systems, AI agents, and workflow automation. This focus allows us to maintain deep technical expertise and deliver at the execution standard enterprise programs require.

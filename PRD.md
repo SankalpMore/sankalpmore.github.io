@@ -1,6 +1,6 @@
-# Product Requirements Document: Dockiotech Enterprise AI Partner Website
+# Product Requirements Document: Dockio Enterprise AI Partner Website
 
-A premium B2B website positioning Dockiotech as a credible, enterprise-grade AI implementation boutique and technical partnership firm for procurement teams, partner managers, and AI transformation leaders at global organizations.
+A premium B2B website positioning Dockio as a credible, enterprise-grade AI implementation boutique and technical partnership firm for procurement teams, partner managers, and AI transformation leaders at global organizations.
 
 ## Latest Updates (Current Iteration)
 - Enhanced hero section with improved animations and gradient overlays

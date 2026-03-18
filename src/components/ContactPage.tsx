@@ -121,8 +121,8 @@ export function ContactPage() {
                   <EnvelopeSimple className="w-5 h-5 text-accent mt-0.5" />
                   <div>
                     <p className="font-medium text-foreground mb-1">Email</p>
-                    <a href="mailto:partnerships@dockiotech.com" className="text-muted-foreground hover:text-accent transition-colors">
-                      partnerships@dockiotech.com
+                    <a href="mailto:partnerships@dockio.com" className="text-muted-foreground hover:text-accent transition-colors">
+                      partnerships@dockio.com
                     </a>
                   </div>
                 </div>
