@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { Code, Users, Network, Shield, FileText, CheckCircle, ArrowRight, Briefcase, ChartLine, Rocket, Brain, Cube, Database, GitBranch, MagnifyingGlass, Robot } from '@phosphor-icons/react'
+import { CapabilityDownload } from '@/components/CapabilityDownload'
 
 export function HomePage() {
   const { navigate } = useRouter()
@@ -13,28 +14,35 @@ export function HomePage() {
     <div className="min-h-screen">
       <section className="relative pt-32 pb-24 px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-transparent pointer-events-none" />
+        <div className="absolute top-20 right-0 w-[600px] h-[600px] bg-accent/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
         
         <div className="max-w-7xl mx-auto relative">
           <div className="max-w-4xl">
-            <h1 className="text-5xl lg:text-6xl font-semibold text-foreground leading-tight tracking-tight mb-6">
-              Enterprise AI Implementation Partner
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-6 animate-in fade-in duration-700">
+              <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+              <span className="text-sm font-medium text-foreground">Enterprise AI Implementation Partner</span>
+            </div>
+            <h1 className="text-5xl lg:text-7xl font-semibold text-foreground leading-[1.1] tracking-tight mb-6 animate-in slide-in-from-bottom-4 duration-700">
+              Scale AI Initiatives with <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary via-accent to-primary">Premium Engineering Talent</span>
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed mb-10 max-w-3xl">
-              Premium AI consulting, GenAI engineering, and staff augmentation for organizations scaling critical AI initiatives. Trusted delivery partner for enterprise AI programs.
+            <p className="text-xl text-muted-foreground leading-relaxed mb-10 max-w-3xl animate-in fade-in duration-700 delay-100">
+              Dockiotech delivers specialized AI engineering teams and technical leadership for enterprise AI programs. Built for the quality standards procurement teams expect.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 animate-in slide-in-from-bottom-4 duration-700 delay-200">
               <Button
                 size="lg"
                 onClick={() => navigate('/contact')}
-                className="bg-primary hover:bg-primary/90 text-base px-8"
+                className="bg-primary hover:bg-primary/90 text-base px-8 shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300"
               >
                 Book a Discovery Call
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 onClick={() => navigate('/services')}
-                className="text-base px-8"
+                className="text-base px-8 hover:bg-muted/80 transition-all duration-300"
               >
                 Explore Capabilities
               </Button>
@@ -43,29 +51,29 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="py-16 px-6 lg:px-8 bg-muted/30">
+      <section className="py-20 px-6 lg:px-8 bg-gradient-to-b from-muted/30 to-transparent border-y border-border/30">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-8">
-            <p className="text-sm font-medium text-muted-foreground tracking-wide uppercase">
+          <div className="text-center mb-12">
+            <p className="text-sm font-medium text-muted-foreground tracking-widest uppercase">
               Built for Enterprise AI Ecosystems
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center opacity-60">
-            <div className="flex items-center gap-2">
-              <Code weight="duotone" className="w-8 h-8 text-primary" />
-              <span className="font-mono text-sm">LLM Applications</span>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
+            <div className="flex flex-col items-center gap-3 p-6 rounded-xl hover:bg-background/50 transition-all duration-300 group">
+              <Code weight="duotone" className="w-10 h-10 text-primary group-hover:scale-110 transition-transform duration-300" />
+              <span className="font-mono text-sm text-muted-foreground group-hover:text-foreground transition-colors">LLM Applications</span>
             </div>
-            <div className="flex items-center gap-2">
-              <Network weight="duotone" className="w-8 h-8 text-primary" />
-              <span className="font-mono text-sm">AI Architecture</span>
+            <div className="flex flex-col items-center gap-3 p-6 rounded-xl hover:bg-background/50 transition-all duration-300 group">
+              <Network weight="duotone" className="w-10 h-10 text-primary group-hover:scale-110 transition-transform duration-300" />
+              <span className="font-mono text-sm text-muted-foreground group-hover:text-foreground transition-colors">AI Architecture</span>
             </div>
-            <div className="flex items-center gap-2">
-              <Robot weight="duotone" className="w-8 h-8 text-primary" />
-              <span className="font-mono text-sm">Agentic Systems</span>
+            <div className="flex flex-col items-center gap-3 p-6 rounded-xl hover:bg-background/50 transition-all duration-300 group">
+              <Robot weight="duotone" className="w-10 h-10 text-primary group-hover:scale-110 transition-transform duration-300" />
+              <span className="font-mono text-sm text-muted-foreground group-hover:text-foreground transition-colors">Agentic Systems</span>
             </div>
-            <div className="flex items-center gap-2">
-              <Database weight="duotone" className="w-8 h-8 text-primary" />
-              <span className="font-mono text-sm">RAG Systems</span>
+            <div className="flex flex-col items-center gap-3 p-6 rounded-xl hover:bg-background/50 transition-all duration-300 group">
+              <Database weight="duotone" className="w-10 h-10 text-primary group-hover:scale-110 transition-transform duration-300" />
+              <span className="font-mono text-sm text-muted-foreground group-hover:text-foreground transition-colors">RAG Systems</span>
             </div>
           </div>
         </div>
@@ -83,7 +91,7 @@ export function HomePage() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="p-8 hover:shadow-lg transition-shadow">
+            <Card className="p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-border/50">
               <Users className="w-10 h-10 text-accent mb-4" weight="duotone" />
               <h3 className="text-xl font-semibold text-foreground mb-3">
                 AI Staff Augmentation
@@ -93,7 +101,7 @@ export function HomePage() {
               </p>
             </Card>
 
-            <Card className="p-8 hover:shadow-lg transition-shadow">
+            <Card className="p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-border/50">
               <Briefcase className="w-10 h-10 text-accent mb-4" weight="duotone" />
               <h3 className="text-xl font-semibold text-foreground mb-3">
                 Enterprise AI Consulting
@@ -103,7 +111,7 @@ export function HomePage() {
               </p>
             </Card>
 
-            <Card className="p-8 hover:shadow-lg transition-shadow">
+            <Card className="p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-border/50">
               <Brain className="w-10 h-10 text-accent mb-4" weight="duotone" />
               <h3 className="text-xl font-semibold text-foreground mb-3">
                 GenAI & Agentic AI Delivery
@@ -113,7 +121,7 @@ export function HomePage() {
               </p>
             </Card>
 
-            <Card className="p-8 hover:shadow-lg transition-shadow">
+            <Card className="p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-border/50">
               <MagnifyingGlass className="w-10 h-10 text-accent mb-4" weight="duotone" />
               <h3 className="text-xl font-semibold text-foreground mb-3">
                 RAG & Knowledge Systems
@@ -123,7 +131,7 @@ export function HomePage() {
               </p>
             </Card>
 
-            <Card className="p-8 hover:shadow-lg transition-shadow">
+            <Card className="p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-border/50">
               <GitBranch className="w-10 h-10 text-accent mb-4" weight="duotone" />
               <h3 className="text-xl font-semibold text-foreground mb-3">
                 AI Workflow Automation
@@ -133,7 +141,7 @@ export function HomePage() {
               </p>
             </Card>
 
-            <Card className="p-8 hover:shadow-lg transition-shadow">
+            <Card className="p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-border/50">
               <Cube className="w-10 h-10 text-accent mb-4" weight="duotone" />
               <h3 className="text-xl font-semibold text-foreground mb-3">
                 LLM Product Engineering
@@ -257,6 +265,75 @@ export function HomePage() {
         </div>
       </section>
 
+      <section className="py-24 px-6 lg:px-8 bg-muted/20">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-semibold text-foreground mb-4">
+              Common Questions
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Quick answers for enterprise buyers evaluating AI implementation partners
+            </p>
+          </div>
+
+          <Accordion type="single" collapsible className="space-y-4">
+            <AccordionItem value="item-1" className="border border-border rounded-lg px-6 bg-background">
+              <AccordionTrigger className="text-left hover:no-underline">
+                What's the typical engagement timeline?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                For staff augmentation, we can provide vetted engineers within 1-2 weeks. Project-based work requires a discovery phase (1-2 weeks) followed by implementation sprints. Most enterprise projects range from 3-6 months, though we support both shorter pilots and longer platform buildouts.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-2" className="border border-border rounded-lg px-6 bg-background">
+              <AccordionTrigger className="text-left hover:no-underline">
+                How do you ensure AI talent quality?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Our screening process includes technical depth interviews, system design assessments, hands-on coding evaluations with modern AI stacks (LangChain, LlamaIndex, vector databases), and communication standards verification. We don't present candidates who can't demonstrate production AI experience.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-3" className="border border-border rounded-lg px-6 bg-background">
+              <AccordionTrigger className="text-left hover:no-underline">
+                Can you work within our existing procurement processes?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Yes. We support standard enterprise procurement including MSAs, SOWs, NDA execution, milestone-based contracts, and integration with vendor management systems. Our team is experienced with the documentation and approval workflows required by large organizations.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-4" className="border border-border rounded-lg px-6 bg-background">
+              <AccordionTrigger className="text-left hover:no-underline">
+                What if we need to scale the team up or down?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Flexibility is built into our engagement models. Staff augmentation roles can be scaled with reasonable notice periods (typically 2-4 weeks). Project-based work is milestone-driven, allowing natural transition points. We prioritize matching your organizational rhythm over rigid contract terms.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-5" className="border border-border rounded-lg px-6 bg-background">
+              <AccordionTrigger className="text-left hover:no-underline">
+                Do you handle data security and compliance requirements?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Our teams work within client infrastructure and adhere to your security policies. We sign NDAs as standard practice, follow secure development protocols, and adapt to industry-specific compliance requirements. Detailed security documentation can be provided during vendor onboarding discussions.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-6" className="border border-border rounded-lg px-6 bg-background">
+              <AccordionTrigger className="text-left hover:no-underline">
+                How do you differentiate from offshore staffing vendors?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                We're not a volume staffing firm. Our focus is exclusively on AI implementation with rigorous talent screening, deep technical expertise in modern AI stacks, enterprise communication standards, and ownership mindset. We prioritize quality and long-term partnerships over transactional placements.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
+      </section>
+
       <section className="py-24 px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl mb-16">
@@ -270,15 +347,16 @@ export function HomePage() {
               <Button
                 size="lg"
                 onClick={() => navigate('/contact')}
-                className="bg-primary hover:bg-primary/90 px-8"
+                className="bg-primary hover:bg-primary/90 px-8 shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300"
               >
                 Book a Discovery Call
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 onClick={() => navigate('/partner-readiness')}
-                className="px-8"
+                className="px-8 hover:bg-muted/80 transition-all duration-300"
               >
                 View Vendor Readiness
               </Button>
@@ -948,6 +1026,10 @@ export function PartnerReadinessPage() {
               <a href="mailto:partnerships@dockiotech.com">Contact Partnerships Team</a>
             </Button>
           </Card>
+
+          <div className="mt-8">
+            <CapabilityDownload />
+          </div>
         </div>
       </div>
     </div>
