@@ -1,3 +1,4 @@
+import { useState, type FormEvent } from 'react'
 import { useRouter } from '@/lib/router'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
@@ -9,6 +10,77 @@ import { CapabilityDownload } from '@/components/CapabilityDownload'
 
 export function HomePage() {
   const { navigate } = useRouter()
+  const [formSubmitted, setFormSubmitted] = useState(false)
+
+  const calendarLink = 'YOUR_CALENDAR_LINK_HERE'
+
+  const scrollToAssessment = () => {
+    document.getElementById('book-assessment')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
+  const handleLeadSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    const form = event.currentTarget
+
+    if (!form.checkValidity()) {
+      form.reportValidity()
+      return
+    }
+
+    // TODO: Send this qualified lead to the backend/email/CRM integration before showing the calendar step.
+    setFormSubmitted(true)
+    window.setTimeout(() => {
+      document.getElementById('calendar-booking')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }, 100)
+  }
+
+  const buyingSignals = [
+    {
+      highlight: 'Secure',
+      title: 'Private data needs secure AI',
+      description: 'For teams that tried ChatGPT or Copilot but are worried about data exposure, access control, and governance.',
+    },
+    {
+      highlight: 'Production',
+      title: 'Your AI PoC should not stay stuck',
+      description: 'For companies that already built an AI PoC but could not take it live due to integration, reliability, security, or adoption gaps.',
+    },
+    {
+      highlight: 'AI-Layer',
+      title: 'Add AI on top of your cloud',
+      description: 'For companies already using Azure, AWS, or OpenAI but lacking a production AI layer across documents, workflows, and business systems.',
+    },
+    {
+      highlight: 'Governed',
+      title: 'AI agents need control',
+      description: 'For teams that want AI agents but need approval flows, audit logs, monitoring, fallback, and human-in-the-loop safeguards.',
+    },
+  ]
+
+  const services = [
+    ['Secure AI Deployment', ['Private RAG', 'Access-controlled AI assistants', 'Enterprise data workflows', 'Guardrails and auditability']],
+    ['PoC-to-Production Rescue', ['Review existing AI PoC', 'Fix architecture gaps', 'Add integrations, testing, monitoring', 'Move to production']],
+    ['AI Layer on Cloud', ['Azure AI Foundry', 'AWS Bedrock', 'OpenAI', 'Cloud-native AI workflows']],
+    ['Governed AI Agents', ['Human approval workflows', 'Tool/function calling', 'Audit logs', 'Risk controls', 'Agent monitoring']],
+    ['Managed AI Services', ['Monthly monitoring', 'Prompt/version updates', 'Cost optimization', 'Bug fixes', 'Usage reports', 'Reliability improvements']],
+  ]
+
+  const pricing = [
+    ['AI Readiness Audit', 'From ₹1.5L'],
+    ['Paid AI Pilot', 'From ₹3L'],
+    ['Production AI Deployment', 'From ₹10L'],
+    ['Managed AI Service', 'From ₹1L/month'],
+    ['Governed AI Agents', 'Custom pricing'],
+  ]
+
+  const deploymentPatterns = [
+    'Private RAG Assistant for BFSI Operations',
+    'Document Automation for Regulated Teams',
+    'Governed AI Agent Workflow',
+    'Managed AI Monitoring Dashboard',
+  ]
+
+  const selectClass = 'h-11 w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring'
 
   return (
     <div className="min-h-screen">
@@ -16,352 +88,120 @@ export function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-transparent pointer-events-none" />
         <div className="absolute top-20 right-0 w-[600px] h-[600px] bg-accent/10 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
-        
         <div className="max-w-7xl mx-auto relative">
           <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-6 animate-in fade-in duration-700">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-6">
               <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-              <span className="text-sm font-medium text-foreground">Enterprise AI Implementation Partner</span>
+              <span className="text-sm font-medium text-foreground">Enterprise AI deployment company India</span>
             </div>
-            <h1 className="text-5xl lg:text-7xl font-semibold text-foreground leading-[1.1] tracking-tight mb-6 animate-in slide-in-from-bottom-4 duration-700">
-              Scale AI Initiatives with <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary via-accent to-primary">Premium Engineering Talent</span>
+            <h1 className="text-5xl lg:text-7xl font-semibold text-foreground leading-[1.1] tracking-tight mb-6">
+              Deploy Secure, Governed AI Into Production
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed mb-10 max-w-3xl animate-in fade-in duration-700 delay-100">
-              Dockio delivers specialized AI engineering teams and technical leadership for enterprise AI programs. Built for the quality standards procurement teams expect.
+            <p className="text-xl text-muted-foreground leading-relaxed mb-10 max-w-3xl">
+              Dockio helps companies move from AI experiments and failed PoCs to production-ready AI systems using OpenAI, Azure AI Foundry, AWS Bedrock, RAG, copilots, AI agents, and managed AI operations.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 animate-in slide-in-from-bottom-4 duration-700 delay-200">
-              <Button
-                size="lg"
-                onClick={() => navigate('/contact')}
-                className="bg-primary hover:bg-primary/90 text-base px-8 shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300"
-              >
-                Book a Discovery Call
-                <ArrowRight className="ml-2 h-4 w-4" />
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button size="lg" onClick={scrollToAssessment} className="bg-primary hover:bg-primary/90 text-base px-8 shadow-lg shadow-primary/25">
+                Book AI Deployment Assessment <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                onClick={() => navigate('/services')}
-                className="text-base px-8 hover:bg-muted/80 transition-all duration-300"
-              >
-                Explore Capabilities
+              <Button size="lg" variant="outline" onClick={scrollToAssessment} className="text-base px-8 hover:bg-muted/80">
+                Estimate My AI Deployment Cost
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 px-6 lg:px-8 bg-gradient-to-b from-muted/30 to-transparent border-y border-border/30">
+      <section id="use-cases" className="py-24 px-6 lg:px-8 bg-card border-y border-border">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <p className="text-sm font-medium text-muted-foreground tracking-widest uppercase">
-              Built for Enterprise AI Ecosystems
+          <div className="max-w-3xl mb-12">
+            <h2 className="text-3xl lg:text-4xl font-semibold text-foreground mb-4">AI experiments are easy. Production AI is where companies get stuck.</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Many teams have ChatGPT or Copilot in use, an AI PoC that never went live, or Azure/AWS cloud infrastructure without a governed AI layer. The AI production gap appears when agents, data access, compliance, monitoring, and risk controls must work together. Dockio helps de-risk that move while AI leaders shift from experiments into production.
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
-            <div className="flex flex-col items-center gap-3 p-6 rounded-xl hover:bg-background/50 transition-all duration-300 group">
-              <Code weight="duotone" className="w-10 h-10 text-primary group-hover:scale-110 transition-transform duration-300" />
-              <span className="font-mono text-sm text-muted-foreground group-hover:text-foreground transition-colors">LLM Applications</span>
-            </div>
-            <div className="flex flex-col items-center gap-3 p-6 rounded-xl hover:bg-background/50 transition-all duration-300 group">
-              <Network weight="duotone" className="w-10 h-10 text-primary group-hover:scale-110 transition-transform duration-300" />
-              <span className="font-mono text-sm text-muted-foreground group-hover:text-foreground transition-colors">AI Architecture</span>
-            </div>
-            <div className="flex flex-col items-center gap-3 p-6 rounded-xl hover:bg-background/50 transition-all duration-300 group">
-              <Robot weight="duotone" className="w-10 h-10 text-primary group-hover:scale-110 transition-transform duration-300" />
-              <span className="font-mono text-sm text-muted-foreground group-hover:text-foreground transition-colors">Agentic Systems</span>
-            </div>
-            <div className="flex flex-col items-center gap-3 p-6 rounded-xl hover:bg-background/50 transition-all duration-300 group">
-              <Database weight="duotone" className="w-10 h-10 text-primary group-hover:scale-110 transition-transform duration-300" />
-              <span className="font-mono text-sm text-muted-foreground group-hover:text-foreground transition-colors">RAG Systems</span>
-            </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {buyingSignals.map((card) => (
+              <Card key={card.highlight} className="p-6 border-border/50 hover:shadow-xl transition-all duration-300">
+                <Badge className="mb-4 bg-accent/10 text-accent hover:bg-accent/10">{card.highlight}</Badge>
+                <h3 className="text-lg font-semibold text-foreground mb-3">{card.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{card.description}</p>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="py-24 px-6 lg:px-8">
+      <section id="services" className="py-24 px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl mb-16">
-            <h2 className="text-3xl lg:text-4xl font-semibold text-foreground mb-4">
-              What We Deliver
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Comprehensive AI implementation capabilities for enterprise programs
-            </p>
+            <h2 className="text-3xl lg:text-4xl font-semibold text-foreground mb-4">What Dockio Deploys</h2>
+            <p className="text-lg text-muted-foreground">Secure RAG deployment, governed AI agents, cloud AI workflows, and managed AI services for production environments.</p>
           </div>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-border/50">
-              <Users className="w-10 h-10 text-accent mb-4" weight="duotone" />
-              <h3 className="text-xl font-semibold text-foreground mb-3">
-                AI Staff Augmentation
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Vetted AI engineers, solution architects, and consultants ready to embed with your teams. Fast access to quality talent for critical initiatives.
-              </p>
-            </Card>
-
-            <Card className="p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-border/50">
-              <Briefcase className="w-10 h-10 text-accent mb-4" weight="duotone" />
-              <h3 className="text-xl font-semibold text-foreground mb-3">
-                Enterprise AI Consulting
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Strategic AI roadmapping, feasibility assessment, and implementation planning for large-scale enterprise transformations.
-              </p>
-            </Card>
-
-            <Card className="p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-border/50">
-              <Brain className="w-10 h-10 text-accent mb-4" weight="duotone" />
-              <h3 className="text-xl font-semibold text-foreground mb-3">
-                GenAI & Agentic AI Delivery
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                LLM application development, AI agent orchestration, and custom GenAI solutions for high-value business workflows.
-              </p>
-            </Card>
-
-            <Card className="p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-border/50">
-              <MagnifyingGlass className="w-10 h-10 text-accent mb-4" weight="duotone" />
-              <h3 className="text-xl font-semibold text-foreground mb-3">
-                RAG & Knowledge Systems
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Enterprise search, retrieval-augmented generation, and knowledge management systems built on your proprietary data.
-              </p>
-            </Card>
-
-            <Card className="p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-border/50">
-              <GitBranch className="w-10 h-10 text-accent mb-4" weight="duotone" />
-              <h3 className="text-xl font-semibold text-foreground mb-3">
-                AI Workflow Automation
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Intelligent automation of complex business processes using AI agents, APIs, and integration orchestration.
-              </p>
-            </Card>
-
-            <Card className="p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-border/50">
-              <Cube className="w-10 h-10 text-accent mb-4" weight="duotone" />
-              <h3 className="text-xl font-semibold text-foreground mb-3">
-                LLM Product Engineering
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Full-stack development of production-grade LLM applications with evaluation, observability, and deployment infrastructure.
-              </p>
-            </Card>
+            {services.map(([title, items]) => (
+              <Card key={title as string} className="p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-border/50">
+                <Shield className="w-10 h-10 text-accent mb-4" weight="duotone" />
+                <h3 className="text-xl font-semibold text-foreground mb-4">{title}</h3>
+                <ul className="space-y-2">
+                  {(items as string[]).map((item) => <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground"><CheckCircle className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />{item}</li>)}
+                </ul>
+              </Card>
+            ))}
           </div>
+        </div>
+      </section>
+
+      <section id="pricing" className="py-24 px-6 lg:px-8 bg-muted/20 border-y border-border/40">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-3xl mb-12"><h2 className="text-3xl lg:text-4xl font-semibold text-foreground mb-4">Transparent starting prices. Custom enterprise scope.</h2></div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-5 mb-8">
+            {pricing.map(([name, price]) => <Card key={name} className="p-6"><p className="text-sm text-muted-foreground mb-3">{name}</p><p className="text-2xl font-semibold text-foreground">{price}</p></Card>)}
+          </div>
+          <p className="text-muted-foreground max-w-4xl mb-8">Final pricing depends on data complexity, integrations, security requirements, cloud environment, compliance needs, and managed support scope. Cloud, model, and third-party API costs are billed separately.</p>
+          <Button size="lg" variant="outline" onClick={scrollToAssessment}>Estimate My AI Deployment Cost</Button>
+        </div>
+      </section>
+
+      <section id="founder-experience" className="py-24 px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-4xl mb-10">
+            <h2 className="text-3xl lg:text-4xl font-semibold text-foreground mb-4">Founder-led enterprise AI experience</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">Dockio is founder-led by Sankalp More, with prior experience in GenAI, RAG, AI agents, cloud AI platforms, and enterprise automation across BFSI, pharma, retail, and technology environments. Dockio applies this experience to help companies move from AI experiments to secure production deployments.</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">{['BFSI', 'Pharma / Healthcare', 'Retail / Consumer', 'Logistics / Operations', 'Cloud / Enterprise IT'].map((industry) => <Card key={industry} className="p-5 text-center font-medium text-foreground">{industry}</Card>)}</div>
         </div>
       </section>
 
       <section className="py-24 px-6 lg:px-8 bg-card border-y border-border">
         <div className="max-w-7xl mx-auto">
-          <div className="max-w-3xl mb-16">
-            <h2 className="text-3xl lg:text-4xl font-semibold text-foreground mb-4">
-              Why Premium Organizations Choose Us
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Built for enterprise expectations and serious AI programs
-            </p>
+          <div className="max-w-3xl mb-12"><h2 className="text-3xl lg:text-4xl font-semibold text-foreground mb-4">Enterprise AI Deployment Patterns</h2><p className="text-lg text-muted-foreground">Representative demo patterns for PoC to production AI programs.</p></div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {deploymentPatterns.map((pattern) => <Card key={pattern} className="p-6 bg-gradient-to-br from-background to-muted/30"><div className="h-28 rounded-xl border border-dashed border-accent/30 bg-accent/5 mb-5 flex items-center justify-center"><Brain className="w-10 h-10 text-accent" weight="duotone" /></div><h3 className="font-semibold text-foreground">{pattern}</h3></Card>)}
           </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="flex gap-4">
-              <div className="flex-shrink-0">
-                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
-                  <Rocket className="w-6 h-6 text-accent" weight="duotone" />
-                </div>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">
-                  Fast Access to Quality AI Talent
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Pre-vetted engineers and architects available for immediate deployment. No lengthy hiring cycles or quality compromises.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-4">
-              <div className="flex-shrink-0">
-                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
-                  <ChartLine className="w-6 h-6 text-accent" weight="duotone" />
-                </div>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">
-                  Outcome-Driven Implementation
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Focus on delivering measurable business results, not billable hours. Clear scoping, milestone tracking, and ownership mindset.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-4">
-              <div className="flex-shrink-0">
-                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
-                  <Code className="w-6 h-6 text-accent" weight="duotone" />
-                </div>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">
-                  Strong Technical Depth
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Deep expertise in modern AI stacks: LangChain, LlamaIndex, vector databases, observability tools, and cloud AI services.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-4">
-              <div className="flex-shrink-0">
-                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
-                  <Network className="w-6 h-6 text-accent" weight="duotone" />
-                </div>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">
-                  Cross-Industry AI Delivery
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Experience delivering AI solutions across retail, finance, healthcare, logistics, and professional services contexts.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-4">
-              <div className="flex-shrink-0">
-                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
-                  <Users className="w-6 h-6 text-accent" weight="duotone" />
-                </div>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">
-                  Flexible Engagement Models
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Support for embedded teams, project-based delivery, fractional leadership, and pod-based execution—whatever fits your structure.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-4">
-              <div className="flex-shrink-0">
-                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
-                  <Shield className="w-6 h-6 text-accent" weight="duotone" />
-                </div>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">
-                  Enterprise-Grade Execution
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Professional communication, documentation discipline, SOW alignment, and structured delivery governance expected by enterprise teams.
-                </p>
-              </div>
-            </div>
-          </div>
+          <p className="text-sm text-muted-foreground mt-6">Representative demo patterns. No client data shown.</p>
         </div>
       </section>
 
-      <section className="py-24 px-6 lg:px-8 bg-muted/20">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-semibold text-foreground mb-4">
-              Common Questions
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Quick answers for enterprise buyers evaluating AI implementation partners
-            </p>
+      <section id="book-assessment" className="py-24 px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-semibold text-foreground mb-4">Tell us about your AI initiative</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">Help us understand where you are in your AI journey. Whether you are exploring secure AI, stuck with an unfinished PoC, planning RAG or AI agents, or looking for managed AI support, we’ll assess the right deployment path before the call.</p>
           </div>
-
-          <Accordion type="single" collapsible className="space-y-4">
-            <AccordionItem value="item-1" className="border border-border rounded-lg px-6 bg-background">
-              <AccordionTrigger className="text-left hover:no-underline">
-                What's the typical engagement timeline?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                For staff augmentation, we can provide vetted engineers within 1-2 weeks. Project-based work requires a discovery phase (1-2 weeks) followed by implementation sprints. Most enterprise projects range from 3-6 months, though we support both shorter pilots and longer platform buildouts.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="item-2" className="border border-border rounded-lg px-6 bg-background">
-              <AccordionTrigger className="text-left hover:no-underline">
-                How do you ensure AI talent quality?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                Our screening process includes technical depth interviews, system design assessments, hands-on coding evaluations with modern AI stacks (LangChain, LlamaIndex, vector databases), and communication standards verification. We don't present candidates who can't demonstrate production AI experience.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="item-3" className="border border-border rounded-lg px-6 bg-background">
-              <AccordionTrigger className="text-left hover:no-underline">
-                Can you work within our existing procurement processes?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                Yes. We support standard enterprise procurement including MSAs, SOWs, NDA execution, milestone-based contracts, and integration with vendor management systems. Our team is experienced with the documentation and approval workflows required by large organizations.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="item-4" className="border border-border rounded-lg px-6 bg-background">
-              <AccordionTrigger className="text-left hover:no-underline">
-                What if we need to scale the team up or down?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                Flexibility is built into our engagement models. Staff augmentation roles can be scaled with reasonable notice periods (typically 2-4 weeks). Project-based work is milestone-driven, allowing natural transition points. We prioritize matching your organizational rhythm over rigid contract terms.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="item-5" className="border border-border rounded-lg px-6 bg-background">
-              <AccordionTrigger className="text-left hover:no-underline">
-                Do you handle data security and compliance requirements?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                Our teams work within client infrastructure and adhere to your security policies. We sign NDAs as standard practice, follow secure development protocols, and adapt to industry-specific compliance requirements. Detailed security documentation can be provided during vendor onboarding discussions.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="item-6" className="border border-border rounded-lg px-6 bg-background">
-              <AccordionTrigger className="text-left hover:no-underline">
-                How do you differentiate from offshore staffing vendors?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                We're not a volume staffing firm. Our focus is exclusively on AI implementation with rigorous talent screening, deep technical expertise in modern AI stacks, enterprise communication standards, and ownership mindset. We prioritize quality and long-term partnerships over transactional placements.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </div>
-      </section>
-
-      <section className="py-24 px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="max-w-3xl mb-16">
-            <h2 className="text-3xl lg:text-4xl font-semibold text-foreground mb-4">
-              Ready to Discuss Your AI Initiative?
-            </h2>
-            <p className="text-lg text-muted-foreground mb-10 max-w-2xl">
-              Whether you need AI staff augmentation, project delivery, or strategic consulting—we support enterprise AI programs with the execution quality you expect.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button
-                size="lg"
-                onClick={() => navigate('/contact')}
-                className="bg-primary hover:bg-primary/90 px-8 shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300"
-              >
-                Book a Discovery Call
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                onClick={() => navigate('/partner-readiness')}
-                className="px-8 hover:bg-muted/80 transition-all duration-300"
-              >
-                View Vendor Readiness
-              </Button>
-            </div>
-          </div>
+          <Card className="p-8">
+            <form onSubmit={handleLeadSubmit} className="grid md:grid-cols-2 gap-5">
+              {[['name','Name'],['email','Work email'],['company','Company name'],['role','Role/designation']].map(([name,label]) => <label key={name} className="text-sm font-medium text-foreground">{label}<input name={name} type={name === 'email' ? 'email' : 'text'} required className="mt-2 h-11 w-full rounded-md border border-input bg-background px-3 py-2 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring" /></label>)}
+              <label className="text-sm font-medium text-foreground">Company size<select required name="companySize" className={`${selectClass} mt-2`}><option value="">Select</option><option>1–50</option><option>51–200</option><option>201–1000</option><option>1000+</option></select></label>
+              <label className="text-sm font-medium text-foreground">What are you looking for?<select required name="need" className={`${selectClass} mt-2`}><option value="">Select</option><option>Move AI PoC to production</option><option>Secure internal company data with AI</option><option>Build RAG / chatbot / copilot</option><option>Deploy governed AI agents</option><option>Add AI layer on Azure/AWS</option><option>Get managed AI support</option><option>Not sure yet</option></select></label>
+              <label className="text-sm font-medium text-foreground">Have you already tried AI internally?<select required name="triedAi" className={`${selectClass} mt-2`}><option value="">Select</option><option>Yes</option><option>No</option><option>In planning</option></select></label>
+              <label className="text-sm font-medium text-foreground">Current platform<select required name="platform" className={`${selectClass} mt-2`}><option value="">Select</option><option>Azure</option><option>AWS</option><option>GCP</option><option>OpenAI</option><option>Not sure</option></select></label>
+              <label className="text-sm font-medium text-foreground">Timeline<select required name="timeline" className={`${selectClass} mt-2`}><option value="">Select</option><option>This month</option><option>This quarter</option><option>Exploring</option></select></label>
+              <label className="text-sm font-medium text-foreground">Budget readiness<select required name="budget" className={`${selectClass} mt-2`}><option value="">Select</option><option>₹3L–₹10L</option><option>₹10L–₹25L</option><option>₹25L+</option><option>Not sure</option></select></label>
+              <div className="md:col-span-2"><Button type="submit" size="lg" className="bg-primary hover:bg-primary/90">Continue to calendar</Button></div>
+            </form>
+          </Card>
+          {formSubmitted && <Card id="calendar-booking" className="p-8 mt-8 bg-primary text-primary-foreground"><h3 className="text-2xl font-semibold mb-3">Book your 30-minute AI Deployment Assessment</h3><p className="mb-6 text-primary-foreground/80">In this call, we’ll discuss your AI use case, current systems, risk areas, deployment path, and whether Dockio can help you move from idea or PoC to production.</p><Button asChild variant="secondary"><a href={calendarLink}>Book Calendar Slot</a></Button></Card>}
         </div>
       </section>
     </div>
@@ -373,7 +213,7 @@ export function ServicesPage() {
 
   const services = [
     {
-      title: 'AI Staff Augmentation',
+      title: 'AI Deployment Support',
       description: 'Embed vetted AI engineers, ML specialists, and solution architects directly into your team for immediate impact.',
       details: [
         'Pre-screened AI/ML engineers with hands-on experience',
@@ -546,7 +386,7 @@ export function TalentPage() {
 
           <TabsContent value="staff-aug" className="space-y-6">
             <Card className="p-8">
-              <h2 className="text-2xl font-semibold text-foreground mb-4">Staff Augmentation</h2>
+              <h2 className="text-2xl font-semibold text-foreground mb-4">Deployment Support</h2>
               <p className="text-muted-foreground mb-6">
                 Flexible AI talent to supplement your existing team during high-demand periods or specific project phases.
               </p>
@@ -566,7 +406,7 @@ export function TalentPage() {
                     <li>• Temporary capacity needs</li>
                     <li>• Seasonal AI project surges</li>
                     <li>• Specialized skills for specific phases</li>
-                    <li>• Bridge staffing while hiring</li>
+                    <li>• Bridge deployment while hiring</li>
                   </ul>
                 </div>
               </div>
@@ -705,7 +545,7 @@ export function IndustriesPage() {
     {
       name: 'Professional Services',
       challenges: ['Knowledge management', 'Proposal generation', 'Client research', 'Resource allocation'],
-      applications: ['Internal knowledge search', 'RFP response automation', 'Market intelligence systems', 'Project staffing optimization'],
+      applications: ['Internal knowledge search', 'RFP response automation', 'Market intelligence systems', 'Project deployment optimization'],
     },
   ]
 
@@ -779,7 +619,7 @@ export function CaseStudiesPage() {
       impact: 'Enabled 24/7 first-line support with consistent quality. Reduced average response time and freed human agents for complex issues.',
     },
     {
-      category: 'Staff Augmentation',
+      category: 'Deployment Support',
       title: 'AI Platform Team Scaling',
       challenge: 'Fast-growing AI platform team needed senior engineers during critical product launch period but couldn\'t wait for traditional hiring cycles.',
       approach: 'Embedded 3 senior AI engineers with LLM application and vector database expertise to work alongside internal team.',
@@ -896,7 +736,7 @@ export function PartnerReadinessPage() {
             <div className="grid md:grid-cols-2 gap-6 text-sm">
               <div>
                 <p className="font-medium text-foreground mb-2">Core Business</p>
-                <p className="text-muted-foreground">Enterprise AI implementation and staff augmentation for serious AI programs</p>
+                <p className="text-muted-foreground">Enterprise AI deployment and managed AI services for serious AI programs</p>
               </div>
               <div>
                 <p className="font-medium text-foreground mb-2">Specialization</p>
@@ -1058,7 +898,7 @@ export function AboutPage() {
               Dockio is an AI-first implementation firm focused on helping enterprise organizations execute AI initiatives with quality and speed. We provide both the AI talent and delivery capability that enterprise teams need to move from strategy to production.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              We're not a generic staffing vendor or broad IT services firm. We specialize exclusively in modern AI implementation—GenAI applications, LLM development, RAG systems, AI agents, and workflow automation. This focus allows us to maintain deep technical expertise and deliver at the execution standard enterprise programs require.
+              We're not a generic deployment vendor or broad IT services firm. We specialize exclusively in modern AI implementation—GenAI applications, LLM development, RAG systems, AI agents, and workflow automation. This focus allows us to maintain deep technical expertise and deliver at the execution standard enterprise programs require.
             </p>
           </Card>
 
@@ -1130,7 +970,7 @@ export function AboutPage() {
                 <CheckCircle className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" weight="duotone" />
                 <div>
                   <p className="font-medium text-foreground mb-1">Flexible Engagement Structures</p>
-                  <p className="text-muted-foreground">Support for staff augmentation, project delivery, fractional leadership—whatever fits your organizational structure.</p>
+                  <p className="text-muted-foreground">Support for AI deployment support, project delivery, fractional leadership—whatever fits your organizational structure.</p>
                 </div>
               </div>
 
@@ -1147,7 +987,7 @@ export function AboutPage() {
           <Card className="p-8 bg-gradient-to-br from-primary/5 to-transparent border-2">
             <h2 className="text-2xl font-semibold text-foreground mb-4">Work With Us</h2>
             <p className="text-muted-foreground mb-6">
-              Whether you need AI staff augmentation, project delivery, or partnership discussions—we're built to support enterprise AI programs.
+              Whether you need AI AI deployment support, project delivery, or partnership discussions—we're built to support enterprise AI programs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button onClick={() => navigate('/contact')} className="bg-primary hover:bg-primary/90">

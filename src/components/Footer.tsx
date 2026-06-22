@@ -1,6 +1,6 @@
 import { useRouter } from '@/lib/router'
 import { Separator } from '@/components/ui/separator'
-import { EnvelopeSimple, LinkedinLogo, Phone } from '@phosphor-icons/react'
+import { EnvelopeSimple, LinkedinLogo } from '@phosphor-icons/react'
 
 export function Footer() {
   const { navigate } = useRouter()
@@ -17,7 +17,7 @@ export function Footer() {
               <span className="text-xl font-semibold text-foreground tracking-[-0.01em]">Dockio</span>
             </div>
             <p className="text-[15px] text-muted-foreground leading-relaxed mb-7 max-w-xs">
-              Enterprise AI implementation partner. Specialized engineering teams and technical leadership for high-stakes AI initiatives.
+              Dockio helps companies deploy and manage secure, governed AI systems from PoC to production.
             </p>
             <div className="flex gap-3">
               <a
@@ -45,7 +45,7 @@ export function Footer() {
                   onClick={() => navigate('/services')}
                   className="text-[15px] text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  AI Engineering Teams
+                  Secure AI Deployment
                 </button>
               </li>
               <li>
@@ -53,7 +53,7 @@ export function Footer() {
                   onClick={() => navigate('/services')}
                   className="text-[15px] text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  Strategic AI Consulting
+                  PoC-to-Production Rescue
                 </button>
               </li>
               <li>
@@ -61,7 +61,7 @@ export function Footer() {
                   onClick={() => navigate('/services')}
                   className="text-[15px] text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  GenAI Development
+                  Governed AI Agents
                 </button>
               </li>
               <li>
@@ -69,7 +69,7 @@ export function Footer() {
                   onClick={() => navigate('/services')}
                   className="text-[15px] text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  Solution Architecture
+                  Managed AI Services
                 </button>
               </li>
             </ul>
@@ -88,10 +88,10 @@ export function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => navigate('/case-studies')}
+                  onClick={() => navigate('/')}
                   className="text-[15px] text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  Case Studies
+                  Use Cases
                 </button>
               </li>
               <li>
@@ -104,10 +104,10 @@ export function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => navigate('/partner-readiness')}
+                  onClick={() => navigate('/')}
                   className="text-[15px] text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  Partnership Process
+                  Pricing
                 </button>
               </li>
             </ul>
@@ -127,18 +127,18 @@ export function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => navigate('/contact')}
+                  onClick={() => navigate('/')}
                   className="text-[15px] text-muted-foreground hover:text-foreground transition-colors text-left"
                 >
-                  Schedule Discussion
+                  Book AI Deployment Assessment
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => navigate('/contact')}
+                  onClick={() => navigate('/')}
                   className="text-[15px] text-muted-foreground hover:text-foreground transition-colors text-left"
                 >
-                  Partnership Inquiries
+                  AI Deployment Cost Estimate
                 </button>
               </li>
             </ul>
@@ -150,7 +150,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-[14px] text-muted-foreground">
           <p>&copy; {new Date().getFullYear()} Dockio. All rights reserved.</p>
           <p className="text-[13px]">
-            Enterprise AI Implementation & Technical Partnership
+            AI Deployment & Managed AI Services
           </p>
         </div>
       </div>
