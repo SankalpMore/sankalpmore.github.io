@@ -31,7 +31,7 @@ export function ContactPage() {
             Start a Conversation
           </h1>
           <p className="text-lg text-muted-foreground">
-            Whether you need AI staff augmentation, project delivery, vendor discussions, or strategic consulting—we're here to help enterprise teams succeed with AI.
+            Whether you need AI AI deployment support, project delivery, vendor discussions, or strategic consulting—we're here to help enterprise teams succeed with AI.
           </p>
         </div>
 
@@ -81,7 +81,7 @@ export function ContactPage() {
                       <SelectValue placeholder="Select inquiry type" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="staffing">AI Staff Augmentation</SelectItem>
+                      <SelectItem value="deployment">AI Deployment Support</SelectItem>
                       <SelectItem value="consulting">AI Consulting Project</SelectItem>
                       <SelectItem value="partner">Subcontracting / Partner Discussion</SelectItem>
                       <SelectItem value="project">Enterprise AI Project</SelectItem>
@@ -142,7 +142,7 @@ export function ContactPage() {
                 Enterprise inquiries are prioritized and typically receive a response within 24 business hours.
               </p>
               <p className="text-sm text-muted-foreground">
-                For urgent AI staffing needs, please note "URGENT" in your message subject.
+                For urgent AI deployment needs, please note "URGENT" in your message subject.
               </p>
             </Card>
 

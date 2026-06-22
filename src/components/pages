@@ -247,7 +247,7 @@ export function HomePage() {
                   Flexible Engagement Architecture
                 </h3>
                 <p className="text-muted-foreground leading-relaxed text-[15px]">
-                  Support for dedicated teams, staff augmentation, project-based delivery, fractional leadership, and pod-based execution—structured to align with your operational model.
+                  Support for dedicated teams, AI deployment support, project-based delivery, fractional leadership, and pod-based execution—structured to align with your operational model.
                 </p>
               </div>
             </div>
@@ -299,7 +299,7 @@ export function HomePage() {
             <Card className="p-7 border-border/60 hover:border-accent/30 transition-all duration-200 hover:shadow-sm">
               <div className="h-8 mb-5" />
               <h3 className="text-lg font-semibold text-foreground mb-3 tracking-tight">
-                Technical Staff Augmentation
+                Technical Deployment Support
               </h3>
               <p className="text-[15px] text-muted-foreground mb-4 leading-relaxed">
                 Flexible AI talent deployment to scale existing teams during high-demand periods without permanent headcount expansion.

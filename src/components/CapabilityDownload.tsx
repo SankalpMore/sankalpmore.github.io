@@ -10,7 +10,7 @@ DOCKIO - CAPABILITY STATEMENT
 Enterprise AI Implementation & Technical Partnership
 
 CORE CAPABILITIES
-- AI Staff Augmentation
+- AI Deployment Support
 - Enterprise AI Consulting
 - GenAI & LLM Application Development
 - AI Agents & Workflow Automation
@@ -20,7 +20,7 @@ CORE CAPABILITIES
 
 ENGAGEMENT MODELS
 - Dedicated AI Talent
-- Staff Augmentation
+- Deployment Support
 - Project-Based Delivery
 - Fractional AI Leadership
 - Pod-Based Delivery
