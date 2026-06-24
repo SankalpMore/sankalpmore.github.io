@@ -9,12 +9,9 @@ import { Code, Users, Network, Shield, FileText, CheckCircle, ArrowRight, Briefc
 import { CapabilityDownload } from '@/components/CapabilityDownload'
 
 export function HomePage() {
-  const { navigate } = useRouter()
   const [formSubmitted, setFormSubmitted] = useState(false)
 
-  const calendarLink = 'YOUR_CALENDAR_LINK_HERE'
-
-  const scrollToAssessment = () => {
+  const scrollToLeadForm = () => {
     document.getElementById('book-assessment')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
@@ -27,181 +24,344 @@ export function HomePage() {
       return
     }
 
-    // TODO: Send this qualified lead to the backend/email/CRM integration before showing the calendar step.
+    // TODO: Connect this lead form to Dockio's email/CRM workflow.
     setFormSubmitted(true)
     window.setTimeout(() => {
       document.getElementById('calendar-booking')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }, 100)
   }
 
-  const buyingSignals = [
-    {
-      highlight: 'Secure',
-      title: 'Private data needs secure AI',
-      description: 'For teams that tried ChatGPT or Copilot but are worried about data exposure, access control, and governance.',
-    },
-    {
-      highlight: 'Production',
-      title: 'Your AI PoC should not stay stuck',
-      description: 'For companies that already built an AI PoC but could not take it live due to integration, reliability, security, or adoption gaps.',
-    },
-    {
-      highlight: 'AI-Layer',
-      title: 'Add AI on top of your cloud',
-      description: 'For companies already using Azure, AWS, or OpenAI but lacking a production AI layer across documents, workflows, and business systems.',
-    },
-    {
-      highlight: 'Governed',
-      title: 'AI agents need control',
-      description: 'For teams that want AI agents but need approval flows, audit logs, monitoring, fallback, and human-in-the-loop safeguards.',
-    },
+  const problemPoints = [
+    'Use cases are not tied to a business metric, process owner, or decision workflow.',
+    'Operational knowledge is split across email, shared drives, CRMs, ERPs, tickets, PDFs, and spreadsheets.',
+    'Security teams need access control, logging, data boundaries, and review paths before rollout.',
+    'Answers must be grounded in approved sources, not generic model responses.',
+    'Business, IT, cloud, and data teams do not have one accountable deployment owner.',
+    'After a prototype, teams still need monitoring, fixes, cost control, and user adoption support.',
+  ]
+
+  const approach = [
+    'Select workflows where AI can reduce effort, response time, leakage, or rework.',
+    'Run a readiness audit covering data sources, users, risk, integrations, and ROI assumptions.',
+    'Build a controlled pilot with source grounding, guardrails, permissions, and human review.',
+    'Integrate with existing tools such as CRM, helpdesk, document stores, cloud, and internal portals.',
+    'Move to production with monitoring for answer quality, latency, usage, cost, and exceptions.',
+    'Operate the system after launch with prompt/model updates, reporting, and managed support.',
   ]
 
   const services = [
-    ['Secure AI Deployment', ['Private RAG', 'Access-controlled AI assistants', 'Enterprise data workflows', 'Guardrails and auditability']],
-    ['PoC-to-Production Rescue', ['Review existing AI PoC', 'Fix architecture gaps', 'Add integrations, testing, monitoring', 'Move to production']],
-    ['AI Layer on Cloud', ['Azure AI Foundry', 'AWS Bedrock', 'OpenAI', 'Cloud-native AI workflows']],
-    ['Governed AI Agents', ['Human approval workflows', 'Tool/function calling', 'Audit logs', 'Risk controls', 'Agent monitoring']],
-    ['Managed AI Services', ['Monthly monitoring', 'Prompt/version updates', 'Cost optimization', 'Bug fixes', 'Usage reports', 'Reliability improvements']],
+    ['AI Readiness Audit', 'A focused review of use cases, data readiness, risk, integration effort, and ROI before committing to a build.'],
+    ['Enterprise RAG / Knowledge Assistant', 'Search and answer systems grounded in approved policies, SOPs, contracts, manuals, reports, and internal documents.'],
+    ['AI Agents & Workflow Automation', 'Controlled agents that trigger actions, prepare outputs, and route exceptions with human approval where needed.'],
+    ['Sales / Support Copilot', 'Role-specific copilots for enquiry handling, qualification, response drafting, product knowledge, and sales enablement.'],
+    ['Document Intelligence', 'Extraction, classification, comparison, summarization, and validation for invoices, contracts, KYC packs, and forms.'],
+    ['Managed AI Operations', 'Ongoing monitoring, quality review, cost optimization, prompt/model changes, and production support after go-live.'],
+    ['Cloud AI Deployment', 'Implementation using OpenAI, Azure AI Foundry, AWS Bedrock, vector databases, APIs, and enterprise cloud services.'],
   ]
 
-  const pricing = [
-    ['AI Readiness Audit', 'From ₹1.5L'],
-    ['Paid AI Pilot', 'From ₹3L'],
-    ['Production AI Deployment', 'From ₹10L'],
-    ['Managed AI Service', 'From ₹1L/month'],
-    ['Governed AI Agents', 'Custom pricing'],
+  const roiExamples = [
+    'Reduce manual report preparation for operations and leadership teams',
+    'Make internal knowledge searchable across approved repositories',
+    'Shorten support response time with drafted, source-backed responses',
+    'Improve lead qualification and follow-up consistency for sales teams',
+    'Reduce document processing effort in finance, legal, operations, and compliance',
+    'Improve field and inside-sales productivity with guided next actions',
   ]
 
-  const deploymentPatterns = [
-    'Private RAG Assistant for BFSI Operations',
-    'Document Automation for Regulated Teams',
-    'Governed AI Agent Workflow',
-    'Managed AI Monitoring Dashboard',
+  const packages = [
+    ['AI Readiness Audit', 'Starting ₹25,000', 'Use-case shortlist, risk review, ROI estimate, architecture direction, and deployment roadmap.'],
+    ['Pilot AI Agent', 'Starting ₹1.5L', 'A limited-scope pilot connected to selected data, tools, users, and review workflows.'],
+    ['Managed AI Retainer', 'Starting ₹75,000/month', 'Monitoring, quality improvements, prompt/model updates, cost control, and managed support.'],
   ]
 
-  const selectClass = 'h-11 w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring'
+  const industries = ['BFSI', 'GCCs', 'IT Services', 'Real Estate', 'Logistics & Warehousing', 'Ports & Infrastructure', 'Mid-market enterprises']
+  const trustSignals = ['Deployment plan before build', 'Role-based access and data boundaries', 'Human approval for sensitive actions', 'Cloud-native architecture', 'Monitoring for quality, latency, cost, and usage', 'Founder-led delivery and review']
+  const examples = ['BFSI policy search assistant', 'Real estate sales enquiry copilot', 'Logistics document automation', 'Internal HR/IT knowledge assistant', 'Invoice and contract intelligence workflow']
+  const inputClass = 'mt-2 h-11 w-full rounded-md border border-input bg-background px-3 py-2 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring'
+  const selectClass = `${inputClass} text-foreground`
 
   return (
-    <div className="min-h-screen">
-      <section className="relative pt-32 pb-24 px-6 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-transparent pointer-events-none" />
-        <div className="absolute top-20 right-0 w-[600px] h-[600px] bg-accent/10 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
-        <div className="max-w-7xl mx-auto relative">
-          <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-6">
-              <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-              <span className="text-sm font-medium text-foreground">Enterprise AI deployment company India</span>
-            </div>
-            <h1 className="text-5xl lg:text-7xl font-semibold text-foreground leading-[1.1] tracking-tight mb-6">
-              Deploy Secure, Governed AI Into Production
+    <div className="min-h-screen bg-background">
+      <section className="relative overflow-hidden px-6 pb-20 pt-32 lg:px-8 lg:pb-28">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(37,99,235,0.12),transparent_34%),linear-gradient(135deg,rgba(15,23,42,0.04),transparent_45%)]" />
+        <div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
+          <div>
+            <Badge className="mb-6 bg-primary/10 px-4 py-2 text-primary hover:bg-primary/10">
+              AI Deployment & Managed AI Services for Indian Enterprises
+            </Badge>
+            <h1 className="mb-6 text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-7xl">
+              We deploy secure AI agents and copilots for Indian enterprises.
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed mb-10 max-w-3xl">
-              Dockio helps companies move from AI experiments and failed PoCs to production-ready AI systems using OpenAI, Azure AI Foundry, AWS Bedrock, RAG, copilots, AI agents, and managed AI operations.
+            <p className="mb-6 max-w-3xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
+              From AI readiness audit to production deployment and managed support — Dockio helps teams turn GenAI ideas into working business systems.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" onClick={scrollToAssessment} className="bg-primary hover:bg-primary/90 text-base px-8 shadow-lg shadow-primary/25">
-                Book AI Deployment Assessment <ArrowRight className="ml-2 h-4 w-4" />
+            <p className="mb-9 text-sm font-medium text-foreground/80">
+              Implementation across OpenAI, Azure AI Foundry, AWS Bedrock, RAG, workflow automation, and enterprise cloud stacks.
+            </p>
+            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Button size="lg" onClick={scrollToLeadForm} className="h-12 px-7">
+                Book AI Readiness Audit <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-              <Button size="lg" variant="outline" onClick={scrollToAssessment} className="text-base px-8 hover:bg-muted/80">
-                Estimate My AI Deployment Cost
+              <Button size="lg" variant="outline" onClick={scrollToLeadForm} className="h-12 px-7">
+                Get ROI Estimate
+              </Button>
+              <Button size="lg" variant="secondary" onClick={scrollToLeadForm} className="h-12 px-7">
+                Request Deployment Call
               </Button>
             </div>
           </div>
+
+          <Card className="border-border/60 bg-white/85 p-6 shadow-2xl shadow-primary/10 backdrop-blur lg:p-8">
+            <div className="mb-6 flex items-center justify-between gap-4">
+              <span className="text-sm font-semibold text-muted-foreground">Deployment sequence</span>
+              <Badge variant="outline">Production-first</Badge>
+            </div>
+            <div className="space-y-4">
+              {['Readiness audit', 'Secure pilot', 'Business integration', 'Production release', 'Managed support'].map((step, index) => (
+                <div key={step} className="flex items-center gap-4 rounded-2xl border border-border/60 bg-muted/20 p-4">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-sm font-semibold text-primary-foreground">
+                    {index + 1}
+                  </div>
+                  <div>
+                    <p className="font-semibold text-foreground">{step}</p>
+                    <p className="text-sm text-muted-foreground">Clear scope, accountable owner, measurable acceptance criteria.</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Card>
         </div>
       </section>
 
-      <section id="use-cases" className="py-24 px-6 lg:px-8 bg-card border-y border-border">
-        <div className="max-w-7xl mx-auto">
-          <div className="max-w-3xl mb-12">
-            <h2 className="text-3xl lg:text-4xl font-semibold text-foreground mb-4">AI experiments are easy. Production AI is where companies get stuck.</h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Many teams have ChatGPT or Copilot in use, an AI PoC that never went live, or Azure/AWS cloud infrastructure without a governed AI layer. The AI production gap appears when agents, data access, compliance, monitoring, and risk controls must work together. Dockio helps de-risk that move while AI leaders shift from experiments into production.
+      <section id="use-cases" className="border-y border-border bg-card px-6 py-20 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 max-w-3xl">
+            <h2 className="mb-4 text-3xl font-semibold tracking-tight lg:text-4xl">
+              Why enterprise AI initiatives stall before production
+            </h2>
+            <p className="text-lg leading-relaxed text-muted-foreground">
+              Many teams have explored ChatGPT, Copilot, or internal prototypes. The harder step is deploying a secure workflow that business users can rely on every day.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {buyingSignals.map((card) => (
-              <Card key={card.highlight} className="p-6 border-border/50 hover:shadow-xl transition-all duration-300">
-                <Badge className="mb-4 bg-accent/10 text-accent hover:bg-accent/10">{card.highlight}</Badge>
-                <h3 className="text-lg font-semibold text-foreground mb-3">{card.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{card.description}</p>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {problemPoints.map((item) => (
+              <Card key={item} className="p-5">
+                <CheckCircle className="mb-3 h-5 w-5 text-primary" />
+                <p className="text-sm leading-relaxed text-muted-foreground">{item}</p>
               </Card>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="services" className="py-24 px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="max-w-3xl mb-16">
-            <h2 className="text-3xl lg:text-4xl font-semibold text-foreground mb-4">What Dockio Deploys</h2>
-            <p className="text-lg text-muted-foreground">Secure RAG deployment, governed AI agents, cloud AI workflows, and managed AI services for production environments.</p>
+      <section className="px-6 py-20 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 max-w-3xl">
+            <h2 className="mb-4 text-3xl font-semibold tracking-tight lg:text-4xl">Dockio’s delivery approach</h2>
+            <p className="text-lg text-muted-foreground">
+              Dockio works backwards from a business workflow, then designs the AI, data, security, and support model needed for production use.
+            </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map(([title, items]) => (
-              <Card key={title as string} className="p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-border/50">
-                <Shield className="w-10 h-10 text-accent mb-4" weight="duotone" />
-                <h3 className="text-xl font-semibold text-foreground mb-4">{title}</h3>
-                <ul className="space-y-2">
-                  {(items as string[]).map((item) => <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground"><CheckCircle className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />{item}</li>)}
-                </ul>
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {approach.map((item, index) => (
+              <Card key={item} className="p-6">
+                <Badge className="mb-4">0{index + 1}</Badge>
+                <p className="font-medium leading-relaxed text-foreground">{item}</p>
               </Card>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="pricing" className="py-24 px-6 lg:px-8 bg-muted/20 border-y border-border/40">
-        <div className="max-w-7xl mx-auto">
-          <div className="max-w-3xl mb-12"><h2 className="text-3xl lg:text-4xl font-semibold text-foreground mb-4">Transparent starting prices. Custom enterprise scope.</h2></div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-5 mb-8">
-            {pricing.map(([name, price]) => <Card key={name} className="p-6"><p className="text-sm text-muted-foreground mb-3">{name}</p><p className="text-2xl font-semibold text-foreground">{price}</p></Card>)}
+      <section id="services" className="border-y border-border bg-muted/20 px-6 py-20 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 max-w-3xl">
+            <h2 className="mb-4 text-3xl font-semibold tracking-tight lg:text-4xl">Services built around deployment, not demos</h2>
+            <p className="text-lg text-muted-foreground">
+              Practical implementation support for teams that need secure AI systems connected to real data, tools, and operating processes.
+            </p>
           </div>
-          <p className="text-muted-foreground max-w-4xl mb-8">Final pricing depends on data complexity, integrations, security requirements, cloud environment, compliance needs, and managed support scope. Cloud, model, and third-party API costs are billed separately.</p>
-          <Button size="lg" variant="outline" onClick={scrollToAssessment}>Estimate My AI Deployment Cost</Button>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {services.map(([title, description]) => (
+              <Card key={title} className="p-7 transition hover:-translate-y-1 hover:shadow-xl">
+                <Robot className="mb-5 h-9 w-9 text-primary" weight="duotone" />
+                <h3 className="mb-3 text-xl font-semibold">{title}</h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">{description}</p>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section id="founder-experience" className="py-24 px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="max-w-4xl mb-10">
-            <h2 className="text-3xl lg:text-4xl font-semibold text-foreground mb-4">Founder-led enterprise AI experience</h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">Dockio is founder-led by Sankalp More, with prior experience in GenAI, RAG, AI agents, cloud AI platforms, and enterprise automation across BFSI, pharma, retail, and technology environments. Dockio applies this experience to help companies move from AI experiments to secure production deployments.</p>
+      <section className="px-6 py-20 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+          <div>
+            <h2 className="mb-4 text-3xl font-semibold tracking-tight lg:text-4xl">Built for measurable ROI</h2>
+            <p className="text-lg leading-relaxed text-muted-foreground">
+              The goal is not another chatbot. The goal is a workflow that reduces manual effort, improves turnaround time, or increases team throughput.
+            </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">{['BFSI', 'Pharma / Healthcare', 'Retail / Consumer', 'Logistics / Operations', 'Cloud / Enterprise IT'].map((industry) => <Card key={industry} className="p-5 text-center font-medium text-foreground">{industry}</Card>)}</div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {roiExamples.map((item) => (
+              <Card key={item} className="p-5">
+                <ChartLine className="mb-3 h-6 w-6 text-primary" />
+                <p className="font-medium text-foreground">{item}</p>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="py-24 px-6 lg:px-8 bg-card border-y border-border">
-        <div className="max-w-7xl mx-auto">
-          <div className="max-w-3xl mb-12"><h2 className="text-3xl lg:text-4xl font-semibold text-foreground mb-4">Enterprise AI Deployment Patterns</h2><p className="text-lg text-muted-foreground">Representative demo patterns for PoC to production AI programs.</p></div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {deploymentPatterns.map((pattern) => <Card key={pattern} className="p-6 bg-gradient-to-br from-background to-muted/30"><div className="h-28 rounded-xl border border-dashed border-accent/30 bg-accent/5 mb-5 flex items-center justify-center"><Brain className="w-10 h-10 text-accent" weight="duotone" /></div><h3 className="font-semibold text-foreground">{pattern}</h3></Card>)}
+      <section id="pricing" className="border-y border-border bg-card px-6 py-20 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 max-w-3xl">
+            <h2 className="mb-4 text-3xl font-semibold tracking-tight lg:text-4xl">Simple starting packages</h2>
+            <p className="text-lg text-muted-foreground">Start with a scoped assessment or pilot before committing to a larger production rollout.</p>
           </div>
-          <p className="text-sm text-muted-foreground mt-6">Representative demo patterns. No client data shown.</p>
+          <div className="grid gap-6 lg:grid-cols-3">
+            {packages.map(([name, price, description]) => (
+              <Card key={name} className="p-7">
+                <h3 className="mb-3 text-xl font-semibold">{name}</h3>
+                <p className="mb-4 text-3xl font-semibold text-primary">{price}</p>
+                <p className="text-sm leading-relaxed text-muted-foreground">{description}</p>
+              </Card>
+            ))}
+          </div>
+          <p className="mt-6 max-w-4xl text-sm text-muted-foreground">
+            Final pricing depends on scope, integrations, data readiness, and security requirements. Cloud, model, and third-party API costs are separate unless explicitly included.
+          </p>
         </div>
       </section>
 
-      <section id="book-assessment" className="py-24 px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-semibold text-foreground mb-4">Tell us about your AI initiative</h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">Help us understand where you are in your AI journey. Whether you are exploring secure AI, stuck with an unfinished PoC, planning RAG or AI agents, or looking for managed AI support, we’ll assess the right deployment path before the call.</p>
+      <section className="px-6 py-20 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <h2 className="mb-10 text-3xl font-semibold tracking-tight lg:text-4xl">Industries Dockio is built to support</h2>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {industries.map((industry) => (
+              <Card key={industry} className="p-6">
+                <Briefcase className="mb-4 h-7 w-7 text-primary" />
+                <h3 className="font-semibold">{industry}</h3>
+              </Card>
+            ))}
           </div>
-          <Card className="p-8">
-            <form onSubmit={handleLeadSubmit} className="grid md:grid-cols-2 gap-5">
-              {[['name','Name'],['email','Work email'],['company','Company name'],['role','Role/designation']].map(([name,label]) => <label key={name} className="text-sm font-medium text-foreground">{label}<input name={name} type={name === 'email' ? 'email' : 'text'} required className="mt-2 h-11 w-full rounded-md border border-input bg-background px-3 py-2 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring" /></label>)}
-              <label className="text-sm font-medium text-foreground">Company size<select required name="companySize" className={`${selectClass} mt-2`}><option value="">Select</option><option>1–50</option><option>51–200</option><option>201–1000</option><option>1000+</option></select></label>
-              <label className="text-sm font-medium text-foreground">What are you looking for?<select required name="need" className={`${selectClass} mt-2`}><option value="">Select</option><option>Move AI PoC to production</option><option>Secure internal company data with AI</option><option>Build RAG / chatbot / copilot</option><option>Deploy governed AI agents</option><option>Add AI layer on Azure/AWS</option><option>Get managed AI support</option><option>Not sure yet</option></select></label>
-              <label className="text-sm font-medium text-foreground">Have you already tried AI internally?<select required name="triedAi" className={`${selectClass} mt-2`}><option value="">Select</option><option>Yes</option><option>No</option><option>In planning</option></select></label>
-              <label className="text-sm font-medium text-foreground">Current platform<select required name="platform" className={`${selectClass} mt-2`}><option value="">Select</option><option>Azure</option><option>AWS</option><option>GCP</option><option>OpenAI</option><option>Not sure</option></select></label>
-              <label className="text-sm font-medium text-foreground">Timeline<select required name="timeline" className={`${selectClass} mt-2`}><option value="">Select</option><option>This month</option><option>This quarter</option><option>Exploring</option></select></label>
-              <label className="text-sm font-medium text-foreground">Budget readiness<select required name="budget" className={`${selectClass} mt-2`}><option value="">Select</option><option>₹3L–₹10L</option><option>₹10L–₹25L</option><option>₹25L+</option><option>Not sure</option></select></label>
-              <div className="md:col-span-2"><Button type="submit" size="lg" className="bg-primary hover:bg-primary/90">Continue to calendar</Button></div>
+        </div>
+      </section>
+
+      <section className="border-y border-border bg-muted/20 px-6 py-20 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-10 max-w-3xl">
+            <h2 className="mb-4 text-3xl font-semibold tracking-tight lg:text-4xl">Trust signals that matter before go-live</h2>
+            <p className="text-lg text-muted-foreground">
+              Enterprise buyers need clear ownership, secure architecture, review workflows, and monitoring before AI becomes part of daily operations.
+            </p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {trustSignals.map((signal) => (
+              <Card key={signal} className="p-5">
+                <Shield className="mb-3 h-6 w-6 text-primary" />
+                <p className="font-medium">{signal}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="founder-experience" className="px-6 py-20 lg:px-8">
+        <div className="mx-auto max-w-5xl">
+          <Card className="p-8 lg:p-10">
+            <Badge className="mb-5">Founder-led delivery</Badge>
+            <h2 className="mb-4 text-3xl font-semibold tracking-tight lg:text-4xl">Practical AI implementation leadership</h2>
+            <p className="text-lg leading-relaxed text-muted-foreground">
+              Sankalp More, Founder of Dockio, has experience across Generative AI, enterprise AI deployment, cloud AI services, LLM applications, and automation workflows. Dockio is built to help businesses move from AI experimentation to production-grade implementation.
+            </p>
+          </Card>
+        </div>
+      </section>
+
+      <section className="border-y border-border bg-card px-6 py-20 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 max-w-3xl">
+            <h2 className="mb-4 text-3xl font-semibold tracking-tight lg:text-4xl">Example deployments</h2>
+            <p className="text-lg text-muted-foreground">
+              Possible solutions Dockio can design and deploy. These are example solutions, not completed client case studies.
+            </p>
+          </div>
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-5">
+            {examples.map((example) => (
+              <Card key={example} className="p-5">
+                <FileText className="mb-4 h-7 w-7 text-primary" />
+                <h3 className="font-semibold leading-snug">{example}</h3>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="book-assessment" className="px-6 py-20 lg:px-8">
+        <div className="mx-auto max-w-5xl">
+          <div className="mb-10 text-center">
+            <h2 className="mb-4 text-3xl font-semibold tracking-tight lg:text-4xl">Have an AI idea but no production system yet?</h2>
+            <p className="mx-auto max-w-3xl text-lg leading-relaxed text-muted-foreground">
+              Share the workflow you want to improve. Dockio will review feasibility, readiness, security considerations, and potential ROI before recommending a next step.
+            </p>
+          </div>
+          <Card className="p-6 shadow-xl shadow-primary/5 lg:p-8">
+            <form onSubmit={handleLeadSubmit} className="grid gap-5 md:grid-cols-2">
+              {[
+                ['name', 'Name', 'text'],
+                ['company', 'Company', 'text'],
+                ['email', 'Email', 'email'],
+                ['phone', 'Phone', 'tel'],
+              ].map(([name, label, type]) => (
+                <label key={name} className="text-sm font-medium text-foreground">
+                  {label}
+                  <input name={name} type={type} required className={inputClass} />
+                </label>
+              ))}
+              <label className="text-sm font-medium text-foreground md:col-span-2">
+                Use Case
+                <textarea
+                  name="useCase"
+                  required
+                  rows={4}
+                  placeholder="Describe the process, data source, team, and expected business outcome."
+                  className="mt-2 w-full rounded-md border border-input bg-background px-3 py-2 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+                />
+              </label>
+              <label className="text-sm font-medium text-foreground">
+                Budget Range
+                <select required name="budget" className={selectClass}>
+                  <option value="">Select</option>
+                  <option>₹25,000–₹1.5L</option>
+                  <option>₹1.5L–₹5L</option>
+                  <option>₹5L–₹15L</option>
+                  <option>₹15L+</option>
+                  <option>Not sure yet</option>
+                </select>
+              </label>
+              <label className="text-sm font-medium text-foreground">
+                What do you need first?
+                <select required name="intent" className={selectClass}>
+                  <option value="">Select</option>
+                  <option>Book AI Readiness Audit</option>
+                  <option>Get ROI Estimate</option>
+                  <option>Request Deployment Call</option>
+                </select>
+              </label>
+              <div className="flex flex-col gap-3 md:col-span-2 sm:flex-row">
+                <Button type="submit" size="lg">Book AI Readiness Audit</Button>
+                <Button type="submit" size="lg" variant="outline">Request ROI Estimate</Button>
+              </div>
             </form>
           </Card>
-          {formSubmitted && <Card id="calendar-booking" className="p-8 mt-8 bg-primary text-primary-foreground"><h3 className="text-2xl font-semibold mb-3">Book your 30-minute AI Deployment Assessment</h3><p className="mb-6 text-primary-foreground/80">In this call, we’ll discuss your AI use case, current systems, risk areas, deployment path, and whether Dockio can help you move from idea or PoC to production.</p><Button asChild variant="secondary"><a href={calendarLink}>Book Calendar Slot</a></Button></Card>}
+          {formSubmitted && (
+            <Card id="calendar-booking" className="mt-8 bg-primary p-8 text-primary-foreground">
+              <h3 className="mb-3 text-2xl font-semibold">Thank you — your request has been captured.</h3>
+              <p className="text-primary-foreground/80">
+                Dockio will review the use case details and follow up with a suitable readiness audit, ROI estimate, or deployment discussion.
+              </p>
+            </Card>
+          )}
         </div>
       </section>
     </div>
