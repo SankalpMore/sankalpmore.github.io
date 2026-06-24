@@ -6,9 +6,9 @@ import { List } from '@phosphor-icons/react'
 
 const navItems = [
   { label: 'Services', target: 'services' },
-  { label: 'Use Cases', target: 'use-cases' },
+  { label: 'Problem', target: 'use-cases' },
   { label: 'Pricing', target: 'pricing' },
-  { label: 'Founder Experience', target: 'founder-experience' },
+  { label: 'Founder', target: 'founder-experience' },
   { label: 'Book Assessment', target: 'book-assessment' },
 ]
 
@@ -73,7 +73,7 @@ export function Navigation() {
               onClick={() => handleNavigation('book-assessment')}
               className="bg-primary hover:bg-primary/90 h-11 px-6 shadow-sm hover:shadow"
             >
-              Book AI Deployment Assessment
+              Book AI Readiness Audit
             </Button>
           </div>
 
@@ -109,7 +109,7 @@ export function Navigation() {
                     onClick={() => handleNavigation('book-assessment')}
                     className="w-full bg-primary hover:bg-primary/90 h-11"
                   >
-                    Book AI Deployment Assessment
+                    Book AI Readiness Audit
                   </Button>
                 </div>
               </SheetContent>
