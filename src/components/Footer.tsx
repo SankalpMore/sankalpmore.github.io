@@ -21,7 +21,7 @@ export function Footer() {
             </p>
             <div className="flex gap-3">
               <a
-                href="mailto:partnerships@dockio.com"
+                href="mailto:partnerships@dockio.in"
                 className="w-11 h-11 rounded-xl bg-muted/50 hover:bg-accent hover:text-accent-foreground transition-all duration-200 flex items-center justify-center border border-border/40 hover:border-accent/40"
               >
                 <EnvelopeSimple className="w-5 h-5" />
@@ -118,11 +118,11 @@ export function Footer() {
             <ul className="space-y-3.5">
               <li>
                 <a
-                  href="mailto:partnerships@dockio.com"
+                  href="mailto:partnerships@dockio.in"
                   className="text-[15px] text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2.5"
                 >
                   <EnvelopeSimple className="w-4 h-4" />
-                  partnerships@dockio.com
+                  partnerships@dockio.in
                 </a>
               </li>
               <li>
@@ -148,7 +148,7 @@ export function Footer() {
         <Separator className="my-10" />
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-[14px] text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Dockio. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Dockio Technosolutions Private Limited. All rights reserved.</p>
           <p className="text-[13px]">
             AI Deployment & Managed AI Services
           </p>
