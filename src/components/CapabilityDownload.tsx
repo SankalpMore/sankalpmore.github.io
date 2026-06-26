@@ -7,6 +7,7 @@ export function CapabilityDownload() {
   const handleDownload = () => {
     const capabilityContent = `
 DOCKIO - CAPABILITY STATEMENT
+Dockio Technosolutions Private Limited
 Enterprise AI Implementation & Technical Partnership
 
 CORE CAPABILITIES
@@ -56,9 +57,9 @@ INDUSTRIES SERVED
 - Government & Public Sector
 
 CONTACT
-partnerships@dockio.com
+partnerships@dockio.in
 
-© ${new Date().getFullYear()} Dockio. All rights reserved.
+© ${new Date().getFullYear()} Dockio Technosolutions Private Limited. All rights reserved.
     `.trim()
 
     const blob = new Blob([capabilityContent], { type: 'text/plain' })

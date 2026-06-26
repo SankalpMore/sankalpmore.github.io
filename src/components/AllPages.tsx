@@ -1023,7 +1023,7 @@ export function PartnerReadinessPage() {
               For detailed compliance documentation, insurance certificates, security questionnaires, or capability presentations, please contact us. We're equipped to support standard enterprise vendor onboarding processes.
             </p>
             <Button className="bg-primary hover:bg-primary/90">
-              <a href="mailto:partnerships@dockio.com">Contact Partnerships Team</a>
+              <a href="mailto:partnerships@dockio.in">Contact Partnerships Team</a>
             </Button>
           </Card>
 
@@ -1055,7 +1055,7 @@ export function AboutPage() {
           <Card className="p-8">
             <h2 className="text-2xl font-semibold text-foreground mb-4">Who We Are</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Dockio is an AI-first implementation firm focused on helping enterprise organizations execute AI initiatives with quality and speed. We provide both the AI talent and delivery capability that enterprise teams need to move from strategy to production.
+              Dockio Technosolutions Private Limited is an AI-first implementation firm focused on helping enterprise organizations execute AI initiatives with quality and speed. We provide both the AI talent and delivery capability that enterprise teams need to move from strategy to production.
             </p>
             <p className="text-muted-foreground leading-relaxed">
               We're not a generic deployment vendor or broad IT services firm. We specialize exclusively in modern AI implementation—GenAI applications, LLM development, RAG systems, AI agents, and workflow automation. This focus allows us to maintain deep technical expertise and deliver at the execution standard enterprise programs require.
