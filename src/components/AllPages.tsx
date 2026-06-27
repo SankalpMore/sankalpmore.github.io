@@ -373,6 +373,7 @@ export function ServicesPage() {
 
   const services = [
     {
+      id: 'ai-deployment-support',
       title: 'AI Deployment Support',
       description: 'Embed vetted AI engineers, ML specialists, and solution architects directly into your team for immediate impact.',
       details: [
@@ -384,6 +385,7 @@ export function ServicesPage() {
       ideal: 'Organizations needing to scale AI teams quickly without lengthy hiring cycles',
     },
     {
+      id: 'enterprise-ai-consulting',
       title: 'Enterprise AI Consulting',
       description: 'Strategic guidance for AI adoption, from feasibility assessment to production readiness.',
       details: [
@@ -395,6 +397,7 @@ export function ServicesPage() {
       ideal: 'Leadership teams planning enterprise-wide AI transformation initiatives',
     },
     {
+      id: 'genai-application-development',
       title: 'GenAI Application Development',
       description: 'Build production-grade LLM applications tailored to your business workflows.',
       details: [
@@ -406,6 +409,7 @@ export function ServicesPage() {
       ideal: 'Teams ready to deploy GenAI solutions for specific business use cases',
     },
     {
+      id: 'ai-agents-workflow-automation',
       title: 'AI Agents & Workflow Automation',
       description: 'Intelligent automation using AI agents, orchestration frameworks, and API integrations.',
       details: [
@@ -417,6 +421,7 @@ export function ServicesPage() {
       ideal: 'Organizations automating complex processes requiring decision-making logic',
     },
     {
+      id: 'rag-enterprise-knowledge-systems',
       title: 'RAG & Enterprise Knowledge Systems',
       description: 'Build internal search and retrieval systems powered by your proprietary data.',
       details: [
@@ -428,6 +433,7 @@ export function ServicesPage() {
       ideal: 'Enterprises struggling with knowledge silos and information discovery',
     },
     {
+      id: 'ai-solution-architecture',
       title: 'AI Solution Architecture',
       description: 'Design scalable, secure, and maintainable AI system architectures.',
       details: [
@@ -454,7 +460,7 @@ export function ServicesPage() {
 
         <div className="space-y-6">
           {services.map((service, index) => (
-            <Card key={index} className="p-8">
+            <Card key={service.id} id={service.id} className="scroll-mt-28 p-8">
               <div className="flex flex-col lg:flex-row gap-8">
                 <div className="flex-1">
                   <h2 className="text-2xl font-semibold text-foreground mb-3">
