@@ -28,13 +28,13 @@ const navItems = [
   { label: 'Book Assessment', target: 'book-assessment' },
 ]
 
-const navItems: NavItem[] = [
-  { label: 'Company', path: '/about' },
-  { label: 'Codex', target: 'codex-integration' },
-  { label: 'Industries', path: '/industries' },
-  { label: 'Services', path: '/services' },
-  { label: 'Resources', path: '/case-studies' },
-]
+// const navItems: NavItem[] = [
+//   { label: 'Company', path: '/about' },
+//   { label: 'Codex', target: '/codex-integration' },
+//   { label: 'Industries', path: '/industries' },
+//   { label: 'Services', path: '/services' },
+//   { label: 'Resources', path: '/case-studies' },
+// ]
 
 export function Navigation() {
   const { currentPath, navigate } = useRouter()
