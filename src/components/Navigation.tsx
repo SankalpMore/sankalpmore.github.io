@@ -20,8 +20,12 @@ const serviceItems = [
   { label: 'RAG & Enterprise Knowledge Systems', target: 'rag-enterprise-knowledge-systems' },
   { label: 'AI Solution Architecture', target: 'ai-solution-architecture' },
 ]
-
-const navItems = [
+type NavItem = {
+  label: string
+  path?: string
+  target?: string
+}
+const LandingnavItems = [
   { label: 'Problem', target: 'use-cases' },
   { label: 'Pricing', target: 'pricing' },
   { label: 'Founder', target: 'founder-experience' },
@@ -30,7 +34,7 @@ const navItems = [
 
 const navItems: NavItem[] = [
   { label: 'Company', path: '/about' },
-  { label: 'Codex', target: '/codex-integration' },
+  { label: 'Codex', target: 'codex-integration' },
   { label: 'Industries', path: '/industries' },
   { label: 'Services', path: '/services' },
   { label: 'Resources', path: '/case-studies' },
@@ -191,7 +195,7 @@ export function Navigation() {
                         ))}
                       </div>
                     </div>
-                    {navItems.map((item) => (
+                    {LandingnavItems.map((item) => (
                       <button
                         key={item.label}
                         onClick={() => handleNavigation(item)}
