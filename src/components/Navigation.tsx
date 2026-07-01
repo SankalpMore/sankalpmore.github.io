@@ -25,7 +25,7 @@ type NavItem = {
   path?: string
   target?: string
 }
-const navItems: NavItem[] = [
+const primaryNavItems: NavItem[] = [
   { label: 'Company', path: '/about' },
   { label: 'Codex', target: 'codex-integration' },
   { label: 'Industries', path: '/industries' },
@@ -127,7 +127,7 @@ export function Navigation() {
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
-            {navItems.map((item) => (
+            {primaryNavItems.map((item) => (
               <button
                 key={item.label}
                 onClick={() => handleNavigation(item)}
@@ -187,7 +187,7 @@ export function Navigation() {
                         ))}
                       </div>
                     </div>
-                    {navItems.map((item) => (
+                    {primaryNavItems.map((item) => (
                       <button
                         key={item.label}
                         onClick={() => handleNavigation(item)}
