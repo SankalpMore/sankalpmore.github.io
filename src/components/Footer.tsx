@@ -6,152 +6,102 @@ export function Footer() {
   const { navigate } = useRouter()
 
   return (
-    <footer className="bg-muted/20 border-t border-border/50 mt-32">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-14">
-          <div className="lg:col-span-1">
-            <div className="flex items-center gap-2.5 mb-5">
-              <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-sm">
-                <span className="text-white font-bold text-lg">D</span>
-              </div>
-              <span className="text-xl font-semibold text-foreground tracking-[-0.01em]">Dockio</span>
-            </div>
-            <p className="text-[15px] text-muted-foreground leading-relaxed mb-7 max-w-xs">
-              Dockio helps companies deploy and manage secure, governed AI systems from PoC to production.
+    <footer className="bg-[#fbfaf8]">
+      <div className="mx-auto max-w-[1180px] px-5 py-16 sm:px-6 lg:px-8">
+        <div className="grid gap-12 md:grid-cols-[1.2fr_repeat(3,0.7fr)]">
+          <div>
+            <button
+              onClick={() => navigate('/')}
+              className="text-left font-sans text-2xl font-bold tracking-normal text-[#181614]"
+            >
+              Dockio
+            </button>
+            <p className="mt-5 max-w-sm text-[15px] leading-7 text-[#67615d]">
+              Dockio helps enterprises turn OpenAI Codex into reviewable business work across knowledge,
+              code, documents, AWS, Azure, and internal systems.
             </p>
-            <div className="flex gap-3">
+            <div className="mt-7 flex gap-3">
               <a
                 href="mailto:partnerships@dockio.in"
-                className="w-11 h-11 rounded-xl bg-muted/50 hover:bg-accent hover:text-accent-foreground transition-all duration-200 flex items-center justify-center border border-border/40 hover:border-accent/40"
+                className="flex h-10 w-10 items-center justify-center rounded-lg border border-[#ded8d2] bg-white text-[#282523] transition hover:bg-[#f7f4f1]"
+                aria-label="Email Dockio"
               >
-                <EnvelopeSimple className="w-5 h-5" />
+                <EnvelopeSimple className="h-5 w-5" />
               </a>
               <a
                 href="https://linkedin.com/company/dockio"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 rounded-xl bg-muted/50 hover:bg-accent hover:text-accent-foreground transition-all duration-200 flex items-center justify-center border border-border/40 hover:border-accent/40"
+                className="flex h-10 w-10 items-center justify-center rounded-lg border border-[#ded8d2] bg-white text-[#282523] transition hover:bg-[#f7f4f1]"
+                aria-label="Dockio on LinkedIn"
               >
-                <LinkedinLogo className="w-5 h-5" />
+                <LinkedinLogo className="h-5 w-5" />
               </a>
             </div>
           </div>
 
           <div>
-            <h3 className="font-semibold text-foreground mb-5 tracking-tight">Capabilities</h3>
-            <ul className="space-y-3.5">
-              <li>
-                <button
-                  onClick={() => navigate('/services')}
-                  className="text-[15px] text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Secure AI Deployment
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => navigate('/services')}
-                  className="text-[15px] text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  PoC-to-Production Rescue
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => navigate('/services')}
-                  className="text-[15px] text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Governed AI Agents
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => navigate('/services')}
-                  className="text-[15px] text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Managed AI Services
-                </button>
-              </li>
+            <h3 className="font-medium text-[#282523]">Codex</h3>
+            <ul className="mt-5 space-y-3">
+              {['Integration services', 'Knowledge workflows', 'AWS deployment', 'Azure implementation'].map((item) => (
+                <li key={item}>
+                  <button
+                    onClick={() => navigate('/services')}
+                    className="text-[15px] text-[#67615d] transition hover:text-[#282523]"
+                  >
+                    {item}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div>
-            <h3 className="font-semibold text-foreground mb-5 tracking-tight">Company</h3>
-            <ul className="space-y-3.5">
-              <li>
-                <button
-                  onClick={() => navigate('/about')}
-                  className="text-[15px] text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  About
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => navigate('/')}
-                  className="text-[15px] text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Use Cases
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => navigate('/industries')}
-                  className="text-[15px] text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Industries
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => navigate('/')}
-                  className="text-[15px] text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Pricing
-                </button>
-              </li>
+            <h3 className="font-medium text-[#282523]">Company</h3>
+            <ul className="mt-5 space-y-3">
+              {[
+                ['About', '/about'],
+                ['Industries', '/industries'],
+                ['Case studies', '/case-studies'],
+                ['Partner readiness', '/partner-readiness'],
+              ].map(([label, path]) => (
+                <li key={label}>
+                  <button
+                    onClick={() => navigate(path)}
+                    className="text-[15px] text-[#67615d] transition hover:text-[#282523]"
+                  >
+                    {label}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div>
-            <h3 className="font-semibold text-foreground mb-5 tracking-tight">Get in Touch</h3>
-            <ul className="space-y-3.5">
+            <h3 className="font-medium text-[#282523]">Contact</h3>
+            <ul className="mt-5 space-y-3">
               <li>
-                <a
-                  href="mailto:partnerships@dockio.in"
-                  className="text-[15px] text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2.5"
-                >
-                  <EnvelopeSimple className="w-4 h-4" />
+                <a href="mailto:partnerships@dockio.in" className="text-[15px] text-[#67615d] transition hover:text-[#282523]">
                   partnerships@dockio.in
                 </a>
               </li>
               <li>
                 <button
-                  onClick={() => navigate('/')}
-                  className="text-[15px] text-muted-foreground hover:text-foreground transition-colors text-left"
+                  onClick={() => navigate('/contact')}
+                  className="text-left text-[15px] text-[#67615d] transition hover:text-[#282523]"
                 >
-                  Book AI Deployment Assessment
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => navigate('/')}
-                  className="text-[15px] text-muted-foreground hover:text-foreground transition-colors text-left"
-                >
-                  AI Deployment Cost Estimate
+                  Book a Codex assessment
                 </button>
               </li>
             </ul>
           </div>
         </div>
 
-        <Separator className="my-10" />
+        <Separator className="my-10 bg-[#e9e4df]" />
 
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-[14px] text-muted-foreground">
+        <div className="flex flex-col justify-between gap-4 text-[14px] text-[#7b746f] md:flex-row md:items-center">
           <p>&copy; {new Date().getFullYear()} Dockio Technosolutions Private Limited. All rights reserved.</p>
-          <p className="text-[13px]">
-            AI Deployment & Managed AI Services
-          </p>
+          <p>OpenAI Codex integration for enterprise knowledge work</p>
         </div>
       </div>
     </footer>

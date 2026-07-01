@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter } from '@/lib/router'
 import { Button } from '@/components/ui/button'
 import {
@@ -28,6 +28,13 @@ const navItems = [
   { label: 'Book Assessment', target: 'book-assessment' },
 ]
 
+const navItems: NavItem[] = [
+  { label: 'Company', path: '/about' },
+  { label: 'Codex', target: 'codex-integration' },
+  { label: 'Industries', path: '/industries' },
+  { label: 'Services', path: '/services' },
+  { label: 'Resources', path: '/case-studies' },
+]
 
 export function Navigation() {
   const { currentPath, navigate } = useRouter()
@@ -35,20 +42,34 @@ export function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
-    }
+    const handleScroll = () => setIsScrolled(window.scrollY > 20)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const handleNavigation = (target: string) => {
+  const handleSectionNavigation = (target: string) => {
     if (currentPath !== '/') {
       navigate('/')
       window.setTimeout(() => document.getElementById(target)?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50)
     } else {
       document.getElementById(target)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
+  }
+
+  const handleNavigation = (item: NavItem) => {
+    if (item.path) {
+      navigate(item.path)
+    }
+
+    if (item.target) {
+      handleSectionNavigation(item.target)
+    }
+
+    setMobileOpen(false)
+  }
+
+  const handleContact = () => {
+    navigate('/contact')
     setMobileOpen(false)
   }
 
@@ -63,22 +84,18 @@ export function Navigation() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/98 backdrop-blur-md shadow-sm border-b border-border/40' : 'bg-white border-b border-border/20'
+      className={`fixed left-0 right-0 top-0 z-50 border-b border-[#ece7e2] bg-white transition-all duration-300 ${
+        isScrolled ? 'shadow-[0_8px_30px_rgba(40,37,35,0.05)]' : ''
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+      <div className="mx-auto max-w-[1180px] px-5 sm:px-6 lg:px-8">
+        <div className="flex h-20 items-center justify-between">
           <button
             onClick={() => navigate('/')}
-            className="flex items-center gap-2.5 group"
+            className="font-sans text-2xl font-bold tracking-normal text-[#181614]"
+            aria-label="Dockio home"
           >
-            <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-sm transition-all duration-200 group-hover:shadow-md">
-              <span className="text-white font-bold text-lg">D</span>
-            </div>
-            <span className="text-xl font-semibold text-foreground tracking-[-0.01em]">
-              Dockio
-            </span>
+            Dockio
           </button>
 
           <div className="hidden lg:flex items-center gap-1">
@@ -116,9 +133,9 @@ export function Navigation() {
             </DropdownMenu>
             {navItems.map((item) => (
               <button
-                key={item.target}
-                onClick={() => handleNavigation(item.target)}
-                className="px-4 py-2.5 text-[15px] font-medium transition-all duration-200 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted/60"
+                key={item.label}
+                onClick={() => handleNavigation(item)}
+                className="text-sm font-medium text-[#69635e] transition hover:text-[#282523]"
               >
                 {item.label}
               </button>
@@ -127,17 +144,18 @@ export function Navigation() {
 
           <div className="hidden lg:block">
             <Button
-              onClick={() => handleNavigation('book-assessment')}
-              className="bg-primary hover:bg-primary/90 h-11 px-6 shadow-sm hover:shadow"
+              onClick={handleContact}
+              variant="outline"
+              className="h-11 rounded-lg border-[#ded8d2] bg-white px-5 text-sm font-medium text-[#282523] hover:bg-[#f7f4f1]"
             >
-              Book AI Readiness Audit
+              Contact Us
             </Button>
           </div>
 
           <div className="lg:hidden">
             <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon">
+                <Button variant="ghost" size="icon" aria-label="Open navigation">
                   <List className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
@@ -175,19 +193,19 @@ export function Navigation() {
                     </div>
                     {navItems.map((item) => (
                       <button
-                        key={item.target}
-                        onClick={() => handleNavigation(item.target)}
-                        className="px-4 py-3.5 text-left text-[15px] font-medium transition-all duration-200 rounded-lg text-foreground hover:bg-muted/60"
+                        key={item.label}
+                        onClick={() => handleNavigation(item)}
+                        className="rounded-md px-2 py-3 text-left text-base font-medium text-[#69635e] transition hover:bg-[#f7f4f1] hover:text-[#282523]"
                       >
                         {item.label}
                       </button>
                     ))}
                   </nav>
                   <Button
-                    onClick={() => handleNavigation('book-assessment')}
-                    className="w-full bg-primary hover:bg-primary/90 h-11"
+                    onClick={handleContact}
+                    className="h-11 rounded-lg bg-[#282523] text-white hover:bg-[#3a3632]"
                   >
-                    Book AI Readiness Audit
+                    Contact Us
                   </Button>
                 </div>
               </SheetContent>
