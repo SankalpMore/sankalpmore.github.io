@@ -275,10 +275,78 @@ export function HomePage() {
 export function ServicesPage() {
   const { navigate } = useRouter()
   const services = [
-    ['Codex integration architecture', 'Reference architecture, data boundaries, identity model, and workflow design.'],
-    ['Enterprise RAG and knowledge grounding', 'Approved-source search across documents, code, tickets, policies, and business data.'],
-    ['AWS and Azure implementation', 'Cloud-native deployment patterns with observability, secrets, networking, and operational controls.'],
-    ['Managed operations', 'Monitoring, evaluation, cost controls, workflow updates, and stakeholder reporting after launch.'],
+    {
+      id: 'ai-deployment-support',
+      title: 'AI Deployment Support',
+      description: 'Embed vetted AI engineers, ML specialists, and solution architects directly into your team for immediate impact.',
+      details: [
+        'Pre-screened AI/ML engineers with hands-on experience',
+        'Fast onboarding with minimal ramp-up time',
+        'Flexible engagement duration based on project needs',
+        'Senior to mid-level talent across AI specializations',
+      ],
+      ideal: 'Organizations needing to scale AI teams quickly without lengthy hiring cycles',
+    },
+    {
+      id: 'enterprise-ai-consulting',
+      title: 'Enterprise AI Consulting',
+      description: 'Strategic guidance for AI adoption, from feasibility assessment to production readiness.',
+      details: [
+        'AI readiness assessment and opportunity identification',
+        'Technology stack recommendation and architecture design',
+        'Business case development and ROI modeling',
+        'Implementation roadmap and governance framework',
+      ],
+      ideal: 'Leadership teams planning enterprise-wide AI transformation initiatives',
+    },
+    {
+      id: 'genai-application-development',
+      title: 'GenAI Application Development',
+      description: 'Build production-grade LLM applications tailored to your business workflows.',
+      details: [
+        'Custom LLM application development using GPT-4, Claude, Llama',
+        'Prompt engineering and optimization for accuracy',
+        'Integration with existing enterprise systems',
+        'User interface development and deployment',
+      ],
+      ideal: 'Teams ready to deploy GenAI solutions for specific business use cases',
+    },
+    {
+      id: 'ai-agents-workflow-automation',
+      title: 'AI Agents & Workflow Automation',
+      description: 'Intelligent automation using AI agents, orchestration frameworks, and API integrations.',
+      details: [
+        'Multi-agent system design and implementation',
+        'Tool calling and external API integration',
+        'Workflow orchestration using LangGraph, CrewAI',
+        'Error handling, monitoring, and reliability engineering',
+      ],
+      ideal: 'Organizations automating complex processes requiring decision-making logic',
+    },
+    {
+      id: 'rag-enterprise-knowledge-systems',
+      title: 'RAG & Enterprise Knowledge Systems',
+      description: 'Build internal search and retrieval systems powered by your proprietary data.',
+      details: [
+        'Document ingestion pipelines and chunking strategies',
+        'Vector database selection and optimization',
+        'Retrieval quality tuning and relevance testing',
+        'Integration with SharePoint, Confluence, internal docs',
+      ],
+      ideal: 'Enterprises struggling with knowledge silos and information discovery',
+    },
+    {
+      id: 'ai-solution-architecture',
+      title: 'AI Solution Architecture',
+      description: 'Design scalable, secure, and maintainable AI system architectures.',
+      details: [
+        'End-to-end AI system architecture design',
+        'Cloud infrastructure planning (AWS, Azure, GCP)',
+        'Data pipeline and model serving architecture',
+        'Security, compliance, and governance considerations',
+      ],
+      ideal: 'Technical leaders planning large-scale AI platform buildouts',
+    },
   ]
 
   return (
@@ -292,11 +360,32 @@ export function ServicesPage() {
             Dockio helps enterprise teams plan, deploy, and operate OpenAI Codex workflows with trustworthy knowledge grounding.
           </p>
         </div>
-        <div className="grid gap-5 md:grid-cols-2">
-          {services.map(([title, body]) => (
-            <Card key={title} className="rounded-md border-slate-200 p-7 shadow-none">
-              <h2 className="text-xl font-semibold text-slate-950">{title}</h2>
-              <p className="mt-3 text-sm leading-6 text-slate-600">{body}</p>
+
+        <div className="space-y-6">
+          {services.map((service, index) => (
+            <Card key={service.id} id={service.id} className="scroll-mt-28 p-8">
+              <div className="flex flex-col lg:flex-row gap-8">
+                <div className="flex-1">
+                  <h2 className="text-2xl font-semibold text-foreground mb-3">
+                    {service.title}
+                  </h2>
+                  <p className="text-muted-foreground mb-6">
+                    {service.description}
+                  </p>
+                  <div className="space-y-2 mb-6">
+                    {service.details.map((detail, idx) => (
+                      <div key={idx} className="flex items-start gap-2">
+                        <CheckCircle className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" weight="duotone" />
+                        <span className="text-sm text-muted-foreground">{detail}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="bg-muted/30 rounded-lg p-4">
+                    <p className="text-sm font-medium text-foreground mb-1">Ideal For:</p>
+                    <p className="text-sm text-muted-foreground">{service.ideal}</p>
+                  </div>
+                </div>
+              </div>
             </Card>
           ))}
         </div>
