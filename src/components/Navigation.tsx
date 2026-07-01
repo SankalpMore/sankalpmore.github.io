@@ -13,30 +13,22 @@ import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/s
 import { CaretDown, List } from '@phosphor-icons/react'
 
 const serviceItems = [
-  { label: 'AI Deployment Support', target: 'ai-deployment-support' },
-  { label: 'Enterprise AI Consulting', target: 'enterprise-ai-consulting' },
-  { label: 'GenAI Application Development', target: 'genai-application-development' },
-  { label: 'AI Agents & Workflow Automation', target: 'ai-agents-workflow-automation' },
-  { label: 'RAG & Enterprise Knowledge Systems', target: 'rag-enterprise-knowledge-systems' },
-  { label: 'AI Solution Architecture', target: 'ai-solution-architecture' },
+  { label: 'OpenAI Codex consulting', target: 'openai-codex-consulting' },
+  { label: 'Enterprise knowledge integration', target: 'enterprise-knowledge-integration' },
+  { label: 'AWS Codex deployment', target: 'aws-codex-deployment' },
+  { label: 'Azure Codex implementation', target: 'azure-codex-implementation' },
+  { label: 'Managed Codex operations', target: 'managed-codex-operations' },
+  { label: 'Workshops and assessments', target: 'workshops-assessments' },
 ]
 type NavItem = {
   label: string
   path?: string
   target?: string
 }
-const LandingnavItems = [
-  { label: 'Problem', target: 'use-cases' },
-  { label: 'Pricing', target: 'pricing' },
-  { label: 'Founder', target: 'founder-experience' },
-  { label: 'Book Assessment', target: 'book-assessment' },
-]
-
 const navItems: NavItem[] = [
   { label: 'Company', path: '/about' },
   { label: 'Codex', target: 'codex-integration' },
   { label: 'Industries', path: '/industries' },
-  { label: 'Services', path: '/services' },
   { label: 'Resources', path: '/case-studies' },
 ]
 
@@ -195,7 +187,7 @@ export function Navigation() {
                         ))}
                       </div>
                     </div>
-                    {LandingnavItems.map((item) => (
+                    {navItems.map((item) => (
                       <button
                         key={item.label}
                         onClick={() => handleNavigation(item)}
