@@ -215,7 +215,7 @@ export function HomePage() {
                   Demonstrated Technical Depth
                 </h3>
                 <p className="text-muted-foreground leading-relaxed text-[15px]">
-                  Hands-on expertise across modern AI infrastructure: LangChain, LlamaIndex, vector databases, LLM observability platforms, and cloud AI services from AWS, Azure, and GCP.
+                  Hands-on expertise across OpenAI Codex workflows, source grounding, evaluation, access controls, and cloud integration patterns across AWS and Azure.
                 </p>
               </div>
             </div>
@@ -247,7 +247,7 @@ export function HomePage() {
                   Flexible Engagement Architecture
                 </h3>
                 <p className="text-muted-foreground leading-relaxed text-[15px]">
-                  Support for dedicated teams, AI deployment support, project-based delivery, fractional leadership, and pod-based execution—structured to align with your operational model.
+                  Support for Codex integration assessments, production pilots, managed operations, cloud deployment planning, and procurement-ready rollout support.
                 </p>
               </div>
             </div>

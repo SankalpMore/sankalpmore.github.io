@@ -8,23 +8,24 @@ export function CapabilityDownload() {
     const capabilityContent = `
 DOCKIO - CAPABILITY STATEMENT
 Dockio Technosolutions Private Limited
-Enterprise AI Implementation & Technical Partnership
+OpenAI Codex Integration & Managed Knowledge Work Operations
 
 CORE CAPABILITIES
-- AI Deployment Support
-- Enterprise AI Consulting
-- GenAI & LLM Application Development
-- AI Agents & Workflow Automation
-- RAG & Enterprise Knowledge Systems
-- AI Solution Architecture
-- Evaluation, Governance & Deployment
+- OpenAI Codex Consulting
+- Enterprise Knowledge Integration
+- AWS Codex Deployment
+- Azure Codex Implementation
+- Managed Codex Operations
+- Workshops & Assessments
+- Evaluation, Governance & Review Workflows
 
 ENGAGEMENT MODELS
-- Dedicated AI Talent
-- Deployment Support
+- Codex Integration Assessment
+- Production Pilot
 - Project-Based Delivery
-- Fractional AI Leadership
-- Pod-Based Delivery
+- Managed Operations Retainer
+- Cloud Deployment Planning
+- Procurement & Vendor Readiness
 
 TARGET CLIENTS
 - Enterprise Organizations
@@ -32,14 +33,15 @@ TARGET CLIENTS
 - System Integrators
 - Cloud/Platform Partners
 - AI Transformation Leaders
+- Knowledge-Heavy Business Teams
 
 TECHNICAL EXPERTISE
-- LangChain, LlamaIndex, LangGraph
-- Vector Databases (Pinecone, Weaviate, Qdrant)
-- Foundation Models (GPT-4, Claude, Llama)
-- Cloud AI Services (AWS, Azure, GCP)
+- OpenAI Codex Workflows
+- Source Grounding Across Repositories, Documents, Tickets & Policies
+- AWS, Azure & Hybrid Cloud Integration
+- Identity, Access, Secrets & Network Controls
 - Observability & Evaluation Tools
-- Production AI Infrastructure
+- Review Gates, Audit Trails & Operational Reporting
 
 DELIVERY STANDARDS
 - SOW & MSA Compliant
@@ -86,7 +88,7 @@ partnerships@dockio.in
             Download Capability Statement
           </h3>
           <p className="text-muted-foreground text-sm">
-            One-page overview of our AI implementation capabilities, engagement models, and technical expertise. Suitable for sharing with procurement teams and internal stakeholders.
+            One-page overview of our Codex integration capabilities, engagement models, and technical expertise. Suitable for sharing with procurement teams and internal stakeholders.
           </p>
         </div>
         <Button 
