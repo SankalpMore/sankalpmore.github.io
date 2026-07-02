@@ -1,168 +1,107 @@
-import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import { Textarea } from '@/components/ui/textarea'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { useState } from 'react'
-import { toast } from 'sonner'
-import { EnvelopeSimple, MapPin, Calendar } from '@phosphor-icons/react'
+import { Button } from '@/components/ui/button'
+import { MICROSOFT_BOOKINGS_URL } from '@/lib/bookings'
+import { Calendar, EnvelopeSimple } from '@phosphor-icons/react'
 
 export function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    inquiryType: '',
-    message: '',
-  })
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    toast.success('Thank you for your inquiry. We will respond within 24 hours.')
-    setFormData({ name: '', email: '', company: '', inquiryType: '', message: '' })
-  }
-
   return (
-    <div className="min-h-screen pt-24">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
-        <div className="max-w-3xl mb-16">
-          <h1 className="text-4xl lg:text-5xl font-semibold text-foreground mb-4">
+    <div className="min-h-screen bg-white pt-24 text-[#282523]">
+      <div className="mx-auto max-w-[1180px] px-5 py-16 sm:px-6 lg:px-8">
+        <div className="mb-14 max-w-3xl">
+          <h1 className="mb-5 font-serif text-4xl font-normal leading-tight text-[#343230] lg:text-5xl">
             Start a Conversation
           </h1>
-          <p className="text-lg text-muted-foreground">
-            Whether you need AI AI deployment support, project delivery, vendor discussions, or strategic consulting—we're here to help enterprise teams succeed with AI.
+          <p className="text-lg leading-8 text-[#67615d]">
+            Whether you need Codex implementation support, project delivery, vendor discussions, or
+            strategic consulting, Dockio can help enterprise teams move AI work into governed operations.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-12">
+        <div className="grid gap-10 lg:grid-cols-3">
           <div className="lg:col-span-2">
-            <Card className="p-8">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Full Name</Label>
-                    <Input
-                      id="name"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      required
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Business Email</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      required
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="company">Organization</Label>
-                  <Input
-                    id="company"
-                    value={formData.company}
-                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    required
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="inquiry-type">Inquiry Type</Label>
-                  <Select
-                    value={formData.inquiryType}
-                    onValueChange={(value) => setFormData({ ...formData, inquiryType: value })}
-                  >
-                    <SelectTrigger id="inquiry-type">
-                      <SelectValue placeholder="Select inquiry type" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="deployment">AI Deployment Support</SelectItem>
-                      <SelectItem value="consulting">AI Consulting Project</SelectItem>
-                      <SelectItem value="partner">Subcontracting / Partner Discussion</SelectItem>
-                      <SelectItem value="project">Enterprise AI Project</SelectItem>
-                      <SelectItem value="vendor">Vendor Onboarding Discussion</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="message">Message</Label>
-                  <Textarea
-                    id="message"
-                    rows={6}
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    placeholder="Tell us about your AI initiative, team needs, or partnership opportunity..."
-                    required
-                  />
-                </div>
-
-                <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90">
-                  Submit Inquiry
-                </Button>
-
-                <p className="text-xs text-muted-foreground text-center">
-                  We typically respond to enterprise inquiries within 24 business hours.
+            <Card className="rounded-md border-[#d9dedb] p-8 shadow-[0_18px_55px_rgba(37,31,28,0.06)]">
+              <div className="max-w-2xl">
+                <h2 className="mb-3 font-serif text-3xl font-normal leading-tight text-[#343230]">
+                  Book a discovery call
+                </h2>
+                <p className="mb-8 leading-7 text-[#67615d]">
+                  Schedule a time through Microsoft Bookings. You can add context about your Codex workflow,
+                  deployment needs, or partnership discussion while booking.
                 </p>
-              </form>
+                <div className="flex flex-col gap-3 sm:flex-row">
+                  <Button asChild size="lg" className="rounded-full bg-[#193a42] px-6 hover:bg-[#102b32]">
+                    <a href={MICROSOFT_BOOKINGS_URL} target="_blank" rel="noopener noreferrer">
+                      Schedule online
+                    </a>
+                  </Button>
+                  <Button asChild size="lg" variant="outline" className="rounded-full border-[#ded8d2] px-6">
+                    <a href="mailto:partnerships@dockio.in">Email partnerships@dockio.in</a>
+                  </Button>
+                </div>
+              </div>
             </Card>
           </div>
 
           <div className="space-y-6">
-            <Card className="p-6">
-              <h3 className="font-semibold text-foreground mb-4">Direct Contact</h3>
+            <Card className="rounded-md border-[#d9dedb] p-6 shadow-none">
+              <h3 className="mb-4 font-semibold text-[#282523]">Direct Contact</h3>
               <div className="space-y-4 text-sm">
                 <div className="flex items-start gap-3">
-                  <EnvelopeSimple className="w-5 h-5 text-accent mt-0.5" />
+                  <EnvelopeSimple className="mt-0.5 h-5 w-5 text-[#1f6d73]" />
                   <div>
-                    <p className="font-medium text-foreground mb-1">Email</p>
-                    <a href="mailto:partnerships@dockio.in" className="text-muted-foreground hover:text-accent transition-colors">
+                    <p className="mb-1 font-medium text-[#282523]">Email</p>
+                    <a
+                      href="mailto:partnerships@dockio.in"
+                      className="text-[#67615d] transition-colors hover:text-[#1f6d73]"
+                    >
                       partnerships@dockio.in
                     </a>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Calendar className="w-5 h-5 text-accent mt-0.5" />
+                  <Calendar className="mt-0.5 h-5 w-5 text-[#1f6d73]" />
                   <div>
-                    <p className="font-medium text-foreground mb-1">Book a Call</p>
-                    <p className="text-muted-foreground">30-minute discovery calls available</p>
+                    <p className="mb-1 font-medium text-[#282523]">Book a Call</p>
+                    <a
+                      href={MICROSOFT_BOOKINGS_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#67615d] transition-colors hover:text-[#1f6d73]"
+                    >
+                      Schedule online
+                    </a>
                   </div>
                 </div>
               </div>
             </Card>
 
-            <Card className="p-6">
-              <h3 className="font-semibold text-foreground mb-4">Response Time</h3>
-              <p className="text-sm text-muted-foreground mb-4">
+            <Card className="rounded-md border-[#d9dedb] p-6 shadow-none">
+              <h3 className="mb-4 font-semibold text-[#282523]">Response Time</h3>
+              <p className="mb-4 text-sm leading-6 text-[#67615d]">
                 Enterprise inquiries are prioritized and typically receive a response within 24 business hours.
               </p>
-              <p className="text-sm text-muted-foreground">
-                For urgent AI deployment needs, please note "URGENT" in your message subject.
+              <p className="text-sm leading-6 text-[#67615d]">
+                For urgent AI deployment needs, email partnerships@dockio.in with "URGENT" in your subject.
               </p>
             </Card>
 
-            <Card className="p-6 bg-muted/30 border-none">
-              <h3 className="font-semibold text-foreground mb-3">What Happens Next?</h3>
-              <ul className="space-y-3 text-sm text-muted-foreground">
+            <Card className="rounded-md border-none bg-[#f7f8f5] p-6 shadow-none">
+              <h3 className="mb-3 font-semibold text-[#282523]">What Happens Next?</h3>
+              <ul className="space-y-3 text-sm leading-6 text-[#67615d]">
                 <li className="flex gap-2">
-                  <span className="text-accent font-semibold">1.</span>
+                  <span className="font-semibold text-[#1f6d73]">1.</span>
                   <span>We review your inquiry and assess fit</span>
                 </li>
                 <li className="flex gap-2">
-                  <span className="text-accent font-semibold">2.</span>
+                  <span className="font-semibold text-[#1f6d73]">2.</span>
                   <span>Schedule a discovery call to understand needs</span>
                 </li>
                 <li className="flex gap-2">
-                  <span className="text-accent font-semibold">3.</span>
+                  <span className="font-semibold text-[#1f6d73]">3.</span>
                   <span>Provide capability overview and proposed approach</span>
                 </li>
                 <li className="flex gap-2">
-                  <span className="text-accent font-semibold">4.</span>
+                  <span className="font-semibold text-[#1f6d73]">4.</span>
                   <span>Discuss engagement structure and next steps</span>
                 </li>
               </ul>

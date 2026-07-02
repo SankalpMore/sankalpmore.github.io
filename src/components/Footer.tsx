@@ -43,7 +43,7 @@ export function Footer() {
           <div>
             <h3 className="font-medium text-[#282523]">Codex</h3>
             <ul className="mt-5 space-y-3">
-              {['Integration services', 'Knowledge workflows', 'AWS deployment', 'Azure implementation'].map((item) => (
+              {['Workflow assessment', 'Workspace integration', 'Knowledge grounding', 'Enablement governance'].map((item) => (
                 <li key={item}>
                   <button
                     onClick={() => navigate('/services')}
