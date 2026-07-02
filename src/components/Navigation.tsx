@@ -13,12 +13,12 @@ import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/s
 import { CaretDown, List } from '@phosphor-icons/react'
 
 const serviceItems = [
-  { label: 'OpenAI Codex consulting', target: 'openai-codex-consulting' },
-  { label: 'Enterprise knowledge integration', target: 'enterprise-knowledge-integration' },
-  { label: 'AWS Codex deployment', target: 'aws-codex-deployment' },
-  { label: 'Azure Codex implementation', target: 'azure-codex-implementation' },
-  { label: 'Managed Codex operations', target: 'managed-codex-operations' },
-  { label: 'Workshops and assessments', target: 'workshops-assessments' },
+  { label: 'Workflow Assessment', target: 'codex-workflow-assessment' },
+  { label: 'Workspace Integration', target: 'codex-workspace-integration' },
+  { label: 'Knowledge Grounding', target: 'rag-knowledge-grounding' },
+  { label: 'Workflow Automation', target: 'ai-agent-workflow-automation' },
+  { label: 'Cloud AI Architecture', target: 'cloud-ai-architecture' },
+  { label: 'Enablement & Governance', target: 'enablement-governance' },
 ]
 type NavItem = {
   label: string
@@ -30,6 +30,7 @@ const navItems: NavItem[] = [
   { label: 'Codex', target: 'codex-integration' },
   { label: 'Industries', path: '/industries' },
   { label: 'Resources', path: '/case-studies' },
+  { label: 'Book Assessment', target: 'book-assessment' },
 ]
 
 export function Navigation() {
@@ -94,11 +95,15 @@ export function Navigation() {
             Dockio
           </button>
 
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden items-center rounded-full border border-[#eee9e5] bg-[#fbfaf8] p-1 lg:flex">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <button
-                  className="flex items-center gap-1.5 rounded-lg px-4 py-2.5 text-[15px] font-medium text-muted-foreground transition-all duration-200 hover:bg-muted/60 hover:text-foreground data-[state=open]:bg-muted/60 data-[state=open]:text-foreground"
+                  className={`flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 ${
+                    currentPath === '/services'
+                      ? 'bg-white text-[#282523] shadow-sm'
+                      : 'text-[#69635e] hover:bg-white hover:text-[#282523] hover:shadow-sm data-[state=open]:bg-white data-[state=open]:text-[#282523] data-[state=open]:shadow-sm'
+                  }`}
                   aria-label="Open services menu"
                 >
                   Services
@@ -131,7 +136,11 @@ export function Navigation() {
               <button
                 key={item.label}
                 onClick={() => handleNavigation(item)}
-                className="text-sm font-medium text-[#69635e] transition hover:text-[#282523]"
+                className={`rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 ${
+                  item.path && currentPath === item.path
+                    ? 'bg-white text-[#282523] shadow-sm'
+                    : 'text-[#69635e] hover:bg-white hover:text-[#282523] hover:shadow-sm'
+                }`}
               >
                 {item.label}
               </button>
@@ -141,8 +150,7 @@ export function Navigation() {
           <div className="hidden lg:block">
             <Button
               onClick={handleContact}
-              variant="outline"
-              className="h-11 rounded-lg border-[#ded8d2] bg-white px-5 text-sm font-medium text-[#282523] hover:bg-[#f7f4f1]"
+              className="h-11 rounded-lg bg-[#193a42] px-5 text-sm font-medium text-white shadow-sm hover:bg-[#102b32]"
             >
               Contact Us
             </Button>
@@ -199,7 +207,7 @@ export function Navigation() {
                   </nav>
                   <Button
                     onClick={handleContact}
-                    className="h-11 rounded-lg bg-[#282523] text-white hover:bg-[#3a3632]"
+                    className="h-11 rounded-lg bg-[#193a42] text-white hover:bg-[#102b32]"
                   >
                     Contact Us
                   </Button>

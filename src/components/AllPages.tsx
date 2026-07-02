@@ -1,269 +1,352 @@
-import { useState } from 'react'
 import { useRouter } from '@/lib/router'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { CapabilityDownload } from '@/components/CapabilityDownload'
+import { MICROSOFT_BOOKINGS_URL } from '@/lib/bookings'
 import heroImage from '@/assets/dockio-knowledge-work-hero.png'
-import { ArrowRight, Briefcase, CheckCircle, Minus, Plus, Users } from '@phosphor-icons/react'
+import { ArrowRight, Briefcase, CheckCircle } from '@phosphor-icons/react'
 
 const sectionClass = 'mx-auto max-w-[1180px] px-5 sm:px-6 lg:px-8'
 
 export function HomePage() {
   const { navigate } = useRouter()
-  const [openArea, setOpenArea] = useState('Finance')
-  const [activeStep, setActiveStep] = useState('Find')
+
+  const scrollToAssessment = () => {
+    document.getElementById('book-assessment')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
+  const proofPillars = [
+    {
+      title: 'Platform-aware implementation',
+      body: 'Codex, OpenAI, Azure AI Foundry, AWS Bedrock, cloud architecture, and enterprise app integration.',
+    },
+    {
+      title: 'Governed workflow delivery',
+      body: 'Source maps, permission boundaries, review paths, acceptance checks, and reusable operating playbooks.',
+    },
+    {
+      title: 'Procurement-ready execution',
+      body: 'Structured pilots, clear owners, delivery documentation, SOW alignment, and measurable rollout gates.',
+    },
+  ]
 
   const applicationAreas = [
     {
-      title: 'Finance',
-      body: 'Reconcile spreadsheet evidence, summarize policy exceptions, and prepare reviewable analysis for finance operations.',
+      title: 'Finance and procurement',
+      owner: 'CFO office / procurement operations',
+      body: 'Prepare reviewable analysis, summarize exceptions, compare vendor material, and package evidence for approvals.',
+      signal: 'Strong fit when the process already has audit discipline, named reviewers, and repeatable decision cycles.',
     },
     {
-      title: 'Marketing',
-      body: 'Turn campaign notes, research, docs, and performance exports into briefs, launch plans, and reusable working assets.',
+      title: 'Revenue and GTM',
+      owner: 'Sales, partner, and revenue operations',
+      body: 'Create account research, proposal drafts, follow-up summaries, and CRM-ready notes from approved sources.',
+      signal: 'Strong fit when teams already track handoffs, CRM hygiene, and enterprise follow-through.',
     },
     {
-      title: 'Sales and GTM',
-      body: 'Create account research, proposal drafts, follow-up notes, and CRM-ready summaries from approved internal sources.',
+      title: 'Delivery operations',
+      owner: 'COO office / program operations',
+      body: 'Turn SOPs, tickets, runbooks, and project notes into trackable next actions, summaries, and delivery updates.',
+      signal: 'Strong fit when work is process-heavy, documented, and owned by operations leaders who can enforce review.',
     },
     {
-      title: 'Operations',
-      body: 'Connect procedures, tickets, runbooks, and internal tools so repetitive knowledge work becomes trackable execution.',
+      title: 'Technology and data teams',
+      owner: 'CTO office / AI transformation team',
+      body: 'Connect repositories, internal docs, cloud workflows, and data tools so Codex can support implementation safely.',
+      signal: 'Strong fit when there are access controls, technical owners, and a clear path from pilot to production.',
     },
     {
-      title: 'Strategy',
-      body: 'Compare documents, synthesize market inputs, and produce decision memos that keep assumptions visible.',
+      title: 'Strategy and transformation',
+      owner: 'Strategy / transformation office',
+      body: 'Synthesize research, compare internal documents, and create decision memos that keep assumptions visible.',
+      signal: 'Strong fit when leadership buys through structured pilots, governance review, and evidence-backed decisions.',
     },
   ]
 
-  const helpSteps = [
+  const deliveryStages = [
     {
-      label: 'Find',
-      title: 'Find the right workflows',
-      body: 'We identify work that is frequent, painful, context-heavy, and reviewable. Those are the best starting points.',
+      stage: '01',
+      title: 'Assess',
+      body: 'Identify workflows that are frequent, context-heavy, reviewable, and valuable enough for a focused pilot.',
+      output: 'Workflow shortlist',
     },
     {
-      label: 'Set up',
-      title: 'Set up the workspace',
-      body: 'We connect Codex to repositories, documents, tools, and permissions without bypassing enterprise controls.',
+      stage: '02',
+      title: 'Architect',
+      body: 'Map sources, permissions, systems, acceptance criteria, and the minimum integration path for safe delegation.',
+      output: 'Pilot architecture',
     },
     {
-      label: 'Run',
-      title: 'Run hands-on labs',
-      body: 'Teams practice delegation with real work: research, analysis, code changes, documents, and operational follow-through.',
+      stage: '03',
+      title: 'Implement',
+      body: 'Configure workflows, prompts, skills, checks, and operating routines around real business work.',
+      output: 'Working system',
     },
     {
-      label: 'Build',
-      title: 'Build reusable skills',
-      body: 'Successful patterns become reusable workflows, prompts, checks, and operating playbooks for the team.',
+      stage: '04',
+      title: 'Enable',
+      body: 'Train owners and reviewers with hands-on labs, source discipline, and clear definitions of done.',
+      output: 'Adoption playbook',
     },
     {
-      label: 'Measure',
-      title: 'Measure adoption and impact',
-      body: 'We track time saved, review quality, reuse, and workflow coverage so leaders know what is actually working.',
+      stage: '05',
+      title: 'Govern',
+      body: 'Track quality, reuse, coverage, risks, and rollout readiness so leaders can scale with control.',
+      output: 'Governance rhythm',
     },
   ]
-
-  const currentStep = helpSteps.find((step) => step.label === activeStep) ?? helpSteps[0]
 
   return (
-    <div className="min-h-screen bg-white text-[#282523]">
-      <section id="codex-integration" className="pt-28 sm:pt-32">
-        <div className={sectionClass}>
-          <div className="mx-auto max-w-4xl text-center">
-            <h1 className="font-serif text-5xl font-normal leading-[0.98] text-[#44413f] sm:text-6xl lg:text-7xl">
-              Work faster with Codex
-            </h1>
-            <p className="mx-auto mt-7 max-w-2xl text-base leading-7 text-[#67615d] sm:text-lg">
-              Dockio helps business teams move from AI chat to real work delegation: research, analysis,
-              documents, code changes, and internal operations.
-            </p>
-          </div>
-
-          <div className="mt-20 overflow-hidden rounded-[2rem] border border-[#eee9e5] bg-[#f7f5f2] shadow-[0_24px_70px_rgba(33,27,22,0.08)]">
-            <img
-              src={heroImage}
-              alt="Enterprise knowledge work materials arranged for Codex delegation"
-              className="h-[360px] w-full object-cover object-center sm:h-[500px] lg:h-[560px]"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section className="py-24 sm:py-28">
-        <div className={`${sectionClass} grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-start`}>
-          <h2 className="max-w-xl font-serif text-4xl font-normal leading-tight text-[#46423f] sm:text-5xl">
-            The next shift is from chat to delegation.
-          </h2>
-          <div className="space-y-6 text-base leading-8 text-[#615c58] sm:text-lg">
-            <p>
-              Codex becomes useful when it can take real context, follow a reviewable path, and return
-              work that fits how a team already operates.
-            </p>
-            <p>
-              Dockio helps enterprises choose the right workflows, connect the right sources, and build
-              operating habits that turn AI from a side experiment into a dependable teammate.
-            </p>
-            <p>
-              The goal is not more prompts. The goal is less handoff friction, clearer evidence, and
-              work that can be reviewed, reused, and trusted.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section id="where-applies" className="border-y border-[#e9e4df] bg-[#fbfaf8] py-24 sm:py-28">
-        <div className={`${sectionClass} grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start`}>
+    <div className="min-h-screen bg-white text-[#22211f]">
+      <section id="codex-integration" className="pt-24 pb-14 sm:pt-28 sm:pb-16">
+        <div className={`${sectionClass} grid gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:items-start`}>
           <div>
-            <div className="mb-8 flex items-center gap-3 text-sm text-[#9a2550]">
-              <span className="h-2.5 w-2.5 rounded-sm bg-[#c11c59]" />
-              Codex for knowledge work
-            </div>
-            <h2 className="font-serif text-4xl font-normal leading-tight text-[#46423f] sm:text-5xl">
-              Where it applies
-            </h2>
-            <p className="mt-7 max-w-md text-base leading-7 text-[#67615d] sm:text-lg">
-              Codex is not just an engineering tool. It becomes valuable anywhere knowledge has to be
-              gathered, shaped, checked, and moved into action.
+            <h1 className="max-w-3xl font-serif text-5xl font-normal leading-[0.98] text-[#343230] sm:text-6xl lg:text-6xl xl:text-[66px]">
+              Codex implementation for disciplined enterprise teams
+            </h1>
+            <p className="mt-7 max-w-2xl text-base leading-8 text-[#67615d] sm:text-lg">
+              Dockio helps transformation, operations, finance, and GTM leaders turn Codex into governed
+              workflows across approved tools, documents, and review paths.
             </p>
-            <Button
-              onClick={() => navigate('/contact')}
-              variant="outline"
-              className="mt-10 h-12 rounded-full border-[#ded8d2] bg-white px-6 text-[#282523] shadow-sm hover:bg-[#f6f3ef]"
-            >
-              Contact us <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <Button
+                onClick={scrollToAssessment}
+                className="h-12 rounded-full bg-[#193a42] px-7 text-white hover:bg-[#102b32]"
+              >
+                Book Assessment <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+              <Button
+                onClick={() => navigate('/services')}
+                variant="outline"
+                className="h-12 rounded-full border-[#ded8d2] bg-white px-7 text-[#282523] hover:bg-[#f7f4f1]"
+              >
+                Explore services
+              </Button>
+            </div>
+            <div className="mt-11 grid gap-5 border-t border-[#ece7e2] pt-7 text-sm leading-6 text-[#615c58] sm:grid-cols-3">
+              <p>
+                <span className="block font-semibold text-[#282523]">Niche focus</span>
+                Codex, LLM workflows, RAG, cloud AI, and enterprise knowledge operations.
+              </p>
+              <p>
+                <span className="block font-semibold text-[#282523]">SI discipline</span>
+                Architecture, delivery governance, enablement, documentation, and rollout gates.
+              </p>
+              <p>
+                <span className="block font-semibold text-[#282523]">Buyer fit</span>
+                Teams with procurement maturity, ethical vendor onboarding, and named owners.
+              </p>
+            </div>
           </div>
 
-          <div className="space-y-4">
-            {applicationAreas.map((area) => {
-              const isOpen = openArea === area.title
+          <div className="rounded-[1.75rem] border border-[#d8e1df] bg-[#132b31] p-4 text-white shadow-[0_30px_90px_rgba(19,43,49,0.22)]">
+            <div className="rounded-[1.25rem] border border-white/10 bg-white/[0.06] p-5">
+              <div className="flex flex-col gap-3 border-b border-white/10 pb-5 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <p className="font-mono text-xs uppercase tracking-[0.18em] text-white/50">Dockio delivery board</p>
+                  <h2 className="mt-2 font-serif text-3xl font-normal">Enterprise Codex pilot</h2>
+                </div>
+                <span className="w-fit rounded-full border border-[#7ca3a5]/40 bg-[#7ca3a5]/15 px-3 py-1 text-xs font-medium text-[#d8f0ef]">
+                  Reviewable
+                </span>
+              </div>
 
-              return (
-                <button
-                  type="button"
-                  key={area.title}
-                  onClick={() => setOpenArea(isOpen ? '' : area.title)}
-                  aria-expanded={isOpen}
-                  className="w-full rounded-2xl border border-[#ded8d2] bg-white px-7 py-6 text-left shadow-[0_14px_40px_rgba(37,31,28,0.04)] transition hover:border-[#cfc6be]"
-                >
-                  <span className="flex items-center justify-between gap-6">
-                    <span className="font-serif text-3xl leading-none text-[#46423f]">{area.title}</span>
-                    {isOpen ? (
-                      <Minus className="h-5 w-5 shrink-0 text-[#bc1d55]" />
-                    ) : (
-                      <Plus className="h-5 w-5 shrink-0 text-[#bc1d55]" />
-                    )}
-                  </span>
-                  {isOpen ? (
-                    <span className="mt-5 block max-w-xl text-base leading-7 text-[#67615d]">{area.body}</span>
-                  ) : null}
-                </button>
-              )
-            })}
+              <div className="mt-5 overflow-hidden rounded-xl border border-white/10 bg-white">
+                <img
+                  src={heroImage}
+                  alt="Dockio implementation materials including architecture notes, workflow maps, and review documents"
+                  className="h-44 w-full object-cover object-center"
+                />
+              </div>
+
+              <div className="mt-5 rounded-xl bg-white p-5 text-[#282523]">
+                <p className="font-mono text-xs uppercase tracking-[0.16em] text-[#7d746e]">Pilot package</p>
+                <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                  {[
+                    'Workflow intake and business outcome',
+                    'Source map and access boundaries',
+                    'Reviewer path and acceptance checks',
+                    'Rollout gates and governance rhythm',
+                  ].map((item) => (
+                    <div key={item} className="flex items-start gap-3">
+                      <CheckCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-[#1f6d73]" weight="fill" />
+                      <span className="text-sm leading-6 text-[#5f5954]">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="py-24 sm:py-28">
-        <div className={`${sectionClass} grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:items-start`}>
-          <h2 className="font-serif text-4xl font-normal leading-tight text-[#46423f] sm:text-5xl">
-            Better tools are not enough. Teams need new habits.
-          </h2>
-          <div className="grid gap-8 text-base leading-8 text-[#615c58] md:grid-cols-2">
-            <p>
-              The teams that benefit most do not ask Codex to improvise in isolation. They give it
-              clear context, constraints, source material, and a definition of done.
-            </p>
-            <p>
-              Dockio turns those habits into working systems: source maps, evaluation checks, approval
-              paths, reusable skills, and operating rhythms leaders can measure.
-            </p>
+      <section className="border-y border-[#e9e4df] bg-[#f7f8f5] py-10">
+        <div className={`${sectionClass} grid gap-5 md:grid-cols-3`}>
+          {proofPillars.map((pillar) => (
+            <div key={pillar.title} className="border-l border-[#ccd7d4] pl-5">
+              <h2 className="font-semibold text-[#282523]">{pillar.title}</h2>
+              <p className="mt-2 text-sm leading-6 text-[#67615d]">{pillar.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="where-applies" className="bg-white py-20 sm:py-24">
+        <div className={sectionClass}>
+          <div className="grid gap-9 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
+            <div>
+              <p className="font-mono text-xs uppercase tracking-[0.18em] text-[#8b817a]">Workflow fit</p>
+              <h2 className="mt-4 max-w-xl font-serif text-4xl font-normal leading-tight text-[#343230] sm:text-5xl">
+                Where serious AI buyers should use Codex first
+              </h2>
+            </div>
+            <div className="max-w-2xl text-base leading-8 text-[#615c58] sm:text-lg">
+              <p>
+                The best starting points are not generic AI experiments. They are recurring workflows
+                where sources are known, ownership is clear, and business reviewers can judge output quality.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-12 grid gap-6 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
+            <div className="rounded-md bg-[#f7f8f5] p-7 ring-1 ring-[#dde5e2] lg:sticky lg:top-28">
+              <p className="font-mono text-xs uppercase tracking-[0.18em] text-[#7d746e]">Best-fit buyer profile</p>
+              <h3 className="mt-5 font-serif text-3xl font-normal leading-tight text-[#343230]">
+                SI-grade delivery works best when the buyer is disciplined.
+              </h3>
+              <div className="mt-8 space-y-5 text-sm leading-6 text-[#67615d]">
+                {[
+                  ['Buying motion', 'Ethical vendor onboarding, procurement discipline, and reliable payment behavior.'],
+                  ['Implementation owner', 'A transformation, operations, finance, GTM, or technology leader who can sponsor a pilot.'],
+                  ['Workflow shape', 'Source-backed, repeatable work where output quality can be reviewed by business owners.'],
+                ].map(([label, text]) => (
+                  <div key={label} className="border-t border-[#dde5e2] pt-5">
+                    <p className="font-semibold text-[#282523]">{label}</p>
+                    <p className="mt-2">{text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="space-y-3">
+              {applicationAreas.map((area, index) => (
+                <div
+                  key={area.title}
+                  className="grid gap-5 rounded-md border border-[#dfe3df] bg-white p-5 shadow-none transition hover:border-[#bdc8c4] hover:shadow-[0_16px_45px_rgba(40,37,35,0.06)] md:grid-cols-[0.72fr_1fr]"
+                >
+                  <div>
+                    <div className="flex items-center gap-3">
+                      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#edf3f1] font-mono text-xs text-[#31575d]">
+                        {String(index + 1).padStart(2, '0')}
+                      </span>
+                      <p className="font-serif text-2xl text-[#46423f]">{area.title}</p>
+                    </div>
+                    <p className="mt-4 text-sm font-medium text-[#31575d]">{area.owner}</p>
+                  </div>
+                  <div className="grid gap-4 text-sm leading-6 text-[#67615d] sm:grid-cols-2">
+                    <div>
+                      <p className="mb-2 text-xs font-semibold uppercase text-[#8b817a]">Codex delegation</p>
+                      <p>{area.body}</p>
+                    </div>
+                    <div>
+                      <p className="mb-2 text-xs font-semibold uppercase text-[#8b817a]">ICP fit signal</p>
+                      <p>{area.signal}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       <section
         id="how-dockio-helps"
-        className="bg-[radial-gradient(circle_at_50%_10%,#7390a0_0%,#284d59_46%,#152d34_100%)] py-24 text-white sm:py-28"
+        className="bg-[#132b31] py-20 text-white sm:py-24"
       >
         <div className={sectionClass}>
-          <div className="text-center">
-            <h2 className="font-serif text-5xl font-normal leading-none sm:text-6xl">How Dockio helps</h2>
-            <p className="mx-auto mt-7 max-w-xl text-base leading-7 text-white/80 sm:text-lg">
-              We help teams build the habit of delegation.
+          <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
+            <div>
+              <p className="font-mono text-xs uppercase tracking-[0.18em] text-white/45">Delivery model</p>
+              <h2 className="mt-4 max-w-xl font-serif text-4xl font-normal leading-tight sm:text-5xl">
+                A focused AI systems integrator for Codex workflows
+              </h2>
+            </div>
+            <p className="max-w-2xl text-base leading-8 text-white/72 sm:text-lg">
+              Dockio brings the delivery habits buyers expect from a service integrator, but keeps the scope
+              narrow: Codex, LLM workflow automation, RAG, cloud AI, and governed knowledge work.
             </p>
           </div>
 
-          <div className="mt-16 overflow-hidden rounded-[1.75rem] bg-white text-[#302b28] shadow-[0_24px_90px_rgba(11,35,42,0.24)]">
-            <div className="grid lg:grid-cols-[1.35fr_repeat(4,0.55fr)]">
-              <div className="min-h-[340px] p-8 sm:p-12 lg:p-16">
-                <div className="mb-12 flex h-8 w-8 items-center justify-center text-[#46423f]">
-                  <span className="relative block h-5 w-5">
-                    <span className="absolute left-0 top-0 h-2.5 w-2.5 border-l-2 border-t-2 border-current" />
-                    <span className="absolute bottom-0 right-0 h-2.5 w-2.5 border-b-2 border-r-2 border-current" />
-                  </span>
-                </div>
-                <h3 className="max-w-lg font-serif text-4xl font-normal leading-tight text-[#46423f] sm:text-5xl">
-                  {currentStep.title}
-                </h3>
-                <p className="mt-8 max-w-xl text-lg leading-8 text-[#67615d]">{currentStep.body}</p>
-                <p className="mt-12 font-serif text-2xl text-[#46423f]">{currentStep.label}</p>
+          <div className="mt-12 grid gap-px overflow-hidden rounded-md border border-white/10 bg-white/10 lg:grid-cols-5">
+            {deliveryStages.map((step) => (
+              <div key={step.stage} className="bg-[#17343b] p-6">
+                <p className="font-mono text-xs text-white/42">{step.stage}</p>
+                <h3 className="mt-6 font-serif text-2xl font-normal">{step.title}</h3>
+                <p className="mt-4 text-sm leading-6 text-white/68">{step.body}</p>
+                <p className="mt-8 border-t border-white/10 pt-4 text-xs font-semibold uppercase tracking-[0.12em] text-[#b9d8d7]">
+                  {step.output}
+                </p>
               </div>
+            ))}
+          </div>
 
-              {helpSteps.slice(1).map((step) => {
-                const isActive = activeStep === step.label
-
-                return (
-                  <button
-                    type="button"
-                    key={step.label}
-                    onClick={() => setActiveStep(step.label)}
-                    aria-pressed={isActive}
-                    className={`flex min-h-[180px] flex-col justify-between border-t border-[#d9e2e3] p-7 text-left transition lg:min-h-[340px] lg:border-l lg:border-t-0 ${
-                      isActive ? 'bg-[#f2f7f7]' : 'bg-white hover:bg-[#f7faf9]'
-                    }`}
-                  >
-                    <span className="relative block h-5 w-5 text-[#46423f]">
-                      <span className="absolute left-0 top-0 h-2.5 w-2.5 border-l-2 border-t-2 border-current" />
-                      <span className="absolute bottom-0 right-0 h-2.5 w-2.5 border-b-2 border-r-2 border-current" />
-                    </span>
-                    <span className="font-serif text-2xl text-[#46423f]">{step.label}</span>
-                  </button>
-                )
-              })}
-            </div>
+          <div className="mt-10 grid gap-5 rounded-md border border-white/10 bg-white/[0.06] p-6 md:grid-cols-3">
+            {['Architecture documentation', 'Security and data handling model', 'Operating cadence for adoption'].map((item) => (
+              <div key={item} className="flex items-start gap-3">
+                <CheckCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-[#a8d8d5]" weight="fill" />
+                <p className="text-sm leading-6 text-white/75">{item}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section id="contact" className="py-24 sm:py-28">
-        <div className={`${sectionClass} grid gap-12 lg:grid-cols-[1fr_0.8fr] lg:items-end`}>
+      <section id="book-assessment" className="border-t border-[#e9e4df] bg-[#fbfaf8] py-20 sm:py-24">
+        <div className={`${sectionClass} grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start`}>
           <div>
-            <h2 className="max-w-3xl font-serif text-5xl font-normal leading-none text-[#46423f] sm:text-6xl">
-              Give Codex real work.
+            <p className="font-mono text-xs uppercase tracking-[0.18em] text-[#8b817a]">Codex assessment</p>
+            <h2 className="mt-4 font-serif text-4xl font-normal leading-tight text-[#343230] sm:text-5xl">
+              Find the first workflow worth delegating.
             </h2>
-            <p className="mt-7 max-w-2xl text-base leading-8 text-[#67615d] sm:text-lg">
-              Dockio helps teams pick the right starting points, wire them into enterprise systems,
-              and build the review habits that make Codex useful beyond the pilot.
+            <p className="mt-7 max-w-lg text-base leading-8 text-[#67615d] sm:text-lg">
+              Share the team, workflow, and timing. Dockio will review whether Codex can safely help,
+              what systems need to be connected, and what a practical pilot should measure.
             </p>
           </div>
-          <div className="flex flex-col gap-4 sm:flex-row lg:justify-end">
-            <Button
-              onClick={() => navigate('/contact')}
-              className="h-12 rounded-full bg-[#282523] px-7 text-white hover:bg-[#3a3632]"
-            >
-              Contact us <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-            <Button
-              onClick={() => navigate('/services')}
-              variant="outline"
-              className="h-12 rounded-full border-[#ded8d2] bg-white px-7 text-[#282523] hover:bg-[#f6f3ef]"
-            >
-              Explore services
-            </Button>
-          </div>
+
+          <Card className="rounded-md border-[#d9dedb] bg-white p-7 shadow-[0_18px_55px_rgba(37,31,28,0.06)]">
+            <div className="space-y-5">
+              <h3 className="font-serif text-3xl font-normal leading-tight text-[#343230]">Schedule online</h3>
+              <p className="text-base leading-7 text-[#67615d]">
+                Choose a time through Microsoft Bookings and share the workflow details in the booking notes.
+              </p>
+              <div className="grid gap-3 text-sm leading-6 text-[#67615d] sm:grid-cols-2">
+                {['Workflow owner and business outcome', 'Systems, sources, and review expectations'].map((item) => (
+                  <div key={item} className="flex items-start gap-3 rounded-md bg-[#f7f8f5] p-3">
+                    <CheckCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-[#1f6d73]" weight="fill" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+              <Button
+                asChild
+                className="h-12 rounded-full bg-[#193a42] px-7 text-white hover:bg-[#102b32]"
+              >
+                <a href={MICROSOFT_BOOKINGS_URL} target="_blank" rel="noopener noreferrer">
+                  Book a Codex assessment <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
+              <p className="text-sm leading-6 text-[#67615d]">
+                Prefer email? Write to{' '}
+                <a href="mailto:partnerships@dockio.in" className="font-medium text-[#282523] underline-offset-4 hover:underline">
+                  partnerships@dockio.in
+                </a>
+                .
+              </p>
+            </div>
+          </Card>
         </div>
       </section>
 
@@ -276,146 +359,158 @@ export function ServicesPage() {
   const { navigate } = useRouter()
   const services = [
     {
-      id: 'openai-codex-consulting',
-      title: 'OpenAI Codex consulting',
-      description: 'Strategy, architecture, security review, and rollout planning for Codex adoption across knowledge work.',
+      id: 'codex-workflow-assessment',
+      title: 'Codex Workflow Assessment',
+      description: 'Identify the first workflows where Codex can create measurable value without adding governance risk.',
       details: [
-        'Workflow selection for research, analysis, documents, code, and internal operations',
-        'Reference architecture, data boundaries, identity model, and review gates',
-        'Risk assessment for source access, sensitive data, and approval paths',
-        'Executive roadmap for pilot, production, and managed operations',
+        'Workflow intake with business owner, reviewer, and success criteria',
+        'Source, tool, and permission mapping',
+        'Pilot backlog ranked by value, effort, and reviewability',
+        'Rollout recommendation for the first governed use case',
       ],
-      ideal: 'Teams that want Codex to move from experimentation to reviewable business work',
+      outcome: 'A practical pilot scope with clear owners, sources, and acceptance checks.',
     },
     {
-      id: 'enterprise-knowledge-integration',
-      title: 'Enterprise knowledge integration',
-      description: 'Connect Codex to the repositories, documents, tickets, policies, and business systems teams already use.',
+      id: 'codex-workspace-integration',
+      title: 'Codex Workspace Integration',
+      description: 'Connect Codex to the approved context it needs: repositories, documents, cloud workflows, and operating tools.',
       details: [
-        'Approved-source mapping across code, docs, tickets, decisions, and spreadsheets',
-        'Retrieval and grounding patterns for source-linked answers and generated work',
-        'Permission-aware access design with SSO and role-based boundaries',
-        'Reusable source maps and context packs for repeat workflows',
+        'Repository, documentation, and internal tool connection planning',
+        'Access-control and source-boundary recommendations',
+        'Reusable workflow setup for repeatable business tasks',
+        'Review and escalation paths for human-in-the-loop delivery',
       ],
-      ideal: 'Knowledge-heavy teams that need source-grounded outputs instead of generic AI responses',
+      outcome: 'A Codex workspace model that supports real work without bypassing enterprise controls.',
     },
     {
-      id: 'aws-codex-deployment',
-      title: 'AWS Codex deployment',
-      description: 'Design, build, and operate Codex workflows in AWS with private connectivity and enterprise controls.',
+      id: 'rag-knowledge-grounding',
+      title: 'RAG and Knowledge Grounding',
+      description: 'Design retrieval and evidence flows for teams that need answers, summaries, and decisions grounded in approved knowledge.',
       details: [
-        'VPC, IAM, KMS, S3, logging, and observability architecture',
-        'Repository and document workflow integration with controlled service access',
-        'Deployment model for pilots, production rollout, and audit evidence',
-        'Operational runbooks for quality, cost, latency, and exception review',
+        'Document ingestion and source-quality assessment',
+        'Retrieval strategy across SharePoint, docs, tickets, and internal files',
+        'Evidence-linking and response review patterns',
+        'Evaluation checks for relevance, coverage, and hallucination risk',
       ],
-      ideal: 'AWS-first organizations that need Codex integrated with existing enterprise infrastructure',
+      outcome: 'Knowledge workflows that business reviewers can inspect, trust, and improve.',
     },
     {
-      id: 'azure-codex-implementation',
-      title: 'Azure Codex implementation',
-      description: 'Integrate Codex workflows with Azure OpenAI patterns, Entra ID, AKS, storage, and Azure Monitor.',
+      id: 'ai-agent-workflow-automation',
+      title: 'AI Agent Workflow Automation',
+      description: 'Automate repeatable knowledge work with tool use, orchestration, guardrails, and reviewable handoffs.',
       details: [
-        'Azure identity and access model for secure knowledge-work delegation',
-        'Document and repository integration with approved business sources',
-        'AKS, storage, networking, Key Vault, and monitoring implementation patterns',
-        'Governance documentation for security, procurement, and platform teams',
+        'Tool-calling and API integration design',
+        'Agent workflow orchestration for multi-step tasks',
+        'Failure handling, logs, and reviewer checkpoints',
+        'Reusable operating playbooks for common work patterns',
       ],
-      ideal: 'Azure-centered enterprises adopting Codex with Microsoft cloud controls',
+      outcome: 'Automation that improves cycle time while keeping accountability visible.',
     },
     {
-      id: 'managed-codex-operations',
-      title: 'Managed Codex operations',
-      description: 'Ongoing quality reviews, workflow updates, cost controls, and operational reporting after launch.',
+      id: 'cloud-ai-architecture',
+      title: 'Cloud AI Architecture',
+      description: 'Plan the cloud, security, and integration foundation for Codex, LLM, and RAG systems.',
       details: [
-        'Evaluation loops for generated work, source quality, and review outcomes',
-        'Prompt, skill, and workflow maintenance as teams learn what works',
-        'Usage, cost, quality, and adoption reporting for decision makers',
-        'Exception handling, incident review, and continuous improvement cadence',
+        'Azure AI Foundry, AWS Bedrock, OpenAI, and private cloud planning',
+        'Data handling and deployment model documentation',
+        'Security questionnaire and architecture artifact support',
+        'Production-readiness roadmap for pilot-to-scale movement',
       ],
-      ideal: 'Teams that need Codex to keep improving after the first production release',
+      outcome: 'A production-minded architecture path that procurement and technical reviewers can evaluate.',
     },
     {
-      id: 'workshops-assessments',
-      title: 'Workshops and assessments',
-      description: 'Hands-on sessions that help teams identify the right work, practice delegation, and define success metrics.',
+      id: 'enablement-governance',
+      title: 'Enablement and Governance',
+      description: 'Turn one-off pilots into repeatable operating habits for owners, reviewers, and delivery teams.',
       details: [
-        'Use-case discovery by function, pain, frequency, and reviewability',
-        'Live Codex delegation labs with real business and technical workflows',
-        'Readiness review for data, access, operating model, and procurement needs',
-        'Success metrics for time saved, reuse, review quality, and coverage',
+        'Hands-on delegation labs using real team work',
+        'Reviewer playbooks, definitions of done, and quality checks',
+        'Adoption reporting across reuse, coverage, quality, and risk',
+        'Governance cadence for scale decisions',
       ],
-      ideal: 'Business and technology leaders deciding where Codex should start',
+      outcome: 'A measured operating rhythm for scaling Codex responsibly.',
     },
   ]
 
+  const engagementStandards = [
+    'Named business owner and reviewer for each workflow',
+    'Documented source map, access model, and delivery assumptions',
+    'Procurement-ready artifacts for SOW, MSA, security, and governance review',
+  ]
+
   return (
-    <div className="min-h-screen bg-white pt-28">
-      <div className={`${sectionClass} py-16`}>
-        <div className="mb-12 max-w-3xl">
-          <h1 className="font-serif text-4xl font-normal tracking-normal text-[#46423f] lg:text-5xl">
-            Codex integration services
-          </h1>
-          <p className="mt-5 text-lg leading-8 text-slate-600">
-            Dockio helps enterprise teams plan, deploy, and operate OpenAI Codex workflows with trustworthy knowledge grounding.
-          </p>
+    <div className="min-h-screen bg-white pt-28 text-[#282523]">
+      <div className={`${sectionClass} py-16 sm:py-20`}>
+        <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
+          <div>
+            <p className="font-mono text-xs uppercase tracking-[0.18em] text-[#8b817a]">Services</p>
+            <h1 className="mt-4 max-w-3xl font-serif text-4xl font-normal leading-tight text-[#343230] lg:text-6xl">
+              Codex implementation services for enterprise teams
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-[#67615d]">
+              Dockio helps disciplined buyers assess, integrate, govern, and scale Codex workflows across
+              approved knowledge, cloud platforms, business systems, and review paths.
+            </p>
+          </div>
+
+          <div className="rounded-md border border-[#d9dedb] bg-[#f7f8f5] p-7">
+            <p className="font-mono text-xs uppercase tracking-[0.18em] text-[#7d746e]">Engagement standard</p>
+            <div className="mt-5 space-y-4">
+              {engagementStandards.map((item) => (
+                <div key={item} className="flex items-start gap-3 border-t border-[#d9dedb] pt-4 first:border-t-0 first:pt-0">
+                  <CheckCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-[#1f6d73]" weight="fill" />
+                  <p className="text-sm leading-6 text-[#615c58]">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
-        <div className="space-y-6">
+        <div className="mt-14 space-y-4">
           {services.map((service, index) => (
-            <Card key={service.id} id={service.id} className="scroll-mt-28 p-8">
-              <div className="flex flex-col lg:flex-row gap-8">
-                <div className="flex-1">
-                  <h2 className="text-2xl font-semibold text-foreground mb-3">
-                    {service.title}
-                  </h2>
-                  <p className="text-muted-foreground mb-6">
-                    {service.description}
-                  </p>
-                  <div className="space-y-2 mb-6">
+            <Card key={service.id} id={service.id} className="scroll-mt-28 rounded-md border-[#d9dedb] p-6 shadow-none">
+              <div className="grid gap-6 lg:grid-cols-[0.72fr_1.28fr]">
+                <div>
+                  <div className="flex items-center gap-3">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#edf3f1] font-mono text-xs text-[#31575d]">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <h2 className="font-serif text-2xl font-normal leading-tight text-[#343230]">{service.title}</h2>
+                  </div>
+                  <p className="mt-4 text-sm leading-6 text-[#67615d]">{service.description}</p>
+                </div>
+                <div>
+                  <div className="grid gap-3 sm:grid-cols-2">
                     {service.details.map((detail, idx) => (
                       <div key={idx} className="flex items-start gap-2">
-                        <CheckCircle className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" weight="duotone" />
-                        <span className="text-sm text-muted-foreground">{detail}</span>
+                        <CheckCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-[#1f6d73]" weight="duotone" />
+                        <span className="text-sm leading-6 text-[#67615d]">{detail}</span>
                       </div>
                     ))}
                   </div>
-                  <div className="bg-muted/30 rounded-lg p-4">
-                    <p className="text-sm font-medium text-foreground mb-1">Ideal For:</p>
-                    <p className="text-sm text-muted-foreground">{service.ideal}</p>
+                  <div className="mt-5 rounded-md bg-[#f7f8f5] p-4">
+                    <p className="mb-1 text-xs font-semibold uppercase tracking-[0.12em] text-[#8b817a]">Outcome</p>
+                    <p className="text-sm leading-6 text-[#615c58]">{service.outcome}</p>
                   </div>
                 </div>
               </div>
             </Card>
           ))}
         </div>
-        <Button onClick={() => navigate('/contact')} className="mt-10 bg-[#282523] hover:bg-[#3a3632]">
-          Discuss your integration
-        </Button>
-      </div>
-    </div>
-  )
-}
 
-export function TalentPage() {
-  const roles = ['AI solution architect', 'LLM application engineer', 'Cloud AI engineer', 'RAG and data engineer']
-
-  return (
-    <div className="min-h-screen bg-white pt-28">
-      <div className={`${sectionClass} py-16`}>
-        <h1 className="max-w-3xl font-serif text-4xl font-normal tracking-normal text-[#46423f] lg:text-5xl">
-          Enterprise AI delivery talent
-        </h1>
-        <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-600">
-          Dockio can support AI programs with specialized implementation capacity for Codex, LLM, RAG, and cloud deployment work.
-        </p>
-        <div className="mt-10 grid gap-4 md:grid-cols-4">
-          {roles.map((role) => (
-            <Card key={role} className="rounded-md border-slate-200 p-6 shadow-none">
-              <Users className="mb-4 h-7 w-7 text-[#284d59]" />
-              <h2 className="font-semibold text-slate-950">{role}</h2>
-            </Card>
-          ))}
+        <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+          <Button asChild className="h-12 rounded-full bg-[#193a42] px-7 text-white hover:bg-[#102b32]">
+            <a href={MICROSOFT_BOOKINGS_URL} target="_blank" rel="noopener noreferrer">
+              Book Assessment <ArrowRight className="ml-2 h-4 w-4" />
+            </a>
+          </Button>
+          <Button
+            onClick={() => navigate('/contact')}
+            variant="outline"
+            className="h-12 rounded-full border-[#ded8d2] bg-white px-7 text-[#282523] hover:bg-[#f7f4f1]"
+          >
+            Contact Dockio
+          </Button>
         </div>
       </div>
     </div>

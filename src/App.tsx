@@ -3,7 +3,7 @@ import { Navigation } from '@/components/Navigation'
 import { Footer } from '@/components/Footer'
 import { ContactPage } from '@/components/ContactPage'
 import { Toaster } from '@/components/ui/sonner'
-import { ServicesPage, TalentPage, IndustriesPage, CaseStudiesPage, PartnerReadinessPage, AboutPage, HomePage } from '@/components/AllPages'
+import { ServicesPage, IndustriesPage, CaseStudiesPage, PartnerReadinessPage, AboutPage, HomePage } from '@/components/AllPages'
 
 function App() {
   return (
@@ -16,9 +16,6 @@ function App() {
           </Route>
           <Route path="/services">
             <ServicesPage />
-          </Route>
-          <Route path="/talent">
-            <TalentPage />
           </Route>
           <Route path="/industries">
             <IndustriesPage />

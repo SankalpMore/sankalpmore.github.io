@@ -1,166 +1,110 @@
-import { useState, type FormEvent } from 'react'
-import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import { Textarea } from '@/components/ui/textarea'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { toast } from 'sonner'
-import { Calendar, EnvelopeSimple, Shield } from '@phosphor-icons/react'
+import { Button } from '@/components/ui/button'
+import { MICROSOFT_BOOKINGS_URL } from '@/lib/bookings'
+import { Calendar, EnvelopeSimple } from '@phosphor-icons/react'
 
 export function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    inquiryType: '',
-    message: '',
-  })
-
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    toast.success('Thank you. Dockio will review your Codex integration request and respond within 24 business hours.')
-    setFormData({ name: '', email: '', company: '', inquiryType: '', message: '' })
-  }
-
   return (
-    <div className="min-h-screen bg-white pt-24">
-      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <div className="mb-16 max-w-3xl">
-          <h1 className="mb-4 text-4xl font-semibold tracking-normal text-slate-950 lg:text-5xl">
-            Book a Codex Integration Assessment
+    <div className="min-h-screen bg-white pt-24 text-[#282523]">
+      <div className="mx-auto max-w-[1180px] px-5 py-16 sm:px-6 lg:px-8">
+        <div className="mb-14 max-w-3xl">
+          <h1 className="mb-5 font-serif text-4xl font-normal leading-tight text-[#343230] lg:text-5xl">
+            Start a Conversation
           </h1>
-          <p className="text-lg leading-8 text-slate-600">
-            Tell us where Codex should connect with your repositories, documents, workflows, AWS, Azure, or business
-            systems. We will review fit, risk, and deployment path before the call.
+          <p className="text-lg leading-8 text-[#67615d]">
+            Whether you need Codex implementation support, project delivery, vendor discussions, or
+            strategic consulting, Dockio can help enterprise teams move AI work into governed operations.
           </p>
         </div>
 
-        <div className="grid gap-12 lg:grid-cols-3">
+        <div className="grid gap-10 lg:grid-cols-3">
           <div className="lg:col-span-2">
-            <Card className="rounded-md border-slate-200 p-8 shadow-none">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid gap-6 md:grid-cols-2">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Full name</Label>
-                    <Input
-                      id="name"
-                      value={formData.name}
-                      onChange={(event) => setFormData({ ...formData, name: event.target.value })}
-                      required
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Business email</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={(event) => setFormData({ ...formData, email: event.target.value })}
-                      required
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="company">Organization</Label>
-                  <Input
-                    id="company"
-                    value={formData.company}
-                    onChange={(event) => setFormData({ ...formData, company: event.target.value })}
-                    required
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="inquiry-type">Inquiry type</Label>
-                  <Select
-                    value={formData.inquiryType}
-                    onValueChange={(value) => setFormData({ ...formData, inquiryType: value })}
-                  >
-                    <SelectTrigger id="inquiry-type">
-                      <SelectValue placeholder="Select inquiry type" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="codex">OpenAI Codex integration</SelectItem>
-                      <SelectItem value="knowledge">Enterprise knowledge integration</SelectItem>
-                      <SelectItem value="cloud">AWS or Azure Codex deployment</SelectItem>
-                      <SelectItem value="managed">Managed Codex operations</SelectItem>
-                      <SelectItem value="vendor">Vendor onboarding discussion</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="message">Message</Label>
-                  <Textarea
-                    id="message"
-                    rows={6}
-                    value={formData.message}
-                    onChange={(event) => setFormData({ ...formData, message: event.target.value })}
-                    placeholder="Tell us about the repositories, documents, systems, or knowledge workflows Codex should help with..."
-                    required
-                  />
-                </div>
-
-                <Button type="submit" size="lg" className="w-full bg-teal-700 hover:bg-teal-800">
-                  Submit assessment request
-                </Button>
-
-                <p className="text-center text-xs text-slate-500">
-                  We typically respond to enterprise inquiries within 24 business hours.
+            <Card className="rounded-md border-[#d9dedb] p-8 shadow-[0_18px_55px_rgba(37,31,28,0.06)]">
+              <div className="max-w-2xl">
+                <h2 className="mb-3 font-serif text-3xl font-normal leading-tight text-[#343230]">
+                  Book a discovery call
+                </h2>
+                <p className="mb-8 leading-7 text-[#67615d]">
+                  Schedule a time through Microsoft Bookings. You can add context about your Codex workflow,
+                  deployment needs, or partnership discussion while booking.
                 </p>
-              </form>
+                <div className="flex flex-col gap-3 sm:flex-row">
+                  <Button asChild size="lg" className="rounded-full bg-[#193a42] px-6 hover:bg-[#102b32]">
+                    <a href={MICROSOFT_BOOKINGS_URL} target="_blank" rel="noopener noreferrer">
+                      Schedule online
+                    </a>
+                  </Button>
+                  <Button asChild size="lg" variant="outline" className="rounded-full border-[#ded8d2] px-6">
+                    <a href="mailto:partnerships@dockio.in">Email partnerships@dockio.in</a>
+                  </Button>
+                </div>
+              </div>
             </Card>
           </div>
 
           <div className="space-y-6">
-            <Card className="rounded-md border-slate-200 p-6 shadow-none">
-              <h3 className="mb-4 font-semibold text-slate-950">Direct contact</h3>
+            <Card className="rounded-md border-[#d9dedb] p-6 shadow-none">
+              <h3 className="mb-4 font-semibold text-[#282523]">Direct Contact</h3>
               <div className="space-y-4 text-sm">
                 <div className="flex items-start gap-3">
-                  <EnvelopeSimple className="mt-0.5 h-5 w-5 text-teal-700" />
+                  <EnvelopeSimple className="mt-0.5 h-5 w-5 text-[#1f6d73]" />
                   <div>
-                    <p className="mb-1 font-medium text-slate-950">Email</p>
-                    <a href="mailto:partnerships@dockio.in" className="text-slate-600 transition-colors hover:text-teal-800">
+                    <p className="mb-1 font-medium text-[#282523]">Email</p>
+                    <a
+                      href="mailto:partnerships@dockio.in"
+                      className="text-[#67615d] transition-colors hover:text-[#1f6d73]"
+                    >
                       partnerships@dockio.in
                     </a>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Calendar className="mt-0.5 h-5 w-5 text-teal-700" />
+                  <Calendar className="mt-0.5 h-5 w-5 text-[#1f6d73]" />
                   <div>
-                    <p className="mb-1 font-medium text-slate-950">Book a call</p>
-                    <p className="text-slate-600">30-minute integration discovery calls available</p>
+                    <p className="mb-1 font-medium text-[#282523]">Book a Call</p>
+                    <a
+                      href={MICROSOFT_BOOKINGS_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#67615d] transition-colors hover:text-[#1f6d73]"
+                    >
+                      Schedule online
+                    </a>
                   </div>
                 </div>
               </div>
             </Card>
 
-            <Card className="rounded-md border-slate-200 p-6 shadow-none">
-              <h3 className="mb-4 font-semibold text-slate-950">What happens next?</h3>
-              <ul className="space-y-3 text-sm text-slate-600">
-                {[
-                  'We review your goals, data sources, cloud environment, and risk profile.',
-                  'We schedule a discovery call with business and technical stakeholders.',
-                  'We outline a Codex integration approach for AWS, Azure, or hybrid cloud.',
-                  'We define scope, controls, success criteria, and the next delivery step.',
-                ].map((item, index) => (
-                  <li key={item} className="flex gap-3">
-                    <span className="font-semibold text-teal-700">{index + 1}.</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+            <Card className="rounded-md border-[#d9dedb] p-6 shadow-none">
+              <h3 className="mb-4 font-semibold text-[#282523]">Response Time</h3>
+              <p className="mb-4 text-sm leading-6 text-[#67615d]">
+                Enterprise inquiries are prioritized and typically receive a response within 24 business hours.
+              </p>
+              <p className="text-sm leading-6 text-[#67615d]">
+                For urgent AI deployment needs, email partnerships@dockio.in with "URGENT" in your subject.
+              </p>
             </Card>
 
-            <Card className="rounded-md border-slate-200 bg-slate-50 p-6 shadow-none">
-              <Shield className="mb-4 h-7 w-7 text-teal-700" />
-              <h3 className="mb-3 font-semibold text-slate-950">Procurement-ready conversation</h3>
-              <p className="text-sm leading-6 text-slate-600">
-                We can support architecture reviews, security questionnaires, SOW scoping, vendor onboarding, and
-                deployment governance discussions.
-              </p>
+            <Card className="rounded-md border-none bg-[#f7f8f5] p-6 shadow-none">
+              <h3 className="mb-3 font-semibold text-[#282523]">What Happens Next?</h3>
+              <ul className="space-y-3 text-sm leading-6 text-[#67615d]">
+                <li className="flex gap-2">
+                  <span className="font-semibold text-[#1f6d73]">1.</span>
+                  <span>We review your inquiry and assess fit</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="font-semibold text-[#1f6d73]">2.</span>
+                  <span>Schedule a discovery call to understand needs</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="font-semibold text-[#1f6d73]">3.</span>
+                  <span>Provide capability overview and proposed approach</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="font-semibold text-[#1f6d73]">4.</span>
+                  <span>Discuss engagement structure and next steps</span>
+                </li>
+              </ul>
             </Card>
           </div>
         </div>
