@@ -40,7 +40,7 @@ TECHNICAL EXPERTISE
 DELIVERY STANDARDS
 - SOW & MSA compliant
 - Milestone-based execution
-- Documentation discipline
+- Clear documentation
 - Enterprise communication standards
 - Security, data handling, and governance alignment
 
