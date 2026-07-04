@@ -103,11 +103,11 @@ export function HomePage() {
         <div className={`${sectionClass} grid gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:items-start`}>
           <div>
             <h1 className="max-w-3xl font-serif text-5xl font-normal leading-[0.98] text-[#343230] sm:text-6xl lg:text-6xl xl:text-[66px]">
-              Codex implementation for teams with clear owners and review paths
+              Work faster with Codex
             </h1>
             <p className="mt-7 max-w-2xl text-base leading-8 text-[#67615d] sm:text-lg">
-              Dockio helps transformation, operations, finance, and GTM leaders turn Codex into governed
-              workflows across approved tools, documents, and review paths.
+              Dockio helps transformation, operations, finance, and GTM leaders connect Codex to approved
+              tools, documents, and review steps so teams can move work forward with less manual handoff.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Button
@@ -198,7 +198,7 @@ export function HomePage() {
             <div>
               <p className="font-mono text-xs uppercase tracking-[0.18em] text-[#8b817a]">Workflow fit</p>
               <h2 className="mt-4 max-w-xl font-serif text-4xl font-normal leading-tight text-[#343230] sm:text-5xl">
-                Where teams should use Codex first
+                Where Codex can help first
               </h2>
             </div>
             <div className="max-w-2xl text-base leading-8 text-[#615c58] sm:text-lg">
@@ -213,7 +213,7 @@ export function HomePage() {
             <div className="rounded-md bg-[#f7f8f5] p-7 ring-1 ring-[#dde5e2] lg:sticky lg:top-28">
               <p className="font-mono text-xs uppercase tracking-[0.18em] text-[#7d746e]">Best-fit buyer profile</p>
               <h3 className="mt-5 font-serif text-3xl font-normal leading-tight text-[#343230]">
-                Dockio works best when the buyer has owners, sources, and review steps in place.
+                Best fit: teams with owners, approved sources, and review steps.
               </h3>
               <div className="mt-8 space-y-5 text-sm leading-6 text-[#67615d]">
                 {[
