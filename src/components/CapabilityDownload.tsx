@@ -27,8 +27,8 @@ ENGAGEMENT MODELS
 
 TARGET CLIENTS
 - Enterprise transformation leaders
-- Finance, operations, procurement, GTM, and technology owners
-- Organizations with mature vendor onboarding and clear review paths
+- Finance, operations, procurement, sales, and technology owners
+- Organizations with clear approval and review paths
 - Teams moving from AI experimentation to governed production workflows
 
 TECHNICAL EXPERTISE
@@ -40,13 +40,13 @@ TECHNICAL EXPERTISE
 DELIVERY STANDARDS
 - SOW & MSA compliant
 - Milestone-based execution
-- Documentation discipline
+- Clear documentation
 - Enterprise communication standards
 - Security, data handling, and governance alignment
 
 BEST-FIT WORKFLOWS
 - Finance and procurement analysis
-- Revenue and GTM research or follow-up preparation
+- Revenue and sales research or follow-up preparation
 - Delivery operations, SOPs, tickets, and runbooks
 - Technology and data team implementation support
 - Strategy and transformation decision memos
@@ -82,7 +82,7 @@ Copyright ${new Date().getFullYear()} Dockio Technosolutions Private Limited. Al
           </h3>
           <p className="text-sm leading-6 text-[#67615d]">
             Procurement-ready overview of Dockio's Codex implementation capabilities, engagement models,
-            governance standards, and best-fit workflow areas.
+            governance standards, and recommended workflow areas.
           </p>
           <div className="mt-4 grid gap-2 text-sm text-[#67615d] sm:grid-cols-2">
             {['SOW and MSA context', 'Architecture and data handling notes'].map((item) => (
