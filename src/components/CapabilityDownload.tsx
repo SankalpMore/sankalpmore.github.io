@@ -25,10 +25,10 @@ ENGAGEMENT MODELS
 - Enablement and reviewer training
 - Pilot-to-scale governance support
 
-TARGET CLIENTS
+ORGANIZATIONS SUPPORTED
 - Enterprise transformation leaders
-- Finance, operations, procurement, GTM, and technology owners
-- Organizations with mature vendor onboarding and clear review paths
+- Finance, operations, customer-facing, and technology owners
+- Organizations with clear owners and review paths
 - Teams moving from AI experimentation to governed production workflows
 
 TECHNICAL EXPERTISE
@@ -44,12 +44,12 @@ DELIVERY STANDARDS
 - Enterprise communication standards
 - Security, data handling, and governance alignment
 
-BEST-FIT WORKFLOWS
-- Finance and procurement analysis
-- Revenue and GTM research or follow-up preparation
+WORKFLOW AREAS
+- Finance and operations analysis
+- Customer and growth research or follow-up preparation
 - Delivery operations, SOPs, tickets, and runbooks
 - Technology and data team implementation support
-- Strategy and transformation decision memos
+- Transformation planning decision memos
 
 CONTACT
 partnerships@dockio.in
@@ -81,8 +81,8 @@ Copyright ${new Date().getFullYear()} Dockio Technosolutions Private Limited. Al
             Download Codex capability statement
           </h3>
           <p className="text-sm leading-6 text-[#67615d]">
-            Procurement-ready overview of Dockio's Codex implementation capabilities, engagement models,
-            governance standards, and best-fit workflow areas.
+            Enterprise-ready overview of Dockio's Codex implementation capabilities, engagement models,
+            governance standards, and workflow areas.
           </p>
           <div className="mt-4 grid gap-2 text-sm text-[#67615d] sm:grid-cols-2">
             {['SOW and MSA context', 'Architecture and data handling notes'].map((item) => (

@@ -1,10 +1,10 @@
 # Product Requirements Document: Dockio Enterprise AI Partner Website
 
-A premium B2B website positioning Dockio as a credible, enterprise-grade AI implementation boutique and technical partnership firm for procurement teams, partner managers, and AI transformation leaders at global organizations.
+A premium B2B website positioning Dockio as a credible, enterprise-grade AI implementation boutique and technical partnership firm for enterprise teams and AI transformation leaders at global organizations.
 
 ## Latest Updates (Current Iteration)
 - Enhanced hero section with improved animations and gradient overlays
-- Added comprehensive FAQ section addressing common procurement questions
+- Added comprehensive FAQ section addressing common enterprise evaluation questions
 - Implemented downloadable capability statement functionality
 - Upgraded card hover states with smooth transitions and elevation effects
 - Improved trust strip section with interactive icon animations
@@ -17,20 +17,20 @@ A premium B2B website positioning Dockio as a credible, enterprise-grade AI impl
 3. **Technical Depth** - Demonstrated expertise through judicious technical detail and clear domain knowledge without overwhelming or dumbing down
 
 **Complexity Level**: Complex Application (advanced functionality, likely with multiple views)
-This is a multi-page enterprise marketing website with dynamic routing, sophisticated content architecture, downloadable resources, contact qualification flows, and comprehensive service/industry matrices requiring careful state management and navigation. The positioning demands precision across all touchpoints to establish trust with enterprise buyers.
+This is a multi-page enterprise marketing website with dynamic routing, sophisticated content architecture, downloadable resources, contact intake flows, and comprehensive service/industry matrices requiring careful state management and navigation. The positioning demands precision across all touchpoints to establish trust with enterprise stakeholders.
 
 ## Essential Features
 
 ### Multi-Page Navigation System
 - **Functionality**: Sticky header navigation with smooth page routing across 8 core pages (Home, Services, Talent Models, Industries, Case Studies, Partner Readiness, About, Contact)
-- **Purpose**: Enable enterprise buyers to self-qualify and find relevant information efficiently
+- **Purpose**: Enable enterprise stakeholders to find relevant information efficiently
 - **Trigger**: User clicks navigation items or CTAs
 - **Progression**: Click nav item → smooth route transition → page loads with appropriate scroll position → content renders
 - **Success criteria**: Sub-100ms perceived navigation, clear active state, mobile-responsive drawer
 
 ### Hero Section with Dual CTAs
 - **Functionality**: Premium hero with enterprise-focused headline, subheadline, and two distinct CTAs (primary: Book Discovery Call, secondary: Explore Capabilities)
-- **Purpose**: Immediately communicate positioning and provide clear next actions for different buyer stages
+- **Purpose**: Immediately communicate positioning and provide clear next actions for different visitor stages
 - **Trigger**: Page load
 - **Progression**: Load → headline animates in → subheadline appears → CTAs become interactive
 - **Success criteria**: Clear value prop in <5 seconds, CTAs visually distinct, mobile-optimized
@@ -44,7 +44,7 @@ This is a multi-page enterprise marketing website with dynamic routing, sophisti
 
 ### Engagement Models Configurator
 - **Functionality**: Interactive presentation of hiring models (dedicated team, staff aug, project-based, fractional leadership, pod delivery)
-- **Purpose**: Help procurement teams understand flexibility and match their procurement patterns
+- **Purpose**: Help enterprise teams understand flexibility and match their engagement needs
 - **Trigger**: View Talent/Hiring Models page
 - **Progression**: Land on page → see model comparison → select model type → view ideal use cases and structure
 - **Success criteria**: Clear differentiation between models, enterprise context for each
@@ -63,12 +63,12 @@ This is a multi-page enterprise marketing website with dynamic routing, sophisti
 - **Progression**: View gallery → select engagement → read structured narrative → understand capability
 - **Success criteria**: Credible storytelling, no fake logos/names, business-outcome focused
 
-### Vendor Readiness Documentation
+### Enterprise Readiness Documentation
 - **Functionality**: Enterprise onboarding-ready page detailing SOW alignment, milestone delivery, documentation standards, communication protocols, NDA handling
-- **Purpose**: Address procurement/partner team concerns about working with smaller firm
+- **Purpose**: Address enterprise evaluation concerns about working with a smaller firm
 - **Trigger**: Navigate to Partner/Vendor Readiness page
-- **Progression**: Procurement team reviews → finds governance info → assesses readiness → initiates conversation
-- **Success criteria**: Addresses all standard vendor questions, feels enterprise-grade
+- **Progression**: Enterprise team reviews → finds governance info → assesses readiness → initiates conversation
+- **Success criteria**: Addresses standard evaluation questions, feels enterprise-grade
 
 ### Downloadable Capability Assets
 - **Functionality**: One-page capability statement and company profile available for download
@@ -78,18 +78,18 @@ This is a multi-page enterprise marketing website with dynamic routing, sophisti
 - **Success criteria**: Professional formatting, suitable for forwarding to decision makers
 
 ### Qualified Contact Form
-- **Functionality**: Enterprise contact form with inquiry type pre-qualification (AI staffing, consulting, subcontracting, project, vendor onboarding)
-- **Purpose**: Filter serious enterprise inquiries and route appropriately
+- **Functionality**: Enterprise contact form with inquiry type routing (AI staffing, consulting, subcontracting, project, implementation planning)
+- **Purpose**: Route enterprise inquiries appropriately
 - **Trigger**: Navigate to Contact page or click CTA
 - **Progression**: Select inquiry type → fill relevant fields → submit → confirmation with expected response time
 - **Success criteria**: No spam feel, professional validation, clear next steps
 
 ### Talent Profile Showcase
 - **Functionality**: Display of AI professional types available (AI Engineers, GenAI Engineers, ML Engineers, Solution Architects, LLM Engineers, Data+AI Engineers, Product-minded Consultants)
-- **Purpose**: Demonstrate talent quality and screening rigor for staff aug buyers
+- **Purpose**: Demonstrate talent quality and delivery standards for enterprise teams
 - **Trigger**: Scroll to talent section or view Talent page
-- **Progression**: View role types → understand screening approach → see communication/ownership standards
-- **Success criteria**: Differentiates from commodity staffing vendors
+- **Progression**: View role types → understand review approach → see communication/ownership standards
+- **Success criteria**: Differentiates from generic staffing providers
 
 ## Edge Case Handling
 - **Empty State Handling**: Case studies use "Representative Engagement Areas" language when real projects unavailable - maintains credibility
@@ -98,12 +98,12 @@ This is a multi-page enterprise marketing website with dynamic routing, sophisti
 - **Slow Network Loading**: Skeleton states for content-heavy sections - maintains premium feel during load
 - **Missing Content Sections**: Graceful omission rather than "coming soon" - preserves professional image
 - **PDF Generation Failure**: Fallback to formatted HTML view with print styles - ensures capability sharing works
-- **Over-zealous Buyers**: FAQ section addresses common questions preemptively - reduces low-quality inquiries
+- **Extra-detail Requests**: FAQ section addresses common questions preemptively - reduces low-context inquiries
 
 ## Design Direction
 The design should evoke the feeling of reviewing a premium technical consultancy or specialized AI implementation boutique—not a staffing agency, not a freelancer collective, not a generic IT services firm. Think of the visual and tonal sophistication expected by:
 - Microsoft or AWS partner program managers evaluating new ecosystem members
-- Deloitte or Accenture procurement leads assessing subcontractors
+- Enterprise services teams evaluating implementation partners
 - Fortune 500 CTOs considering technical partnerships
 - PE-backed software companies evaluating AI implementation partners
 
@@ -117,7 +117,7 @@ The aesthetic must be confident, minimal, precise, execution-focused, and techni
 
 **Secondary Color**: Refined Slate `oklch(0.42 0.015 245)` - Muted, sophisticated secondary for less critical UI elements. Maintains professional restraint.
 
-**Accent Color**: Intelligent Teal `oklch(0.58 0.12 200)` - Purposeful highlight suggesting AI/technology without being trendy or playful. Used for hover states, active elements, and strategic visual punctuation.
+**Accent Color**: Intelligent Teal `oklch(0.58 0.12 200)` - Purposeful highlight suggesting AI/technology without being trendy or playful. Used for hover states, active elements, and selective visual punctuation.
 
 **Background**: Sophisticated Cool White `oklch(0.985 0.002 240)` - Nearly white with the slightest cool undertone. Creates breathing room without stark clinical feel.
 

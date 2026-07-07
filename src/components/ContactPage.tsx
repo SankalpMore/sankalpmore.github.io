@@ -12,8 +12,8 @@ export function ContactPage() {
             Start a Conversation
           </h1>
           <p className="text-lg leading-8 text-[#67615d]">
-            Whether you need Codex implementation support, project delivery, vendor discussions, or
-            strategic consulting, Dockio can help enterprise teams move AI work into governed operations.
+            Whether you need Codex implementation support, project delivery, implementation planning, or
+            advisory support, Dockio can help enterprise teams move AI work into governed operations.
           </p>
         </div>
 
@@ -90,7 +90,7 @@ export function ContactPage() {
               <ul className="space-y-3 text-sm leading-6 text-[#67615d]">
                 <li className="flex gap-2">
                   <span className="font-semibold text-[#1f6d73]">1.</span>
-                  <span>We review your inquiry and assess fit</span>
+                  <span>We review your inquiry and implementation context</span>
                 </li>
                 <li className="flex gap-2">
                   <span className="font-semibold text-[#1f6d73]">2.</span>
