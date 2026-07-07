@@ -26,41 +26,41 @@ export function HomePage() {
       body: 'Source maps, permission boundaries, review paths, acceptance checks, and reusable operating playbooks.',
     },
     {
-      title: 'Procurement-ready execution',
-      body: 'Structured pilots, clear owners, delivery documentation, SOW alignment, and measurable rollout gates.',
+      title: 'Enterprise-ready execution',
+      body: 'Structured pilots, clear owners, delivery documentation, review alignment, and measurable rollout gates.',
     },
   ]
 
   const applicationAreas = [
     {
-      title: 'Finance and procurement',
-      owner: 'CFO office / procurement operations',
-      body: 'Prepare reviewable analysis, summarize exceptions, compare vendor material, and package evidence for approvals.',
-      signal: 'Strong fit when the process already has audit discipline, named reviewers, and repeatable decision cycles.',
+      title: 'Finance and operations',
+      owner: 'CFO office / operations teams',
+      body: 'Prepare reviewable analysis, summarize exceptions, compare supporting material, and package evidence for approvals.',
+      signal: 'Works best when the process already has audit discipline, named reviewers, and repeatable decision cycles.',
     },
     {
-      title: 'Revenue and GTM',
-      owner: 'Sales, partner, and revenue operations',
+      title: 'Customer and growth operations',
+      owner: 'Customer, partner, and operations teams',
       body: 'Create account research, proposal drafts, follow-up summaries, and CRM-ready notes from approved sources.',
-      signal: 'Strong fit when teams already track handoffs, CRM hygiene, and enterprise follow-through.',
+      signal: 'Works best when teams already track handoffs, CRM hygiene, and enterprise follow-through.',
     },
     {
       title: 'Delivery operations',
       owner: 'COO office / program operations',
       body: 'Turn SOPs, tickets, runbooks, and project notes into trackable next actions, summaries, and delivery updates.',
-      signal: 'Strong fit when work is process-heavy, documented, and owned by operations leaders who can enforce review.',
+      signal: 'Works best when work is process-heavy, documented, and owned by operations leaders who can enforce review.',
     },
     {
       title: 'Technology and data teams',
       owner: 'CTO office / AI transformation team',
       body: 'Connect repositories, internal docs, cloud workflows, and data tools so Codex can support implementation safely.',
-      signal: 'Strong fit when there are access controls, technical owners, and a clear path from pilot to production.',
+      signal: 'Works best when there are access controls, technical owners, and a clear path from pilot to production.',
     },
     {
-      title: 'Strategy and transformation',
-      owner: 'Strategy / transformation office',
+      title: 'Transformation planning',
+      owner: 'Transformation office',
       body: 'Synthesize research, compare internal documents, and create decision memos that keep assumptions visible.',
-      signal: 'Strong fit when leadership buys through structured pilots, governance review, and evidence-backed decisions.',
+      signal: 'Works best when leadership uses structured pilots, governance review, and evidence-backed decisions.',
     },
   ]
 
@@ -80,7 +80,7 @@ export function HomePage() {
     {
       stage: '03',
       title: 'Implement',
-      body: 'Configure workflows, prompts, skills, checks, and operating routines around real business work.',
+      body: 'Configure workflows, skills, checks, and operating routines around real business work.',
       output: 'Working system',
     },
     {
@@ -106,7 +106,7 @@ export function HomePage() {
               Codex implementation for disciplined enterprise teams
             </h1>
             <p className="mt-7 max-w-2xl text-base leading-8 text-[#67615d] sm:text-lg">
-              Dockio helps transformation, operations, finance, and GTM leaders turn Codex into governed
+              Dockio helps transformation, operations, finance, and customer-facing leaders turn Codex into governed
               workflows across approved tools, documents, and review paths.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -134,8 +134,8 @@ export function HomePage() {
                 Architecture, delivery governance, enablement, documentation, and rollout gates.
               </p>
               <p>
-                <span className="block font-semibold text-[#282523]">Buyer fit</span>
-                Teams with procurement maturity, ethical vendor onboarding, and named owners.
+                <span className="block font-semibold text-[#282523]">Operating fit</span>
+                Teams with clear ownership, review paths, and named implementation owners.
               </p>
             </div>
           </div>
@@ -198,7 +198,7 @@ export function HomePage() {
             <div>
               <p className="font-mono text-xs uppercase tracking-[0.18em] text-[#8b817a]">Workflow fit</p>
               <h2 className="mt-4 max-w-xl font-serif text-4xl font-normal leading-tight text-[#343230] sm:text-5xl">
-                Where serious AI buyers should use Codex first
+                Where enterprise teams should use Codex first
               </h2>
             </div>
             <div className="max-w-2xl text-base leading-8 text-[#615c58] sm:text-lg">
@@ -211,14 +211,14 @@ export function HomePage() {
 
           <div className="mt-12 grid gap-6 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
             <div className="rounded-md bg-[#f7f8f5] p-7 ring-1 ring-[#dde5e2] lg:sticky lg:top-28">
-              <p className="font-mono text-xs uppercase tracking-[0.18em] text-[#7d746e]">Best-fit buyer profile</p>
+              <p className="font-mono text-xs uppercase tracking-[0.18em] text-[#7d746e]">Implementation readiness</p>
               <h3 className="mt-5 font-serif text-3xl font-normal leading-tight text-[#343230]">
-                SI-grade delivery works best when the buyer is disciplined.
+                Enterprise AI works best when the operating context is clear.
               </h3>
               <div className="mt-8 space-y-5 text-sm leading-6 text-[#67615d]">
                 {[
-                  ['Buying motion', 'Ethical vendor onboarding, procurement discipline, and reliable payment behavior.'],
-                  ['Implementation owner', 'A transformation, operations, finance, GTM, or technology leader who can sponsor a pilot.'],
+                  ['Commercial review', 'Clear ownership, review steps, and timely decision-making.'],
+                  ['Implementation owner', 'A transformation, operations, finance, customer-facing, or technology leader who can sponsor a pilot.'],
                   ['Workflow shape', 'Source-backed, repeatable work where output quality can be reviewed by business owners.'],
                 ].map(([label, text]) => (
                   <div key={label} className="border-t border-[#dde5e2] pt-5">
@@ -250,7 +250,7 @@ export function HomePage() {
                       <p>{area.body}</p>
                     </div>
                     <div>
-                      <p className="mb-2 text-xs font-semibold uppercase text-[#8b817a]">ICP fit signal</p>
+                      <p className="mb-2 text-xs font-semibold uppercase text-[#8b817a]">Readiness signal</p>
                       <p>{area.signal}</p>
                     </div>
                   </div>
@@ -274,7 +274,7 @@ export function HomePage() {
               </h2>
             </div>
             <p className="max-w-2xl text-base leading-8 text-white/72 sm:text-lg">
-              Dockio brings the delivery habits buyers expect from a service integrator, but keeps the scope
+              Dockio brings the delivery habits enterprise teams expect from an implementation partner, but keeps the scope
               narrow: Codex, LLM workflow automation, RAG, cloud AI, and governed knowledge work.
             </p>
           </div>
@@ -388,7 +388,7 @@ export function ServicesPage() {
       description: 'Design retrieval and evidence flows for teams that need answers, summaries, and decisions grounded in approved knowledge.',
       details: [
         'Document ingestion and source-quality assessment',
-        'Retrieval strategy across SharePoint, docs, tickets, and internal files',
+        'Retrieval design across SharePoint, docs, tickets, and internal files',
         'Evidence-linking and response review patterns',
         'Evaluation checks for relevance, coverage, and hallucination risk',
       ],
@@ -416,7 +416,7 @@ export function ServicesPage() {
         'Security questionnaire and architecture artifact support',
         'Production-readiness roadmap for pilot-to-scale movement',
       ],
-      outcome: 'A production-minded architecture path that procurement and technical reviewers can evaluate.',
+      outcome: 'A production-minded architecture path that commercial and technical reviewers can evaluate.',
     },
     {
       id: 'enablement-governance',
@@ -435,7 +435,7 @@ export function ServicesPage() {
   const engagementStandards = [
     'Named business owner and reviewer for each workflow',
     'Documented source map, access model, and delivery assumptions',
-    'Procurement-ready artifacts for SOW, MSA, security, and governance review',
+    'Review-ready artifacts for SOW, MSA, security, and governance review',
   ]
 
   return (
@@ -448,7 +448,7 @@ export function ServicesPage() {
               Codex implementation services for enterprise teams
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-[#67615d]">
-              Dockio helps disciplined buyers assess, integrate, govern, and scale Codex workflows across
+              Dockio helps enterprise teams assess, integrate, govern, and scale Codex workflows across
               approved knowledge, cloud platforms, business systems, and review paths.
             </p>
           </div>
@@ -598,10 +598,10 @@ export function PartnerReadinessPage() {
     <div className="min-h-screen bg-white pt-28">
       <div className={`${sectionClass} py-16`}>
         <h1 className="max-w-3xl font-serif text-4xl font-normal tracking-normal text-[#46423f] lg:text-5xl">
-          Enterprise and vendor readiness
+          Enterprise readiness
         </h1>
         <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-600">
-          Information for procurement teams, partner managers, and organizations evaluating Dockio for Codex integration delivery.
+          Information for organizations evaluating Dockio for secure Codex integration delivery.
         </p>
         <div className="mt-10 grid gap-4 md:grid-cols-3">
           {standards.map((item) => (
