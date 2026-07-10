@@ -29,7 +29,7 @@ This is a multi-page enterprise marketing website with dynamic routing, sophisti
 - **Success criteria**: Sub-100ms perceived navigation, clear active state, mobile-responsive drawer
 
 ### Hero Section with Dual CTAs
-- **Functionality**: Premium hero with enterprise-focused headline, subheadline, and two distinct CTAs (primary: Book Discovery Call, secondary: Explore Capabilities)
+- **Functionality**: Premium hero with enterprise-focused headline, subheadline, and two distinct CTAs (primary: Plan Your AI Adoption Audit, secondary: How the 2-Week Audit Works)
 - **Purpose**: Immediately communicate positioning and provide clear next actions for different visitor stages
 - **Trigger**: Page load
 - **Progression**: Load → headline animates in → subheadline appears → CTAs become interactive

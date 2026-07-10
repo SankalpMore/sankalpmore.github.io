@@ -1,0 +1,100 @@
+- generic:
+  - generic:
+    - generic:
+      - navigation:
+        - generic:
+          - generic:
+            - button: Dockio
+            - generic:
+              - button: Industries
+              - button: Services
+              - button [expanded]: Use Cases
+              - button: Company
+            - generic:
+              - button: Plan Your AI Adoption Audit
+      - main:
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - paragraph: Use cases
+                - heading [level=1]: Practical ways teams get work done with ChatGPT Work.
+                - paragraph: Explore task patterns by function. Each one starts with approved context, a clear output, and a human who remains accountable for what is used.
+              - generic:
+                - button:
+                  - generic: "01"
+                  - heading [level=2]: Finance
+                  - paragraph: Prepare reviewable commentary and exception views from approved financial sources.
+                - button:
+                  - generic: "02"
+                  - heading [level=2]: Ops
+                  - paragraph: Keep day-to-day operations aligned with clear inputs, named owners, and structured follow-ups.
+                - button:
+                  - generic: "03"
+                  - heading [level=2]: Marketing
+                  - paragraph: Turn approved research and campaign material into reviewable briefs, drafts, and launch coordination.
+                - button:
+                  - generic: "04"
+                  - heading [level=2]: Sales
+                  - paragraph: Give teams source-backed account context and reviewable follow-up materials without automating judgment.
+                - button:
+                  - generic: "05"
+                  - heading [level=2]: Data analytics
+                  - paragraph: Turn approved data, feedback, and reports into structured analysis for accountable human review.
+                - button:
+                  - generic: "06"
+                  - heading [level=2]: Engineering
+                  - paragraph: Use ChatGPT Work for engineering coordination, with Codex when deeper implementation is separately scoped.
+      - contentinfo:
+        - generic:
+          - generic:
+            - generic:
+              - button: Dockio
+              - paragraph: Managed ChatGPT Enterprise and ChatGPT Work delivery for regulated day-to-day enterprise tasks.
+              - generic:
+                - link:
+                  - /url: mailto:partnerships@dockio.in
+                - link:
+                  - /url: https://linkedin.com/company/dockio
+            - generic:
+              - heading [level=3]: Adoption
+              - list:
+                - listitem:
+                  - button: Governance Adoption Sprint
+                - listitem:
+                  - button: Task examples
+                - listitem:
+                  - button: Discuss Co-Delivery
+            - generic:
+              - heading [level=3]: Company
+              - list:
+                - listitem:
+                  - button: About
+                - listitem:
+                  - button: Industries
+                - listitem:
+                  - button: Case studies
+                - listitem:
+                  - button: Partner readiness
+            - generic:
+              - heading [level=3]: Contact
+              - list:
+                - listitem:
+                  - link:
+                    - /url: mailto:partnerships@dockio.in
+                    - text: partnerships@dockio.in
+                - listitem:
+                  - button: Plan Your AI Adoption Audit
+          - generic:
+            - paragraph: © 2026 Dockio Technosolutions Private Limited. All rights reserved.
+            - paragraph: Managed ChatGPT Enterprise and ChatGPT Work delivery for regulated day-to-day enterprise tasks
+      - region "Notifications alt+T"
+  - menu "Use Cases" [active] [ref=e111]:
+    - menuitem "View all use cases" [ref=e113] [cursor=pointer]
+    - separator [ref=e114]
+    - menuitem "Finance" [ref=e115] [cursor=pointer]
+    - menuitem "Ops" [ref=e116] [cursor=pointer]
+    - menuitem "Marketing" [ref=e117] [cursor=pointer]
+    - menuitem "Sales" [ref=e118] [cursor=pointer]
+    - menuitem "Data analytics" [ref=e119] [cursor=pointer]
+    - menuitem "Engineering" [ref=e120] [cursor=pointer]

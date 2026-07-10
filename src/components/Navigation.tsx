@@ -13,12 +13,7 @@ import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/s
 import { CaretDown, List } from '@phosphor-icons/react'
 
 const serviceItems = [
-  { label: 'Workflow Assessment', target: 'codex-workflow-assessment' },
-  { label: 'Workspace Integration', target: 'codex-workspace-integration' },
-  { label: 'Knowledge Grounding', target: 'rag-knowledge-grounding' },
-  { label: 'Workflow Automation', target: 'ai-agent-workflow-automation' },
-  { label: 'Cloud AI Architecture', target: 'cloud-ai-architecture' },
-  { label: 'Enablement & Governance', target: 'enablement-governance' },
+  { label: 'ChatGPT Work Governance Adoption Sprint', target: 'adoption-sprint' },
 ]
 type NavItem = {
   label: string
@@ -27,10 +22,10 @@ type NavItem = {
 }
 const navItems: NavItem[] = [
   { label: 'Company', path: '/about' },
-  { label: 'Codex', target: 'codex-integration' },
-  { label: 'Industries', path: '/industries' },
-  { label: 'Resources', path: '/case-studies' },
-  { label: 'Book Assessment', target: 'book-assessment' },
+  { label: 'ChatGPT Work', target: 'chatgpt-work' },
+  { label: 'Task Examples', target: 'workflow-examples' },
+  { label: 'Co-Delivery', target: 'co-delivery' },
+  { label: 'AI Adoption Audit', target: 'ai-adoption-audit' },
 ]
 
 export function Navigation() {
@@ -40,17 +35,12 @@ export function Navigation() {
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const handleSectionNavigation = (target: string) => {
-    if (currentPath !== '/') {
-      navigate('/')
-      window.setTimeout(() => document.getElementById(target)?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50)
-    } else {
-      document.getElementById(target)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }
+  const handleSectionNavigation = (_target: string) => {
+    navigate('/')
   }
 
   const handleNavigation = (item: NavItem) => {
@@ -70,13 +60,9 @@ export function Navigation() {
     setMobileOpen(false)
   }
 
-  const handleServiceNavigation = (target?: string) => {
+  const handleServiceNavigation = (_target?: string) => {
     navigate('/services')
     setMobileOpen(false)
-
-    if (target) {
-      window.setTimeout(() => document.getElementById(target)?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80)
-    }
   }
 
   return (
@@ -95,7 +81,7 @@ export function Navigation() {
             Dockio
           </button>
 
-          <div className="hidden items-center rounded-full border border-[#eee9e5] bg-[#fbfaf8] p-1 lg:flex">
+          <div className="hidden items-center rounded-full border border-[#eee9e5] bg-[#fbfaf8] p-1 xl:flex">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <button
@@ -106,19 +92,19 @@ export function Navigation() {
                   }`}
                   aria-label="Open services menu"
                 >
-                  Services
+                  Adoption Sprint
                   <CaretDown className="h-3.5 w-3.5" weight="bold" />
                 </button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="start" className="w-80 p-2">
                 <DropdownMenuLabel className="px-3 py-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                  Services
+                  Adoption Sprint
                 </DropdownMenuLabel>
                 <DropdownMenuItem
                   onSelect={() => handleServiceNavigation()}
                   className="cursor-pointer rounded-md px-3 py-2.5 font-medium"
                 >
-                  View all services
+                  View the Adoption Sprint
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 {serviceItems.map((item) => (
@@ -147,16 +133,16 @@ export function Navigation() {
             ))}
           </div>
 
-          <div className="hidden lg:block">
+          <div className="hidden xl:block">
             <Button
               onClick={handleContact}
               className="h-11 rounded-lg bg-[#193a42] px-5 text-sm font-medium text-white shadow-sm hover:bg-[#102b32]"
             >
-              Contact Us
+              Plan Your AI Adoption Audit
             </Button>
           </div>
 
-          <div className="lg:hidden">
+          <div className="xl:hidden">
             <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" aria-label="Open navigation">
@@ -180,7 +166,7 @@ export function Navigation() {
                         onClick={() => handleServiceNavigation()}
                         className="flex w-full items-center justify-between rounded-md px-3 py-3 text-left text-[15px] font-semibold text-foreground transition-all duration-200 hover:bg-muted/70"
                       >
-                        Services
+                        Adoption Sprint
                         <CaretDown className="h-4 w-4" weight="bold" />
                       </button>
                       <div className="mt-1 grid gap-1">
@@ -209,7 +195,7 @@ export function Navigation() {
                     onClick={handleContact}
                     className="h-11 rounded-lg bg-[#193a42] text-white hover:bg-[#102b32]"
                   >
-                    Contact Us
+                    Plan Your AI Adoption Audit
                   </Button>
                 </div>
               </SheetContent>

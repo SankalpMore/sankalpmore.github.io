@@ -1,0 +1,75 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e6]:
+      - button "Dockio home" [ref=e7]: Dockio
+      - generic [ref=e8]:
+        - button "Industries" [ref=e9]
+        - button "Services" [ref=e12]
+        - button "Use Cases" [active] [ref=e15]
+        - button "Company" [ref=e18]
+      - button "Plan Your AI Adoption Audit" [ref=e22]
+  - main [ref=e23]:
+    - generic [ref=e122]:
+      - button "View all use cases" [ref=e123]
+      - generic [ref=e126]:
+        - paragraph [ref=e127]: Use case
+        - heading "Finance" [level=1] [ref=e128]
+        - paragraph [ref=e129]: Prepare reviewable commentary and exception views from approved financial sources.
+      - generic [ref=e130]:
+        - generic [ref=e131]:
+          - paragraph [ref=e132]: Representative tasks
+          - heading "Start with tasks that already have a defined owner and review path." [level=2] [ref=e133]
+        - generic [ref=e134]:
+          - paragraph [ref=e138]: Close commentary
+          - paragraph [ref=e142]: Variance and exception summaries
+          - paragraph [ref=e146]: Finance-review briefs
+      - generic [ref=e147]:
+        - generic [ref=e148]:
+          - paragraph [ref=e149]: Managed delivery
+          - heading "ChatGPT Enterprise and ChatGPT Work, introduced with practical controls." [level=2] [ref=e150]
+        - generic [ref=e151]:
+          - paragraph [ref=e152]: Dockio helps establish the task boundary, approved sources and apps, reviewer responsibilities, pilot measure, and implementation path before the use case expands.
+          - button "Plan Your AI Adoption Audit" [ref=e153]
+  - contentinfo [ref=e68]:
+    - generic [ref=e69]:
+      - generic [ref=e70]:
+        - generic [ref=e71]:
+          - button "Dockio" [ref=e72]
+          - paragraph [ref=e73]: Managed ChatGPT Enterprise and ChatGPT Work delivery for regulated day-to-day enterprise tasks.
+          - generic [ref=e74]:
+            - link "Email Dockio" [ref=e75] [cursor=pointer]:
+              - /url: mailto:partnerships@dockio.in
+            - link "Dockio on LinkedIn" [ref=e78] [cursor=pointer]:
+              - /url: https://linkedin.com/company/dockio
+        - generic [ref=e81]:
+          - heading "Adoption" [level=3] [ref=e82]
+          - list [ref=e83]:
+            - listitem [ref=e84]:
+              - button "Governance Adoption Sprint" [ref=e85]
+            - listitem [ref=e86]:
+              - button "Task examples" [ref=e87]
+            - listitem [ref=e88]:
+              - button "Discuss Co-Delivery" [ref=e89]
+        - generic [ref=e90]:
+          - heading "Company" [level=3] [ref=e91]
+          - list [ref=e92]:
+            - listitem [ref=e93]:
+              - button "About" [ref=e94]
+            - listitem [ref=e95]:
+              - button "Industries" [ref=e96]
+            - listitem [ref=e97]:
+              - button "Case studies" [ref=e98]
+            - listitem [ref=e99]:
+              - button "Partner readiness" [ref=e100]
+        - generic [ref=e101]:
+          - heading "Contact" [level=3] [ref=e102]
+          - list [ref=e103]:
+            - listitem [ref=e104]:
+              - link "partnerships@dockio.in" [ref=e105] [cursor=pointer]:
+                - /url: mailto:partnerships@dockio.in
+            - listitem [ref=e106]:
+              - button "Plan Your AI Adoption Audit" [ref=e107]
+      - generic [ref=e108]:
+        - paragraph [ref=e109]: © 2026 Dockio Technosolutions Private Limited. All rights reserved.
+        - paragraph [ref=e110]: Managed ChatGPT Enterprise and ChatGPT Work delivery for regulated day-to-day enterprise tasks
+  - region "Notifications alt+T"

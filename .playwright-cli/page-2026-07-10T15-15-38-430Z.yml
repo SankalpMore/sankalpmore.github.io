@@ -1,0 +1,84 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e6]:
+      - button "Dockio home" [ref=e7]: Dockio
+      - generic [ref=e8]:
+        - button "Industries" [ref=e9]
+        - button "Services" [ref=e12]
+        - button "Use Cases" [ref=e15]
+        - button "Company" [ref=e18]
+      - button "Plan Your AI Adoption Audit" [ref=e22]
+  - main [ref=e23]:
+    - generic [ref=e26]:
+      - generic [ref=e27]:
+        - paragraph [ref=e28]: Use cases
+        - heading "Practical ways teams get work done with ChatGPT Work." [level=1] [ref=e29]
+        - paragraph [ref=e30]: Explore task patterns by function. Each one starts with approved context, a clear output, and a human who remains accountable for what is used.
+      - generic [ref=e31]:
+        - button "01 Finance Prepare reviewable commentary and exception views from approved financial sources." [ref=e32]:
+          - generic [ref=e33]: "01"
+          - heading "Finance" [level=2] [ref=e34]
+          - paragraph [ref=e35]: Prepare reviewable commentary and exception views from approved financial sources.
+        - button "02 Ops Keep day-to-day operations aligned with clear inputs, named owners, and structured follow-ups." [ref=e38]:
+          - generic [ref=e39]: "02"
+          - heading "Ops" [level=2] [ref=e40]
+          - paragraph [ref=e41]: Keep day-to-day operations aligned with clear inputs, named owners, and structured follow-ups.
+        - button "03 Marketing Turn approved research and campaign material into reviewable briefs, drafts, and launch coordination." [ref=e44]:
+          - generic [ref=e45]: "03"
+          - heading "Marketing" [level=2] [ref=e46]
+          - paragraph [ref=e47]: Turn approved research and campaign material into reviewable briefs, drafts, and launch coordination.
+        - button "04 Sales Give teams source-backed account context and reviewable follow-up materials without automating judgment." [ref=e50]:
+          - generic [ref=e51]: "04"
+          - heading "Sales" [level=2] [ref=e52]
+          - paragraph [ref=e53]: Give teams source-backed account context and reviewable follow-up materials without automating judgment.
+        - button "05 Data analytics Turn approved data, feedback, and reports into structured analysis for accountable human review." [ref=e56]:
+          - generic [ref=e57]: "05"
+          - heading "Data analytics" [level=2] [ref=e58]
+          - paragraph [ref=e59]: Turn approved data, feedback, and reports into structured analysis for accountable human review.
+        - button "06 Engineering Use ChatGPT Work for engineering coordination, with Codex when deeper implementation is separately scoped." [ref=e62]:
+          - generic [ref=e63]: "06"
+          - heading "Engineering" [level=2] [ref=e64]
+          - paragraph [ref=e65]: Use ChatGPT Work for engineering coordination, with Codex when deeper implementation is separately scoped.
+  - contentinfo [ref=e68]:
+    - generic [ref=e69]:
+      - generic [ref=e70]:
+        - generic [ref=e71]:
+          - button "Dockio" [ref=e72]
+          - paragraph [ref=e73]: Managed ChatGPT Enterprise and ChatGPT Work delivery for regulated day-to-day enterprise tasks.
+          - generic [ref=e74]:
+            - link "Email Dockio" [ref=e75] [cursor=pointer]:
+              - /url: mailto:partnerships@dockio.in
+            - link "Dockio on LinkedIn" [ref=e78] [cursor=pointer]:
+              - /url: https://linkedin.com/company/dockio
+        - generic [ref=e81]:
+          - heading "Adoption" [level=3] [ref=e82]
+          - list [ref=e83]:
+            - listitem [ref=e84]:
+              - button "Governance Adoption Sprint" [ref=e85]
+            - listitem [ref=e86]:
+              - button "Task examples" [ref=e87]
+            - listitem [ref=e88]:
+              - button "Discuss Co-Delivery" [ref=e89]
+        - generic [ref=e90]:
+          - heading "Company" [level=3] [ref=e91]
+          - list [ref=e92]:
+            - listitem [ref=e93]:
+              - button "About" [ref=e94]
+            - listitem [ref=e95]:
+              - button "Industries" [ref=e96]
+            - listitem [ref=e97]:
+              - button "Case studies" [ref=e98]
+            - listitem [ref=e99]:
+              - button "Partner readiness" [ref=e100]
+        - generic [ref=e101]:
+          - heading "Contact" [level=3] [ref=e102]
+          - list [ref=e103]:
+            - listitem [ref=e104]:
+              - link "partnerships@dockio.in" [ref=e105] [cursor=pointer]:
+                - /url: mailto:partnerships@dockio.in
+            - listitem [ref=e106]:
+              - button "Plan Your AI Adoption Audit" [ref=e107]
+      - generic [ref=e108]:
+        - paragraph [ref=e109]: © 2026 Dockio Technosolutions Private Limited. All rights reserved.
+        - paragraph [ref=e110]: Managed ChatGPT Enterprise and ChatGPT Work delivery for regulated day-to-day enterprise tasks
+  - region "Notifications alt+T"

@@ -1,0 +1,44 @@
+# Dockio
+
+Dockio Technosolutions Private Limited provides managed ChatGPT Enterprise and ChatGPT Work delivery for regulated day-to-day enterprise tasks.
+
+## Primary offer
+
+ChatGPT Work Governance Adoption Sprint: a fixed-scope, two-week engagement that gives enterprise leaders an approval-ready path to introduce ChatGPT Work into regulated day-to-day tasks. It does not include a free audit or broadly scoped implementation.
+
+## Sprint deliverables
+
+- Task whitelist: enable, pilot, restrict, or keep out of scope
+- Approved data-source, app, and plugin permission plan
+- Human-review and accountability design
+- Pilot group, success measures, and implementation path
+- Risk register and executive rollout memo
+
+## Day-to-day task fit
+
+- Regulatory circular impact analysis
+- Policy and SOP comparison
+- Audit-evidence pack preparation
+- Credit or risk memo support
+- Finance-close commentary and exception summaries
+- Procurement or vendor-risk review
+- Customer complaint and root-cause synthesis
+
+## Where Codex fits
+
+ChatGPT Work is used for regulated day-to-day enterprise tasks. Dockio uses Codex where deeper implementation, integration, and repeatable task automation are needed.
+
+## Engagement path
+
+Workspace AI Compliance Audit -> Paid ChatGPT Work Governance Adoption Sprint -> One task pilot -> Multi-task rollout
+
+## Canonical pages
+
+- https://sankalpmore.github.io/
+- https://sankalpmore.github.io/#/services
+- https://sankalpmore.github.io/#/partner-readiness
+- https://sankalpmore.github.io/#/contact
+
+## Contact
+
+partnerships@dockio.in

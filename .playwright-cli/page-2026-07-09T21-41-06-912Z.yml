@@ -1,0 +1,232 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e6]:
+      - button "Dockio home" [ref=e7]: Dockio
+      - button "Open navigation" [ref=e9]
+  - main [ref=e10]:
+    - generic [ref=e11]:
+      - generic [ref=e13]:
+        - generic [ref=e14]:
+          - heading "Make ChatGPT Work safe for regulated knowledge work." [level=1] [ref=e15]
+          - paragraph [ref=e16]: Dockio helps BFSI and GCC teams decide which workflows, data sources, approved apps, and review controls are ready before rollout. We use Codex where deeper implementation, integration, and repeatable workflow automation are needed.
+          - generic [ref=e17]:
+            - button "Plan a Readiness Conversation" [ref=e18]
+            - button "See the 2-week Sprint" [ref=e19]
+          - generic [ref=e20]:
+            - paragraph [ref=e21]:
+              - generic [ref=e22]: Built for
+              - text: BFSI and GCC leaders responsible for sensitive, repeatable knowledge work.
+            - paragraph [ref=e23]:
+              - generic [ref=e24]: Start with
+              - text: Named workflow owners, approved sources, and accountable review.
+            - paragraph [ref=e25]:
+              - generic [ref=e26]: Outcome
+              - text: A controlled-pilot path that senior stakeholders can review.
+        - generic [ref=e28]:
+          - generic [ref=e29]:
+            - generic [ref=e30]:
+              - paragraph [ref=e31]: Readiness sprint
+              - heading "Approval-ready in two weeks" [level=2] [ref=e32]
+            - generic [ref=e33]: Fixed scope
+          - img "Controlled workflow review materials and implementation notes" [ref=e35]
+          - generic [ref=e36]:
+            - paragraph [ref=e37]: Sprint outputs
+            - generic [ref=e38]:
+              - generic [ref=e39]: Workflow whitelist
+              - generic [ref=e43]: Permission plan
+              - generic [ref=e47]: Human review design
+              - generic [ref=e51]: Pilot and rollout path
+      - generic [ref=e56]:
+        - generic [ref=e57]:
+          - heading "Regulated knowledge work" [level=2] [ref=e58]
+          - paragraph [ref=e59]: Sensitive, source-backed workflows where accuracy and accountability matter.
+        - generic [ref=e60]:
+          - heading "Controls before scale" [level=2] [ref=e61]
+          - paragraph [ref=e62]: Decide which data, apps, and review steps are appropriate before rollout.
+        - generic [ref=e63]:
+          - heading "Implementation where needed" [level=2] [ref=e64]
+          - paragraph [ref=e65]: Use Codex for deeper integration and repeatable workflow automation after readiness.
+      - generic [ref=e67]:
+        - generic [ref=e68]:
+          - generic [ref=e69]:
+            - paragraph [ref=e70]: Workflow examples
+            - heading "Start with knowledge work that already has owners, sources, and review." [level=2] [ref=e71]
+          - paragraph [ref=e72]: Dockio focuses on workflows where the organization can define what is in scope, what evidence is permitted, and who remains accountable for the final decision.
+        - generic [ref=e73]:
+          - article [ref=e74]:
+            - generic [ref=e75]: "01"
+            - generic [ref=e76]:
+              - heading "Regulatory circular impact analysis" [level=3] [ref=e77]
+              - paragraph [ref=e78]: Compare new circulars with approved policies, procedures, and operating obligations.
+          - article [ref=e79]:
+            - generic [ref=e80]: "02"
+            - generic [ref=e81]:
+              - heading "Policy and SOP comparison" [level=3] [ref=e82]
+              - paragraph [ref=e83]: Identify changes, gaps, and accountable owners across controlled internal documents.
+          - article [ref=e84]:
+            - generic [ref=e85]: "03"
+            - generic [ref=e86]:
+              - heading "Audit-evidence pack preparation" [level=3] [ref=e87]
+              - paragraph [ref=e88]: Organize source-backed evidence and reviewer-ready summaries for audit activity.
+          - article [ref=e89]:
+            - generic [ref=e90]: "04"
+            - generic [ref=e91]:
+              - heading "Credit or risk memo support" [level=3] [ref=e92]
+              - paragraph [ref=e93]: Prepare controlled first drafts from approved source material for named reviewers.
+          - article [ref=e94]:
+            - generic [ref=e95]: "05"
+            - generic [ref=e96]:
+              - heading "Finance-close commentary and exception summaries" [level=3] [ref=e97]
+              - paragraph [ref=e98]: Turn close packs and approved reports into reviewable commentary and exception views.
+          - article [ref=e99]:
+            - generic [ref=e100]: "06"
+            - generic [ref=e101]:
+              - heading "Procurement or vendor-risk review" [level=3] [ref=e102]
+              - paragraph [ref=e103]: Synthesize supplier material against defined review criteria and source boundaries.
+          - article [ref=e104]:
+            - generic [ref=e105]: "07"
+            - generic [ref=e106]:
+              - heading "Customer complaint and root-cause synthesis" [level=3] [ref=e107]
+              - paragraph [ref=e108]: Cluster documented issues, identify patterns, and prepare accountable next-step summaries.
+      - generic [ref=e110]:
+        - generic [ref=e111]:
+          - paragraph [ref=e112]: ChatGPT Work Governance Readiness Sprint
+          - heading "A fixed-scope, two-week engagement for regulated knowledge workflows." [level=2] [ref=e113]
+          - paragraph [ref=e114]: The sprint creates an approval-ready path to a controlled pilot. It is designed for teams that need clear workflow boundaries and review controls before a scaled AI rollout.
+          - paragraph [ref=e115]: Implementation is separately scoped after the readiness decision.
+        - list [ref=e117]:
+          - listitem [ref=e118]:
+            - generic [ref=e121]: "Workflow whitelist: enable, pilot, restrict, or keep out of scope"
+          - listitem [ref=e122]:
+            - generic [ref=e125]: Approved data-source, app, and plugin permission plan
+          - listitem [ref=e126]:
+            - generic [ref=e129]: Human-review and accountability design
+          - listitem [ref=e130]:
+            - generic [ref=e133]: Pilot group, success measures, and implementation path
+          - listitem [ref=e134]:
+            - generic [ref=e137]: Risk register and executive rollout memo
+      - generic [ref=e139]:
+        - generic [ref=e140]:
+          - generic [ref=e141]:
+            - paragraph [ref=e142]: Engagement path
+            - heading "A disciplined route from initial context to controlled rollout." [level=2] [ref=e143]
+          - paragraph [ref=e144]: Every next step has a defined decision point. The readiness sprint comes before implementation, not after a broad rollout has already begun.
+        - generic [ref=e145]:
+          - generic [ref=e146]:
+            - paragraph [ref=e147]: "01"
+            - paragraph [ref=e148]: Account-specific POV or referral
+          - generic [ref=e149]:
+            - paragraph [ref=e150]: "02"
+            - paragraph [ref=e151]: Readiness Conversation
+          - generic [ref=e152]:
+            - paragraph [ref=e153]: "03"
+            - paragraph [ref=e154]: Paid Readiness Sprint
+          - generic [ref=e155]:
+            - paragraph [ref=e156]: "04"
+            - paragraph [ref=e157]: One workflow pilot
+          - generic [ref=e158]:
+            - paragraph [ref=e159]: "05"
+            - paragraph [ref=e160]: Multi-workflow rollout
+      - generic [ref=e162]:
+        - generic [ref=e163]:
+          - paragraph [ref=e164]: 30-minute working conversation
+          - heading "Plan a Readiness Conversation." [level=2] [ref=e165]
+          - paragraph [ref=e166]: Bring the workflow under consideration. We will determine whether a paid readiness sprint is appropriate; this is not a free audit.
+        - generic [ref=e168]:
+          - heading "Prepare the booking notes" [level=3] [ref=e169]
+          - paragraph [ref=e170]: A short note helps us use the 30 minutes well.
+          - generic [ref=e171]:
+            - generic [ref=e172]: Organization and role
+            - generic [ref=e176]: Workflow under consideration
+            - generic [ref=e180]: Current ChatGPT Work or Codex status
+            - generic [ref=e184]: Information sensitivity
+          - link "Plan a Readiness Conversation" [ref=e188] [cursor=pointer]:
+            - /url: https://outlook.office.com/book/Sankalp@dockio.in/?ismsaljsauthenabled
+          - paragraph [ref=e189]:
+            - text: Prefer email? Write to
+            - link "partnerships@dockio.in" [ref=e190] [cursor=pointer]:
+              - /url: mailto:partnerships@dockio.in
+            - text: .
+      - generic [ref=e192]:
+        - generic [ref=e193]:
+          - paragraph [ref=e194]: Additional routes
+          - heading "Bring the right conversation to the right next step." [level=2] [ref=e195]
+        - generic [ref=e196]:
+          - generic [ref=e198]:
+            - generic [ref=e203]:
+              - paragraph [ref=e204]: For BFSI and GCC teams
+              - heading "Request the BFSI/GCC Readiness Memo" [level=3] [ref=e205]
+              - paragraph [ref=e206]: A concise view of the two-week readiness sprint, its deliverables, representative workflows, and the controlled-pilot path.
+            - generic [ref=e207]:
+              - generic [ref=e208]: Regulated knowledge workflow fit
+              - generic [ref=e211]: Readiness, pilot, and rollout path
+            - button "Request the BFSI/GCC Readiness Memo" [ref=e214]
+          - generic [ref=e215]:
+            - paragraph [ref=e216]: Delivery and referral partners
+            - heading "Discuss Co-Delivery" [level=3] [ref=e217]
+            - paragraph [ref=e218]: For partners seeking a focused readiness and controlled-pilot delivery capability for regulated enterprise clients.
+            - button "Discuss Co-Delivery" [ref=e219]
+      - generic [ref=e221]:
+        - generic [ref=e222]:
+          - paragraph [ref=e223]: Common questions
+          - heading "Clear answers before a readiness decision." [level=2] [ref=e224]
+        - generic [ref=e225]:
+          - group [ref=e226]:
+            - generic "Is the readiness conversation a free audit? +" [ref=e227] [cursor=pointer]:
+              - text: Is the readiness conversation a free audit?
+              - generic [ref=e228]: +
+          - group [ref=e229]:
+            - generic "What does the two-week sprint produce? +" [ref=e230] [cursor=pointer]:
+              - text: What does the two-week sprint produce?
+              - generic [ref=e231]: +
+          - group [ref=e232]:
+            - generic "When does Dockio use Codex? +" [ref=e233] [cursor=pointer]:
+              - text: When does Dockio use Codex?
+              - generic [ref=e234]: +
+          - group [ref=e235]:
+            - generic "Does the sprint include implementation? +" [ref=e236] [cursor=pointer]:
+              - text: Does the sprint include implementation?
+              - generic [ref=e237]: +
+  - contentinfo [ref=e239]:
+    - generic [ref=e240]:
+      - generic [ref=e241]:
+        - generic [ref=e242]:
+          - button "Dockio" [ref=e243]
+          - paragraph [ref=e244]: ChatGPT Work and Codex implementation for regulated enterprise knowledge work.
+          - generic [ref=e245]:
+            - link "Email Dockio" [ref=e246] [cursor=pointer]:
+              - /url: mailto:partnerships@dockio.in
+            - link "Dockio on LinkedIn" [ref=e249] [cursor=pointer]:
+              - /url: https://linkedin.com/company/dockio
+        - generic [ref=e252]:
+          - heading "Readiness" [level=3] [ref=e253]
+          - list [ref=e254]:
+            - listitem [ref=e255]:
+              - button "Governance Readiness Sprint" [ref=e256]
+            - listitem [ref=e257]:
+              - button "Workflow examples" [ref=e258]
+            - listitem [ref=e259]:
+              - button "Discuss Co-Delivery" [ref=e260]
+        - generic [ref=e261]:
+          - heading "Company" [level=3] [ref=e262]
+          - list [ref=e263]:
+            - listitem [ref=e264]:
+              - button "About" [ref=e265]
+            - listitem [ref=e266]:
+              - button "Industries" [ref=e267]
+            - listitem [ref=e268]:
+              - button "Case studies" [ref=e269]
+            - listitem [ref=e270]:
+              - button "Partner readiness" [ref=e271]
+        - generic [ref=e272]:
+          - heading "Contact" [level=3] [ref=e273]
+          - list [ref=e274]:
+            - listitem [ref=e275]:
+              - link "partnerships@dockio.in" [ref=e276] [cursor=pointer]:
+                - /url: mailto:partnerships@dockio.in
+            - listitem [ref=e277]:
+              - button "Plan a Readiness Conversation" [ref=e278]
+      - generic [ref=e279]:
+        - paragraph [ref=e280]: © 2026 Dockio Technosolutions Private Limited. All rights reserved.
+        - paragraph [ref=e281]: ChatGPT Work and Codex implementation for regulated knowledge work
+  - region "Notifications alt+T"

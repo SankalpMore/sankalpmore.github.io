@@ -48,7 +48,7 @@ export function Router({ children }: { children: ReactNode }) {
     }
 
     setCurrentPath(nextPath)
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    window.scrollTo(0, 0)
   }
 
   return <RouterContext.Provider value={{ currentPath, navigate }}>{children}</RouterContext.Provider>

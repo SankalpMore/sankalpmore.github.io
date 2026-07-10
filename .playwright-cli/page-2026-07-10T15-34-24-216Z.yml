@@ -1,0 +1,128 @@
+- generic:
+  - generic:
+    - generic:
+      - navigation:
+        - generic:
+          - generic:
+            - button: Dockio
+            - generic:
+              - button [expanded]
+      - main:
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - paragraph: Use cases
+                - heading [level=1]: Practical ways teams get work done with ChatGPT Work.
+                - paragraph: Explore task patterns by function. Each one starts with approved context, a clear output, and a human who remains accountable for what is used.
+              - generic:
+                - button:
+                  - generic: "01"
+                  - heading [level=2]: Finance
+                  - paragraph: Prepare reviewable commentary and exception views from approved financial sources.
+                - button:
+                  - generic: "02"
+                  - heading [level=2]: Ops
+                  - paragraph: Keep day-to-day operations aligned with clear inputs, named owners, and structured follow-ups.
+                - button:
+                  - generic: "03"
+                  - heading [level=2]: Marketing
+                  - paragraph: Turn approved research and campaign material into reviewable briefs, drafts, and launch coordination.
+                - button:
+                  - generic: "04"
+                  - heading [level=2]: Sales
+                  - paragraph: Give teams source-backed account context and reviewable follow-up materials without automating judgment.
+                - button:
+                  - generic: "05"
+                  - heading [level=2]: Data analytics
+                  - paragraph: Turn approved data, feedback, and reports into structured analysis for accountable human review.
+                - button:
+                  - generic: "06"
+                  - heading [level=2]: Engineering
+                  - paragraph: Use ChatGPT Work for engineering coordination, with Codex when deeper implementation is separately scoped.
+      - contentinfo:
+        - generic:
+          - generic:
+            - generic:
+              - button: Dockio
+              - paragraph: Managed ChatGPT Enterprise and ChatGPT Work delivery for regulated day-to-day enterprise tasks.
+              - generic:
+                - link:
+                  - /url: mailto:partnerships@dockio.in
+                - link:
+                  - /url: https://linkedin.com/company/dockio
+            - generic:
+              - heading [level=3]: Adoption
+              - list:
+                - listitem:
+                  - button: Governance Adoption Sprint
+                - listitem:
+                  - button: Task examples
+                - listitem:
+                  - button: Discuss Co-Delivery
+            - generic:
+              - heading [level=3]: Company
+              - list:
+                - listitem:
+                  - button: About
+                - listitem:
+                  - button: Industries
+                - listitem:
+                  - button: Case studies
+                - listitem:
+                  - button: Partner readiness
+            - generic:
+              - heading [level=3]: Contact
+              - list:
+                - listitem:
+                  - link:
+                    - /url: mailto:partnerships@dockio.in
+                    - text: partnerships@dockio.in
+                - listitem:
+                  - button: Plan Your AI Adoption Audit
+          - generic:
+            - paragraph: © 2026 Dockio Technosolutions Private Limited. All rights reserved.
+            - paragraph: Managed ChatGPT Enterprise and ChatGPT Work delivery for regulated day-to-day enterprise tasks
+      - region "Notifications alt+T"
+  - dialog [ref=e114]:
+    - heading "Dockio navigation" [level=2] [ref=e115]
+    - paragraph [ref=e116]: Navigate Dockio industries, services, use cases, and company pages.
+    - generic [ref=e117]:
+      - generic [ref=e118]:
+        - generic [ref=e119]: D
+        - generic [ref=e121]: Dockio
+      - navigation [ref=e122]:
+        - generic [ref=e123]:
+          - button "Industries" [active] [ref=e124]
+          - generic [ref=e127]:
+            - button "Financial services" [ref=e128]
+            - button "IT services" [ref=e129]
+            - button "Global capability centers" [ref=e130]
+            - button "Logistics" [ref=e131]
+            - button "Real estate" [ref=e132]
+            - button "Healthcare operations" [ref=e133]
+            - button "Manufacturing" [ref=e134]
+            - button "Professional services" [ref=e135]
+        - generic [ref=e136]:
+          - button "Services" [ref=e137]
+          - generic [ref=e140]:
+            - button "ChatGPT Enterprise foundation" [ref=e141]
+            - button "ChatGPT Work managed adoption" [ref=e142]
+            - button "Governance Adoption Sprint" [ref=e143]
+            - button "Codex workflow implementation" [ref=e144]
+        - generic [ref=e145]:
+          - button "Use Cases" [ref=e146]
+          - generic [ref=e149]:
+            - button "Finance" [ref=e150]
+            - button "Ops" [ref=e151]
+            - button "Marketing" [ref=e152]
+            - button "Sales" [ref=e153]
+            - button "Data analytics" [ref=e154]
+            - button "Engineering" [ref=e155]
+        - generic [ref=e156]:
+          - button "Company" [ref=e157]
+          - generic [ref=e160]:
+            - button "About Dockio" [ref=e161]
+            - button "Co-Delivery" [ref=e162]
+      - button "Plan Your AI Adoption Audit" [ref=e163]
+    - button "Close" [ref=e164]

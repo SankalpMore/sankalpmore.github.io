@@ -17,8 +17,7 @@ export function Footer() {
               Dockio
             </button>
             <p className="mt-5 max-w-sm text-[15px] leading-7 text-[#67615d]">
-              Dockio helps enterprises turn OpenAI Codex into reviewable business work across knowledge,
-              code, documents, AWS, Azure, and internal systems.
+              Managed ChatGPT Enterprise and ChatGPT Work delivery for regulated day-to-day enterprise tasks.
             </p>
             <div className="mt-7 flex gap-3">
               <a
@@ -41,12 +40,16 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-medium text-[#282523]">Codex</h3>
+            <h3 className="font-medium text-[#282523]">Adoption</h3>
             <ul className="mt-5 space-y-3">
-              {['Workflow assessment', 'Workspace integration', 'Knowledge grounding', 'Enablement governance'].map((item) => (
+              {[
+                ['ChatGPT Work Governance Adoption Sprint', '/services'],
+                ['Task examples', '/case-studies'],
+                ['Discuss Co-Delivery', '/partner-readiness'],
+              ].map(([item, path]) => (
                 <li key={item}>
                   <button
-                    onClick={() => navigate('/services')}
+                    onClick={() => navigate(path)}
                     className="text-[15px] text-[#67615d] transition hover:text-[#282523]"
                   >
                     {item}
@@ -90,7 +93,7 @@ export function Footer() {
                   onClick={() => navigate('/contact')}
                   className="text-left text-[15px] text-[#67615d] transition hover:text-[#282523]"
                 >
-                  Book a Codex assessment
+                  Plan Your AI Adoption Audit
                 </button>
               </li>
             </ul>
@@ -101,7 +104,7 @@ export function Footer() {
 
         <div className="flex flex-col justify-between gap-4 text-[14px] text-[#7b746f] md:flex-row md:items-center">
           <p>&copy; {new Date().getFullYear()} Dockio Technosolutions Private Limited. All rights reserved.</p>
-          <p>OpenAI Codex integration for enterprise knowledge work</p>
+          <p>Managed ChatGPT Enterprise and ChatGPT Work delivery for regulated day-to-day enterprise tasks</p>
         </div>
       </div>
     </footer>
