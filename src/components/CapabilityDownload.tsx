@@ -5,7 +5,6 @@ import { toast } from 'sonner'
 
 const memoContent = `
 DOCKIO - AI ADOPTION MEMO
-// Dockio Technosolutions Private Limited
 Managed ChatGPT Enterprise and ChatGPT Work delivery for regulated day-to-day enterprise tasks
 
 WHAT THIS MEMO COVERS
