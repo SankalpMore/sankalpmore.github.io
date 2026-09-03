@@ -103,7 +103,7 @@ export function Footer() {
         <Separator className="my-10 bg-[#e9e4df]" />
 
         <div className="flex flex-col justify-between gap-4 text-[14px] text-[#7b746f] md:flex-row md:items-center">
-          {/* <p>&copy; {new Date().getFullYear()} Dockio Technosolutions Private Limited. All rights reserved.</p> */}
+          <p>&copy; {new Date().getFullYear()} Dockio Technosolutions Private Limited. All rights reserved.</p>
           <p>Managed ChatGPT Enterprise and ChatGPT Work delivery for regulated day-to-day enterprise tasks</p>
         </div>
       </div>
