@@ -1,14 +1,28 @@
 # Dockio
 
-Dockio is led by founder Sankalp More and supports enterprise AI product owners, programme/delivery leads, and sponsors.
+Dockio is a founder-led AI systems integration practice connecting business priorities, enterprise implementation, everyday adoption and evidence of value.
 
-Services: AI business analysis, requirements/use-case/value prioritization, embedded PM/PMO delivery coordination, governed AI tasks/skills/tools, adoption, and selective development.
+## Services
+AI business analysis, requirements and value prioritization; governed AI tasks, skills and tools; embedded BA/PM/PMO; delivery and integration coordination; selective development; adoption and outcome reviews.
 
-Engagements use agreed hours or days on time and materials. Scope, rate, review cadence, founder involvement, availability, and delivery responsibilities are agreed before work begins. Finance is the preferred starting point; global and cross-industry enquiries are welcome. Remote delivery or other working arrangements are agreed per engagement.
+## Working model
+Agreed hours or days on time and materials. Scope, rate, review cadence, founder involvement and responsibilities are agreed before work starts. Finance is the preferred starting point; global and cross-industry enquiries are welcome.
 
-Examples are illustrative, not client wins or guaranteed outcomes. Dockio is independent.
+## BudgetOps
+BudgetOps is Dockio's vision for connecting business priorities, delivery, adoption and outcomes to better-informed funding decisions.
 
-Canonical website: https://www.dockio.in/
-Services: https://www.dockio.in/#/services
-Contact: https://www.dockio.in/#/contact
-Email: sankalp@dockio.in
+## Founder
+Sankalp More. Background in statistics and artificial intelligence, with enterprise experience across AI platforms, governance, value prioritization and adoption.
+
+## Pages
+- https://www.dockio.in/
+- https://www.dockio.in/services/
+- https://www.dockio.in/industries/financial-services/
+- https://www.dockio.in/approach/
+- https://www.dockio.in/budgetops/
+- https://www.dockio.in/about/
+- https://www.dockio.in/contact/
+- https://www.dockio.in/privacy/
+
+## Contact
+sankalp@dockio.in
