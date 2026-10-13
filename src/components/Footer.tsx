@@ -17,7 +17,7 @@ export function Footer() {
               Dockio
             </button>
             <p className="mt-5 max-w-sm text-[15px] leading-7 text-[#67615d]">
-              Managed ChatGPT Enterprise and ChatGPT Work delivery for regulated day-to-day enterprise tasks.
+              Independent enterprise AI services, from paid discovery to implementation and ongoing improvement.
             </p>
             <div className="mt-7 flex gap-3">
               <a
@@ -40,10 +40,10 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-medium text-[#282523]">Adoption</h3>
+            <h3 className="font-medium text-[#282523]">Work with us</h3>
             <ul className="mt-5 space-y-3">
               {[
-                ['ChatGPT Work Governance Adoption Sprint', '/services'],
+                ['Discovery, delivery, and support', '/services'],
                 ['Task examples', '/case-studies'],
                 ['Discuss Co-Delivery', '/partner-readiness'],
               ].map(([item, path]) => (
@@ -65,7 +65,7 @@ export function Footer() {
               {[
                 ['About', '/about'],
                 ['Industries', '/industries'],
-                ['Case studies', '/case-studies'],
+                ['Workflow examples', '/case-studies'],
                 ['Partner readiness', '/partner-readiness'],
               ].map(([label, path]) => (
                 <li key={label}>
@@ -93,7 +93,7 @@ export function Footer() {
                   onClick={() => navigate('/contact')}
                   className="text-left text-[15px] text-[#67615d] transition hover:text-[#282523]"
                 >
-                  Plan Your AI Adoption Audit
+                  Discuss your AI initiative
                 </button>
               </li>
             </ul>
@@ -104,7 +104,7 @@ export function Footer() {
 
         <div className="flex flex-col justify-between gap-4 text-[14px] text-[#7b746f] md:flex-row md:items-center">
           <p>&copy; {new Date().getFullYear()} Dockio Technosolutions Private Limited. All rights reserved.</p>
-          <p>Managed ChatGPT Enterprise and ChatGPT Work delivery for regulated day-to-day enterprise tasks</p>
+          <p>Independent AI implementation partner</p>
         </div>
       </div>
     </footer>

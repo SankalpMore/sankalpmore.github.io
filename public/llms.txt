@@ -1,44 +1,27 @@
 # Dockio
 
-Dockio Technosolutions Private Limited provides managed ChatGPT Enterprise and ChatGPT Work delivery for regulated day-to-day enterprise tasks.
+Dockio Technosolutions Private Limited is an independent enterprise AI implementation partner.
 
-## Primary offer
+## Who we help
+Enterprise business and operations sponsors, AI and technology leaders, and consulting or technology partners seeking focused delivery capacity.
 
-ChatGPT Work Governance Adoption Sprint: a fixed-scope, two-week engagement that gives enterprise leaders an approval-ready path to introduce ChatGPT Work into regulated day-to-day tasks. It does not include a free audit or broadly scoped implementation.
-
-## Sprint deliverables
-
-- Task whitelist: enable, pilot, restrict, or keep out of scope
-- Approved data-source, app, and plugin permission plan
-- Human-review and accountability design
-- Pilot group, success measures, and implementation path
-- Risk register and executive rollout memo
-
-## Day-to-day task fit
-
-- Regulatory circular impact analysis
-- Policy and SOP comparison
-- Audit-evidence pack preparation
-- Credit or risk memo support
-- Finance-close commentary and exception summaries
-- Procurement or vendor-risk review
-- Customer complaint and root-cause synthesis
-
-## Where Codex fits
-
-ChatGPT Work is used for regulated day-to-day enterprise tasks. Dockio uses Codex where deeper implementation, integration, and repeatable task automation are needed.
+## Services
+- Paid discovery and adoption planning: workflow selection, business outcomes, source access, permissions, review responsibilities, and implementation scope.
+- Scoped delivery: ChatGPT adoption, AI workflows and agents, integration, and Codex-assisted implementation where appropriate.
+- Ongoing support and improvement: workflow reviews, evaluations, documentation, and agreed maintenance.
+- Partner co-delivery with explicit ownership and acceptance criteria.
 
 ## Engagement path
+Introductory conversation -> agreed paid discovery or implementation scope -> controlled delivery -> ongoing improvement where needed.
 
-Workspace AI Compliance Audit -> Paid ChatGPT Work Governance Adoption Sprint -> One task pilot -> Multi-task rollout
+Workflow examples on the site are illustrative patterns, not named customer case studies or promised results. Dockio is independent; no official OpenAI partnership or certification is claimed.
 
 ## Canonical pages
-
-- https://sankalpmore.github.io/
-- https://sankalpmore.github.io/#/services
-- https://sankalpmore.github.io/#/partner-readiness
-- https://sankalpmore.github.io/#/contact
+- https://www.dockio.in/
+- https://www.dockio.in/#/services
+- https://www.dockio.in/#/use-cases
+- https://www.dockio.in/#/partner-readiness
+- https://www.dockio.in/#/contact
 
 ## Contact
-
 partnerships@dockio.in

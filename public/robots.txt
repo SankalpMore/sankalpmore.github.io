@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sankalpmore.github.io/sitemap.xml
+Sitemap: https://www.dockio.in/sitemap.xml
