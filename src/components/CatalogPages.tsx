@@ -64,28 +64,28 @@ export const industryItems: CatalogItem[] = [
 
 export const serviceItems: CatalogItem[] = [
   {
-    label: 'ChatGPT adoption foundation',
+    label: 'Governed AI tasks, skills and tools',
     path: '/services/chatgpt-enterprise-foundation',
-    summary: 'Help teams put ChatGPT to work with clear ownership, useful workflows, onboarding, and appropriate access.',
-    tasks: ['Workspace and ownership model', 'Team onboarding and workflow selection', 'Source access and review responsibilities'],
+    summary: 'Translate a priority use case into repeatable work with approved sources, explicit permissions, accountable review, and clear task instructions.',
+    tasks: ['Task and skill definitions', 'Approved tool and source boundaries', 'Evaluation criteria and human review'],
   },
   {
-    label: 'Managed adoption and improvement',
+    label: 'Adoption and team enablement',
     path: '/services/chatgpt-work-managed-adoption',
-    summary: 'Keep AI useful after launch through recurring adoption support, workflow maintenance, and measured improvement.',
-    tasks: ['Team enablement and adoption support', 'Workflow monitoring and maintenance', 'Usage review and improvement backlog'],
+    summary: 'Help the pilot become part of everyday work through practical guidance, owner enablement, feedback, and an adoption backlog.',
+    tasks: ['Role-based guidance and onboarding', 'Adoption blockers and feedback review', 'Handover and improvement backlog'],
   },
   {
-    label: 'Scoped AI discovery',
+    label: 'AI business analysis and value prioritization',
     path: '/services/governance-adoption-sprint',
-    summary: 'A paid discovery engagement to prioritize a workflow, assess feasibility, and define a practical delivery scope. A two-week format is available for a focused brief.',
-    tasks: ['Workflow priorities and success measures', 'Data, integration, and control requirements', 'Delivery scope and implementation roadmap'],
+    summary: 'Connect business priorities to a feasible AI requirement. Define the problem, use cases, expected value, dependencies, and acceptance criteria.',
+    tasks: ['Use-case and value prioritization', 'Requirements and acceptance criteria', 'Stakeholder alignment and delivery brief'],
   },
   {
-    label: 'AI workflow and agent implementation',
+    label: 'Delivery coordination and selective development',
     path: '/services/codex-workflow-implementation',
-    summary: 'Build and integrate AI workflows and agents around your team’s systems, using Codex where it supports implementation.',
-    tasks: ['Workflow and agent design', 'System integration and evaluation', 'Operational handoff and support plan'],
+    summary: 'Embedded PM and PMO support connects business, technology, risk, and vendors. Include selective development where it serves the agreed outcome.',
+    tasks: ['Milestones, decisions, risks, and dependencies', 'Implementation coordination and sponsor reporting', 'Selectively scoped tools, integrations, and testing'],
   },
 ]
 
@@ -139,7 +139,7 @@ function CatalogRail({ items }: { items: CatalogItem[] }) {
 
 function DetailPage({ item, category }: { item: CatalogItem; category: string }) {
   const { navigate } = useRouter()
-  return <div className="min-h-screen bg-white pt-28 text-[#282523]"><div className={`${sectionClass} py-16 sm:py-20`}><button onClick={() => navigate(`/${category}`)} className="mb-10 inline-flex items-center gap-2 text-sm font-medium text-[#31575d] transition hover:text-[#193a42]"><ArrowLeft className="h-4 w-4" />View all {category.replace('-', ' ')}</button><PageIntro label={category === 'use-cases' ? 'Use case' : category === 'industries' ? 'Industry' : 'Service'} title={item.label} copy={item.summary} /><div className="mt-16 grid gap-12 border-t border-[#e9e4df] pt-12 lg:grid-cols-[0.82fr_1.18fr]"><div><p className="font-mono text-xs uppercase tracking-[0.18em] text-[#8b817a]">Where we can help</p><h2 className="mt-4 font-serif text-3xl font-normal leading-tight text-[#343230] sm:text-4xl">Start with a workflow and a clear business outcome.</h2></div><div className="space-y-4">{item.tasks.map((task) => <div key={task} className="flex items-start gap-3 border-t border-[#d9dedb] pt-4 first:border-t-0 first:pt-0"><CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-[#1f6d73]" weight="fill" /><p className="text-base leading-7 text-[#67615d]">{task}</p></div>)}</div></div><section className="mt-16 grid gap-10 bg-[#f7f8f5] p-7 sm:p-10 lg:grid-cols-[0.82fr_1.18fr]"><div><p className="font-mono text-xs uppercase tracking-[0.18em] text-[#8b817a]">Managed delivery</p><h2 className="mt-4 font-serif text-3xl font-normal leading-tight text-[#343230] sm:text-4xl">From discovery to delivery, with support as you grow.</h2></div><div><p className="text-base leading-8 text-[#67615d]">Dockio works with enterprise sponsors, workflow owners, and technology teams to define the outcome, agree a paid discovery scope, and deliver the adoption, workflow, or integration work that follows. We assess access, review, and risk requirements where the work calls for them, then support ongoing use and improvement.</p><Button onClick={() => navigate('/contact')} className="mt-7 h-11 rounded-full bg-[#193a42] px-6 text-white hover:bg-[#102b32]">Discuss your AI initiative <ArrowRight className="ml-2 h-4 w-4" /></Button></div></section></div></div>
+  return <div className="min-h-screen bg-white pt-28 text-[#282523]"><div className={`${sectionClass} py-16 sm:py-20`}><button onClick={() => navigate(`/${category}`)} className="mb-10 inline-flex items-center gap-2 text-sm font-medium text-[#31575d] transition hover:text-[#193a42]"><ArrowLeft className="h-4 w-4" />View all {category.replace('-', ' ')}</button><PageIntro label={category === 'use-cases' ? 'Use case' : category === 'industries' ? 'Industry' : 'Service'} title={item.label} copy={item.summary} /><div className="mt-16 grid gap-12 border-t border-[#e9e4df] pt-12 lg:grid-cols-[0.82fr_1.18fr]"><div><p className="font-mono text-xs uppercase tracking-[0.18em] text-[#8b817a]">Where we can help</p><h2 className="mt-4 font-serif text-3xl font-normal leading-tight text-[#343230] sm:text-4xl">Start with a workflow and a clear business outcome.</h2></div><div className="space-y-4">{item.tasks.map((task) => <div key={task} className="flex items-start gap-3 border-t border-[#d9dedb] pt-4 first:border-t-0 first:pt-0"><CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-[#1f6d73]" weight="fill" /><p className="text-base leading-7 text-[#67615d]">{task}</p></div>)}</div></div><section className="mt-16 grid gap-10 bg-[#f7f8f5] p-7 sm:p-10 lg:grid-cols-[0.82fr_1.18fr]"><div><p className="font-mono text-xs uppercase tracking-[0.18em] text-[#8b817a]">Managed delivery</p><h2 className="mt-4 font-serif text-3xl font-normal leading-tight text-[#343230] sm:text-4xl">From discovery to delivery, with support as you grow.</h2></div><div><p className="text-base leading-8 text-[#67615d]">Dockio works alongside your team on an agreed BA, PM, PMO, implementation, or adoption remit. We agree hours or days on time and materials, with scope, rate, review cadence, founder involvement, and delivery capacity specified before work starts. Access, review, and acceptance requirements are part of the delivery plan.</p><Button onClick={() => navigate('/contact')} className="mt-7 h-11 rounded-full bg-[#193a42] px-6 text-white hover:bg-[#102b32]">Share your requirement <ArrowRight className="ml-2 h-4 w-4" /></Button></div></section></div></div>
 }
 
 export function IndustriesLandingPage() {
@@ -147,7 +147,7 @@ export function IndustriesLandingPage() {
 }
 
 export function ServicesLandingPage() {
-  return <div className="min-h-screen bg-white pt-28 text-[#282523]"><div className={`${sectionClass} py-16 sm:py-20`}><PageIntro label="Services" title="Enterprise AI services, from first scope to ongoing improvement." copy="Start with paid discovery to clarify the opportunity and delivery scope. Move into ChatGPT adoption, AI workflow and agent implementation, or integration, with recurring support as your needs evolve. We also work alongside delivery partners." /><CatalogRail items={serviceItems} /></div></div>
+  return <div className="min-h-screen bg-white pt-28 text-[#282523]"><div className={`${sectionClass} py-16 sm:py-20`}><PageIntro label="Services" title="The support between strategy and delivery." copy="Bring Dockio into the part of your initiative that needs hands-on ownership: requirements and value prioritization, governed AI tasks and tools, implementation coordination, or adoption. Engage for agreed hours or days with founder involvement specified." /><CatalogRail items={serviceItems} /></div></div>
 }
 
 export function UseCasesLandingPage() {

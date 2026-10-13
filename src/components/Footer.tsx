@@ -17,11 +17,11 @@ export function Footer() {
               Dockio
             </button>
             <p className="mt-5 max-w-sm text-[15px] leading-7 text-[#67615d]">
-              Independent enterprise AI services, from paid discovery to implementation and ongoing improvement.
+              Founder-led AI business analysis, delivery coordination, and adoption support for enterprise teams.
             </p>
             <div className="mt-7 flex gap-3">
               <a
-                href="mailto:partnerships@dockio.in"
+                href="mailto:sankalp@dockio.in"
                 className="flex h-10 w-10 items-center justify-center rounded-lg border border-[#ded8d2] bg-white text-[#282523] transition hover:bg-[#f7f4f1]"
                 aria-label="Email Dockio"
               >
@@ -84,8 +84,8 @@ export function Footer() {
             <h3 className="font-medium text-[#282523]">Contact</h3>
             <ul className="mt-5 space-y-3">
               <li>
-                <a href="mailto:partnerships@dockio.in" className="text-[15px] text-[#67615d] transition hover:text-[#282523]">
-                  partnerships@dockio.in
+                <a href="mailto:sankalp@dockio.in" className="text-[15px] text-[#67615d] transition hover:text-[#282523]">
+                  sankalp@dockio.in
                 </a>
               </li>
               <li>
@@ -93,7 +93,7 @@ export function Footer() {
                   onClick={() => navigate('/contact')}
                   className="text-left text-[15px] text-[#67615d] transition hover:text-[#282523]"
                 >
-                  Discuss your AI initiative
+                  Share your requirement
                 </button>
               </li>
             </ul>

@@ -44,3 +44,9 @@ Run TypeScript and production build. Smoke all existing routes, then check deskt
 ## Claims and evidence
 
 No fabricated clients, testimonials, metrics, OpenAI partnership, certification, regulatory approval, or guaranteed business result. Keep private strategy and unvalidated products out of public copy. Incorporate newly supplied vision notes without claiming access to unseen conversations.
+
+## October 2026 requirement refinement
+
+The current owner brief takes precedence over earlier discovery-first messaging. Lead with embedded AI BA/PM/PMO, requirements/use-case/value prioritization, governed AI tasks/skills/tools, implementation coordination and adoption, plus selective development. Engage for agreed hours/days on time and materials with founder involvement specified. Founder Sankalp More is the direct contact at sankalp@dockio.in. Finance is preferred, global and cross-industry requirements welcome; working arrangements agreed per engagement. Do not claim a consultant bench, client wins, employer endorsements, or a finalized product.
+
+Primary CTA: Share your requirement. The contact page opens an editable mailto draft that the visitor chooses whether to send. No lead submission backend, tracking, or automatic messages. Preserve existing route slugs and useful assets. Review changes in a draft PR and matching owner-private Sites preview; public cutover requires explicit approval.

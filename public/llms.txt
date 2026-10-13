@@ -1,27 +1,14 @@
 # Dockio
 
-Dockio Technosolutions Private Limited is an independent enterprise AI implementation partner.
+Dockio is led by founder Sankalp More and supports enterprise AI product owners, programme/delivery leads, and sponsors.
 
-## Who we help
-Enterprise business and operations sponsors, AI and technology leaders, and consulting or technology partners seeking focused delivery capacity.
+Services: AI business analysis, requirements/use-case/value prioritization, embedded PM/PMO delivery coordination, governed AI tasks/skills/tools, adoption, and selective development.
 
-## Services
-- Paid discovery and adoption planning: workflow selection, business outcomes, source access, permissions, review responsibilities, and implementation scope.
-- Scoped delivery: ChatGPT adoption, AI workflows and agents, integration, and Codex-assisted implementation where appropriate.
-- Ongoing support and improvement: workflow reviews, evaluations, documentation, and agreed maintenance.
-- Partner co-delivery with explicit ownership and acceptance criteria.
+Engagements use agreed hours or days on time and materials. Scope, rate, review cadence, founder involvement, availability, and delivery responsibilities are agreed before work begins. Finance is the preferred starting point; global and cross-industry enquiries are welcome. Remote delivery or other working arrangements are agreed per engagement.
 
-## Engagement path
-Introductory conversation -> agreed paid discovery or implementation scope -> controlled delivery -> ongoing improvement where needed.
+Examples are illustrative, not client wins or guaranteed outcomes. Dockio is independent.
 
-Workflow examples on the site are illustrative patterns, not named customer case studies or promised results. Dockio is independent; no official OpenAI partnership or certification is claimed.
-
-## Canonical pages
-- https://www.dockio.in/
-- https://www.dockio.in/#/services
-- https://www.dockio.in/#/use-cases
-- https://www.dockio.in/#/partner-readiness
-- https://www.dockio.in/#/contact
-
-## Contact
-partnerships@dockio.in
+Canonical website: https://www.dockio.in/
+Services: https://www.dockio.in/#/services
+Contact: https://www.dockio.in/#/contact
+Email: sankalp@dockio.in

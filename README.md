@@ -13,7 +13,7 @@ The Sites copy remains owner-private. GitHub Pages remains the public host. Both
 
 Write for enterprise business and operations sponsors, AI/technology leaders, workflow owners, and consulting or technology delivery partners. Help them identify a concrete business outcome, understand Dockio's role, and start a qualified conversation.
 
-Position the engagement around paid discovery, scoped implementation, and ongoing support or improvement. ChatGPT and Codex are tools used where appropriate; Dockio is an independent services provider. Preserve clear responsibilities, approved information access, human review, and measurable acceptance criteria. Workflow examples are illustrative, not customer wins or promises. Do not publish private strategy, personal planning, client opportunities, or unverified partnerships.
+Position engagements around embedded AI BA/PM/PMO support, requirements and value prioritization, governed AI tasks/skills/tools, implementation coordination, adoption, and selective development. Agree hours or days on time and materials, including founder involvement, before starting. Finance is preferred; global and cross-industry enquiries are welcome. ChatGPT and Codex are tools used where appropriate; Dockio is an independent services provider. Preserve clear responsibilities, approved information access, human review, and measurable acceptance criteria. Workflow examples are illustrative, not customer wins or promises. Do not publish private strategy, personal planning, client opportunities, or unverified partnerships.
 
 ## Development
 
@@ -24,12 +24,12 @@ npx tsc --noEmit
 npm run build
 ```
 
-This is a React/Vite static app. The existing hash routes support both GitHub Pages and Sites. Keep the Microsoft Bookings URL in `src/lib/bookings.ts` and the established partnerships email unless instructed otherwise. Search metadata uses `www.dockio.in` as the canonical domain for both copies.
+This is a React/Vite static app. The existing hash routes support both GitHub Pages and Sites. The primary enquiry path opens an editable email draft to `sankalp@dockio.in`, as requested by the owner. The legacy Microsoft Bookings configuration is retained in `src/lib/bookings.ts` but is not the primary enquiry path. The website does not collect or submit visitor briefs. Search metadata uses `www.dockio.in` as the canonical domain for both copies.
 
 ## Release both copies
 
 1. Update the GitHub source and check the desktop/mobile visitor journey, service routes, contact links, FAQ, and downloadable memo. Run TypeScript and the production build.
-2. Commit and push the reviewed source to `main`. The existing `.github/workflows/static.yml` publishes to GitHub Pages. Verify that commit's deployment finishes successfully.
+2. Commit and push changes to a review branch and open a draft PR. Do not merge or change the live domain/DNS without explicit final approval. A private Sites preview may use the draft branch; record clearly that it is ahead of public production. After approval, merging to `main` triggers the existing `.github/workflows/static.yml` GitHub Pages deployment. Verify that deployment finishes successfully.
 3. Use Sites to open the project identified in `.openai/hosting.json`, preserving its audience. Use fresh short-lived credentials through hidden stdin only; never commit credentials.
 4. From a clean GitHub checkout, synchronize the source into the clean, separate Sites checkout:
 
@@ -39,7 +39,7 @@ This is a React/Vite static app. The existing hash routes support both GitHub Pa
 
    The utility verifies the Site identity, copies tracked source, removes obsolete tracked application files, preserves extra hosting fields, and records the GitHub commit in `.openai/github-source.json` in the Sites copy.
 5. Build and package the synchronized Sites checkout with the supported Sites source workflow. The static artifact contains `.openai/hosting.json` and `dist/`. Push its exact source commit before saving and deploying the matching artifact.
-6. Publish with the owner-private Sites operation and verify its terminal deployment result. Record both URLs and source commits in the release handoff. Never report synchronization complete if either publication failed.
+6. Publish with the owner-private Sites operation and verify its terminal deployment result. Record both URLs and source commits in the release handoff. Never report synchronization complete if either publication failed. During review, parity means the private Sites preview matches the PR commit; public production intentionally stays at the last approved commit.
 
 This is a release workflow, not a background auto-sync service. Each website release must complete both destinations. No persistent Sites credentials are stored in GitHub Actions.
 
