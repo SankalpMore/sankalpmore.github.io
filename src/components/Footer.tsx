@@ -1,6 +1,6 @@
 import { useRouter } from '@/lib/router'
 import { Separator } from '@/components/ui/separator'
-import { EnvelopeSimple, LinkedinLogo } from '@phosphor-icons/react'
+import { EnvelopeSimple } from '@phosphor-icons/react'
 
 export function Footer() {
   const { navigate } = useRouter()
@@ -26,15 +26,6 @@ export function Footer() {
                 aria-label="Email Dockio"
               >
                 <EnvelopeSimple className="h-5 w-5" />
-              </a>
-              <a
-                href="https://linkedin.com/company/dockio"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-10 w-10 items-center justify-center rounded-lg border border-[#ded8d2] bg-white text-[#282523] transition hover:bg-[#f7f4f1]"
-                aria-label="Dockio on LinkedIn"
-              >
-                <LinkedinLogo className="h-5 w-5" />
               </a>
             </div>
           </div>
