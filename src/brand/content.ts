@@ -17,12 +17,12 @@ export const faqs = [
 ];
 const core = [
     ['/', 'AI systems integration, delivery & adoption', 'AI-value-focused systems integration. Dockio connects business priorities, enterprise AI implementation and everyday adoption. Share your requirement.'],
-    ['/services', 'Enterprise AI services', 'AI requirements, value prioritization, governed tasks and tools, systems integration, delivery coordination and adoption support.'],
+    ['/services', 'Enterprise AI solutions', 'AI requirements, value prioritization, governed tasks and tools, systems integration, delivery coordination and adoption support.'],
     ['/approach', 'How we work', 'An embedded enterprise AI remit, agreed hours or days, accountable delivery and founder involvement. See how Dockio works alongside your team.'],
     ['/budgetops', 'BudgetOps | Evidence for investment decisions', 'Explore the Dockio BudgetOps vision: connect priorities, delivery, adoption and outcomes to better-informed funding decisions.'],
     ['/about', 'About Dockio & Sankalp More', 'Founder-led enterprise AI systems integration. Meet Sankalp More and the thinking behind Dockio’s focus on implementation, governance, value and adoption.'],
     ['/contact', 'Share your AI requirement', 'Tell Dockio about your AI priorities, delivery challenge or adoption requirement. Prepare a local email brief for sankalp@dockio.in.'],
-    ['/industries', 'Enterprise AI by industry', 'AI systems integration and adoption shaped around industry workflows, with a focus on finance and cross-industry delivery.'],
+    ['/industries', 'Industries we serve | Enterprise AI', 'AI systems integration and adoption shaped around industry workflows, with a focus on finance and cross-industry delivery.'],
     ['/use-cases', 'Enterprise AI use cases', 'Explore AI opportunities in finance, operations, data, engineering and customer work. Define the outcome before the implementation.'],
     ['/case-studies', 'AI workflow possibilities', 'Explore illustrative AI workflow opportunities, from finance-close commentary to programme reporting and policy comparison.'],
     ['/partner-readiness', 'Work with Dockio', 'Bring Dockio into a defined AI workstream alongside your delivery team, with clear ownership, integration responsibilities and handover.'],

@@ -1,6 +1,7 @@
 import { Header, Footer, EnquiryBand } from './brand/Brand';
 import { Home } from './brand/Home';
-import { About, Approach, BudgetOps, Catalog, Detail, Partners, Privacy, Services, Workflows } from './brand/Pages';
+import { About, Approach, BudgetOps, Partners, Privacy } from './brand/Pages';
+import { Solutions, Industries, UseCases, Detail } from './brand/Exploration';
 import { Contact } from './brand/Contact';
 import { industryItems, serviceItems, useCaseItems } from './brand/content';
 export default function App({ initialPath = '/' }: {
@@ -17,7 +18,7 @@ export default function App({ initialPath = '/' }: {
                 content = <Home />;
                 break;
             case '/services':
-                content = <Services />;
+                content = <Solutions />;
                 break;
             case '/approach':
                 content = <Approach />;
@@ -32,13 +33,13 @@ export default function App({ initialPath = '/' }: {
                 content = <Contact />;
                 break;
             case '/industries':
-                content = <Catalog category="industries"/>;
+                content = <Industries />;
                 break;
             case '/use-cases':
-                content = <Catalog category="use-cases"/>;
+                content = <UseCases />;
                 break;
             case '/case-studies':
-                content = <Workflows />;
+                content = <UseCases examples />;
                 break;
             case '/partner-readiness':
                 content = <Partners />;
@@ -48,5 +49,5 @@ export default function App({ initialPath = '/' }: {
                 break;
             default: content = <section className="section shell page-intro"><p className="eyebrow">LET’S GET YOU BACK</p><h1>There’s more<br />to explore.</h1><p>This page could not be found.</p><a href="/" className="button">Explore Dockio</a></section>;
         }
-    return <><a className="skip-link" href="#main">Skip to content</a><Header path={path}/><main id="main" tabIndex={-1}>{content}{!['/contact', '/privacy'].includes(path) && <EnquiryBand />}</main><Footer /></>;
+    return <><a className="skip-link" href="#main">Skip to content</a><Header path={path}/><main id="main" tabIndex={-1}>{content}{!item && !['/contact', '/privacy'].includes(path) && <EnquiryBand />}</main><Footer /></>;
 }

@@ -1,4 +1,4 @@
-type CatalogItem = {
+export type CatalogItem = {
     label: string;
     path: string;
     summary: string;
@@ -8,49 +8,49 @@ export const industryItems: CatalogItem[] = [
     {
         label: 'Financial services',
         path: '/industries/financial-services',
-        summary: 'AI adoption and workflow delivery for finance teams, with source access, review, and accountability suited to the work.',
+        summary: 'Connect finance reporting, policy review and evidence preparation to authoritative sources, clear ownership and accountable judgement.',
         tasks: ['Policy and circular impact review', 'Audit-evidence preparation', 'Close and exception commentary'],
     },
     {
         label: 'IT services',
         path: '/industries/it-services',
-        summary: 'AI adoption, workflow implementation, and delivery support for teams working across clients and systems.',
+        summary: 'Keep requirements, engineering changes, client commitments and release evidence connected across delivery workstreams.',
         tasks: ['Delivery-status updates', 'Requirements comparison', 'Customer handoff preparation'],
     },
     {
         label: 'Global capability centers',
         path: '/industries/global-capability-centers',
-        summary: 'ChatGPT adoption and connected workflows for shared services, with a repeatable path from pilot to wider use.',
+        summary: 'Coordinate shared-service handoffs and extend useful workflows across locations without losing local procedures or ownership.',
         tasks: ['Leadership briefs', 'Procedure comparison', 'Shared-services exception summaries'],
     },
     {
         label: 'Logistics',
         path: '/industries/logistics',
-        summary: 'AI workflows for operational updates, exception handling, and coordination across teams and suppliers.',
+        summary: 'Connect shipment events, carrier messages and customer escalations so coordinators can review the facts and act on exceptions.',
         tasks: ['Operational exception summaries', 'SOP comparison', 'Customer escalation synthesis'],
     },
     {
         label: 'Real estate',
         path: '/industries/real-estate',
-        summary: 'AI support for document-intensive investment and portfolio operations, from discovery to implementation.',
+        summary: 'Organize property documents, diligence questions and portfolio reporting around the correct asset, document version and reviewer.',
         tasks: ['Document comparison', 'Due-diligence pack preparation', 'Portfolio update drafts'],
     },
     {
         label: 'Healthcare operations',
         path: '/industries/healthcare-operations',
-        summary: 'AI adoption for non-clinical operations, with appropriate data access and human review built into delivery.',
+        summary: 'Support non-clinical procedure changes, administrative coordination and team learning through bounded, reviewable workflows.',
         tasks: ['Procedure comparison', 'Quality-issue synthesis', 'Training follow-up preparation'],
     },
     {
         label: 'Manufacturing',
         path: '/industries/manufacturing',
-        summary: 'AI workflows spanning quality, supplier documentation, and shift communication, supported as needs evolve.',
+        summary: 'Carry quality observations, supplier documentation and open actions across shifts with product context and evidence intact.',
         tasks: ['Shift-summary preparation', 'Quality documentation review', 'Supplier material synthesis'],
     },
     {
         label: 'Professional services',
         path: '/industries/professional-services',
-        summary: 'ChatGPT adoption and workflow implementation for client delivery, research, and reusable team knowledge.',
+        summary: 'Prepare engagement briefs and reusable knowledge with clear evidence, source ownership and client-confidentiality boundaries.',
         tasks: ['Engagement briefing', 'Research synthesis', 'Knowledge-pack maintenance'],
     },
 ];
@@ -88,7 +88,7 @@ export const useCaseItems: CatalogItem[] = [
         tasks: ['Close commentary', 'Variance and exception summaries', 'Finance-review briefs'],
     },
     {
-        label: 'Ops',
+        label: 'Operations',
         path: '/use-cases/ops',
         summary: 'Keep day-to-day operations aligned with clear inputs, named owners, and structured follow-ups.',
         tasks: ['Weekly briefs', 'Project status updates', 'Training follow-ups'],
