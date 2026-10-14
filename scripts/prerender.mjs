@@ -18,7 +18,7 @@ try {
  for(const page of [...pages,{path:'/404',title:'Page not found',description:'Explore Dockio enterprise AI transformation and systems-integration services.'}]) {
   const url=canonical(page.path), graph=[organization,person,website,{'@type':'WebPage','@id':url,name:page.title+' | Dockio',url,description:page.description,isPartOf:{'@id':origin+'/#website'},inLanguage:'en-IN'}]
   if(page.path.startsWith('/services/')) graph.push({'@type':'Service',name:page.title,description:page.description,url,provider:{'@id':orgId}})
-  if(page.path.startsWith('/insights/')) graph.push({'@type':'Article',headline:page.title,description:page.description,url,author:{'@id':authorId},publisher:{'@id':orgId},datePublished:'2026-10-14',dateModified:'2026-10-14',image:origin+'/images/workshop-1536.webp',mainEntityOfPage:{'@id':url}})
+  if(page.path.startsWith('/insights/')) graph.push({'@type':'Article',headline:page.title,description:page.description,url,author:{'@id':authorId},publisher:{'@id':orgId},datePublished:'2026-10-14',dateModified:'2026-10-14',image:origin+'/images/discussion-1536.webp',mainEntityOfPage:{'@id':url}})
   if(page.path==='/') graph.push({'@type':'FAQPage',mainEntity:homeFaqs.map(([q,a])=>({'@type':'Question',name:q,acceptedAnswer:{'@type':'Answer',text:a}}))})
   if(page.path!=='/'&&page.path!=='/404') {
    const parts=page.path.split('/').filter(Boolean)
@@ -27,7 +27,7 @@ try {
    crumbs.push({'@type':'ListItem',position:crumbs.length+1,name:page.title,item:url})
    graph.push({'@type':'BreadcrumbList',itemListElement:crumbs})
   }
-  const image=origin+'/images/workshop-1536.webp'
+  const image=origin+'/images/discussion-1536.webp'
   const meta=`<title>${esc(page.title)} | Dockio</title>\n<meta name="description" content="${esc(page.description)}"/>\n<meta name="robots" content="${page.path==='/404'?'noindex,follow':'index,follow,max-image-preview:large'}"/>\n<link rel="canonical" href="${url}"/>\n<meta property="og:type" content="${page.path.startsWith('/insights/')?'article':'website'}"/>\n<meta property="og:site_name" content="Dockio"/>\n<meta property="og:title" content="${esc(page.title)} | Dockio"/>\n<meta property="og:description" content="${esc(page.description)}"/>\n<meta property="og:url" content="${url}"/>\n<meta property="og:image" content="${image}"/>\n<meta property="og:image:alt" content="Illustrative enterprise collaboration scene"/>\n<meta property="og:locale" content="en_IN"/>\n<meta name="twitter:card" content="summary_large_image"/>\n<script type="application/ld+json">${JSON.stringify({'@context':'https://schema.org','@graph':graph}).replaceAll('<','\\u003c')}</script>`
   const rendered=template.replace('<!--head-meta-->',meta).replace('<!--app-html-->',renderToString(createElement(App,{initialPath:page.path})))
   const file=page.path==='/404'?resolve(root,'dist/404.html'):resolve(root,'dist',page.path.slice(1),'index.html')

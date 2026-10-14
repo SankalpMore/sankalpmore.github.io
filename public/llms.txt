@@ -20,13 +20,16 @@ We connect business priorities, enterprise systems and people to build useful AI
 - [Company and leadership](https://www.dockio.in/about/)
 - [Perspectives](https://www.dockio.in/insights/)
 
+## Example work
+- [Interactive examples](https://www.dockio.in/examples/): A scripted banking knowledge workflow with exception scenarios, and an editable investment capacity estimate. Fictional policies and illustrative inputs; no customer results or live AI are represented.
+
 ## BudgetOps
 - [BudgetOps](https://www.dockio.in/budgetops/): A platform in development for preparing AI investment proposals, examining assumptions and cost scenarios, and organising supporting evidence. Design-partner conversations are open. It is not a generally available product.
 
 ## Enquiries
 - [Book a conversation](https://www.dockio.in/book/)
 - [RFI and RFP enquiries](https://www.dockio.in/rfp/)
-- [Guided enquiry](https://www.dockio.in/contact/): A browser-local brief builder that prepares an email. The visitor sends the email; it is not an online submission system.
+- [Guided enquiry](https://www.dockio.in/contact/): Prepare and review an initiative, procurement, embedded, partner or BudgetOps enquiry. The submission service stores the request and returns a receipt reference after a successful send. Email/copy/download alternatives are available.
 - Contact: sankalp@dockio.in
 
 Workflow examples are illustrative. Leadership experience is distinct from Dockio client engagements. No guaranteed ROI, search ranking or regulatory approval is claimed.

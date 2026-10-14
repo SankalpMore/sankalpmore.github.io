@@ -2,6 +2,7 @@ import { createRoot, hydrateRoot } from 'react-dom/client';
 import App from './App';
 import { pages, aliases } from './site/meta';
 import './site/styles.css';
+import './site/premium.css';
 const legacyPath = window.location.hash.startsWith('#/') ? window.location.hash.slice(1) : null;
 if (legacyPath) {
     const legacyUrl = new URL(legacyPath, window.location.origin);

@@ -35,157 +35,157 @@ export const services: Service[] = [
     path: "/services/ai-strategy-value",
     title: "AI strategy & value design",
     shortTitle: "Strategy & value",
-    headline: "Start with a business decision worth improving.",
+    headline: "Know which AI initiative deserves investment.",
     summary:
-      "Translate AI ambition into practical priorities, an investment case and a delivery direction. We connect the problem, its owner and the evidence needed to decide what comes next.",
+      "A promising use case needs a business owner, a workable scope and a case for the spend. We turn competing ideas into a decision brief that connects the process problem, delivery dependencies, full costs and evidence a pilot should produce.",
     deliverables: [
-      "Stakeholder discovery and a clear view of the current process, its constraints and its users.",
-      "Qualified opportunities with explicit business owners, value hypotheses and feasibility considerations.",
-      "Baseline measures, cost scenarios and assumptions that sponsors can examine.",
-      "A prioritised roadmap with dependencies, delivery options and decision points.",
-      "A sponsor-ready brief explaining the proposed scope and what a pilot will test.",
+      "Map the current task, users, review effort and bottlenecks with the people who do the work.",
+      "Compare candidate use cases by business value, feasibility, dependencies and accountable ownership.",
+      "Build cost scenarios covering implementation, model use, integration, support and human review.",
+      "Define pilot scope, acceptance criteria and the evidence needed to continue, change or stop.",
+      "Prepare a sponsor brief with options, assumptions, open questions and the decision being requested.",
     ],
     examples: [
-      "Prioritise AI opportunities across a business function or enterprise programme.",
-      "Develop the case for an assistant or document-intensive workflow.",
-      "Assess whether to improve, extend or replace an existing AI capability.",
+      "Choose between a knowledge assistant, a document workflow and an existing process improvement.",
+      "Prepare the business case for an AI pilot before procurement or engineering commits to the build.",
+      "Review an underused capability and decide whether to improve its workflow, extend its remit or retire it.",
     ],
     measures: [
-      "Completeness of the baseline and supporting evidence",
-      "Clarity of ownership, assumptions and decision criteria",
-      "Time required to prepare and review an investment proposal",
+      "Time needed to prepare and review a decision-ready proposal",
+      "Coverage of costs, dependencies and benefit assumptions",
+      "Agreement on the pilot owner, acceptance criteria and next decision",
     ],
-    question: "Which business problem should your next AI investment solve?",
+    question: "What would make this AI initiative worth funding?",
   },
   {
     path: "/services/agentic-ai-integration",
     title: "Agentic AI & enterprise integration",
     shortTitle: "AI implementation",
-    headline: "Connect AI to the work that matters.",
+    headline: "Make AI part of a complete business workflow.",
     summary:
-      "Design and implement assistants and multi-step workflows that use enterprise knowledge, tools and systems. We connect useful capabilities with defined permissions, review responsibilities and a practical route into production.",
+      "The useful result comes after the answer: a reviewed brief, a completed task or an exception resolved. We build assistants and connected workflows around that result, linking approved knowledge and enterprise systems with clear permissions, review and recovery.",
     deliverables: [
-      "Workflow and solution design grounded in the existing business process.",
-      "Knowledge retrieval with source context and information-access requirements.",
-      "API and MCP tool integration, orchestration and human review points.",
-      "Exception handling, recovery paths and testable acceptance criteria.",
-      "Pilot delivery, release preparation and an agreed operational handover.",
+      "Specify the task, required inputs, finished output and responsibilities at each workflow step.",
+      "Connect approved knowledge sources with access controls and references reviewers can examine.",
+      "Integrate agreed APIs and MCP tools with bounded actions and human approval points.",
+      "Build exception paths for missing information, denied access, failed tools and incomplete results.",
+      "Deliver the scoped pilot with acceptance results, operating documentation and a handover to named owners.",
     ],
     examples: [
-      "An enterprise knowledge assistant that helps users find and examine supporting sources.",
-      "A proposal or research workflow combining information retrieval, drafting and expert review.",
-      "A document-intensive process that coordinates systems and routes exceptions to people.",
+      "A research-to-brief workflow that gathers approved sources, drafts a structured output and routes it for review.",
+      "An internal assistant that answers process questions from current guidance and shows the supporting material.",
+      "A document workflow that extracts and compares information, then routes discrepancies to the responsible team.",
     ],
     measures: [
-      "Task completion and reviewer acceptance",
-      "Source quality, exception frequency and successful recovery",
-      "Cycle time and operating cost per completed workflow",
+      "Completed tasks accepted by the business reviewer",
+      "End-to-end cycle time, including correction and approval",
+      "Exception recovery and operating cost per accepted task",
     ],
-    question: "Where would connected AI remove the most friction from your workflow?",
+    question: "What must happen after the AI produces an answer?",
   },
   {
     path: "/services/chatgpt-codex-enablement",
     title: "ChatGPT & Codex enablement",
     shortTitle: "Workplace enablement",
-    headline: "Give people a better way to work with AI.",
+    headline: "Put ChatGPT and Codex into the working day.",
     summary:
-      "Introduce ChatGPT and Codex through the work your teams actually do. We shape role-specific workflows, practical learning and a rollout that makes quality, adoption and value observable.",
+      "Start with the recurring work your teams want to improve. We shape role-specific workflows, practical learning and review habits so people can move from individual experimentation to a shared way of producing useful work.",
     deliverables: [
-      "Readiness assessment covering user groups, information access and priority workflows.",
-      "Role-specific use cases and guidance for business, product and engineering teams.",
-      "Workspace, operating-policy and review-practice recommendations suited to your environment.",
-      "Practical workshops, reusable examples and a champion enablement plan.",
-      "A phased rollout with baseline measures, user feedback and an improvement backlog.",
+      "Select recurring tasks with business, product and engineering teams and record how they work today.",
+      "Design reusable instructions, examples and review checklists for each agreed role and workflow.",
+      "Recommend workspace practices and information-handling rules aligned with your approved environment.",
+      "Run practical sessions using representative tasks and prepare champions to support their colleagues.",
+      "Plan rollout around completed work, user feedback and a backlog of access or workflow improvements.",
     ],
     examples: [
-      "Help research, analysis and operations teams build repeatable ChatGPT workflows.",
-      "Introduce Codex into scoped product and engineering tasks with review and acceptance practices.",
-      "Turn promising individual experiments into shared ways of working.",
+      "Help analysts turn source material into a referenced brief with a consistent review checklist.",
+      "Introduce Codex for scoped code changes, repository questions and test preparation with engineering review.",
+      "Give operations teams reusable ways to prepare procedures, meeting follow-ups and service responses.",
     ],
     measures: [
-      "Completion and quality of the intended tasks",
-      "Sustained use within the target workflow",
-      "Time saved after review and correction effort",
+      "Task quality after review and correction",
+      "Repeated use within the selected workflow",
+      "Time released after preparation, verification and rework",
     ],
-    question: "What should your people be able to do better with ChatGPT or Codex?",
+    question: "Which recurring task should your team do better with AI?",
   },
   {
     path: "/services/governance-evaluation",
     title: "AI governance, evaluation & operations",
     shortTitle: "Governance & evaluation",
-    headline: "Build confidence into everyday execution.",
+    headline: "Know when an AI workflow is ready to release.",
     summary:
-      "Make quality, operating cost and accountability visible. We help teams define how AI is evaluated, released, monitored and improved within the organisation's existing responsibilities.",
+      "Teams need a clear basis for accepting a release and a way to respond when it fails. We connect quality tests, controls, operating costs and ownership to the task being delivered, with evidence the business and technology teams can review together.",
     deliverables: [
-      "Risk and control mapping for the intended users, data and actions.",
-      "Quality criteria, representative evaluation sets and reviewer guidance.",
-      "Prompt, retrieval and workflow regression tests, including failure scenarios.",
-      "Release, escalation and rollback responsibilities with a practical operating cadence.",
-      "Consumption and cost assessment linked to an evidence-based improvement backlog.",
+      "Map the workflow's data, actions and dependencies to your existing controls and accountable owners.",
+      "Define acceptance criteria and assemble representative normal, edge and failure cases with business reviewers.",
+      "Build repeatable evaluations for prompts, retrieval, tool use and workflow changes.",
+      "Agree release checks, incident routes, rollback decisions and the evidence retained for review.",
+      "Analyse consumption, retries and review effort to prioritise practical quality and cost improvements.",
     ],
     examples: [
-      "Evaluate an existing retrieval assistant before expanding its use.",
-      "Improve model-update testing and reduce repeated manual review.",
-      "Assess how retrieval, tool calls and retries affect quality and operating cost.",
+      "Test whether a knowledge assistant finds the right sources and acknowledges when evidence is missing.",
+      "Check that a connected workflow stops appropriately when access is denied or a tool is unavailable.",
+      "Create a repeatable regression pack before changing a model, prompt, knowledge source or integration.",
     ],
     measures: [
-      "Evaluation coverage and results against agreed acceptance criteria",
-      "Issue resolution and release-preparation effort",
-      "Quality and consumption cost across repeated runs",
+      "Acceptance results across representative tasks and failure cases",
+      "Reviewer effort and time required to assess a release",
+      "Unresolved exceptions, recovery success and cost per completed task",
     ],
-    question: "What evidence would give your team confidence to release or scale?",
+    question: "What evidence should your team see before approving the next release?",
   },
   {
     path: "/services/embedded-ai-teams",
     title: "Embedded AI delivery & specialist teams",
     shortTitle: "Embedded delivery",
-    headline: "Add capability where your programme needs it.",
+    headline: "Give the next workstream clear delivery ownership.",
     summary:
-      "Embed a defined workstream or specialist capacity within your delivery structure. We agree the responsibilities, outputs and handoffs so additional capacity supports the programme's goals.",
+      "An enterprise programme may need a product workstream, evaluation support or specialist delivery capacity. We scope the remit within your existing team, then agree the roles, outputs and working arrangements required to move it forward.",
     deliverables: [
-      "A scoped role or workstream with named outputs and acceptance criteria.",
-      "An agreed delivery configuration, working arrangement and onboarding plan.",
-      "Stakeholder alignment and coordination between business, product and engineering.",
-      "A delivery cadence that makes progress, dependencies and decisions visible.",
-      "Documentation, knowledge transfer and a practical handover plan.",
+      "Define the workstream, responsibilities, expected outputs and acceptance criteria with your programme lead.",
+      "Agree the specialist configuration, location, duration and onboarding needs before confirming the engagement.",
+      "Translate business requirements into prioritised work with traceable decisions and engineering handoffs.",
+      "Maintain a delivery cadence covering progress, dependencies, issues and decisions needing your input.",
+      "Prepare documentation, knowledge transfer and a handover the receiving team can act on.",
     ],
     examples: [
-      "AI product and business-analysis support from discovery through acceptance.",
-      "Evaluation, testing and implementation workstreams within an enterprise programme.",
-      "Data-science or engineering requirements scoped around an agreed business outcome.",
+      "An AI product and business-analysis workstream covering discovery, requirements, backlog and business acceptance.",
+      "A dedicated evaluation workstream that prepares test cases, coordinates reviewers and tracks release readiness.",
+      "A scoped data-science or integration workstream with agreed deliverables inside a wider programme.",
     ],
     measures: [
-      "Delivery against agreed outputs and acceptance criteria",
-      "Handoff quality and resolution of dependencies",
-      "Knowledge transfer and readiness for the receiving team",
+      "Outputs accepted against the agreed workstream scope",
+      "Time lost to unresolved dependencies and repeated handoffs",
+      "Handover completeness and the receiving team's readiness",
     ],
-    question: "Which role or workstream needs additional ownership and delivery capacity?",
+    question: "Which workstream needs clearer ownership or additional specialist capacity?",
   },
   {
     path: "/services/data-customer-intelligence",
     title: "Data, analytics & customer intelligence",
     shortTitle: "Data & intelligence",
-    headline: "Turn insight into a decision you can test.",
+    headline: "Put customer insight into the next business decision.",
     summary:
-      "Connect data, analytics and AI with the decisions business teams make. We help define useful customer and operational insights, shape a pilot and establish how to assess its effect.",
+      "A segment or score is useful when a team can act on it. We connect data diagnostics, customer analytics and recommendation design to a specific decision, an operational workflow and a pilot that can establish whether the change helps.",
     deliverables: [
-      "Data and use-case diagnostics tied to a specific business decision.",
-      "Customer segmentation, propensity or lead-prioritisation problem definition.",
-      "Next-best-action or offer design with business rules and operational requirements.",
-      "Modelling and pilot scope with a baseline, comparison approach and measurement plan.",
-      "Integration requirements connecting analytical outputs to the people using them.",
+      "Assess data quality, coverage, permissions and suitability for the chosen customer or operating decision.",
+      "Define segments, propensity targets or prioritisation rules with the team responsible for acting on them.",
+      "Develop the agreed analytical prototype and document its assumptions, limits and evaluation results.",
+      "Design a pilot with a relevant baseline or comparison group and explicit business success criteria.",
+      "Specify how scores and recommendations enter the workflow, receive feedback and reach an accountable owner.",
     ],
     examples: [
-      "Develop a customer micro-segmentation or lead-prioritisation pilot.",
-      "Define a next-best-action workflow and how its recommendations will be used.",
-      "Explore customer journeys, service feedback or operational bottlenecks.",
+      "A lead-prioritisation pilot that gives relationship teams a reason to act and records the resulting outcome.",
+      "A next-best-action prototype that combines customer context, eligibility rules and expert review.",
+      "A service-feedback analysis that turns recurring themes into a prioritised operational improvement backlog.",
     ],
     measures: [
-      "Data suitability and usefulness of the resulting insight",
-      "Recommendation uptake within the intended process",
-      "Pilot outcomes against a relevant baseline or comparison group",
+      "Data coverage and analytical performance for the intended decision",
+      "Recommendation use and outcomes recorded by the operating team",
+      "Pilot results against the agreed baseline or comparison group",
     ],
-    question: "Which customer or operating decision would benefit from better evidence?",
+    question: "Which decision should better customer evidence change?",
   },
 ];
 
@@ -193,48 +193,48 @@ export const industries: Industry[] = [
   {
     path: "/industries/financial-services",
     title: "Banking & financial services",
-    headline: "Enterprise AI built around banking realities.",
+    headline: "AI that fits the way a bank has to work.",
     summary:
-      "Connect AI ambition with controlled information access, complex operating processes and accountable decisions. Dockio helps financial-services teams define valuable work, implement useful capabilities and examine the evidence for further investment.",
+      "Relationship preparation, internal knowledge and document operations involve several teams, restricted information and established approvals. We build around those realities, connecting a defined business task to approved sources, accountable review and a measurable pilot.",
     workflows: [
       {
-        title: "Knowledge and research",
+        title: "Relationship briefing packs",
         description:
-          "Help teams retrieve approved information, examine sources and prepare research with a clear review step.",
+          "Bring together permitted customer context, product information and approved research into a structured brief for a relationship manager to review before a meeting.",
       },
       {
-        title: "Relationship and service preparation",
+        title: "Internal policy and process answers",
         description:
-          "Bring relevant customer, product and process information together to support preparation and service workflows.",
+          "Retrieve current guidance with source references, respect user access and route unresolved questions to the policy or process owner.",
       },
       {
-        title: "Document-intensive operations",
+        title: "Document comparison and exceptions",
         description:
-          "Scope extraction, comparison, evidence preparation and exception handling around the organisation's decision rights.",
+          "Extract agreed fields, compare documents against a checklist and assemble an evidence pack for the operations reviewer to resolve discrepancies.",
       },
       {
-        title: "Customer intelligence",
+        title: "Customer intelligence and next actions",
         description:
-          "Define segmentation, lead-prioritisation and next-best-action pilots with a practical measurement approach.",
+          "Scope segmentation, lead-prioritisation or next-best-action pilots with data permissions, eligibility rules and a comparison approach agreed in advance.",
       },
       {
-        title: "Reusable enterprise capabilities",
+        title: "Reusable platform workflows",
         description:
-          "Connect knowledge, tools and workflows with evaluation practices and accountable business ownership.",
+          "Turn a recurring task into a governed workflow with a business owner, permission checks, acceptance tests and a defined route when a dependency fails.",
       },
     ],
     constraints: [
-      "Information access and user entitlements",
-      "Data privacy and internal approval processes",
+      "User entitlements and approved information sources",
+      "Data handling and internal approval processes",
       "Legacy systems and integration dependencies",
-      "API consumption and operating economics",
-      "Review responsibilities and exception handling",
+      "API consumption, retries and review effort",
+      "Business decision rights and exception ownership",
     ],
     measures: [
-      "Preparation time and first-pass quality",
-      "Task completion and exception rates",
-      "Use within the intended business workflow",
-      "Business outcomes verified through the agreed pilot",
+      "Preparation time after verification and correction",
+      "Evidence completeness and reviewer acceptance",
+      "Task completion, exceptions and successful recovery",
+      "Observed pilot outcomes and cost per accepted task",
     ],
     services: [
       "/services/ai-strategy-value",
@@ -246,41 +246,41 @@ export const industries: Industry[] = [
   {
     path: "/industries/insurance",
     title: "Insurance",
-    headline: "More useful information. More consistent operations.",
+    headline: "Make policy and claims information easier to work with.",
     summary:
-      "Help underwriting, claims and service teams work with policy knowledge and supporting documents. We shape AI workflows that make evidence easier to examine and keep expert review responsibilities clear.",
+      "Policy wording, supporting documents and operational guidance are spread across many sources. We help underwriting, claims and service teams assemble the information a specialist needs, preserve its provenance and make the next review step clear.",
     workflows: [
       {
-        title: "Policy and procedure knowledge",
+        title: "Policy and procedure lookup",
         description:
-          "Make approved policy, product and operational information easier for internal teams to find and interpret.",
+          "Find relevant clauses and internal guidance, show the version and supporting source, and flag questions that need a product specialist's interpretation.",
       },
       {
         title: "Claims-document preparation",
         description:
-          "Organise supporting information, prepare evidence summaries and identify items that need an expert's attention.",
+          "Organise submitted material against a claims checklist, identify missing items and prepare a referenced summary for the claims handler's review.",
       },
       {
-        title: "Underwriting-support research",
+        title: "Underwriting submission briefs",
         description:
-          "Assist information gathering and comparison within a defined scope, with human review of the resulting work.",
+          "Extract agreed facts from a submission, compare them with the required information and surface gaps for an underwriter to examine.",
       },
       {
-        title: "Distribution and service enablement",
+        title: "Distribution and service support",
         description:
-          "Support product questions, service preparation and consistent access to relevant internal guidance.",
+          "Prepare responses to product and servicing questions from approved material, with escalation for exceptions and specialist decisions.",
       },
     ],
     constraints: [
       "Sensitive customer and policy information",
-      "Document variation and incomplete evidence",
-      "Product and process version control",
+      "Incomplete submissions and varying document formats",
+      "Policy versions and approved wording",
       "Expert judgement and approval responsibilities",
     ],
     measures: [
-      "Document preparation effort and completeness",
-      "Source traceability and reviewer acceptance",
-      "Service turnaround and exception handling",
+      "Time required to prepare a complete review pack",
+      "Accuracy, missing-item detection and source traceability",
+      "Reviewer acceptance and service turnaround",
     ],
     services: [
       "/services/ai-strategy-value",
@@ -291,47 +291,47 @@ export const industries: Industry[] = [
   {
     path: "/industries/gcc",
     title: "Global capability centres",
-    headline: "Make useful AI repeatable across the enterprise.",
+    headline: "Turn local AI experiments into a shared way of working.",
     summary:
-      "GCCs connect global business teams, technology and operations. Dockio helps translate shared AI ambition into reusable capabilities, clearer handoffs and practical adoption across functions.",
+      "A GCC has to connect global demand with shared platforms and local operating needs. We help teams choose repeatable tasks, build reusable workflows and agree how business, product and engineering teams will own delivery and improvement.",
     workflows: [
       {
-        title: "Internal knowledge and service",
+        title: "Internal knowledge and service requests",
         description:
-          "Connect enterprise information to internal research, support and shared-service workflows.",
+          "Find relevant internal guidance, draft a response with supporting sources and route requests that need an accountable service owner.",
       },
       {
-        title: "Finance and business operations",
+        title: "Finance and management preparation",
         description:
-          "Prepare reports, proposals and supporting documents with explicit quality criteria and review steps.",
+          "Assemble approved inputs into a management brief, commentary draft or project update, with traceable sources and a review checklist.",
       },
       {
-        title: "Product and engineering enablement",
+        title: "Product and engineering workflows",
         description:
-          "Scope ChatGPT and Codex workflows around useful tasks, team practices and review requirements.",
+          "Use ChatGPT or Codex for requirements clarification, repository questions, scoped changes and test preparation within the team's review practices.",
       },
       {
-        title: "Evaluation and rollout",
+        title: "Shared evaluation and rollout",
         description:
-          "Establish a shared way to test capabilities, gather feedback and decide when to extend adoption.",
+          "Create representative test packs, record acceptance decisions and use feedback from one team to improve a capability before wider rollout.",
       },
       {
-        title: "Embedded delivery workstreams",
+        title: "Embedded programme workstreams",
         description:
-          "Add scoped business-analysis, evaluation or implementation capacity within the centre's delivery structure.",
+          "Add scoped product analysis, evaluation or implementation support with defined outputs, a delivery cadence and an explicit handover.",
       },
     ],
     constraints: [
-      "Distributed stakeholders and delivery handoffs",
-      "Shared-platform standards and local business needs",
-      "Information permissions across functions",
+      "Global stakeholders and cross-team handoffs",
+      "Shared-platform standards and local process needs",
+      "Information permissions across teams and regions",
       "Ownership of reusable capabilities and operating costs",
     ],
     measures: [
-      "Workstream cycle time and handoff quality",
-      "Reuse and evaluation coverage",
-      "Adoption within target teams",
-      "Operating cost and quality of completed tasks",
+      "Task cycle time and effort spent on handoffs",
+      "Accepted reuse across the intended teams",
+      "Repeat use and quality after rollout",
+      "Operating cost per completed workflow",
     ],
     services: [
       "/services/chatgpt-codex-enablement",
@@ -343,41 +343,41 @@ export const industries: Industry[] = [
   {
     path: "/industries/life-sciences",
     title: "Life sciences & pharmaceuticals",
-    headline: "Connect specialist knowledge with everyday work.",
+    headline: "Put approved knowledge within reach of the next task.",
     summary:
-      "Support information-heavy enterprise workflows with AI that preserves source context and review responsibilities. We focus on useful knowledge, document and operational capabilities within the boundaries your organisation defines.",
+      "Specialist teams spend time finding the right material, checking its version and preparing it for review. We focus on internal knowledge, document and operational workflows, with source traceability and the validation boundaries your organisation defines.",
     workflows: [
       {
-        title: "Approved knowledge retrieval",
+        title: "Approved internal knowledge",
         description:
-          "Help internal users locate relevant information and examine the material behind an answer.",
+          "Retrieve relevant passages from approved product, procedure and operational material, with references and clear handling of unanswered questions.",
       },
       {
-        title: "Portfolio and project information",
+        title: "Project and portfolio briefs",
         description:
-          "Connect dispersed project knowledge to research, preparation and operational coordination.",
+          "Assemble status, decisions and open dependencies from permitted project sources into a brief that programme owners can verify and update.",
       },
       {
-        title: "Document and evidence preparation",
+        title: "Document comparison and evidence packs",
         description:
-          "Assist document comparison, summarisation and supporting-evidence assembly for expert review.",
+          "Compare agreed sections or versions, highlight changes and prepare referenced evidence for a specialist to review and accept.",
       },
       {
-        title: "Feedback and operational insight",
+        title: "Operational feedback analysis",
         description:
-          "Explore sentiment, feedback themes and recommendation prototypes around a defined business question.",
+          "Group permitted service or internal feedback into themes, connect each finding to its source and prepare an action backlog for the process owner.",
       },
     ],
     constraints: [
-      "Approved information sources and access boundaries",
+      "Approved sources and information access boundaries",
       "Document provenance and version control",
-      "Specialist terminology and review needs",
-      "Validation and approval requirements defined by the client",
+      "Specialist terminology and review requirements",
+      "Client-defined validation and approval boundaries",
     ],
     measures: [
-      "Retrieval quality and evidence completeness",
+      "Relevant retrieval and complete source references",
       "Preparation effort and reviewer acceptance",
-      "Usefulness within the intended operational workflow",
+      "Time to find, verify and use approved information",
     ],
     services: [
       "/services/agentic-ai-integration",
@@ -388,41 +388,41 @@ export const industries: Industry[] = [
   {
     path: "/industries/consumer-retail",
     title: "Consumer, retail & commerce",
-    headline: "Better customer journeys, supported by practical AI.",
+    headline: "Connect customer questions with useful commercial action.",
     summary:
-      "Connect customer insight, product knowledge and operations. Dockio helps teams shape AI capabilities that improve discovery and service, then test their effect on the customer journey.",
+      "Product information, service feedback and customer analytics should help a team decide what to do next. We build focused discovery and service workflows, then test their effect on the journey using current information and an agreed comparison.",
     workflows: [
       {
-        title: "Product discovery",
+        title: "Product discovery and comparison",
         description:
-          "Help customers or service teams explore relevant products using current information and clear interaction design.",
+          "Answer product questions from the current catalogue, compare relevant options and guide the customer to the next step when the information is sufficient.",
       },
       {
-        title: "Customer and service knowledge",
+        title: "Service response preparation",
         description:
-          "Support consistent answers and preparation across product, policy and service information.",
+          "Combine approved product and policy information into a draft response, with source references and escalation for cases outside the service team's authority.",
       },
       {
-        title: "Customer intelligence",
+        title: "Customer segments and journey signals",
         description:
-          "Define segmentation and journey-analysis pilots around decisions that commercial teams can act on.",
+          "Define actionable segments or prioritisation models, connect them to campaign or service decisions and assess outcomes through a bounded pilot.",
       },
       {
-        title: "Commercial and operational workflows",
+        title: "Commercial and supplier briefs",
         description:
-          "Assist content, proposal and supplier-information work with review responsibilities built into the process.",
+          "Prepare category, supplier or campaign briefs from approved inputs, surface missing information and route the output for commercial review.",
       },
     ],
     constraints: [
-      "Freshness of product and policy information",
+      "Current product, availability and policy information",
       "Customer context and data permissions",
-      "Integration with commerce and service systems",
-      "Consistency of brand, information and escalation",
+      "Commerce and service-system integration",
+      "Brand consistency and escalation responsibilities",
     ],
     measures: [
-      "Customer effort and answer quality",
+      "Answer quality and customer effort",
       "Journey completion and service handling time",
-      "Pilot outcomes against an agreed comparison",
+      "Pilot results against an agreed comparison group",
     ],
     services: [
       "/services/data-customer-intelligence",

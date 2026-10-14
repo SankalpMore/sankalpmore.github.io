@@ -1,6 +1,7 @@
 import { Header, Footer, Breadcrumb } from './site/ui';
 import { Home } from './site/Home';
 import { Contact } from './site/Contact';
+import { Examples } from './site/Examples';
 import { Services, ServiceDetail, Industries, IndustryDetail, Approach, BudgetOps, About, OpenAI, Book, Procurement, Insights, Article, Privacy, Value, PartnerWork, NotFound } from './site/Pages';
 import { services, industries, insights } from './site/catalog';
 import { aliases } from './site/meta';
@@ -17,6 +18,7 @@ export default function App({ initialPath = '/' }: { initialPath?: string }) {
   else switch (path) {
     case '/': content = <Home />; break;
     case '/services': content = <Services />; break;
+    case '/examples': content = <Examples />; break;
     case '/industries': content = <Industries />; break;
     case '/approach': content = <Approach />; break;
     case '/budgetops': content = <BudgetOps />; break;
