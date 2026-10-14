@@ -5,6 +5,7 @@ The public website for Dockio Technosolutions Private Limited: an independent en
 - Canonical website: https://www.dockio.in/
 - GitHub source: https://github.com/SankalpMore/sankalpmore.github.io
 - Maintained Sites copy: https://dockio-intelligence-partnership.sankalp.chatgpt.site
+- Supplied-design Sites preview: https://dockio-preview-2026.sankalp.chatgpt.site
 - Sites project identity: `.openai/hosting.json`
 
 The Sites copy remains owner-private. GitHub Pages remains the public host. Both copies use this repository's application source; do not maintain independent marketing copy.
@@ -24,11 +25,15 @@ npx tsc --noEmit
 npm run build
 ```
 
-This is a React/Vite static app. The existing hash routes support both GitHub Pages and Sites. Keep the Microsoft Bookings URL in `src/lib/bookings.ts` and the established partnerships email unless instructed otherwise. Search metadata uses `www.dockio.in` as the canonical domain for both copies.
+The active website is generated from the supplied Dockio preview, with 19 static pages. Edit page content in `dockio-site/source/routes.json`, the shared header and footer in `before.html` and `after.html`, and shared styles and behavior in `site.css` and `site.js`. `npm run build` generates `dist/`; `npm run dev` builds and serves it at http://127.0.0.1:5173. No runtime framework, form endpoint, or third-party front-end assets are required. The previous React source is retained for reference and can be started with `npm run dev:legacy`; it is not part of the active build.
+
+All booking actions open the existing Microsoft Bookings URL, `https://outlook.office.com/book/Sankalp@dockio.in/?ismsaljsauthenabled`, in a new tab. The provider owns availability, time zones, attendee questions, and confirmation. The contact page provides a booking card rather than the preview's email-draft form. The supplied `sankalp@dockio.in` email address remains available. Configure every booking destination centrally in `dockio-site/site.config.json`; the generator also applies it to the contact card. Do not collect or simulate bookings locally.
+
+Static navigation works without JavaScript. Previous hash URLs are forwarded to the equivalent pages; `/case-studies` and `/partner-readiness` are retained as redirects. Search metadata and the sitemap use `www.dockio.in` as the canonical domain, with `SITE_URL` available for an alternate deployment origin. The private supplied-design preview uses the same page source. Its separate publishing checkout is under the locally ignored `sites/` directory.
 
 ## Release both copies
 
-1. Update the GitHub source and check the desktop/mobile visitor journey, service routes, contact links, FAQ, and downloadable memo. Run TypeScript and the production build.
+1. Update the GitHub source and check desktop/mobile navigation, service routes, the home tabs, contact links, and the Microsoft booking handoff without submitting a real appointment. Run TypeScript and the production build.
 2. Commit and push the reviewed source to `main`. The existing `.github/workflows/static.yml` publishes to GitHub Pages. Verify that commit's deployment finishes successfully.
 3. Use Sites to open the project identified in `.openai/hosting.json`, preserving its audience. Use fresh short-lived credentials through hidden stdin only; never commit credentials.
 4. From a clean GitHub checkout, synchronize the source into the clean, separate Sites checkout:

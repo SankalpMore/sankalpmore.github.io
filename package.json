@@ -4,12 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "node dockio-site/serve.mjs --output dist",
     "kill": "fuser -k 5000/tcp",
-    "build": "tsc -b --noCheck && vite build",
+    "build": "node dockio-site/build.mjs --output dist",
     "lint": "eslint .",
     "optimize": "vite optimize",
-    "preview": "vite preview"
+    "preview": "node dockio-site/serve.mjs --output dist",
+    "dev:legacy": "vite"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
