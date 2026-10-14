@@ -1,67 +1,35 @@
-import { Header, Footer, EnquiryBand } from './brand/Brand';
-import { Home } from './brand/Home';
-import { Partners, Privacy } from './brand/Pages';
-import { Solutions, Industries, UseCases } from './brand/Exploration';
-import { ServicePage } from './brand/ServicePages';
-import { IndustryPage, WorkflowPage } from './brand/ContextPages';
-import { EngagementApproach, BudgetOpsVision, FounderAbout, ValueRealization } from './brand/VisionPages';
-import { Insights, InsightArticle } from './brand/Insights';
-import { insights } from './brand/insightContent';
-import { Contact } from './brand/Contact';
-import { industryItems, serviceItems, useCaseItems } from './brand/content';
-export default function App({ initialPath = '/' }: {
-    initialPath?: string;
-}) {
-    const path = initialPath.replace(/\/$/, '') || '/';
-    let content: React.ReactNode;
-    const item = [...industryItems, ...serviceItems, ...useCaseItems].find(i => i.path === path);
-    const insight = insights.find(i => i.path === path);
-    if (item)
-        content = path.startsWith('/services/') ? <ServicePage item={item}/> : path.startsWith('/industries/') ? <IndustryPage item={item}/> : <WorkflowPage item={item}/>;
-    else if (insight)
-        content = <InsightArticle insight={insight}/>;
-    else
-        switch (path) {
-            case '/':
-                content = <Home />;
-                break;
-            case '/services':
-                content = <Solutions />;
-                break;
-            case '/approach':
-                content = <EngagementApproach />;
-                break;
-            case '/budgetops':
-                content = <BudgetOpsVision />;
-                break;
-            case '/about':
-                content = <FounderAbout />;
-                break;
-            case '/value-realization':
-                content = <ValueRealization />;
-                break;
-            case '/insights':
-                content = <Insights />;
-                break;
-            case '/contact':
-                content = <Contact />;
-                break;
-            case '/industries':
-                content = <Industries />;
-                break;
-            case '/use-cases':
-                content = <UseCases />;
-                break;
-            case '/case-studies':
-                content = <UseCases examples />;
-                break;
-            case '/partner-readiness':
-                content = <Partners />;
-                break;
-            case '/privacy':
-                content = <Privacy />;
-                break;
-            default: content = <section className="section shell page-intro"><p className="eyebrow">LET’S GET YOU BACK</p><h1>There’s more<br />to explore.</h1><p>This page could not be found.</p><a href="/" className="button">Explore Dockio</a></section>;
-        }
-    return <><a className="skip-link" href="#main">Skip to content</a><Header path={path}/><main id="main" tabIndex={-1}>{content}{!item && !['/contact', '/privacy'].includes(path) && <EnquiryBand />}</main><Footer /></>;
+import { Header, Footer, Breadcrumb } from './site/ui';
+import { Home } from './site/Home';
+import { Contact } from './site/Contact';
+import { Services, ServiceDetail, Industries, IndustryDetail, Approach, BudgetOps, About, OpenAI, Book, Procurement, Insights, Article, Privacy, Value, PartnerWork, NotFound } from './site/Pages';
+import { services, industries, insights } from './site/catalog';
+import { aliases } from './site/meta';
+export default function App({ initialPath = '/' }: { initialPath?: string }) {
+  const original = initialPath.replace(/\/$/, '') || '/';
+  const path = aliases[original] ?? original;
+  const service = services.find(s => s.path === path);
+  const industry = industries.find(s => s.path === path);
+  const insight = insights.find(s => s.path === path);
+  let content: React.ReactNode;
+  if (service) content = <ServiceDetail service={service} />;
+  else if (industry) content = <IndustryDetail industry={industry} />;
+  else if (insight) content = <Article article={insight} />;
+  else switch (path) {
+    case '/': content = <Home />; break;
+    case '/services': content = <Services />; break;
+    case '/industries': content = <Industries />; break;
+    case '/approach': content = <Approach />; break;
+    case '/budgetops': content = <BudgetOps />; break;
+    case '/about': content = <About />; break;
+    case '/value-realization': content = <Value />; break;
+    case '/openai': content = <OpenAI />; break;
+    case '/book': content = <Book />; break;
+    case '/contact': content = <><Breadcrumb title="Contact" /><Contact /><noscript><div className="shell nojs-message">The guided brief needs JavaScript. Email your requirement to <a href="mailto:sankalp@dockio.in">sankalp@dockio.in</a> or <a href="/book/">book a conversation</a>.</div></noscript></>; break;
+    case '/rfp': content = <Procurement />; break;
+    case '/insights': content = <Insights />; break;
+    case '/privacy': content = <Privacy />; break;
+    case '/partner-readiness': content = <PartnerWork />; break;
+    default: content = <NotFound />;
+  }
+  return <><a className="skip-link" href="#main">Skip to content</a><Header path={path} /><noscript><div className="nojs-message"><a href="/services/">Services</a> · <a href="/industries/">Industries</a> · <a href="/budgetops/">BudgetOps</a> · <a href="/contact/">Contact</a> · <a href="/book/">Book a conversation</a></div></noscript><main id="main" tabIndex={-1}>{content}</main><Footer /></>;
 }

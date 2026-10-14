@@ -1,13 +1,13 @@
 import { createRoot, hydrateRoot } from 'react-dom/client';
 import App from './App';
-import { pages } from './brand/content';
-import './brand/styles.css';
-import './brand/vision.css';
+import { pages, aliases } from './site/meta';
+import './site/styles.css';
 const legacyPath = window.location.hash.startsWith('#/') ? window.location.hash.slice(1) : null;
 if (legacyPath) {
-    const normalized = legacyPath.replace(/\/$/, '') || '/';
-    const safePath = pages.some(page => page.path === normalized) ? normalized : '/';
-    window.location.replace(safePath + (safePath.endsWith('/') ? '' : '/') + window.location.search);
+    const legacyUrl = new URL(legacyPath, window.location.origin);
+    const normalized = legacyUrl.pathname.replace(/\/$/, '') || '/';
+    const safePath = aliases[normalized] ?? (pages.some(page => page.path === normalized) ? normalized : '/');
+    window.location.replace(safePath + (safePath.endsWith('/') ? '' : '/') + (legacyUrl.search || window.location.search));
 }
 else {
     const container = document.getElementById('root')!;

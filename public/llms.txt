@@ -1,30 +1,32 @@
 # Dockio
 
-Dockio is a founder-led AI systems integration practice connecting business priorities, enterprise implementation, everyday adoption and evidence of value.
+> Dockio Technosolutions Private Limited is an enterprise AI transformation and systems-integration company based in Mumbai, India. Dockio is an OpenAI Select Partner.
+
+We connect business priorities, enterprise systems and people to build useful AI capabilities and evidence of value. Our primary focus is banking and financial services, with services for insurance, global capability centres, life sciences and consumer businesses.
 
 ## Services
-AI business analysis, requirements and value prioritization; governed AI tasks, skills and tools; embedded BA/PM/PMO; delivery and integration coordination; selective development; adoption and outcome reviews.
+- [AI strategy and value design](https://www.dockio.in/services/ai-strategy-value/)
+- [Agentic AI and enterprise integration](https://www.dockio.in/services/agentic-ai-integration/)
+- [ChatGPT and Codex enablement](https://www.dockio.in/services/chatgpt-codex-enablement/)
+- [AI governance, evaluation and operations](https://www.dockio.in/services/governance-evaluation/)
+- [Embedded AI delivery and specialist teams](https://www.dockio.in/services/embedded-ai-teams/)
+- [Data, analytics and customer intelligence](https://www.dockio.in/services/data-customer-intelligence/)
 
-## Working model
-Agreed hours or days on time and materials. Scope, rate, review cadence, founder involvement and responsibilities are agreed before work starts. Finance is the preferred starting point; global and cross-industry enquiries are welcome.
+## Context
+- [Industries](https://www.dockio.in/industries/)
+- [Working model](https://www.dockio.in/approach/)
+- [Value and ROI](https://www.dockio.in/value-realization/)
+- [OpenAI partnership](https://www.dockio.in/openai/)
+- [Company and leadership](https://www.dockio.in/about/)
+- [Perspectives](https://www.dockio.in/insights/)
 
 ## BudgetOps
-BudgetOps is Dockio's vision for connecting business priorities, delivery, adoption and outcomes to better-informed funding decisions.
+- [BudgetOps](https://www.dockio.in/budgetops/): A platform in development for preparing AI investment proposals, examining assumptions and cost scenarios, and organising supporting evidence. Design-partner conversations are open. It is not a generally available product.
 
-## Founder
-Sankalp More. Background in statistics and artificial intelligence, with enterprise experience across AI platforms, governance, value prioritization and adoption.
+## Enquiries
+- [Book a conversation](https://www.dockio.in/book/)
+- [RFI and RFP enquiries](https://www.dockio.in/rfp/)
+- [Guided enquiry](https://www.dockio.in/contact/): A browser-local brief builder that prepares an email. The visitor sends the email; it is not an online submission system.
+- Contact: sankalp@dockio.in
 
-## Pages
-- https://www.dockio.in/
-- https://www.dockio.in/services/
-- https://www.dockio.in/industries/financial-services/
-- https://www.dockio.in/approach/
-- https://www.dockio.in/value-realization/
-- https://www.dockio.in/budgetops/
-- https://www.dockio.in/insights/
-- https://www.dockio.in/about/
-- https://www.dockio.in/contact/
-- https://www.dockio.in/privacy/
-
-## Contact
-sankalp@dockio.in
+Workflow examples are illustrative. Leadership experience is distinct from Dockio client engagements. No guaranteed ROI, search ranking or regulatory approval is claimed.

@@ -1,64 +1,52 @@
 # Dockio website
 
-The public website for Dockio Technosolutions Private Limited: a founder-led AI systems integration practice focused on value, implementation and adoption.
+The public website for Dockio Technosolutions Private Limited, an enterprise AI transformation and systems-integration company focused on business value, connected implementation, adoption and outcome evidence.
 
 - Canonical website: https://www.dockio.in/
-- GitHub source: https://github.com/SankalpMore/sankalpmore.github.io
-- Maintained Sites copy: https://dockio-intelligence-partnership.sankalp.chatgpt.site
-- Sites project identity: `.openai/hosting.json`
+- Canonical source: https://github.com/SankalpMore/sankalpmore.github.io
 
-The Sites copy remains owner-private. GitHub Pages remains the public host. Both copies use this repository's application source; do not maintain independent marketing copy.
+## Positioning and content
 
-## Audience and message
+Dockio is a company owned and directed by Sankalp Shirish More. Leadership experience informs its services; previous-employer engagements are not presented as Dockio customer relationships. No invented customers, team headcount, testimonials, performance figures or guarantees are used.
 
-Write for enterprise business and operations sponsors, AI/technology leaders, workflow owners, and consulting or technology delivery partners. Help them identify a concrete business outcome, understand Dockio's role, and start a qualified conversation.
+Six services cover AI strategy/value design, agentic integration, ChatGPT/Codex enablement, governance/evaluation, embedded AI teams and data/customer intelligence. Five industries cover banking/financial services, insurance, GCCs, life sciences and consumer/retail. BudgetOps is a developing platform with a product/design-partner enquiry route. The OpenAI page uses the owner's explicitly confirmed Select Partner tier without suggesting a higher tier, ranking or guaranteed endorsement.
 
-Position engagements around embedded AI BA/PM/PMO support, requirements and value prioritization, governed AI tasks/skills/tools, implementation coordination, adoption, and selective development. Agree hours or days on time and materials, including founder involvement, before starting. Finance is preferred; global and cross-industry enquiries are welcome. ChatGPT and Codex are tools used where appropriate; Dockio is an independent services provider. Preserve clear responsibilities, approved information access, human review, and measurable acceptance criteria. Workflow examples are illustrative, not customer wins or promises. Do not publish private strategy, personal planning, client opportunities, or unverified partnerships.
+`src/site/` contains the current application design and content. `src/App.tsx` resolves real routes; `scripts/prerender.mjs` renders 28 complete indexable HTML pages plus legacy URL handoffs and a 404. `src/site/meta.ts` owns route metadata and legacy destinations. Existing legacy brand files remain unused and are not part of the browser bundle.
 
-## Development
+The homepage follows the image-generated editorial design: white, charcoal, cobalt, human photography, open service rows and a dark BudgetOps section. Generated workplace assets are illustrative; no person is labelled as an actual employee or client. `docs/design-system.md` records the design and verification limits.
+
+## Visitor routes and functionality
+
+- `/book/` links to the retained Microsoft Bookings URL. Real meeting types, time zones, available slots and confirmation remain in Microsoft Bookings.
+- `/contact/` supports initiative, procurement, embedded, BudgetOps and partner enquiries. Four required fields lead to a reviewable email brief. Service/industry context carries into the draft; optional fields vary by enquiry type. Copy and local text download are fallbacks.
+- Enquiries are sent only when the visitor sends the email to `sankalp@dockio.in`. No server submission, attachment upload, CRM connection or email notification backend is represented as connected. Procurement documents can be attached by the visitor in their email app or shared through a separately agreed route.
+- There are no added advertising or analytics scripts. No enquiry details are persisted in browser storage.
+
+## Development and checks
 
 ```sh
 npm ci
-npm run dev
-npx tsc --noEmit
 npm run build
 ```
 
-This is a React/Vite static app. The production build pre-renders 34 routes to static HTML for GitHub Pages and Sites. Each page has substantive content, a distinct title/description/canonical, and matching structured data. Legacy hash links redirect to the same path without the hash. The local requirement builder previews a brief, offers copying, and opens an editable email draft to `sankalp@dockio.in`, as requested by the owner. The legacy Microsoft Bookings configuration is retained in `src/lib/bookings.ts` but is not the primary enquiry path. The website does not collect or submit visitor briefs. Search metadata uses `www.dockio.in` as the canonical domain for both copies.
+The build runs TypeScript, Vite, static rendering and page-integrity checks. The current managed environment has no supported control-browser tool, so browser visual and interaction QA is not claimed. Do not replace managed preview infrastructure with an alternate browser path. Run representative desktop/mobile navigation, form, keyboard and live-booking checks when the supported browser is available.
 
-## Release both copies
+## Release and review
 
-1. Update the GitHub source and check the desktop/mobile visitor journey, service routes, local brief review/copy/mailto, navigation, FAQ, direct static URLs, legacy hash redirects, and no-JavaScript content. Run TypeScript and the production build.
-2. Commit and push changes to a review branch and open a draft PR. Do not merge or change the live domain/DNS without explicit final approval. A private Sites preview may use the draft branch; record clearly that it is ahead of public production. After approval, merging to `main` triggers the existing `.github/workflows/static.yml` GitHub Pages deployment. Verify that deployment finishes successfully.
-3. Use Sites to open the project identified in `.openai/hosting.json`, preserving its audience. Use fresh short-lived credentials through hidden stdin only; never commit credentials.
-4. From a clean GitHub checkout, synchronize the source into the clean, separate Sites checkout:
-
-   ```sh
-   node scripts/prepare-sites-copy.mjs /absolute/path/to/dockio-sites
-   ```
-
-   The utility verifies the Site identity, copies tracked source, removes obsolete tracked application files, preserves extra hosting fields, and records the GitHub commit in `.openai/github-source.json` in the Sites copy.
-5. Build and package the synchronized Sites checkout with the supported Sites source workflow. The static artifact contains `.openai/hosting.json` and `dist/`. Push its exact source commit before saving and deploying the matching artifact.
-6. Publish with the owner-private Sites operation and verify its terminal deployment result. Record both URLs and source commits in the release handoff. Never report synchronization complete if either publication failed. During review, parity means the private Sites preview matches the PR commit; public production intentionally stays at the last approved commit.
-
-This is a release workflow, not a background auto-sync service. Each website release must complete both destinations. No persistent Sites credentials are stored in GitHub Actions.
-
-## Context limits
-
-The October 2026 draft uses the existing website/requirements and accessible recent business direction. Arbitrary past ChatGPT chats and private Dot content are not automatically available to a new coding session. Reconcile any newly supplied vision before changing the positioning.
-
-## Brand and application architecture
-
-`src/brand/` owns the current design system, shared content, catalogue, page components, accessible vector logo/evidence diagram, and local enquiry builder. `scripts/prerender.mjs` renders `src/App.tsx` to each static route after Vite builds its assets, and generates the sitemap from the same route inventory. Retained legacy components/assets are not imported by the new app. No external fonts, analytics, backend or API credentials are required.
-
-`docs/design-system.md` records the design contract. Generated workshop images are illustrative creative assets, not photographs of Dockio employees or clients; their accessible descriptions preserve that distinction. The website includes no synthetic testimonials, client logos, employer endorsements or performance claims.
-
-## Page narratives
-
-The homepage connects priority, delivery, adoption, evidence and future investment. Four service pages use distinct decision, workflow-boundary, delivery-ownership and adoption models. Industry pages connect specific operating contexts to illustrative workflows; use-case pages are practical workflow guides. `VisionPages.tsx` covers engagement responsibilities, value measurement, the BudgetOps vision and founder context. `Insights.tsx` renders three original guidance articles from `insightContent.ts`. All routes, including articles, are statically rendered and linked from the site.
-
-The evidence models are semantic HTML, not product screenshots or performance dashboards. BudgetOps is explicitly an emerging vision. The examples describe prospective measures and decision questions; they do not report client results. `vision.css` extends the shared brand system with page-specific layouts.
+1. Update the canonical GitHub review branch. Validate the production build, static pages, titles/canonicals/schema, images, internal links, legacy handoffs and enquiry implementation.
+2. Continue draft PR #16 with an accurate title and description. Do not merge or change live-domain/DNS configuration without the owner's final approval. Merging the approved PR to main triggers `.github/workflows/static.yml` and the public GitHub Pages deployment.
+3. Keep the private review build at the exact GitHub PR commit. Preserve its existing hosting settings and audience, and record the source commit through the supported project workflow.
+4. Build, package and publish the private review build through the supported project workflow. Verify its terminal result. Report the draft preview and PR as ahead of public production until approved and merged. Never report www.dockio.in updated before the public deployment succeeds.
 
 ## Search foundations
 
-The build provides ordinary crawlable links, 34 complete HTML pages, page-specific metadata, canonical URLs, a sitemap, truthful Organization/Service/WebPage/Article data, and FAQ markup matching visible answers. `llms.txt` is a human-maintained summary, not a ranking mechanism. Google describes ordinary SEO as the foundation for its AI features: https://developers.google.com/search/docs/appearance/ai-features . OpenAI documents OAI-SearchBot and GPTBot as separate controls: https://developers.openai.com/api/docs/bots . No crawler/security settings, Search Console registrations, backlink submissions or external directory listings were changed. After the approved public release, inspect URLs in the owner's Search Console and run PageSpeed Insights against the live domain.
+Every indexable page has substantive HTML, real links, a unique title/description, a canonical under `https://www.dockio.in/`, social metadata and visible-content-matched structured data. The build generates a complete sitemap. Robots permits OAI-SearchBot and retains the existing broad crawler policy. `llms.txt` is an optional identity/navigation summary; it is not a ranking mechanism. Legacy static URLs use canonical/refresh/client handoffs, not claimed HTTP 301 redirects.
+
+After public release, inspect key URLs and submit the sitemap through the owner's verified Search Console. Confirm crawler access at the actual host/CDN, examine PageSpeed and monitor genuine qualified enquiries. No ranking guarantee or live analytics result is claimed.
+
+Official reference guidance:
+- https://developers.google.com/search/docs/appearance/ai-features
+- https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap
+- https://developers.google.com/search/docs/appearance/structured-data/organization
+- https://developers.openai.com/api/docs/bots
+- https://openai.com/business/partners/
