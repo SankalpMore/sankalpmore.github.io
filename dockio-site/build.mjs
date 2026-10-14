@@ -60,6 +60,6 @@ for (const [alias, target] of Object.entries(aliases)) {
 fs.writeFileSync(path.join(output, '.nojekyll'), '');
 fs.writeFileSync(path.join(output, 'sitemap.xml'), '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + Object.keys(routes).map(route => `<url><loc>${origin}${address(route)}</loc></url>`).join('') + '</urlset>\n');
 fs.writeFileSync(path.join(output, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${origin}/sitemap.xml\n`);
-const notFound = render('/', {title:'Page not found',description:'Find your way back to Dockio.',body:'<section class="wrap error-page"><h1>That page isn’t here.</h1><p>Let’s get you back to the work.</p><a class="button primary" href="/">Back to Dockio</a></section>'}).replaceAll('href="assets/', 'href="/assets/').replaceAll('src="assets/', 'src="/assets/').replace(/href="(?!https:|mailto:|#|\/)([^"]+)"/g, 'href="/$1"');
+const notFound = render('/', {title:'Page not found',description:'Find your way back to Dockio.',body:'<section class="wrap error-page"><h1>That page isn’t here.</h1><p>Let’s get you back to the work.</p><a class="button primary" href="/">Back to Dockio</a></section>'}).replaceAll('href="assets/', 'href="/assets/').replaceAll('src="assets/', 'src="/assets/').replace(/href="(?!https:|mailto:|data:|#|\/)([^"]+)"/g, 'href="/$1"');
 fs.writeFileSync(path.join(output, '404.html'), notFound);
 console.log(`Built ${Object.keys(routes).length} pages with the existing Microsoft Bookings URL.`);
