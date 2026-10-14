@@ -148,6 +148,7 @@
 .budget-connection p+p {margin-top:22px}
 .budget-connection .evidence-visual {color:#536b5b}
 .budget-connection .cycle-type,.budget-connection .cycle-label {fill:var(--ink)}
+.budget-connection .cycle-label {stroke:var(--paper)}
 .budget-connection .cycle-core {stroke:#7e9180}
 .budget-connection .cycle-node {stroke:#536b5b}
 .approach-opening {padding-block:65px 50px;display:grid;grid-template-columns:1.2fr .8fr;gap:65px;align-items:center}
