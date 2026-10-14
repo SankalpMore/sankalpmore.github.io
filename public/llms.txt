@@ -1,27 +1,35 @@
 # Dockio
 
-Dockio Technosolutions Private Limited is an independent enterprise AI implementation partner.
+> Dockio Technosolutions Private Limited is an enterprise AI transformation and systems-integration company based in Mumbai, India. Dockio is an OpenAI Select Partner.
 
-## Who we help
-Enterprise business and operations sponsors, AI and technology leaders, and consulting or technology partners seeking focused delivery capacity.
+We connect business priorities, enterprise systems and people to build useful AI capabilities and evidence of value. Our primary focus is banking and financial services, with services for insurance, global capability centres, life sciences and consumer businesses.
 
 ## Services
-- Paid discovery and adoption planning: workflow selection, business outcomes, source access, permissions, review responsibilities, and implementation scope.
-- Scoped delivery: ChatGPT adoption, AI workflows and agents, integration, and Codex-assisted implementation where appropriate.
-- Ongoing support and improvement: workflow reviews, evaluations, documentation, and agreed maintenance.
-- Partner co-delivery with explicit ownership and acceptance criteria.
+- [AI strategy and value design](https://www.dockio.in/services/ai-strategy-value/)
+- [Agentic AI and enterprise integration](https://www.dockio.in/services/agentic-ai-integration/)
+- [ChatGPT and Codex enablement](https://www.dockio.in/services/chatgpt-codex-enablement/)
+- [AI governance, evaluation and operations](https://www.dockio.in/services/governance-evaluation/)
+- [Embedded AI delivery and specialist teams](https://www.dockio.in/services/embedded-ai-teams/)
+- [Data, analytics and customer intelligence](https://www.dockio.in/services/data-customer-intelligence/)
 
-## Engagement path
-Introductory conversation -> agreed paid discovery or implementation scope -> controlled delivery -> ongoing improvement where needed.
+## Context
+- [Industries](https://www.dockio.in/industries/)
+- [Working model](https://www.dockio.in/approach/)
+- [Value and ROI](https://www.dockio.in/value-realization/)
+- [OpenAI partnership](https://www.dockio.in/openai/)
+- [Company and leadership](https://www.dockio.in/about/)
+- [Perspectives](https://www.dockio.in/insights/)
 
-Workflow examples on the site are illustrative patterns, not named customer case studies or promised results. Dockio is independent; no official OpenAI partnership or certification is claimed.
+## Example work
+- [Interactive examples](https://www.dockio.in/examples/): A scripted banking knowledge workflow with exception scenarios, and an editable investment capacity estimate. Fictional policies and illustrative inputs; no customer results or live AI are represented.
 
-## Canonical pages
-- https://www.dockio.in/
-- https://www.dockio.in/#/services
-- https://www.dockio.in/#/use-cases
-- https://www.dockio.in/#/partner-readiness
-- https://www.dockio.in/#/contact
+## BudgetOps
+- [BudgetOps](https://www.dockio.in/budgetops/): A platform in development for preparing AI investment proposals, examining assumptions and cost scenarios, and organising supporting evidence. Design-partner conversations are open. It is not a generally available product.
 
-## Contact
-partnerships@dockio.in
+## Enquiries
+- [Book a conversation](https://www.dockio.in/book/)
+- [RFI and RFP enquiries](https://www.dockio.in/rfp/)
+- [Guided enquiry](https://www.dockio.in/contact/): Prepare and review an initiative, procurement, embedded, partner or BudgetOps enquiry. The submission service stores the request and returns a receipt reference after a successful send. Email/copy/download alternatives are available.
+- Contact: sankalp@dockio.in
+
+Workflow examples are illustrative. Leadership experience is distinct from Dockio client engagements. No guaranteed ROI, search ranking or regulatory approval is claimed.
