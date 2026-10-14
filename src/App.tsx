@@ -1,7 +1,12 @@
 import { Header, Footer, EnquiryBand } from './brand/Brand';
 import { Home } from './brand/Home';
-import { About, Approach, BudgetOps, Partners, Privacy } from './brand/Pages';
-import { Solutions, Industries, UseCases, Detail } from './brand/Exploration';
+import { Partners, Privacy } from './brand/Pages';
+import { Solutions, Industries, UseCases } from './brand/Exploration';
+import { ServicePage } from './brand/ServicePages';
+import { IndustryPage, WorkflowPage } from './brand/ContextPages';
+import { EngagementApproach, BudgetOpsVision, FounderAbout, ValueRealization } from './brand/VisionPages';
+import { Insights, InsightArticle } from './brand/Insights';
+import { insights } from './brand/insightContent';
 import { Contact } from './brand/Contact';
 import { industryItems, serviceItems, useCaseItems } from './brand/content';
 export default function App({ initialPath = '/' }: {
@@ -10,8 +15,11 @@ export default function App({ initialPath = '/' }: {
     const path = initialPath.replace(/\/$/, '') || '/';
     let content: React.ReactNode;
     const item = [...industryItems, ...serviceItems, ...useCaseItems].find(i => i.path === path);
+    const insight = insights.find(i => i.path === path);
     if (item)
-        content = <Detail item={item} category={path.split('/')[1]}/>;
+        content = path.startsWith('/services/') ? <ServicePage item={item}/> : path.startsWith('/industries/') ? <IndustryPage item={item}/> : <WorkflowPage item={item}/>;
+    else if (insight)
+        content = <InsightArticle insight={insight}/>;
     else
         switch (path) {
             case '/':
@@ -21,13 +29,19 @@ export default function App({ initialPath = '/' }: {
                 content = <Solutions />;
                 break;
             case '/approach':
-                content = <Approach />;
+                content = <EngagementApproach />;
                 break;
             case '/budgetops':
-                content = <BudgetOps />;
+                content = <BudgetOpsVision />;
                 break;
             case '/about':
-                content = <About />;
+                content = <FounderAbout />;
+                break;
+            case '/value-realization':
+                content = <ValueRealization />;
+                break;
+            case '/insights':
+                content = <Insights />;
                 break;
             case '/contact':
                 content = <Contact />;

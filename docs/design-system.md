@@ -9,10 +9,10 @@ The October 2026 direction uses warm ivory (#F5F2EA), deep ink (#172B32), vermil
 ## Implementation contract
 
 - Max-width 1280px; desktop gutters 48–64px, mobile 22px. Hero heading 56–92px; section titles 40–64px; body 17–20px. System sans typography avoids external font requests.
-- Header: dockio mark; Solutions, Industries, How we work, BudgetOps, About; Share your requirement. Mobile menu expands below header with matching links.
-- Hero: AI transformation & systems integration; Big ambition. Real-world AI.; supplied business-priorities-to-adoption copy; Share your requirement; See how we work.
+- Header: dockio mark; Solutions, Industries, How we work, Value, Insights, About; Share your requirement. Mobile menu expands below header with matching links.
+- Hero: Enterprise AI from requirement to outcome; Business intent. Connected delivery. Evidence of value.; business-priorities-to-adoption copy; Share your requirement; See how we work.
 - Photo is a generated illustrative collaboration scene, never presented as Dockio staff or clients. No founder portrait unless provided by the founder.
-- Service columns: Choose what matters; Make the work happen; Help the change stick. Sage working-model section. Dark BudgetOps section with an accessible vector evidence cycle. Direct enquiry section.
+- Home: linked five-stage work/evidence path, recognizable buyer situations, an embedded working model, a finance perspective and the BudgetOps vision. Direct enquiry throughout.
 - The BudgetOps section is a vision for better investment decisions, not a released product, pricing offer, or client result.
 - Arrows, logo, and explanatory diagram are scalable vector artwork; body copy and all controls remain HTML. Focus states, keyboard behavior, and reduced-motion support are required.
 - Contact creates a local reviewable email brief. No backend, analytics, persistence, or automatic sending.
@@ -32,3 +32,20 @@ The expanded visual system uses split image-led introductions, open situation ro
 Seven generated editorial work scenes cover cross-functional collaboration, finance review, technology implementation, logistics, manufacturing quality, non-clinical healthcare operations and property review. People vary in age, gender and background and participate in the depicted work. These are illustrative fictional scenes, never staff portraits, clients or evidence of engagements. All new detail and hub photos carry an illustrative caption and descriptive alt text; thumbnails within already-labelled links use empty alt text. Source images are optimized into local 1536px and 640px WebP variants with explicit dimensions and responsive loading. Preserve useful older assets without routing visitors to obsolete visuals.
 
 BudgetOps remains a vision. The value-review sections connect observed delivery and adoption evidence to the next continue/change/scale decision; they do not advertise a finished product.
+
+## Distinct page narratives
+
+The deeper site uses purpose-specific models rather than one detail-page layout:
+
+- Prioritization: an open decision sheet for value, readiness, ownership and boundaries, followed by proceed/investigate/defer decisions.
+- Governed workflows: a four-part source/task/review/action contract, with read/draft/write permission boundaries.
+- Delivery: a shared implementation view and named business, platform, risk and support responsibilities; three release-readiness questions.
+- Adoption: practitioner, reviewer and owner perspectives; practice/use/review and responses to common friction.
+- Industries: a context-specific evidence or handoff model, an annotated illustrative workflow and delivery considerations alongside deliverables.
+- Use cases: a task brief, working outline, implementation questions and an evaluation plan.
+- Value: quality/adoption/process/business evidence chain and an accessible example measurement table. The table scrolls within its region on small screens.
+- BudgetOps: an editorial funding-review sheet connecting four evidence questions to continue/change/scale/stop. This is a conceptual review method, never a released-product interface.
+- Approach: engagement agreement, work sequence and an explicit responsibility model.
+- Insights: original long-form guidance, normal anchor navigation, practical questions and connected services.
+
+All models are HTML, remain readable without JavaScript and stack in semantic order. The seven local illustrative images remain varied and contextual. The header links to Value and Insights; BudgetOps is linked from the home path, value pages, article content and footer.

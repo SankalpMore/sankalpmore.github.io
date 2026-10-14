@@ -1,6 +1,6 @@
 import { Arrow } from './Brand';
-import { industryItems, serviceItems, useCaseItems, type CatalogItem } from './catalog';
-import { detailContent, type Point, type Scene } from './detailContent';
+import { industryItems, serviceItems, useCaseItems } from './catalog';
+import { detailContent, type Scene } from './detailContent';
 const sceneDescriptions: Record<Scene, string> = {
     collaboration: 'Illustrative workplace scene: colleagues of different ages shaping a business workflow together',
     finance: 'Illustrative workplace scene: finance professionals checking a report and its supporting information',
@@ -58,29 +58,5 @@ export function UseCases({ examples = false }: {
     return <>
     <section className="shell exploration-hero"><div><p className="eyebrow">{examples ? 'WORKFLOW POSSIBILITIES' : 'USE CASES'}</p><h1>A useful change.<br />A workflow you<br />can evaluate.</h1><p className="exploration-lead">These illustrative starting points show how a business task can connect to approved information, an accountable reviewer and a clear next action.</p><a className="button" href="#workflow-examples">Explore the examples <Arrow /></a></div><Photo scene="technology" priority/></section>
     <section id="workflow-examples" className="section shell"><div className="workflow-catalog">{useCaseItems.map((item, i) => <article key={item.path}><span className="small-number">0{i + 1} / {item.label}</span><h2>{detailContent[item.path].workflow.title}</h2><p>{item.summary}</p><a className="text-link" href={item.path + '/'}>Explore {item.label.toLowerCase()} <Arrow /></a></article>)}</div></section>
-  </>;
-}
-function PointList({ points }: {
-    points: Point[];
-}) {
-    return <ol className="delivery-list">{points.map((p, i) => <li key={p.title}><span className="small-number">0{i + 1}</span><div><h3>{p.title}</h3><p>{p.text}</p></div></li>)}</ol>;
-}
-const allItems = [...industryItems, ...serviceItems, ...useCaseItems];
-export function Detail({ item, category }: {
-    item: CatalogItem;
-    category: string;
-}) {
-    const detail = detailContent[item.path];
-    const categoryName = category === 'services' ? 'solutions' : category === 'use-cases' ? 'use cases' : 'industries';
-    return <>
-    <div className="shell detail-back"><a className="text-link" href={`/${category}/`}><Arrow back/>All {categoryName}</a></div>
-    <section className="shell exploration-hero detail-hero"><div><p className="eyebrow">{item.label}</p><h1>{detail.headline}</h1><p className="exploration-lead">{item.summary}</p><a className="button" href={'/contact/?topic=' + encodeURIComponent(item.label)}>Discuss this requirement <Arrow /></a></div><Photo scene={detail.image} priority/></section>
-    <nav className="shell section-rail" aria-label="On this page"><a href="#opportunity">The opportunity <Arrow /></a><a href="#workflow">Workflow example <Arrow /></a><a href="#contribution">Dockio’s contribution <Arrow /></a><a href="#value">Measures of value <Arrow /></a></nav>
-    <section className="section shell opportunity-section" id="opportunity"><h2>The work behind<br />the opportunity.</h2><p>{detail.context}</p></section>
-    <section id="workflow" className="workflow-section"><div className="shell"><p className="eyebrow">ILLUSTRATIVE WORKFLOW</p><div className="workflow-heading"><h2>{detail.workflow.title}</h2><p>{detail.workflow.intro}</p></div></div><div className="workflow-band"><ol className="shell workflow-steps">{detail.workflow.steps.map((step, i) => <li key={step.title}><div className="number-line"><span>0{i + 1}</span></div><h3>{step.title}</h3><p>{step.text}</p></li>)}</ol></div></section>
-    <section id="contribution" className="section shell contribution-grid"><div><h2>What Dockio brings<br />to the work.</h2><p>Deliverables are shaped to the agreed remit, your existing teams and the next decision you need to make.</p></div><PointList points={detail.deliverables}/></section>
-    <section className="considerations-section shell"><div className="section-heading"><h2>Designed for<br />the operating reality.</h2><p>Integration, governance and adoption belong in the requirement from the beginning.</p></div><div className="consideration-columns">{detail.considerations.map(p => <article key={p.title}><h3>{p.title}</h3><p>{p.text}</p></article>)}</div></section>
-    <section id="value" className="value-review"><div className="shell"><div className="section-heading"><h2>Make progress<br />visible.</h2><p>Agree a baseline, a sample and a review period before work starts. Compare effort and quality together.</p></div><dl className="measure-grid">{detail.measures.map(m => <div key={m.title}><dt>{m.title}</dt><dd>{m.text}</dd></div>)}</dl><div className="investment-note"><p>Use the evidence to decide what to continue, change or scale. That is the connection we are exploring through our BudgetOps vision.</p><a href="/budgetops/" className="text-link">Explore BudgetOps <Arrow /></a></div></div></section>
-    <section className="section shell next-step"><div><h2>A useful<br />first conversation.</h2><p>{detail.next}</p><a href={'/contact/?topic=' + encodeURIComponent(item.label)} className="button button-ink">Share your requirement <Arrow /></a><p className="engagement-note">Agreed hours or days on time and materials. Scope, responsibilities, availability and founder involvement are defined before work starts.</p></div><aside aria-label="Related work"><p className="eyebrow">CONNECTED TO THIS WORK</p>{detail.related.map(path => <a href={path + '/'} className="related-link" key={path}>{allItems.find(i => i.path === path)?.label}<Arrow /></a>)}<a href="/approach/" className="related-link">How engagements work <Arrow /></a></aside></section>
   </>;
 }

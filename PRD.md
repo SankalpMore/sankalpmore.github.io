@@ -6,7 +6,7 @@ Build an approachable, premium, AI-value-focused systems integration brand. Conn
 
 Warm ivory, deep ink, vermilion and sage. Original open-dock vector mark. Large editorial typography, meaningful human collaboration imagery, connected service structure, evidence-cycle diagram and purposeful interaction. Preserve existing useful assets and route slugs.
 
-Home introduces the value proposition, three connected capabilities, embedded working model, finance perspective and BudgetOps vision. Services, approach, industry/use-case details, founder/about and a local enquiry builder develop the story. BudgetOps is an emerging vision for better-informed investment decisions; immediate commercial work remains enterprise AI services.
+Home introduces the value proposition, a linked five-stage work/evidence path, recognizable buyer situations, embedded working model, finance perspective and BudgetOps vision. Four distinct service models, engagement responsibilities, industry contexts, workflow guides, value measurement, original insights, founder/about and a local enquiry builder develop the story. BudgetOps is an emerging vision for better-informed investment decisions; immediate commercial work remains enterprise AI services.
 
 ## Commercial content
 

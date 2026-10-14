@@ -1,8 +1,9 @@
 import { industryItems, serviceItems, useCaseItems } from './catalog';
+import { insights } from './insightContent';
 export { industryItems, serviceItems, useCaseItems };
 export const origin = 'https://www.dockio.in';
 export const email = 'sankalp@dockio.in';
-export const heroCopy = 'Turn business priorities into AI your people can use. Dockio works alongside your teams to shape the right use cases, connect the right tools and carry change through to everyday adoption.';
+export const heroCopy = 'Dockio connects enterprise AI priorities to implementation, governance and everyday adoption. Start with a defined requirement. Keep the outcome in view.';
 export const capabilities = [
     { title: 'Choose what matters', text: 'Start with the value you want to create. Turn competing ideas into clear priorities, requirements and measures of success.', items: ['Use-case & value prioritization', 'Business analysis & requirements', 'Success measures & acceptance criteria'], path: '/services/governance-adoption-sprint' },
     { title: 'Make the work happen', text: 'Connect people, platforms and delivery. Bring the requirements, integration and controls together in a workable plan.', items: ['Embedded BA, PM & PMO', 'AI tasks, skills, tools & integration', 'Delivery coordination & selective development'], path: '/services/codex-workflow-implementation' },
@@ -26,8 +27,10 @@ const core = [
     ['/use-cases', 'Enterprise AI use cases', 'Explore AI opportunities in finance, operations, data, engineering and customer work. Define the outcome before the implementation.'],
     ['/case-studies', 'AI workflow possibilities', 'Explore illustrative AI workflow opportunities, from finance-close commentary to programme reporting and policy comparison.'],
     ['/partner-readiness', 'Work with Dockio', 'Bring Dockio into a defined AI workstream alongside your delivery team, with clear ownership, integration responsibilities and handover.'],
+    ['/value-realization', 'AI value measurement & evidence', 'Connect task quality, adoption and process change to business outcomes. Define baselines, accountable measures and evidence for the next AI investment decision.'],
+    ['/insights', 'Practical perspectives on enterprise AI', 'Original Dockio guidance on AI use-case selection, workflow ownership and evidence for investment decisions.'],
     ['/privacy', 'Website privacy', 'How the Dockio website handles local enquiry drafts, email links and website information.'],
 ] as const;
-export const pages = [...core.map(([path, title, description]) => ({ path, title, description })), ...[...serviceItems, ...industryItems, ...useCaseItems].map(i => ({ path: i.path, title: i.label, description: i.summary }))];
+export const pages = [...insights.map(({ path, title, description }) => ({ path, title, description })), ...core.map(([path, title, description]) => ({ path, title, description })), ...[...serviceItems, ...industryItems, ...useCaseItems].map(i => ({ path: i.path, title: i.label, description: i.summary }))];
 export function pageMeta(path: string) { return pages.find(p => p.path === path) ?? { path, title: 'Page not found', description: 'Explore Dockio enterprise AI services.' }; }
 export function canonical(path: string) { return origin + (path === '/' ? '/' : path + '/'); }

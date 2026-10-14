@@ -2,6 +2,7 @@ import { createRoot, hydrateRoot } from 'react-dom/client';
 import App from './App';
 import { pages } from './brand/content';
 import './brand/styles.css';
+import './brand/vision.css';
 const legacyPath = window.location.hash.startsWith('#/') ? window.location.hash.slice(1) : null;
 if (legacyPath) {
     const normalized = legacyPath.replace(/\/$/, '') || '/';

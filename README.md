@@ -24,7 +24,7 @@ npx tsc --noEmit
 npm run build
 ```
 
-This is a React/Vite static app. The production build pre-renders 29 routes to static HTML for GitHub Pages and Sites. Each page has substantive content, a distinct title/description/canonical, and matching structured data. Legacy hash links redirect to the same path without the hash. The local requirement builder previews a brief, offers copying, and opens an editable email draft to `sankalp@dockio.in`, as requested by the owner. The legacy Microsoft Bookings configuration is retained in `src/lib/bookings.ts` but is not the primary enquiry path. The website does not collect or submit visitor briefs. Search metadata uses `www.dockio.in` as the canonical domain for both copies.
+This is a React/Vite static app. The production build pre-renders 34 routes to static HTML for GitHub Pages and Sites. Each page has substantive content, a distinct title/description/canonical, and matching structured data. Legacy hash links redirect to the same path without the hash. The local requirement builder previews a brief, offers copying, and opens an editable email draft to `sankalp@dockio.in`, as requested by the owner. The legacy Microsoft Bookings configuration is retained in `src/lib/bookings.ts` but is not the primary enquiry path. The website does not collect or submit visitor briefs. Search metadata uses `www.dockio.in` as the canonical domain for both copies.
 
 ## Release both copies
 
@@ -53,6 +53,12 @@ The October 2026 draft uses the existing website/requirements and accessible rec
 
 `docs/design-system.md` records the design contract. Generated workshop images are illustrative creative assets, not photographs of Dockio employees or clients; their accessible descriptions preserve that distinction. The website includes no synthetic testimonials, client logos, employer endorsements or performance claims.
 
+## Page narratives
+
+The homepage connects priority, delivery, adoption, evidence and future investment. Four service pages use distinct decision, workflow-boundary, delivery-ownership and adoption models. Industry pages connect specific operating contexts to illustrative workflows; use-case pages are practical workflow guides. `VisionPages.tsx` covers engagement responsibilities, value measurement, the BudgetOps vision and founder context. `Insights.tsx` renders three original guidance articles from `insightContent.ts`. All routes, including articles, are statically rendered and linked from the site.
+
+The evidence models are semantic HTML, not product screenshots or performance dashboards. BudgetOps is explicitly an emerging vision. The examples describe prospective measures and decision questions; they do not report client results. `vision.css` extends the shared brand system with page-specific layouts.
+
 ## Search foundations
 
-The build provides ordinary crawlable links, 29 complete HTML pages, page-specific metadata, canonical URLs, a sitemap, truthful Organization/Service/WebPage data, and FAQ markup matching visible answers. `llms.txt` is a human-maintained summary, not a ranking mechanism. Google describes ordinary SEO as the foundation for its AI features: https://developers.google.com/search/docs/appearance/ai-features . OpenAI documents OAI-SearchBot and GPTBot as separate controls: https://developers.openai.com/api/docs/bots . No crawler/security settings, Search Console registrations, backlink submissions or external directory listings were changed. After the approved public release, inspect URLs in the owner's Search Console and run PageSpeed Insights against the live domain.
+The build provides ordinary crawlable links, 34 complete HTML pages, page-specific metadata, canonical URLs, a sitemap, truthful Organization/Service/WebPage/Article data, and FAQ markup matching visible answers. `llms.txt` is a human-maintained summary, not a ranking mechanism. Google describes ordinary SEO as the foundation for its AI features: https://developers.google.com/search/docs/appearance/ai-features . OpenAI documents OAI-SearchBot and GPTBot as separate controls: https://developers.openai.com/api/docs/bots . No crawler/security settings, Search Console registrations, backlink submissions or external directory listings were changed. After the approved public release, inspect URLs in the owner's Search Console and run PageSpeed Insights against the live domain.
