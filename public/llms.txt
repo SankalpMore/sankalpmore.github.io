@@ -1,27 +1,38 @@
 # Dockio
 
-Dockio Technosolutions Private Limited is an independent enterprise AI implementation partner.
+Dockio Technosolutions Private Limited is an enterprise AI implementation and systems-integration company based in Mumbai, India. Dockio is an OpenAI Select Partner.
 
-## Who we help
-Enterprise business and operations sponsors, AI and technology leaders, and consulting or technology partners seeking focused delivery capacity.
+## Positioning
+Make AI work. In your business. Dockio helps banks and enterprise teams turn OpenAI investment into working capabilities, meaningful adoption and evidence of value.
 
-## Services
-- Paid discovery and adoption planning: workflow selection, business outcomes, source access, permissions, review responsibilities, and implementation scope.
-- Scoped delivery: ChatGPT adoption, AI workflows and agents, integration, and Codex-assisted implementation where appropriate.
-- Ongoing support and improvement: workflow reviews, evaluations, documentation, and agreed maintenance.
-- Partner co-delivery with explicit ownership and acceptance criteria.
+## Engagements
+- AI opportunity and investment assessment: prioritised use cases, value hypothesis, feasibility, dependencies and a scoped implementation proposal.
+- Embedded AI implementation: work alongside enterprise platform and business teams to deliver a defined workflow, agreed controls, evaluation and operating handoff.
+- Adoption and value realisation: identify adoption friction, improve execution and link operational outcomes to validated financial impact.
+- AI Implementation and Value Sprint: a scoped paid engagement for one workflow, with timing, dependencies and acceptance criteria agreed before delivery.
 
-## Engagement path
-Introductory conversation -> agreed paid discovery or implementation scope -> controlled delivery -> ongoing improvement where needed.
+## Industries
+Banking and financial services, including enterprise AI platforms and banking GCCs, is the primary focus. Other relevant engagements include private equity portfolio companies, enterprise operations and professional services.
 
-Workflow examples on the site are illustrative patterns, not named customer case studies or promised results. Dockio is independent; no official OpenAI partnership or certification is claimed.
+## OpenAI partnership
+Dockio's organisational tier is Select. Descriptions of ChatGPT adoption, API integration and Codex enablement are service offerings, not claims to separate specialization badges. Dockio provides its own professional services; product subscriptions and usage terms are governed by the relevant OpenAI agreements.
+
+## BudgetOps
+BudgetOps is in development. Its direction is recommendation-first AI investment intelligence connecting initiatives, adoption, realised value and the next funding decision. Product/project managers prepare funding cases; Finance validates adoption and realised value; business sponsors prioritise justified investment and emerging AI opportunities. Product direction is not a claim that every feature is available today.
+
+## Evidence and enquiries
+Workflow examples are representative patterns, not customer case studies or achieved-result claims. No guaranteed delivery duration or ROI is promised. Meeting bookings use the existing Microsoft Bookings calendar. The website enquiry form prepares an email draft on the visitor's device; the visitor reviews and sends it. It does not store or submit enquiries automatically.
 
 ## Canonical pages
 - https://www.dockio.in/
-- https://www.dockio.in/#/services
-- https://www.dockio.in/#/use-cases
-- https://www.dockio.in/#/partner-readiness
-- https://www.dockio.in/#/contact
+- https://www.dockio.in/services/
+- https://www.dockio.in/services/implementation-sprint/
+- https://www.dockio.in/industries/financial-services/
+- https://www.dockio.in/industries/private-equity/
+- https://www.dockio.in/delivery-example/
+- https://www.dockio.in/openai/
+- https://www.dockio.in/budgetops/
+- https://www.dockio.in/contact/
 
 ## Contact
-partnerships@dockio.in
+sankalp@dockio.in
