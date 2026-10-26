@@ -29,6 +29,7 @@ Workflow examples are representative patterns, not customer case studies or achi
 - https://www.dockio.in/services/implementation-sprint/
 - https://www.dockio.in/industries/financial-services/
 - https://www.dockio.in/industries/private-equity/
+- https://www.dockio.in/delivery-example/
 - https://www.dockio.in/openai/
 - https://www.dockio.in/budgetops/
 - https://www.dockio.in/contact/

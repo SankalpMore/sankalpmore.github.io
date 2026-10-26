@@ -1,5 +1,6 @@
 /** Keep shared navigation and badge dimensions consistent across both renderers. */
 import { applySelectRelease as applyContent } from './select-release.mjs';
+import { applyPremiumRelease } from './premium-release.mjs';
 export function applySelectRelease(input) {
   const result = applyContent(input);
   result.before = result.before.replace(/<a class="nav-link" data-route="\/approach"[^>]*>[\s\S]*?<\/a>/, '');
@@ -13,5 +14,5 @@ export function applySelectRelease(input) {
   if (partner && !partner.body.includes('OpenAI, ChatGPT and Codex are trademarks')) {
     partner.body = partner.body.replace('or an OpenAI guarantee of our work.</p>', 'or an OpenAI guarantee of our work.</p><p class="release-note">OpenAI, ChatGPT and Codex are trademarks of OpenAI.</p>');
   }
-  return result;
+  return applyPremiumRelease(result);
 }
