@@ -1,0 +1,30 @@
+name: Dockio website review
+on:
+  pull_request:
+    paths:
+      - 'dockio-site/**'
+      - 'public/assets/**'
+      - '.github/workflows/dockio-review.yml'
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build static website
+        run: node dockio-site/build.mjs --output dist
+      - name: Verify pages and local references
+        run: node dockio-site/verify.mjs dist
+      - name: Retain review build
+        uses: actions/upload-artifact@v4
+        with:
+          name: dockio-select-review
+          path: |
+            dist/
+            dockio-site/
+          retention-days: 7
