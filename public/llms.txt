@@ -1,38 +1,57 @@
 # Dockio
 
-Dockio Technosolutions Private Limited is an enterprise AI implementation and systems-integration company based in Mumbai, India. Dockio is an OpenAI Select Partner.
+> Dockio Technosolutions Private Limited is an enterprise AI implementation and systems-integration company based in Mumbai, India, and an OpenAI Select Partner. It helps enterprise teams prioritise AI use cases, implement governed workflows and connect meaningful adoption to evidence of business value.
 
-## Positioning
-Make AI work. In your business. Dockio helps banks and enterprise teams turn OpenAI investment into working capabilities, meaningful adoption and evidence of value.
+Dockio's primary industry focus is banking and financial services, including enterprise and group AI platforms and banking GCCs. Other relevant engagements include private equity portfolio companies, enterprise operations and professional services. Its brand promise is “Make AI work. In your business.”
 
-## Engagements
-- AI opportunity and investment assessment: prioritised use cases, value hypothesis, feasibility, dependencies and a scoped implementation proposal.
-- Embedded AI implementation: work alongside enterprise platform and business teams to deliver a defined workflow, agreed controls, evaluation and operating handoff.
-- Adoption and value realisation: identify adoption friction, improve execution and link operational outcomes to validated financial impact.
-- AI Implementation and Value Sprint: a scoped paid engagement for one workflow, with timing, dependencies and acceptance criteria agreed before delivery.
+## Company and partnership
+
+- [Dockio homepage](https://www.dockio.in/): Overview, engagement choices, illustrative workflow and frequently asked questions.
+- [About Dockio](https://www.dockio.in/about/): Company focus, Mumbai location and leadership. Individual professional experience is distinct from contracts delivered by Dockio.
+- [OpenAI Select partnership](https://www.dockio.in/openai/): Dockio's Select organisational tier and independent implementation services around ChatGPT adoption, API integration, agentic workflows and Codex enablement.
+- [Delivery approach](https://www.dockio.in/approach/): Defined outcomes, approved sources and access, evaluation, human review, operating ownership and adoption evidence.
+
+## Services
+
+- [AI implementation engagements](https://www.dockio.in/services/): Overview of assessment, embedded implementation and adoption services.
+- [AI opportunity and investment assessment](https://www.dockio.in/services/strategy/): Prioritised use cases, a value hypothesis, feasibility, dependencies and a scoped implementation proposal.
+- [Embedded AI implementation](https://www.dockio.in/services/integration/): Defined workflows, integrations, controls, evaluation evidence and operating handover alongside enterprise teams.
+- [Governed agentic workflows](https://www.dockio.in/services/workflows/): Multi-step work involving approved information, tools, people and explicit approval boundaries.
+- [Adoption and value realisation](https://www.dockio.in/services/adoption/): Adoption friction, task quality, operational outcomes and financial validation.
+- [AI Implementation and Value Sprint](https://www.dockio.in/services/implementation-sprint/): A scoped paid engagement for one workflow. Timing, dependencies, acceptance criteria and commercial terms are agreed before delivery.
 
 ## Industries
-Banking and financial services, including enterprise AI platforms and banking GCCs, is the primary focus. Other relevant engagements include private equity portfolio companies, enterprise operations and professional services.
 
-## OpenAI partnership
-Dockio's organisational tier is Select. Descriptions of ChatGPT adoption, API integration and Codex enablement are service offerings, not claims to separate specialization badges. Dockio provides its own professional services; product subscriptions and usage terms are governed by the relevant OpenAI agreements.
+- [Industry focus](https://www.dockio.in/industries/): Banking, portfolios and enterprise work.
+- [Banking and financial services](https://www.dockio.in/industries/financial-services/): Use-case prioritisation, governed implementation and adoption for enterprise AI platform owners, sponsors and banking GCCs.
+- [Private equity and portfolio companies](https://www.dockio.in/industries/private-equity/): Repeatable AI opportunities tied to operating priorities, assessed and implemented in each company's context.
+- [Enterprise operations](https://www.dockio.in/industries/enterprise-operations/): Document-heavy workflows and handoffs across business functions.
+- [Professional services](https://www.dockio.in/industries/professional-services/): Research, synthesis and knowledge-intensive work with professional review.
 
-## BudgetOps
-BudgetOps is in development. Its direction is recommendation-first AI investment intelligence connecting initiatives, adoption, realised value and the next funding decision. Product/project managers prepare funding cases; Finance validates adoption and realised value; business sponsors prioritise justified investment and emerging AI opportunities. Product direction is not a claim that every feature is available today.
+## Illustrative workflow and product direction
 
-## Evidence and enquiries
-Workflow examples are representative patterns, not customer case studies or achieved-result claims. No guaranteed delivery duration or ROI is promised. Meeting bookings use the existing Microsoft Bookings calendar. The website enquiry form prepares an email draft on the visitor's device; the visitor reviews and sends it. It does not store or submit enquiries automatically.
+- [Illustrative delivery example](https://www.dockio.in/delivery-example/): A synthetic investment-case review showing a business brief, evidence gaps, human review and next actions. It uses no client data or live AI execution.
+- [BudgetOps](https://www.dockio.in/budgetops/): In-development, recommendation-first AI investment intelligence. It is intended to connect delivery, adoption and realised-value evidence to the next funding decision for product/project managers, Finance and business sponsors. Described capabilities are product direction, not a claim that all features are available today.
 
-## Canonical pages
-- https://www.dockio.in/
-- https://www.dockio.in/services/
-- https://www.dockio.in/services/implementation-sprint/
-- https://www.dockio.in/industries/financial-services/
-- https://www.dockio.in/industries/private-equity/
-- https://www.dockio.in/delivery-example/
-- https://www.dockio.in/openai/
-- https://www.dockio.in/budgetops/
-- https://www.dockio.in/contact/
+## Implementation perspectives
 
-## Contact
-sankalp@dockio.in
+- [All perspectives](https://www.dockio.in/insights/): Practical guidance on enterprise AI delivery and business value.
+- [Moving beyond an AI pilot](https://www.dockio.in/insights/beyond-the-pilot/): Integration dependencies, failure handling, operational ownership and readiness for everyday work.
+- [Choosing the business task first](https://www.dockio.in/insights/start-with-the-work/): Workflow requirements, visible assumptions and a defined first increment.
+- [Connecting usage to business value](https://www.dockio.in/insights/beyond-usage/): Task completion, quality, rework and validated financial effects. Estimated time savings are distinct from realised financial value.
+
+## Contact and interpretation
+
+- [Discuss a requirement](https://www.dockio.in/contact/): Book a conversation or prepare an implementation, embedded-team, adoption, RFI/RFP or BudgetOps email enquiry.
+- [Website privacy information](https://www.dockio.in/privacy/): Information handling for website visits, email enquiries and Microsoft Bookings.
+
+Business contact: sankalp@dockio.in. Location: Mumbai, India.
+
+Website enquiry forms prepare an email draft on the visitor's device. They do not automatically submit or store enquiries. The visitor reviews and sends the email. Meeting scheduling uses Microsoft Bookings.
+
+Workflow examples are illustrative patterns, not customer case studies or achieved-result claims. No guaranteed delivery duration or ROI is stated. OpenAI Select identifies Dockio's organisational partner tier; descriptions of services do not imply separate specialization badges or an OpenAI guarantee of Dockio's work. Dockio supplies its own professional services. OpenAI product subscriptions and usage terms remain governed by the relevant OpenAI agreements.
+
+## Official product-provider references
+
+- [OpenAI Partner Network](https://openai.com/business/partners/): General information about the partner ecosystem, not a substitute for Dockio's own engagement scope.
+- [OpenAI enterprise privacy](https://openai.com/enterprise-privacy/): OpenAI's business-data commitments and controls.

@@ -41,9 +41,9 @@
  window.addEventListener('dockio:page',bindPage);bindPage();
  if(!window.DOCKIO_PREVIEW&&location.hash.startsWith('#/')){
   const url=new URL(location.href),requested=location.hash.slice(1).split('?')[0].replace(/\/$/,'')||'/';
-  const aliases={'/case-studies':'/insights','/partner-readiness':'/about'};
+  const aliases={'/case-studies':'/insights','/partner-readiness':'/about','/engagements/workflow-sprint':'/services/implementation-sprint','/engagements/embedded':'/services/integration','/engagements/embedded-delivery':'/services/integration'};
   const route=aliases[requested]||requested;
   const known=['/delivery-example','/engagements/workflow-sprint','/engagements/embedded','/engagements/embedded-delivery','/','/services','/services/strategy','/services/integration','/services/workflows','/services/adoption','/services/implementation-sprint','/industries','/industries/financial-services','/industries/private-equity','/industries/enterprise-operations','/industries/professional-services','/openai','/approach','/budgetops','/about','/contact','/privacy','/insights','/insights/beyond-the-pilot','/insights/start-with-the-work','/insights/beyond-usage'];
-  if(known.includes(route)){const depth=(document.body.dataset.page||'/').split('/').filter(Boolean).length;const base='../'.repeat(depth);const q=location.hash.split('?')[1];location.replace(base+(route==='/'?'':route.slice(1)+'/')+'index.html'+(q?'?'+q:''));}
+  if(known.includes(route)){const q=location.hash.split('?')[1];location.replace((route==='/'?'/':route+'/')+(q?'?'+q:''));}
  }
 })();
