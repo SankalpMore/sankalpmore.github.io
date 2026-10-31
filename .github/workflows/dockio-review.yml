@@ -3,7 +3,8 @@ on:
   pull_request:
     paths:
       - 'dockio-site/**'
-      - 'public/assets/**'
+      - 'public/**'
+      - '.openai/hosting.json'
       - '.github/workflows/dockio-review.yml'
 permissions:
   contents: read
@@ -20,6 +21,10 @@ jobs:
         run: node dockio-site/build.mjs --output dist
       - name: Verify pages and local references
         run: node dockio-site/verify.mjs dist
+      - name: Test enquiry handling and access boundaries
+        run: node --test dockio-site/enquiry-worker.test.mjs
+      - name: Build Sites worker
+        run: node dockio-site/build-worker.mjs
       - name: Retain review build
         uses: actions/upload-artifact@v4
         with:

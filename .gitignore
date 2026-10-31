@@ -35,3 +35,6 @@ pids
 
 # Separate Sites publishing checkouts, managed locally.
 /sites/
+
+# Local preview enquiry records; never publish.
+.sites-runtime/

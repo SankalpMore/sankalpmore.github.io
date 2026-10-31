@@ -1,0 +1,40 @@
+DOCKIO | AI TEAM REQUIREMENT BRIEF
+Send a sanitised brief to sankalp@dockio.in or use https://www.dockio.in/request-ai-team/
+Do not include credentials, customer records or confidential client information.
+
+COMPANY AND OWNER
+Company:
+Contact name, work email and role:
+Business sponsor / accountable delivery owner:
+Procurement contact:
+
+REQUIREMENT
+Business outcome and workflow:
+Roles and seniority:
+Individual specialist or managed team:
+Number of people:
+Location / countries:
+Remote, hybrid or on-site:
+Working hours / time-zone overlap:
+Expected duration / extension needs:
+Target start date:
+
+ENVIRONMENT AND ACCEPTANCE
+Approved AI platforms / models / tools:
+Integration and source systems:
+Data, security and access restrictions:
+Expected work products:
+Acceptance / performance review criteria:
+Client responsibilities and dependencies:
+
+PROCUREMENT
+Budget approval and procurement stage:
+RFI / RFP deadlines:
+Mandatory employment / background screening:
+Insurance requirements:
+Security and policy evidence required:
+IP / confidentiality / contract requirements:
+Replacement, continuity and exit requirements:
+Secure channel / NDA required for supporting documents:
+
+Dockio confirms role fit, availability, employment model, timelines and commercial terms in its proposal. This brief does not create a contractual commitment.
