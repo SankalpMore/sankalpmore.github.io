@@ -1,4 +1,4 @@
-/* Progressive enhancements. No analytics, browser storage or enquiry submission endpoint. */
+/* Progressive enhancements. General contact drafts remain local; dedicated team intake is handled separately. */
 (() => {
  'use strict';
  const $ = (s, r=document) => r.querySelector(s);

@@ -34,7 +34,9 @@ for (const file of sourceFiles) {
   mkdirSync(dirname(target), { recursive: true })
   cpSync(resolve(source, file), target)
 }
-writeFileSync(resolve(destination, manifestPath), JSON.stringify({ ...destinationManifest, ...sourceManifest, static: { ...destinationManifest.static, ...sourceManifest.static } }, null, 2) + '\n')
+const mergedManifest = { ...destinationManifest, ...sourceManifest };
+if (!sourceManifest.static) delete mergedManifest.static;
+writeFileSync(resolve(destination, manifestPath), JSON.stringify(mergedManifest, null, 2) + '\n')
 writeFileSync(resolve(destination, '.openai/github-source.json'), JSON.stringify({
   repository: 'https://github.com/SankalpMore/sankalpmore.github.io',
   commit_sha: git(source, 'rev-parse', 'HEAD'),
