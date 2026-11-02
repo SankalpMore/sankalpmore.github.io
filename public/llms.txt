@@ -2,11 +2,11 @@
 
 > Dockio Technosolutions Private Limited is an enterprise AI implementation and systems-integration company based in Mumbai, India, and an OpenAI Select Partner. It helps enterprise teams prioritise AI use cases, implement governed workflows and connect meaningful adoption to evidence of business value.
 
-Dockio's primary industry focus is banking and financial services, including enterprise and group AI platforms and banking GCCs. Other relevant engagements include private equity portfolio companies, enterprise operations and professional services. Its brand promise is “Make AI work. In your business.”
+Dockio serves banking and financial services, pharma and life sciences, logistics and supply chain, IT and software, and retail and consumer goods. The industry pages describe representative applications for scoped engagements. Leadership experience includes banking AI platforms, life sciences and consumer goods; it is distinct from Dockio client engagements. Its brand promise is “Make AI work. In your business.”
 
 ## Company and partnership
 
-- [Dockio homepage](https://www.dockio.in/): Overview, engagement choices, illustrative workflow and frequently asked questions.
+- [Dockio homepage](https://www.dockio.in/): Industry overview, representative workflows, delivery capabilities and engagement options.
 - [About Dockio](https://www.dockio.in/about/): Company focus, Mumbai location and leadership. Individual professional experience is distinct from contracts delivered by Dockio.
 - [OpenAI Select partnership](https://www.dockio.in/openai/): Dockio's Select organisational tier and independent implementation services around ChatGPT adoption, API integration, agentic workflows and Codex enablement.
 - [Delivery approach](https://www.dockio.in/approach/): Defined outcomes, approved sources and access, evaluation, human review, operating ownership and adoption evidence.
@@ -22,8 +22,12 @@ Dockio's primary industry focus is banking and financial services, including ent
 
 ## Industries
 
-- [Industry focus](https://www.dockio.in/industries/): Banking, portfolios and enterprise work.
+- [Industry focus](https://www.dockio.in/industries/): Banking, pharma, logistics, IT, retail and wider enterprise work.
 - [Banking and financial services](https://www.dockio.in/industries/financial-services/): Use-case prioritisation, governed implementation and adoption for enterprise AI platform owners, sponsors and banking GCCs.
+- [Pharma and life sciences](https://www.dockio.in/industries/pharma-life-sciences/): Scientific knowledge, controlled-document workflows and commercial operations.
+- [Logistics and supply chain](https://www.dockio.in/industries/logistics-supply-chain/): Shipment exceptions, freight documents and warehouse coordination.
+- [IT and software](https://www.dockio.in/industries/it-software/): Engineering workflows, service operations and delivery knowledge.
+- [Retail and consumer goods](https://www.dockio.in/industries/retail-consumer-goods/): Store support, customer service and commercial operations.
 - [Private equity and portfolio companies](https://www.dockio.in/industries/private-equity/): Repeatable AI opportunities tied to operating priorities, assessed and implemented in each company's context.
 - [Enterprise operations](https://www.dockio.in/industries/enterprise-operations/): Document-heavy workflows and handoffs across business functions.
 - [Professional services](https://www.dockio.in/industries/professional-services/): Research, synthesis and knowledge-intensive work with professional review.
