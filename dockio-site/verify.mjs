@@ -106,6 +106,13 @@ for (const match of guide.matchAll(/https:\/\/www\.dockio\.in\/[^\s)]*/g)) asser
 const home = read(path.join(root,'index.html'));
 assert(home.includes('Make AI work.')); assert(home.includes('openai-select-partner.svg'));
 const contact = read(path.join(root,'contact/index.html'));
-assert(contact.includes('id="release-enquiry"'));
-assert(contact.includes('Nothing is sent or stored by Dockio until you send the email.'));
+assert(contact.includes('id="discussion-enquiry"'));
+assert(contact.includes('Choose a discussion time'));
+assert(contact.includes('action="/api/enquiries"'));
+assert(!contact.includes('id="release-enquiry"'));
+const why = read(path.join(root,'why-dockio/index.html'));
+assert(why.includes('OpenAI Select Partner'));
+assert(home.includes('Built into'));
+assert(!home.includes('industry-mosaic'));
+assert(home.includes('href="/contact/"'));
 console.log(`Verified ${canonicalPages} canonical pages, ${files.length} HTML outputs, ${checked} local references and ${fragments} fragments; metadata, schema, redirects and sitemap agree.`);

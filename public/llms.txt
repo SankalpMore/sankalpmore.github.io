@@ -2,11 +2,12 @@
 
 > Dockio Technosolutions Private Limited is an enterprise AI implementation and systems-integration company based in Mumbai, India, and an OpenAI Select Partner. It helps enterprise teams prioritise AI use cases, implement governed workflows and connect meaningful adoption to evidence of business value.
 
-Dockio serves banking and financial services, pharma and life sciences, logistics and supply chain, IT and software, and retail and consumer goods. The industry pages describe representative applications for scoped engagements. Leadership experience includes banking AI platforms, life sciences and consumer goods; it is distinct from Dockio client engagements. Its brand promise is “Make AI work. In your business.”
+Dockio serves banking and financial services, pharma and life sciences, logistics and supply chain, IT and software, and retail and consumer goods. The industry pages describe representative applications for scoped engagements. Leadership experience includes banking AI platforms, life sciences and consumer goods; it is distinct from Dockio client engagements. Its primary positioning is enterprise AI strategy and delivery. “Make AI work” is a supporting brand line.
 
 ## Company and partnership
 
-- [Dockio homepage](https://www.dockio.in/): Industry overview, representative workflows, delivery capabilities and engagement options.
+- [Dockio homepage](https://www.dockio.in/): A concise entry point to services, industries, executive trust and requirement sharing.
+- [Why Dockio](https://www.dockio.in/why-dockio/): Leadership experience, partner scope, delivery accountability and supplier evaluation.
 - [About Dockio](https://www.dockio.in/about/): Company focus, Mumbai location and leadership. Individual professional experience is distinct from contracts delivered by Dockio.
 - [OpenAI Select partnership](https://www.dockio.in/openai/): Dockio's Select organisational tier and independent implementation services around ChatGPT adoption, API integration, agentic workflows and Codex enablement.
 - [Delivery approach](https://www.dockio.in/approach/): Defined outcomes, approved sources and access, evaluation, human review, operating ownership and adoption evidence.
@@ -46,12 +47,12 @@ Dockio serves banking and financial services, pharma and life sciences, logistic
 
 ## Contact and interpretation
 
-- [Discuss a requirement](https://www.dockio.in/contact/): Book a conversation or prepare an implementation, embedded-team, adoption, RFI/RFP or BudgetOps email enquiry.
-- [Website privacy information](https://www.dockio.in/privacy/): Information handling for website visits, email enquiries and Microsoft Bookings.
+- [Discuss a requirement](https://www.dockio.in/contact/): Submit a short business requirement, then open Microsoft Bookings to choose a discussion time.
+- [Website privacy information](https://www.dockio.in/privacy/): Information handling for business requirements, attachments, the private enquiry inbox and Microsoft Bookings.
 
 Business contact: sankalp@dockio.in. Location: Mumbai, India.
 
-Website enquiry forms prepare an email draft on the visitor's device. They do not automatically submit or store enquiries. The visitor reviews and sends the email. Meeting scheduling uses Microsoft Bookings.
+The short contact form and detailed AI team form send requirements and optional sanitised PDF briefs to Dockio’s private enquiry inbox. Submission does not book a meeting. Visitors can open Microsoft Bookings afterwards or book directly. Briefs are not automatically forwarded to Microsoft or an AI model.
 
 Workflow examples are illustrative patterns, not customer case studies or achieved-result claims. No guaranteed delivery duration or ROI is stated. OpenAI Select identifies Dockio's organisational partner tier; descriptions of services do not imply separate specialization badges or an OpenAI guarantee of Dockio's work. Dockio supplies its own professional services. OpenAI product subscriptions and usage terms remain governed by the relevant OpenAI agreements.
 
