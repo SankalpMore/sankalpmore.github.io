@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { applySelectRelease } from './finalize-release.mjs';
 import { applyEmbeddedRelease } from './embedded-release.mjs';
+import { applyGsiRedesign } from './gsi-redesign.mjs';
 import { addTeamEnquiry } from './team-enquiry.mjs';
 import { applySearchContent } from './seo-content.mjs';
 import { aliases, address, escape, structuredData, socialImage, socialAlt } from './search-metadata.mjs';
@@ -15,11 +16,11 @@ const config = JSON.parse(fs.readFileSync(path.join(root, 'site.config.json'), '
 const origin = (process.env.SITE_URL || config.origin).replace(/\/$/, '');
 if (!/^https:\/\//.test(origin)) throw new Error('SITE_URL must be an HTTPS origin');
 if (!/^https:\/\/outlook\.office\.com\/book\//.test(config.bookingUrl)) throw new Error('Expected the configured Microsoft Bookings destination');
-const {routes,before,after} = addTeamEnquiry(applyEmbeddedRelease(applySearchContent(applySelectRelease({
+const {routes,before,after} = applyGsiRedesign(addTeamEnquiry(applyEmbeddedRelease(applySearchContent(applySelectRelease({
   routes: JSON.parse(fs.readFileSync(path.join(source, 'routes.json'), 'utf8')),
   before: fs.readFileSync(path.join(source, 'before.html'), 'utf8'),
   after: fs.readFileSync(path.join(source, 'after.html'), 'utf8')
-}))));
+})))));
 for (const alias of Object.keys(aliases)) delete routes[alias];
 function render(route, entry, { noindex = false } = {}) {
   const canonical = origin + address(route);
@@ -61,6 +62,7 @@ function render(route, entry, { noindex = false } = {}) {
     attrs = attrs.replace(/href="[^"]*"/, `href="${href}"`);
     return `<a${attrs} data-route="${pathname}${suffix}"${pathname === route ? ' aria-current="page"' : ''}>${label}</a>`;
   });
+  html = html.replaceAll('—', ' / ');
   return html.replace(/(<a\b[^>]*\bdata-booking\b[^>]*?\bhref=")[^"]*/g, '$1' + escape(config.bookingUrl));
 }
 
@@ -75,7 +77,7 @@ for (const [route, entry] of Object.entries(routes)) {
   fs.mkdirSync(directory, { recursive: true });
   fs.writeFileSync(path.join(directory, 'index.html'), render(route, entry));
 }
-const css = fs.readFileSync(path.join(source,'site.css'),'utf8') + '\n' + ['release.css','premium.css','delivery-demo.css','seo.css','embedded.css'].map(file=>fs.readFileSync(path.join(root,file),'utf8')).join('\n');
+const css = fs.readFileSync(path.join(source,'site.css'),'utf8') + '\n' + ['release.css','premium.css','delivery-demo.css','seo.css','embedded.css','gsi-redesign.css'].map(file=>fs.readFileSync(path.join(root,file),'utf8')).join('\n');
 fs.writeFileSync(path.join(output,'assets/site.css'),css);
 fs.writeFileSync(path.join(output,'assets/site.js'),['release.js','premium.js','delivery-demo.js','team-enquiry.js'].map(file=>fs.readFileSync(path.join(root,file),'utf8')).join('\n'));
 for (const [alias, target] of Object.entries(aliases)) {
