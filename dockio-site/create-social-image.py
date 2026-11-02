@@ -27,9 +27,9 @@ draw.rectangle((0, 0, 1199, 11), fill=FOREST)
 mark(draw, 64, 53, 66, FOREST, 6)
 draw.text((145, 59), 'dockio', font=ImageFont.truetype(BOLD, 48), fill=FOREST)
 draw.ellipse((326, 102, 337, 113), fill=ORANGE)
-draw.text((70, 178), 'Make AI work.', font=ImageFont.truetype(BOLD, 76), fill=FOREST)
-draw.text((70, 272), 'In your business.', font=ImageFont.truetype(FONT, 76), fill=FOREST)
-draw.text((74, 389), 'Enterprise AI implementation', font=ImageFont.truetype(FONT, 28), fill=FOREST)
+draw.text((70, 178), 'Enterprise AI.', font=ImageFont.truetype(BOLD, 76), fill=FOREST)
+draw.text((70, 272), 'Built into your business.', font=ImageFont.truetype(FONT, 62), fill=FOREST)
+draw.text((74, 389), 'Strategy. Implementation. Embedded teams.', font=ImageFont.truetype(FONT, 28), fill=FOREST)
 draw.line((74, 463, 1126, 463), fill=SAGE, width=2)
 for index, (label, text) in enumerate((('01', 'Prioritise'), ('02', 'Implement'), ('03', 'Realise value'))):
     x = 74 + index*355

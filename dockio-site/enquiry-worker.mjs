@@ -34,6 +34,22 @@ async function rateLimit(bucket,request,env){
 }
 const fields={name:100,email:180,company:180,requesterRole:120,specialistRole:100,seniority:60,location:180,arrangement:40,duration:120,environment:300,procurement:100,intent:80,message:5000};
 const enums={intent:['Request a team proposal','Request capability profiles','Discuss workforce requirements','Submit an RFI/RFP'],specialistRole:['AI engineer','Solution architect','AI product lead','Evaluation specialist','Adoption lead','Programme principal','Multiple roles / managed team','Help me define the roles'],seniority:['Mid-level','Senior','Lead / principal','Mixed team','To be agreed'],arrangement:['Remote','Hybrid','On-site','To be agreed'],procurement:['Exploring options','Budget / sponsor approval in progress','Supplier qualification','RFI stage','RFP stage','Ready to contract','Other / to be discussed']};
+const discussionRequired={name:100,email:180,company:180,intent:80,message:5000};
+const discussionOptional={requesterRole:120,timeline:60,industry:100,location:180,environment:300,audience:60};
+const discussionEnums={intent:['AI implementation','Embedded AI teams','AI strategy','Adoption & value','RFI/RFP','Product / other enquiry'],timeline:['This month','This quarter','Planning ahead','Not sure'],industry:['Banking & financial services','Pharma & life sciences','Logistics & supply chain','IT & software','Retail & consumer goods','Other','To discuss'],audience:['Product or delivery','Executive','Procurement']};
+function textField(form,key,max,required){
+ const values=form.getAll(key),value=values[0];
+ if(values.length>1||value!==undefined&&typeof value!=='string'||typeof value==='string'&&value.length>max)fail(`Please check ${key}.`);
+ const text=typeof value==='string'?value.trim():'';if(required&&!text)fail(`Please check ${key}.`);return text;
+}
+function discussionData(form){
+ const data={formType:'discussion'};
+ for(const[key,max]of Object.entries(discussionRequired))data[key]=textField(form,key,max,true);
+ for(const[key,max]of Object.entries(discussionOptional))data[key]=textField(form,key,max,false);
+ for(const[key,values]of Object.entries(discussionEnums))if(data[key]&&!values.includes(data[key]))fail(`Please select a valid ${key}.`);
+ return data;
+}
+
 async function submit(request,env){
  if(!env.BUCKET||!env.INBOX_OWNER_EMAIL)fail('Enquiry capture is temporarily unavailable. Please email sankalp@dockio.in.',503);
  if(!request.headers.get('content-type')?.startsWith('multipart/form-data;'))fail('Use the requirement form.');
@@ -42,12 +58,16 @@ async function submit(request,env){
  if(form.get('website'))fail('The requirement could not be accepted.');
  if(form.get('consent')!=='yes')fail('Please agree to the enquiry privacy notice.');
  const id=form.get('requestId');if(typeof id!=='string'||!uuid.test(id))fail('Please reload the form and retry.');
- const data={};for(const[key,max]of Object.entries(fields)){const v=form.get(key);if(typeof v!=='string'||!v.trim()||v.length>max||form.getAll(key).length!==1)fail(`Please check ${key}.`);data[key]=v.trim();}
+ const formTypes=form.getAll('formType');if(formTypes.length>1||formTypes.length===1&&formTypes[0]!=='discussion')fail('Please use a supported requirement form.');
+ const isDiscussion=formTypes[0]==='discussion',data=isDiscussion?discussionData(form):{};
+ if(!isDiscussion){
+  for(const[key,max]of Object.entries(fields)){const v=form.get(key);if(typeof v!=='string'||!v.trim()||v.length>max||form.getAll(key).length!==1)fail(`Please check ${key}.`);data[key]=v.trim();}
+  for(const[k,values]of Object.entries(enums))if(!values.includes(data[k]))fail(`Please select a valid ${k}.`);
+  data.teamSize=Number(form.get('teamSize'));if(!Number.isInteger(data.teamSize)||data.teamSize<1||data.teamSize>100)fail('Team size must be between 1 and 100.');
+  data.startDate=String(form.get('startDate')||'');if(data.startDate&&(!/^\d{4}-\d{2}-\d{2}$/.test(data.startDate)||!Number.isFinite(Date.parse(data.startDate))||new Date(data.startDate).toISOString().slice(0,10)!==data.startDate))fail('Please check the target start date.');
+ }
  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email))fail('Please enter a valid work email.');
  if(data.message.length<30)fail('Please add at least 30 characters about your requirement.');
- for(const[k,values]of Object.entries(enums))if(!values.includes(data[k]))fail(`Please select a valid ${k}.`);
- data.teamSize=Number(form.get('teamSize'));if(!Number.isInteger(data.teamSize)||data.teamSize<1||data.teamSize>100)fail('Team size must be between 1 and 100.');
- data.startDate=String(form.get('startDate')||'');if(data.startDate&&(!/^\d{4}-\d{2}-\d{2}$/.test(data.startDate)||!Number.isFinite(Date.parse(data.startDate))||new Date(data.startDate).toISOString().slice(0,10)!==data.startDate))fail('Please check the target start date.');
  let document=null;const file=form.get('document');if(file&&typeof file!=='string'&&file.size){
   if(file.size>MAX_FILE||!file.name.toLowerCase().endsWith('.pdf'))fail('Attach a PDF no larger than 5 MB.');
   const content=new Uint8Array(await file.arrayBuffer());if(new TextDecoder().decode(content.slice(0,5))!=='%PDF-')fail('The attachment must be a PDF.');
@@ -61,7 +81,7 @@ async function submit(request,env){
  if(!saved)fail('A submission is already being processed. Please retry.',409);
  return json({reference:record.reference,preview:!!env.PREVIEW_MODE},201);
 }
-function page(body,status=200){return new Response(`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Dockio enquiry inbox</title><style>body{font:16px/1.6 system-ui;color:#173c2d;background:#f7f8f3;margin:32px auto;padding:0 24px;max-width:1000px}a{color:#173c2d}article{background:white;border:1px solid #ccd9ce;padding:24px;margin:20px 0;overflow-wrap:anywhere}dt{font-weight:700;margin-top:12px}dd{margin:0;white-space:pre-wrap}button{padding:12px;cursor:pointer}</style></head><body><a href="/">dockio.</a> · <a href="/admin/enquiries">Enquiry inbox</a><h1>AI team enquiries</h1><p>Private owner inbox. Enquiries are stored here; automatic email notifications are not configured. Uploaded PDFs are untrusted documents—download only if expected and open with your organisation’s protected viewer.</p>${body}</body></html>`,{status,headers:{...privateHeaders,'Content-Type':'text/html; charset=utf-8','Content-Security-Policy':"default-src 'none'; style-src 'unsafe-inline'; form-action 'self'; frame-ancestors 'none'; base-uri 'none'"}});}
+function page(body,status=200){return new Response(`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Dockio enquiry inbox</title><style>body{font:16px/1.6 system-ui;color:#173c2d;background:#f7f8f3;margin:32px auto;padding:0 24px;max-width:1000px}a{color:#173c2d}article{background:white;border:1px solid #ccd9ce;padding:24px;margin:20px 0;overflow-wrap:anywhere}dt{font-weight:700;margin-top:12px}dd{margin:0;white-space:pre-wrap}button{padding:12px;cursor:pointer}</style></head><body><a href="/">dockio.</a> · <a href="/admin/enquiries">Enquiry inbox</a><h1>Business enquiries</h1><p>Private owner inbox. Enquiries are stored here; automatic email notifications are not configured. Uploaded PDFs are untrusted documents; download only if expected and open with your organisation’s protected viewer.</p>${body}</body></html>`,{status,headers:{...privateHeaders,'Content-Type':'text/html; charset=utf-8','Content-Security-Policy':"default-src 'none'; style-src 'unsafe-inline'; form-action 'self'; frame-ancestors 'none'; base-uri 'none'"}});}
 async function admin(request,env,url){
  const email=request.headers.get('oai-authenticated-user-email'),user=request.headers.get('oai-authenticated-user-id');
  if(!user||!email)return page('<p><a href="/signin-with-chatgpt?return_to=%2Fadmin%2Fenquiries">Sign in with ChatGPT</a> using the site owner account.</p>',401);
