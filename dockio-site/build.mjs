@@ -73,9 +73,9 @@ for (const [route, entry] of Object.entries(routes)) {
   fs.mkdirSync(directory, { recursive: true });
   fs.writeFileSync(path.join(directory, 'index.html'), render(route, entry));
 }
-const css = fs.readFileSync(path.join(source,'site.css'),'utf8') + '\n' + ['release.css','premium.css','delivery-demo.css','seo.css','embedded.css','gsi-redesign.css','enterprise.css'].map(file=>fs.readFileSync(path.join(root,file),'utf8')).join('\n');
+const css = fs.readFileSync(path.join(source,'site.css'),'utf8') + '\n' + ['release.css','premium.css','seo.css','embedded.css','gsi-redesign.css','enterprise.css'].map(file=>fs.readFileSync(path.join(root,file),'utf8')).join('\n');
 fs.writeFileSync(path.join(output,'assets/site.css'),css);
-fs.writeFileSync(path.join(output,'assets/site.js'),['release.js','premium.js','delivery-demo.js','team-enquiry.js','discussion-enquiry.js'].map(file=>fs.readFileSync(path.join(root,file),'utf8')).join('\n'));
+fs.writeFileSync(path.join(output,'assets/site.js'),['release.js','team-enquiry.js','discussion-enquiry.js'].map(file=>fs.readFileSync(path.join(root,file),'utf8')).join('\n'));
 for (const [alias, target] of Object.entries(aliases)) {
   const directory = path.join(output, alias.slice(1));
   fs.mkdirSync(directory, {recursive:true});
