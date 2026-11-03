@@ -11,14 +11,12 @@ The public custom domain belongs to the Sites project returned by `get_site`. Th
 
 ## Build and edit
 
-`npm run build` generates 34 canonical content pages, five preserved-route redirects and a 404 page into `dist/`. `npm run dev` serves the build. The server accepts `--host` and `--port`.
+`npm run build` generates 33 canonical content pages, six preserved-route redirects and a 404 page into `dist/`. `npm run dev` serves the build. The server accepts `--host` and `--port`.
 
 - `dockio-site/source/`: retained page templates and base visual system.
 - `select-release.mjs`: engagement, partnership and industry content.
 - `premium-release.mjs` and `premium.css`: homepage, delivery journey and visual refinements.
-- `delivery-demo.mjs`, `.css`, `.js`: synthetic investment-case review example.
 - `release.js`: navigation and local enquiry draft flow.
-- `premium.js`: BudgetOps stakeholder tabs.
 - `finalize-release.mjs`: composed release entry point.
 - `seo-content.mjs` and `seo.css`: page metadata, buyer FAQs, breadcrumbs and related-page links.
 - `search-metadata.mjs`: canonical aliases and grounded Organization, WebSite, WebPage, Service and breadcrumb data.
@@ -33,13 +31,13 @@ The original React source is retained for reference, not used by the active stat
 
 Dockio is an owner-confirmed OpenAI Select Partner. Preserve the supplied partner artwork and clear space. The industry directory covers banking, pharma, logistics, IT and retail. Private equity, enterprise operations and professional services remain available. No unverified clients, results, testimonials or higher partner tiers.
 
-The workflow example is synthetic and runs locally without model calls. BudgetOps is explicitly in development. The enterprise-workshop image is illustrative, not a photograph of Dockio employees or customers.
+The retired delivery-example URL redirects to the delivery approach. BudgetOps is in development; its public page provides product contact information.
 
 The Microsoft Bookings destination and `sankalp@dockio.in` are preserved. The short `/contact/` form and detailed `/request-ai-team/` form submit actual requirements and an optional PDF (5 MB maximum) to `/api/enquiries`. After successful storage it offers the verified Microsoft Bookings calendar link. The current calendar refuses framing; enable inline scheduling only after obtaining and testing its supported embed configuration. No email notification or appointment is automatically sent/booked. No advertising analytics or CRM integration is added.
 
 ## Release both copies
 
-1. Build and verify the source; check representative desktop/mobile navigation, delivery and BudgetOps tabs, short requirement submission and booking links. Do not submit a real appointment or test email.
+1. Build and verify the source; check representative desktop/mobile navigation, service and industry navigation, short requirement submission and booking links. Do not submit a real appointment or test email.
 2. Commit and push to GitHub, merge the reviewed branch to `main`, and check the Pages workflow for that commit.
 3. Open the existing public Site using fresh repository credentials through hidden stdin. Preserve its audience and source history.
 4. From the clean GitHub checkout, run `node scripts/prepare-sites-copy.mjs /absolute/path/to/opened-sites-checkout`. It records the GitHub commit and preserves the selected hosting identity.

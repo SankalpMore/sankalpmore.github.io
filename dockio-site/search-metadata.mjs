@@ -1,4 +1,5 @@
 export const aliases = {
+  '/delivery-example': '/approach',
   '/case-studies': '/insights',
   '/partner-readiness': '/about',
   '/engagements/workflow-sprint': '/services/implementation-sprint',
