@@ -112,7 +112,16 @@ assert(contact.includes('action="/api/enquiries"'));
 assert(!contact.includes('id="release-enquiry"'));
 const why = read(path.join(root,'why-dockio/index.html'));
 assert(why.includes('OpenAI Select Partner'));
-assert(home.includes('Built into'));
+const main = html => html.split('<main id="main" tabindex="-1">')[1].split('</main>')[0];
+const hero = main(home).split('</section>')[0];
+for (const url of ['/project-enquiry/','/delivery-example/','/services/implementation-sprint/']) {
+  assert(hero.includes('href="'+url+'"'), 'Missing first-screen route: '+url);
+}
+const project = main(read(path.join(root,'project-enquiry/index.html')));
+assert(project.includes('id="project-enquiry"') && project.includes('action="/api/enquiries"'));
+assert(!project.includes('name="teamSize"') && !project.includes('name="seniority"'));
+assert(project.includes('Choose a discussion time'));
+assert(main(read(path.join(root,'delivery-example/index.html'))).includes('https://www.changingbox.com/'));
 assert(!home.includes('industry-mosaic'));
 assert(home.includes('href="/contact/"'));
 console.log(`Verified ${canonicalPages} canonical pages, ${files.length} HTML outputs, ${checked} local references and ${fragments} fragments; metadata, schema, redirects and sitemap agree.`);

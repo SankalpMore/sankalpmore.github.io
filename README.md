@@ -11,7 +11,7 @@ The public custom domain belongs to the Sites project returned by `get_site`. Th
 
 ## Build and edit
 
-`npm run build` generates 33 canonical content pages, six preserved-route redirects and a 404 page into `dist/`. `npm run dev` serves the build. The server accepts `--host` and `--port`.
+`npm run build` generates 38 canonical content pages, five preserved-route redirects and a 404 page into `dist/`. `npm run dev` serves the build. The server accepts `--host` and `--port`.
 
 - `dockio-site/source/`: retained page templates and base visual system.
 - `select-release.mjs`: engagement, partnership and industry content.
@@ -31,9 +31,9 @@ The original React source is retained for reference, not used by the active stat
 
 Dockio is an owner-confirmed OpenAI Select Partner. Preserve the supplied partner artwork and clear space. The industry directory covers banking, pharma, logistics, IT and retail. Private equity, enterprise operations and professional services remain available. No unverified clients, results, testimonials or higher partner tiers.
 
-The retired delivery-example URL redirects to the delivery approach. BudgetOps is in development; its public page provides product contact information.
+The delivery example describes the ChangingBox marketplace operated by Dockio. BudgetOps is in development; its public page provides product contact information.
 
-The Microsoft Bookings destination and `sankalp@dockio.in` are preserved. The short `/contact/` form and detailed `/request-ai-team/` form submit actual requirements and an optional PDF (5 MB maximum) to `/api/enquiries`. After successful storage it offers the verified Microsoft Bookings calendar link. The current calendar refuses framing; enable inline scheduling only after obtaining and testing its supported embed configuration. No email notification or appointment is automatically sent/booked. No advertising analytics or CRM integration is added.
+The Microsoft Bookings destination and `sankalp@dockio.in` are preserved. The project `/project-enquiry/`, general `/contact/` and detailed team `/request-ai-team/` forms submit actual requirements and an optional PDF (5 MB maximum) to `/api/enquiries`. After successful storage it offers the verified Microsoft Bookings calendar link. The current calendar refuses framing; enable inline scheduling only after obtaining and testing its supported embed configuration. No email notification or appointment is automatically sent/booked. No advertising analytics or CRM integration is added.
 
 ## Release both copies
 

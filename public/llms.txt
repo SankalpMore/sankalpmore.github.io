@@ -14,6 +14,9 @@ Dockio serves banking and financial services, pharma and life sciences, logistic
 - [Agentic workflows](https://www.dockio.in/services/workflows/): Business workflows involving AI, information sources, tools and human review.
 - [Implementation sprint](https://www.dockio.in/services/implementation-sprint/): A scoped implementation engagement for a business workflow.
 
+- [Banking AI workflow implementation](https://www.dockio.in/services/banking-ai-workflow-implementation/): Service operations, approved policy and human review.
+- [Enterprise Codex rollout](https://www.dockio.in/services/enterprise-codex-rollout/): Repository pilot, evaluation and handover.
+
 ## Industries
 
 - [Industries](https://www.dockio.in/industries/)
@@ -31,6 +34,8 @@ Dockio serves banking and financial services, pharma and life sciences, logistic
 - [Why Dockio](https://www.dockio.in/why-dockio/): Enterprise experience and delivery accountability.
 - [About Dockio](https://www.dockio.in/about/): Company and leadership.
 - [OpenAI partnership](https://www.dockio.in/openai/): Dockio's OpenAI services.
+- [ChangingBox delivery example](https://www.dockio.in/delivery-example/): The storage marketplace operated by Dockio.
+- [Implementation partnerships](https://www.dockio.in/partners/implementation/): Joint project scope and responsibilities.
 - [Delivery approach](https://www.dockio.in/approach/): Scope, integration, evaluation and operating handover.
 - [Supplier information](https://www.dockio.in/procurement/): Company, contracting and supplier qualification.
 - [Role capabilities](https://www.dockio.in/capabilities/ai-talent/): Specialist roles for enterprise AI programmes.
@@ -48,6 +53,7 @@ Sankalp Shirish More is Dockio's Founder and Director. His six years of professi
 
 ## Contact
 
+- [Project enquiry and RFI](https://www.dockio.in/project-enquiry/)
 - [Discuss a requirement](https://www.dockio.in/contact/)
 - [Detailed AI team brief](https://www.dockio.in/request-ai-team/)
 - [Privacy](https://www.dockio.in/privacy/)

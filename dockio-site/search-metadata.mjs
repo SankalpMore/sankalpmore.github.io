@@ -1,6 +1,5 @@
 export const aliases = {
-  '/delivery-example': '/approach',
-  '/case-studies': '/insights',
+  '/case-studies': '/delivery-example',
   '/partner-readiness': '/about',
   '/engagements/workflow-sprint': '/services/implementation-sprint',
   '/engagements/embedded-delivery': '/services/integration',
@@ -17,7 +16,7 @@ export function structuredData(origin, route, entry) {
   const organization = { '@id': origin + '/#organization' };
   const website = { '@id': origin + '/#website' };
   const webpage = {
-    '@type': route === '/about' ? 'AboutPage' : route === '/contact' ? 'ContactPage' : 'WebPage',
+    '@type': route === '/about' ? 'AboutPage' : ['/contact','/project-enquiry'].includes(route) ? 'ContactPage' : 'WebPage',
     '@id': url + '#webpage', url, name: entry.title, description: entry.description,
     inLanguage: 'en-IN', isPartOf: website, publisher: organization,
     primaryImageOfPage: { '@type': 'ImageObject', url: origin + socialImage, width: 1200, height: 630 }

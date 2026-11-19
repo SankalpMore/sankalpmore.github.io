@@ -10,6 +10,9 @@ import { addTeamEnquiry } from './team-enquiry.mjs';
 import { applySearchContent } from './seo-content.mjs';
 import { aliases, address, escape, structuredData, socialImage, socialAlt } from './search-metadata.mjs';
 
+import { projectWorksheets } from './project-pages.mjs';
+import { projectEnquiryPage } from './project-enquiry.mjs';
+
 const root = path.dirname(fileURLToPath(import.meta.url));
 const source = path.join(root, 'source');
 const outputArg = process.argv.indexOf('--output');
@@ -23,6 +26,7 @@ const {routes,before,after} = applyDiscussionEnquiry(applyEnterpriseRelease(appl
   before: fs.readFileSync(path.join(source, 'before.html'), 'utf8'),
   after: fs.readFileSync(path.join(source, 'after.html'), 'utf8')
 })))))));
+routes['/project-enquiry'] = projectEnquiryPage();
 for (const alias of Object.keys(aliases)) delete routes[alias];
 function render(route, entry, { noindex = false } = {}) {
   const canonical = origin + address(route);
@@ -58,7 +62,7 @@ function render(route, entry, { noindex = false } = {}) {
     attrs = attrs.replace(/href="[^"]*"/, `href="${href}"`);
     return `<a${attrs} data-route="${pathname}${suffix}"${pathname === route ? ' aria-current="page"' : ''}>${label}</a>`;
   });
-  html = html.replaceAll('—', ' / ');
+  html = html.replaceAll('—', ' / ').replace(/<span aria-hidden="true">\s*↗\s*<\/span>/g, '').replaceAll('↗', '');
   return html.replace(/(<a\b[^>]*\bdata-booking\b[^>]*?\bhref=")[^"]*/g, '$1' + escape(config.bookingUrl));
 }
 
@@ -68,14 +72,17 @@ fs.rmSync(output, { recursive: true, force: true });
 fs.mkdirSync(path.join(output, 'assets'), { recursive: true });
 const publicDirectory = path.resolve(root, '..', 'public');
 if (fs.existsSync(publicDirectory)) fs.cpSync(publicDirectory, output, { recursive: true });
+for (const [name, csv] of Object.entries(projectWorksheets())) {
+  fs.writeFileSync(path.join(output,'downloads',name),csv);
+}
 for (const [route, entry] of Object.entries(routes)) {
   const directory = path.join(output, route.slice(1));
   fs.mkdirSync(directory, { recursive: true });
   fs.writeFileSync(path.join(directory, 'index.html'), render(route, entry));
 }
-const css = fs.readFileSync(path.join(source,'site.css'),'utf8') + '\n' + ['release.css','premium.css','seo.css','embedded.css','gsi-redesign.css','enterprise.css'].map(file=>fs.readFileSync(path.join(root,file),'utf8')).join('\n');
+const css = fs.readFileSync(path.join(source,'site.css'),'utf8') + '\n' + ['release.css','premium.css','seo.css','embedded.css','gsi-redesign.css','enterprise.css','project.css'].map(file=>fs.readFileSync(path.join(root,file),'utf8')).join('\n');
 fs.writeFileSync(path.join(output,'assets/site.css'),css);
-fs.writeFileSync(path.join(output,'assets/site.js'),['release.js','team-enquiry.js','discussion-enquiry.js'].map(file=>fs.readFileSync(path.join(root,file),'utf8')).join('\n'));
+fs.writeFileSync(path.join(output,'assets/site.js'),['release.js','team-enquiry.js','discussion-enquiry.js','project-enquiry.js'].map(file=>fs.readFileSync(path.join(root,file),'utf8')).join('\n'));
 for (const [alias, target] of Object.entries(aliases)) {
   const directory = path.join(output, alias.slice(1));
   fs.mkdirSync(directory, {recursive:true});

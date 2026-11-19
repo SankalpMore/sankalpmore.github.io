@@ -50,6 +50,25 @@ function discussionData(form){
  return data;
 }
 
+const projectOffers = {
+ general:'AI implementation', sprint:'Implementation sprint', banking:'Banking workflow implementation',
+ codex:'Enterprise Codex rollout', rfi:'Project RFI / RFP', partner:'Implementation partnership'
+};
+const referralSources = new Set(['Direct / unknown','Google search','Bing search','AI referral','OpenAI referral','LinkedIn','Partner link','Other referral']);
+function projectData(form) {
+ const offer = textField(form,'offer',16,false) || 'general';
+ if (!Object.hasOwn(projectOffers,offer)) fail('Please select a valid project.');
+ const landingPage = textField(form,'landingPage',160,false);
+ const referralSource = textField(form,'referralSource',30,false);
+ return {
+  formType:'project', intent:projectOffers[offer],
+  email:textField(form,'email',180,true), company:textField(form,'company',180,true),
+  message:textField(form,'message',5000,false),
+  landingPage:/^\/(?:[a-z0-9-]+\/){0,4}$/.test(landingPage) ? landingPage : '',
+  referralSource:referralSources.has(referralSource) ? referralSource : 'Direct / unknown'
+ };
+}
+
 async function submit(request,env){
  if(!env.BUCKET||!env.INBOX_OWNER_EMAIL)fail('Enquiry capture is temporarily unavailable. Please email sankalp@dockio.in.',503);
  if(!request.headers.get('content-type')?.startsWith('multipart/form-data;'))fail('Use the requirement form.');
@@ -58,26 +77,29 @@ async function submit(request,env){
  if(form.get('website'))fail('The requirement could not be accepted.');
  if(form.get('consent')!=='yes')fail('Please agree to the enquiry privacy notice.');
  const id=form.get('requestId');if(typeof id!=='string'||!uuid.test(id))fail('Please reload the form and retry.');
- const formTypes=form.getAll('formType');if(formTypes.length>1||formTypes.length===1&&formTypes[0]!=='discussion')fail('Please use a supported requirement form.');
- const isDiscussion=formTypes[0]==='discussion',data=isDiscussion?discussionData(form):{};
- if(!isDiscussion){
+ const formTypes=form.getAll('formType');if(formTypes.length>1||formTypes.length===1&&!['discussion','project'].includes(formTypes[0]))fail('Please use a supported requirement form.');
+ const type=formTypes[0]||'team';
+ const data=type==='discussion'?discussionData(form):type==='project'?projectData(form):{};
+ if(type==='team'){
   for(const[key,max]of Object.entries(fields)){const v=form.get(key);if(typeof v!=='string'||!v.trim()||v.length>max||form.getAll(key).length!==1)fail(`Please check ${key}.`);data[key]=v.trim();}
   for(const[k,values]of Object.entries(enums))if(!values.includes(data[k]))fail(`Please select a valid ${k}.`);
   data.teamSize=Number(form.get('teamSize'));if(!Number.isInteger(data.teamSize)||data.teamSize<1||data.teamSize>100)fail('Team size must be between 1 and 100.');
   data.startDate=String(form.get('startDate')||'');if(data.startDate&&(!/^\d{4}-\d{2}-\d{2}$/.test(data.startDate)||!Number.isFinite(Date.parse(data.startDate))||new Date(data.startDate).toISOString().slice(0,10)!==data.startDate))fail('Please check the target start date.');
  }
  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email))fail('Please enter a valid work email.');
- if(data.message.length<30)fail('Please add at least 30 characters about your requirement.');
+ if(type!=='project'&&data.message.length<30)fail('Please add at least 30 characters about your requirement.');
+ if(form.getAll('document').length>1)fail('Attach a single PDF.');
  let document=null;const file=form.get('document');if(file&&typeof file!=='string'&&file.size){
   if(file.size>MAX_FILE||!file.name.toLowerCase().endsWith('.pdf'))fail('Attach a PDF no larger than 5 MB.');
   const content=new Uint8Array(await file.arrayBuffer());if(new TextDecoder().decode(content.slice(0,5))!=='%PDF-')fail('The attachment must be a PDF.');
   document={name:file.name.replace(/[\r\n\x00-\x1f]/g,'').slice(0,180),size:content.length,base64:encode(content)};
  }
+ if(type==='project'&&!document&&data.message.length<15)fail('Describe your workflow in at least 15 characters, or attach a PDF.');
  const fingerprint=await digest(new TextEncoder().encode(JSON.stringify({data,document}))),key=`enquiries/${id}.json`;
  const existing=await env.BUCKET.get(key);if(existing){const saved=await existing.json();if(saved.fingerprint!==fingerprint)fail('This submission changed. Please reload and try again.',409);return json({reference:saved.reference,preview:!!env.PREVIEW_MODE});}
  await rateLimit(env.BUCKET,request,env);
  const record={id,reference:`${env.PREVIEW_MODE?'PREVIEW':'DK'}-${id}`,submittedAt:new Date().toISOString(),consent:'Enquiry response and privacy notice accepted',data,document,fingerprint};
- const saved=await env.BUCKET.put(key,JSON.stringify(record),{onlyIf:{etagDoesNotMatch:'*'},httpMetadata:{contentType:'application/json'},customMetadata:{company:data.company,submittedAt:record.submittedAt,reference:record.reference}});
+ const saved=await env.BUCKET.put(key,JSON.stringify(record),{onlyIf:{etagDoesNotMatch:'*'},httpMetadata:{contentType:'application/json'},customMetadata:{company:data.company,submittedAt:record.submittedAt,reference:record.reference,category:{project:'Implementation project',team:'AI team',discussion:'General enquiry'}[type]}});
  if(!saved)fail('A submission is already being processed. Please retry.',409);
  return json({reference:record.reference,preview:!!env.PREVIEW_MODE},201);
 }
@@ -104,7 +126,7 @@ async function admin(request,env,url){
  if(request.method!=='GET')return page('<p>Method not allowed.</p>',405);
  const cursor=url.searchParams.get('cursor')||undefined;if(cursor&&cursor.length>2000)return page('<p>Invalid page.</p>',400);
  const list=await env.BUCKET.list({prefix:'enquiries/',limit:50,cursor,include:['customMetadata']});
- return page(`<p>Up to 50 records per page, ordered by reference.</p>${list.objects.length?list.objects.map(o=>`<article><h2><a href="/admin/enquiries/${o.key.slice(10,-5)}">${escape(o.customMetadata?.company||'Open enquiry')}</a></h2><p>${escape(o.customMetadata?.submittedAt)} · ${escape(o.customMetadata?.reference)}</p></article>`).join(''):'<p>No enquiries on this page.</p>'}${list.truncated?`<a href="?cursor=${encodeURIComponent(list.cursor)}">Next page →</a>`:''}`);
+ return page(`<p>Up to 50 records per page, ordered by reference.</p>${list.objects.length?list.objects.map(o=>`<article><h2><a href="/admin/enquiries/${o.key.slice(10,-5)}">${escape(o.customMetadata?.company||'Open enquiry')}</a></h2><p>${o.customMetadata?.category ? escape(o.customMetadata.category)+' · ' : ''}${escape(o.customMetadata?.submittedAt)} · ${escape(o.customMetadata?.reference)}</p></article>`).join(''):'<p>No enquiries on this page.</p>'}${list.truncated?`<a href="?cursor=${encodeURIComponent(list.cursor)}">Next page →</a>`:''}`);
 }
 export async function handleEnquiry(request,env){
  const url=new URL(request.url);if(!url.pathname.startsWith('/api/enquiries')&&!url.pathname.startsWith('/admin/enquiries'))return null;

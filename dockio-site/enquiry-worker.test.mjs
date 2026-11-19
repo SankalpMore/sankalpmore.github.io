@@ -34,3 +34,36 @@ test('legacy team and short discussion coexist without weakening team validation
  env.PREVIEW_MODE=true;const response=await handleEnquiry(discussionPost({intent:'RFI/RFP'}),env);assert.equal(response.status,201);const body=await response.json();assert.match(body.reference,/^PREVIEW-/);assert.equal(body.preview,true);
  const entries=await env.BUCKET.list({prefix:'enquiries/'});assert.equal(entries.objects.length,2);
 });
+
+function projectPost(changes = {}, id = crypto.randomUUID(), file) {
+ const form = new FormData();
+ const fields = {formType:'project',email:'buyer@example.test',company:'Example Ltd',message:'Review one service queue against approved policy.',offer:'banking',landingPage:'/industries/financial-services/',referralSource:'Google search',consent:'yes',requestId:id,...changes};
+ for (const [key,value] of Object.entries(fields)) form.set(key,value);
+ if (file) form.set('document',file,file.name);
+ return new Request(base+'/api/enquiries',{method:'POST',body:form,headers:{Origin:base}});
+}
+test('project briefs accept either workflow text or a sanitised PDF without staffing fields and retain referral context',async t=>{
+ const env=await context(t), id=crypto.randomUUID();
+ let response=await handleEnquiry(projectPost({},id),env);
+ assert.equal(response.status,201);
+ const receipt=await response.json();
+ response=await handleEnquiry(projectPost({},id),env);
+ assert.equal(response.status,200);assert.equal((await response.json()).reference,receipt.reference);
+ const stored=await (await env.BUCKET.get('enquiries/'+id+'.json')).json();
+ assert.equal(stored.data.intent,'Banking workflow implementation');assert.equal(stored.data.landingPage,'/industries/financial-services/');assert.equal(stored.data.referralSource,'Google search');
+ const pdf=new File(['%PDF-1.4\nTest brief'],'brief.pdf',{type:'application/pdf'});
+ const pdfId=crypto.randomUUID();
+ assert.equal((await handleEnquiry(projectPost({message:'',offer:'rfi'},pdfId,pdf),env)).status,201);
+ assert.equal((await (await env.BUCKET.get('enquiries/'+pdfId+'.json')).json()).data.intent,'Project RFI / RFP');
+});
+test('project briefs require a valid description or PDF and reject invalid contact information and consent',async t=>{
+ const env=await context(t);
+ for(const patch of [{message:''},{message:'short'},{email:'invalid'},{company:''},{consent:''},{offer:'other fake'}]){
+  assert.equal((await handleEnquiry(projectPost(patch),env)).status,400);
+ }
+ assert.equal((await handleEnquiry(projectPost({message:''},undefined,new File(['plain text'],'brief.pdf')),env)).status,400);
+ const id=crypto.randomUUID();
+ assert.equal((await handleEnquiry(projectPost({landingPage:'/contact/?email=person',referralSource:'custom'},id),env)).status,201);
+ const entry=await (await env.BUCKET.get('enquiries/'+id+'.json')).json();
+ assert.equal(entry.data.landingPage,'');assert.equal(entry.data.referralSource,'Direct / unknown');
+});
