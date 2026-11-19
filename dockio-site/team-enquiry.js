@@ -2,7 +2,8 @@
  const form=document.querySelector('#team-enquiry');if(!form)return;
  const status=document.querySelector('#team-submit-status'),button=form.querySelector('[type="submit"]'),confirmation=document.querySelector('#team-confirmation');
  const intent=new URLSearchParams(location.search).get('intent');const intents={proposal:'Request a team proposal',profiles:'Request capability profiles',sponsor:'Discuss workforce requirements',rfp:'Submit an RFI/RFP'};
- if(intents[intent])form.elements.intent.value=intents[intent];
+ if(intent==='rfp'){location.replace('/project-enquiry/?offer=rfi');return;}
+ if(Object.hasOwn(intents,intent))form.elements.intent.value=intents[intent];
  const endpoint=location.hostname==='sankalpmore.github.io'?'https://www.dockio.in/api/enquiries':'/api/enquiries';
  const newId=()=>{const b=crypto.getRandomValues(new Uint8Array(16));b[6]=(b[6]&15)|64;b[8]=(b[8]&63)|128;const h=Array.from(b,x=>x.toString(16).padStart(2,'0')).join('');return `${h.slice(0,8)}-${h.slice(8,12)}-${h.slice(12,16)}-${h.slice(16,20)}-${h.slice(20)}`;};
  let pendingKey=newId();

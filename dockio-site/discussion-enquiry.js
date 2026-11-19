@@ -2,6 +2,7 @@
  const form=document.querySelector('#discussion-enquiry');if(!form)return;
  const status=document.querySelector('#discussion-submit-status'),button=form.querySelector('[type="submit"]'),confirmation=document.querySelector('#discussion-confirmation');
  const query=new URLSearchParams(location.search);
+ if(['rfi','rfp'].includes(query.get('service'))){location.replace('/project-enquiry/?offer=rfi');return;}
  const services={implementation:'AI implementation',integration:'AI implementation',workflows:'AI implementation','implementation-sprint':'AI implementation',teams:'Embedded AI teams','embedded-ai-teams':'Embedded AI teams',assessment:'AI strategy',embedded:'Embedded AI teams',budgetops:'Product / other enquiry',collaboration:'Product / other enquiry',strategy:'AI strategy',adoption:'Adoption & value',value:'Adoption & value',rfp:'RFI/RFP',rfi:'RFI/RFP'};
  const industries={banking:'Banking & financial services','financial-services':'Banking & financial services',pharma:'Pharma & life sciences','pharma-life-sciences':'Pharma & life sciences',logistics:'Logistics & supply chain','logistics-supply-chain':'Logistics & supply chain',technology:'IT & software','it-software':'IT & software',retail:'Retail & consumer goods','retail-consumer-goods':'Retail & consumer goods'};
  const audiences={delivery:'Product or delivery',product:'Product or delivery',executive:'Executive',leadership:'Executive',procurement:'Procurement'};
