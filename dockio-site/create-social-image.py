@@ -1,6 +1,6 @@
 """Rebuild the original Dockio brand assets. Requires Pillow; not part of the site build."""
 from pathlib import Path
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageOps
 
 ASSETS = Path(__file__).resolve().parent.parent / 'public' / 'assets'
 FOREST = '#172b23'
@@ -21,19 +21,17 @@ mark(ImageDraw.Draw(logo), 32, 32, 448, ORANGE, 34)
 logo.save(ASSETS / 'dockio-logo.png', optimize=True)
 logo.resize((96, 96), Image.Resampling.LANCZOS).save(ASSETS / 'favicon.png', optimize=True)
 
-image = Image.new('RGB', (1200, 630), CREAM)
+image = ImageOps.fit(Image.open(ASSETS / 'team-at-work.webp').convert('RGB'), (1200, 630))
+shade = Image.new('RGBA', image.size)
+shade_draw = ImageDraw.Draw(shade)
+for column in range(820):
+    opacity = round(112 * (1 - column / 820))
+    shade_draw.line((column, 0, column, 630), fill=(8, 21, 15, opacity))
+image = Image.alpha_composite(image.convert('RGBA'), shade).convert('RGB')
 draw = ImageDraw.Draw(image)
-draw.rectangle((0, 0, 1199, 11), fill=FOREST)
-mark(draw, 64, 53, 66, FOREST, 6)
-draw.text((145, 59), 'dockio', font=ImageFont.truetype(BOLD, 48), fill=FOREST)
-draw.ellipse((326, 102, 337, 113), fill=ORANGE)
-draw.text((70, 178), 'Enterprise AI.', font=ImageFont.truetype(BOLD, 76), fill=FOREST)
-draw.text((70, 272), 'Built into your business.', font=ImageFont.truetype(FONT, 62), fill=FOREST)
-draw.text((74, 389), 'Strategy. Implementation. Embedded teams.', font=ImageFont.truetype(FONT, 28), fill=FOREST)
-draw.line((74, 463, 1126, 463), fill=SAGE, width=2)
-for index, (label, text) in enumerate((('01', 'Prioritise'), ('02', 'Implement'), ('03', 'Realise value'))):
-    x = 74 + index*355
-    draw.text((x, 501), label, font=ImageFont.truetype(BOLD, 18), fill=FOREST)
-    draw.text((x+45, 492), text, font=ImageFont.truetype(FONT, 28), fill=FOREST)
-draw.rectangle((1125, 70, 1141, 417), fill=ORANGE)
-image.save(ASSETS / 'dockio-social.png', optimize=True)
+mark(draw, 52, 40, 52, ORANGE, 4)
+draw.text((116, 44), 'dockio.', font=ImageFont.truetype(BOLD, 35), fill=CREAM)
+heading = ImageFont.truetype(BOLD, 67)
+for index, line in enumerate(('Enterprise AI,', 'built with', 'your team.')):
+    draw.text((52, 218 + index * 71), line, font=heading, fill=CREAM)
+image.quantize(colors=200, method=Image.Quantize.MEDIANCUT).save(ASSETS / 'dockio-social.png', optimize=True)

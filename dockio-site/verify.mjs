@@ -104,7 +104,7 @@ assert(robots.includes(`Sitemap: ${origin}/sitemap.xml`));
 const guide = read(path.join(root,'llms.txt'));
 for (const match of guide.matchAll(/https:\/\/www\.dockio\.in\/[^\s)]*/g)) assert(canonicals.has(match[0]), `Noncanonical llms guide link: ${match[0]}`);
 const home = read(path.join(root,'index.html'));
-assert(home.includes('Make AI work.')); assert(home.includes('openai-select-partner.svg'));
+assert(home.includes('openai-select-partner.svg'));
 const contact = read(path.join(root,'contact/index.html'));
 assert(contact.includes('id="discussion-enquiry"'));
 assert(contact.includes('Choose a discussion time'));
@@ -114,9 +114,19 @@ const why = read(path.join(root,'why-dockio/index.html'));
 assert(why.includes('OpenAI Select Partner'));
 const main = html => html.split('<main id="main" tabindex="-1">')[1].split('</main>')[0];
 const hero = main(home).split('</section>')[0];
-for (const url of ['/project-enquiry/','/delivery-example/','/services/implementation-sprint/']) {
+assert(hero.includes('team-at-work.webp'));
+for (const url of ['/project-enquiry/','/services/embedded-ai-teams/']) {
   assert(hero.includes('href="'+url+'"'), 'Missing first-screen route: '+url);
 }
+for (const url of ['/delivery-example/','/services/implementation-sprint/','/services/strategy/','/services/banking-ai-workflow-implementation/']) {
+  assert(main(home).includes('href="'+url+'"'), 'Missing homepage route: '+url);
+}
+for (const route of ['index.html','services/banking-ai-workflow-implementation/index.html']) {
+  const body = main(read(path.join(root,route)));
+  for (const id of ['address-0','address-1','reply-0','reply-1']) assert(body.includes('id="'+id+'"'));
+  assert(body.includes('Refer to account servicing') && body.includes('Ready for review'));
+}
+assert(main(read(path.join(root,'services/strategy/index.html'))).includes('/downloads/workflow-value-map.csv'));
 const project = main(read(path.join(root,'project-enquiry/index.html')));
 assert(project.includes('id="project-enquiry"') && project.includes('action="/api/enquiries"'));
 assert(!project.includes('name="teamSize"') && !project.includes('name="seniority"'));

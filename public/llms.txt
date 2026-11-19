@@ -2,6 +2,8 @@
 
 > Dockio Technosolutions Private Limited is an enterprise AI strategy, implementation and systems-integration company based in Mumbai, India. Dockio is an OpenAI Select Partner.
 
+Dockio builds workflows alongside its clients’ teams. Engagements cover value mapping, implementation, embedded specialists and rollout. A client’s maintainers receive the agreed code or configuration, tests and operating instructions.
+
 Dockio serves banking and financial services, pharma and life sciences, logistics and supply chain, IT and software, and retail and consumer goods.
 
 ## Services
