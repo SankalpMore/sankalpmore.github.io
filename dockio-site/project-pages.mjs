@@ -1,4 +1,5 @@
 import {industries} from './gsi-redesign.mjs';
+import {bankingCaseSection} from './service-case.mjs';
 
 const sprint = '/services/implementation-sprint/';
 const banking = '/services/banking-ai-workflow-implementation/';
@@ -40,19 +41,52 @@ function diagram(label, stages) {
 function offerCards() {
   return `<div class="project-cards"><article>${photo('banking','Colleagues reviewing a document at a bank')}<div><p class="project-kicker">Banking operations</p><h3>Policy answers for the service desk</h3><p>Connect a service queue to approved policy. Give the case handler a draft with the relevant passage and route exceptions to a reviewer.</p>${link(banking,'Explore banking workflow implementation')}</div></article><article>${photo('technology','Software engineers working together at their desks')}<div><p class="project-kicker">Software engineering</p><h3>Codex in pull request review</h3><p>Run Codex with one repository team. Measure review time, rework and cost while maintainers keep control of every merge.</p>${link(engineering,'Explore the Codex rollout')}</div></article></div>`;
 }
+const sectorWork = [
+  ['logistics','Logistics','Shipment exceptions'],
+  ['pharma','Pharma','Quality reviews'],
+  ['technology','IT','Code review'],
+  ['banking','Banking','Service cases'],
+  ['retail','Retail','Product enquiries']
+];
+
+function industryLinks() {
+  return `<nav class="sector-strip" aria-label="Industry workflows"><div class="wrap">
+    ${sectorWork.map(([key,label,work]) => {
+      const sector = industries.find(item => item.key === key);
+      return `<a href="${sector.route}/"><img src="/assets/industry-${key}-thumb.webp" alt="" width="84" height="64"><span><strong>${label}</strong><small>${work}</small></span></a>`;
+    }).join('')}
+  </div></nav>`;
+}
+
 export function projectHome() {
-  return {title:'Enterprise AI systems integration for banking and engineering',description:'Dockio integrates AI into banking operations and software delivery. Start with a paid implementation sprint, scope a project or discuss a specialist team.',body:`
-    <section class="enterprise-home-hero project-home"><div class="enterprise-home-copy"><p class="project-kicker">Enterprise AI implementation</p>
-    <h1>AI systems integration <em>for banking and engineering.</em></h1>
-    <p>We connect AI to the systems your teams use. Start with one workflow, test it with the people who own it, and decide what to put into production.</p>
-    ${actions(link(project,'Scope an implementation',true),link(example,'View delivery example'))}
-    ${link(sprint,'Explore the paid implementation sprint')}
-    <div class="enterprise-home-credential"><img src="/assets/openai-select-partner.svg" alt="OpenAI Select Partner" width="126" height="60"><span>Dockio Technosolutions Private Limited<br>Mumbai, India</span></div></div>
-    <figure class="enterprise-home-photo">${photo('banking','Banking professionals reviewing information together',true)}</figure></section>
-    <section class="enterprise-industry-strip wrap" aria-label="Industry navigation"><span>Industries</span><div>${industries.map(s => link(s.route+'/',s.short)).join('')}</div>${link('/industries/','All industries')}</section>
-    ${section('Implementation projects',offerCards())}
-    ${band('Commission a project or add specialists','Engage Dockio to deliver an agreed scope, or bring specialists into a programme your team leads.',actions(link('/request-ai-team/','Request an AI team'),link('/services/','All services')))}
-    <section class="project-company wrap"><p>Dockio is led by Sankalp Shirish More, whose enterprise AI experience spans banking, life sciences and consumer goods.</p>${actions(link('/why-dockio/','Meet Dockio'),link('/procurement/','Supplier information'))}</section>`};
+  return {
+    title:'Enterprise AI delivery and embedded specialists',
+    description:'Dockio engineers and delivery leads build enterprise AI with your team. Map the value of one workflow, test it in your systems and decide where to scale.',
+    body:`
+      <section class="delivery-hero">
+        <img class="delivery-hero-photo" src="/assets/team-at-work.webp" width="1774" height="887" alt="Three colleagues review an operations sheet at a shared workstation." fetchpriority="high">
+        <div class="wrap hero-inner"><div class="hero-message"><h1>Enterprise AI,<br>built with<br> your team.</h1>
+        <p>Our engineers and delivery leads join your team to build AI into one workflow. Together, we measure how it performs and decide where to scale.</p>
+        <div class="hero-actions"><a class="delivery-action light" href="/project-enquiry/">Discuss a project</a><a class="delivery-action outline" href="/services/embedded-ai-teams/">Find a specialist</a></div></div></div>
+      </section>
+      ${industryLinks()}
+      ${bankingCaseSection()}
+      <section class="home-people"><div class="wrap">
+        <h2>Specialists who build<br> with your team.</h2>
+        <div class="people-layout"><div class="people-intro"><p>Bring in one specialist or ask Dockio to lead a team. We agree what each person will deliver and who they will work with before they join.</p>
+          <a class="editorial-link" href="/services/embedded-ai-teams/">Meet the roles</a></div>
+          <dl class="role-list">
+            <div><dt>Delivery lead</dt><dd>Works with your product owner to pick a workflow, establish the baseline and agree what success looks like.</dd></div>
+            <div><dt>AI engineer</dt><dd>Builds the integration with your developers and turns difficult cases into tests they can run again.</dd></div>
+            <div><dt>Platform engineer</dt><dd>Pairs with your platform team on deployment and monitoring, then rehearses recovery with the people on call.</dd></div>
+          </dl>
+        </div>
+      </div></section>
+      <section class="scale-panel"><div class="wrap scale-grid"><div><h2>What earns a wider rollout?</h2><p>Your workflow owner compares the pilot with how the team works today. We look at time, quality, rework and running costs. Together we decide whether to expand, revise the workflow or stop.</p><a class="editorial-link" href="/services/strategy/">See how we map value</a></div>
+        <div class="scale-operate"><h3>What your team keeps</h3><p>Your team keeps the agreed code or configuration, tests and runbook. Before handover, your maintainers release a change and handle an exception with us.</p><a class="editorial-link" href="${sprint}">Implementation sprint</a></div></div></section>
+      <section class="owned-product"><div class="wrap"><a class="product-photo" href="${example}" aria-label="Explore the ChangingBox storage marketplace"><img src="/assets/industry-logistics.webp" width="1440" height="960" alt="Storage bays and warehouse operations" loading="lazy"></a><div><p class="product-context">A Dockio product</p><h2>ChangingBox</h2><p>We own and operate a storage marketplace. Follow a warehouse search through listing terms, host enquiries and reservation requests.</p><a class="editorial-link" href="${example}">Explore ChangingBox</a></div></div></section>
+      <section class="delivery-end"><div class="wrap"><h2>What are you working on?</h2><a class="delivery-action light" href="/project-enquiry/">Discuss a project</a></div></section>`
+  };
 }
 
 export function implementationPages() {
@@ -61,15 +95,16 @@ export function implementationPages() {
     hero('Paid engagement','AI Implementation &amp; Value Sprint','Commission a working implementation of one workflow in your approved environment. Your team receives the integration, test results and a recommendation on whether to release, revise or stop.',
       actions(link(project+'?offer=sprint','Scope a sprint',true),link(statement,'Project capability statement (PDF)'))) +
     section('What the sprint includes',rows([
-      ['Before the build','The workflow owner supplies representative cases, the current process and acceptance criteria. Your platform owner agrees access, environments and the actions a user must approve.'],
-      ['Build and evaluation','Dockio connects the agreed sources and systems, implements the review path and tests ordinary cases and exceptions against the baseline.'],
-      ['Handover and decision','You receive the working configuration, evaluation record, open issues and operating instructions. The business and platform owners decide what is ready for production.']
+      ['Before the build','Your workflow owner and our delivery lead map the steps, volumes and rework. We agree the baseline, the smallest useful release and the tests it must pass. Your platform owner confirms the access we can use.'],
+      ['Build and evaluation','Our engineer pairs with your maintainer to connect the approved sources and systems. Operations reviewers test everyday cases and exceptions and record where the workflow needs to change.'],
+      ['Handover and decision','Your maintainer runs the tests, releases a reviewed change and rehearses recovery with us. The business and platform owners review the evidence and decide whether to extend the rollout, revise the workflow or stop.']
     ])) + section('Choose a starting workflow',offerCards()) +
     band('Commercial terms and support','We quote the sprint after reviewing access approvals, systems to connect, test coverage and reviewer availability. Production rollout and ongoing support can be scoped separately, with service hours, escalation and change ownership agreed in writing.',actions(link(project+'?offer=sprint','Discuss scope and timing',true))),true);
 
   pages[routeKey(banking)] = page(banking,'Banking workflow implementation','Banking AI workflow implementation in India','Connect a banking service queue to approved policy with source-linked drafts, access controls, human review and an agreed acceptance test for a bank or GCC.',
     hero('Banking and financial services','AI workflow implementation for banking operations','Give service teams an answer they can check against the bank’s policy. Dockio connects one service queue to an approved policy collection inside your bank or global capability centre.',
-      actions(link(project+'?offer=banking','Scope a banking workflow',true),link('#acceptance','Sample acceptance checklist')),photo('banking','Two banking colleagues reviewing a case together',true)) +
+      actions(link(project+'?offer=banking','Scope a banking workflow',true),link('#service-case','Try the service case'))) +
+    bankingCaseSection(true) +
     section('From service case to approved response',
       diagram('Service desk workflow', [['Service queue','An authorised handler opens a case.'],['Policy repository','Retrieve current passages within the handler’s access.'],['Approved AI service','Draft an answer with policy references, or return an exception.'],['Case handler','Verify the passage and record the response or escalate it.']]) +
       '<p class="project-note">Dockio configures the connections, retrieval and review routing. The bank provisions identities, owns the policy collection and retains authority over the response sent to the customer.</p>') +
@@ -113,6 +148,16 @@ export const projectPaths = {banking,engineering,sprint,project,example,partners
 export function projectWorksheets() {
   const csv = records => records.map(row => row.map(value => '"' + value.replaceAll('"','""') + '"').join(',')).join('\r\n') + '\r\n';
   return {
+    'workflow-value-map.csv':csv([
+      ['Measure or decision','How to record it','Baseline','Pilot result or decision','Period or evidence source','Accountable owner'],
+      ['Eligible volume','Count comparable cases. Record exclusions and the time period.','','','',''],
+      ['Handling time per case','Separate active work from waiting time. Use minutes and record the sample size.','','','',''],
+      ['Quality and rework','Count accepted results and cases needing correction. Use the same checks in both periods.','','','',''],
+      ['Running cost','Include model usage, infrastructure, human review and support. Record one-off build costs separately.','','','',''],
+      ['Capacity released','Compare hours at equivalent volume and quality. Record how released time will be used.','','','',''],
+      ['Financial benefit','Separate avoided costs from spending reductions that finance confirms.','','','',''],
+      ['Release decision','Expand, revise or stop. Record reasoning, quality thresholds, the next owner and review date.','','','','']
+    ]),
     'banking-acceptance-checklist.csv':csv([
       ['Check','Evidence to record','Case reference','Expected result','Observed result','Reviewer','Decision'],
       ...bankingChecks.map(row => [...row,'','','','',''])

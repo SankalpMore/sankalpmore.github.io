@@ -7,7 +7,7 @@ export function projectEnquiryPage() {
     description:'Send Dockio your work email, company and a short project description or sanitised PDF. Receive an enquiry reference and choose a discussion time.',
     breadcrumbs:[{name:'Home',route:'/'},{name:'Project enquiry',route:'/project-enquiry'}],
     body:`<nav class="seo-breadcrumb wrap" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><span aria-current="page">Project enquiry</span></li></ol></nav>
-    <section class="project-intro"><div class="wrap project-intro-grid"><p class="project-kicker">Project enquiry</p><h1>Scope an implementation</h1><p class="project-lead">Send a short description of the workflow or attach your project brief. You can choose a 30-minute discussion after submitting.</p></div></section>
+    <section class="project-intro"><div class="wrap project-intro-grid"><h1>Discuss your project.</h1><p class="project-lead">Tell us what your team does today and what you want to improve. Send a short description or a PDF, then choose a time for a 30-minute discussion.</p></div></section>
     <div class="wrap project-enquiry-grid"><div><form id="project-enquiry" action="/api/enquiries" method="post" enctype="multipart/form-data">
     <input type="hidden" name="formType" value="project"><input type="hidden" name="offer" value="general">
     <p id="project-context" class="discussion-context" hidden></p>
@@ -24,8 +24,8 @@ export function projectEnquiryPage() {
     <section id="project-confirmation" hidden aria-live="polite"><h2 tabindex="-1">Project brief received</h2><p id="project-received"></p><p class="discussion-reference">Enquiry reference <strong id="project-reference"></strong></p>
     <p>You can now choose a time in Microsoft Bookings. Include your reference in the meeting notes so we can match the call to your brief.</p>
     <div class="project-actions">${calendar('Choose a discussion time')}<button class="button secondary" id="project-copy-reference" type="button">Copy reference</button></div><p id="project-copy-status" role="status"></p></section></div>
-    <aside><h2>Prefer to talk first?</h2><p>Bring your workflow, the systems involved and any deadline for a proposal.</p>
-    ${calendar('Book a discussion')}<hr><p>Looking for specialist capacity? <a class="project-link" href="/request-ai-team/">Request an AI team</a>.</p>
+    <aside><h2>Prefer to talk first?</h2><p>You can book a call directly. Bring the workflow, the systems involved and any deadline.</p>
+    ${calendar('Book a discussion')}<hr><p>Need someone to join your team? <a class="project-link" href="/contact/?service=teams">Discuss a specialist</a>.</p>
     <a class="project-link" href="/procurement/">Supplier information</a></aside></div>`
   };
 }
