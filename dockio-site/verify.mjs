@@ -130,7 +130,7 @@ assert(hero.includes('team-at-work.webp'));
 for (const url of ['/project-enquiry/','/services/embedded-ai-teams/']) {
   assert(hero.includes('href="'+url+'"'), 'Missing first-screen route: '+url);
 }
-for (const url of ['/delivery-example/','/services/implementation-sprint/','/services/strategy/','/services/banking-ai-workflow-implementation/']) {
+for (const url of ['/delivery-example/','/services/implementation-sprint/','/services/strategy/#capacity','/services/banking-ai-workflow-implementation/']) {
   assert(main(home).includes('href="'+url+'"'), 'Missing homepage route: '+url);
 }
 for (const route of ['index.html','services/banking-ai-workflow-implementation/index.html']) {
@@ -138,7 +138,16 @@ for (const route of ['index.html','services/banking-ai-workflow-implementation/i
   for (const id of ['address-0','address-1','reply-0','reply-1']) assert(body.includes('id="'+id+'"'));
   assert(body.includes('Refer to account servicing') && body.includes('Ready for review'));
 }
-assert(main(read(path.join(root,'services/strategy/index.html'))).includes('/downloads/workflow-value-map.csv'));
+const strategy = main(read(path.join(root,'services/strategy/index.html')));
+assert(strategy.includes('id="capacity-form"') && strategy.includes('/downloads/workflow-value-map.csv'));
+const specialists = main(read(path.join(root,'services/embedded-ai-teams/index.html')));
+for (const id of ['role-0','role-1','sample-0','sample-1']) assert(specialists.includes('id="'+id+'"'));
+for (const role of ['AI business analyst','AI product manager']) {
+  assert(specialists.includes(new URLSearchParams({role}).toString()));
+  assert(main(contact).includes('<option>'+role+'</option>'));
+  assert(main(read(path.join(root,'request-ai-team/index.html'))).includes('<option>'+role+'</option>'));
+}
+assert(main(read(path.join(root,'global-capability-centres/index.html'))).includes('Keep decisions local'));
 const project = main(read(path.join(root,'project-enquiry/index.html')));
 assert(project.includes('id="project-enquiry"') && project.includes('action="/api/enquiries"'));
 assert(!project.includes('name="teamSize"') && !project.includes('name="seniority"'));

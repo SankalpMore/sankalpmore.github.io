@@ -1,7 +1,11 @@
 (()=>{
  const form=document.querySelector('#team-enquiry');if(!form)return;
  const status=document.querySelector('#team-submit-status'),button=form.querySelector('[type="submit"]'),confirmation=document.querySelector('#team-confirmation');
- const intent=new URLSearchParams(location.search).get('intent');const intents={proposal:'Request a team proposal',profiles:'Request capability profiles',sponsor:'Discuss workforce requirements',rfp:'Submit an RFI/RFP'};
+ const query=new URLSearchParams(location.search);
+ const requestedRole=query.get('role');
+ if([...form.elements.specialistRole.options].some(option=>option.value===requestedRole))form.elements.specialistRole.value=requestedRole;
+ form.elements.seniority.value='To be agreed';
+ const intent=query.get('intent');const intents={proposal:'Request a team proposal',profiles:'Request capability profiles',sponsor:'Discuss workforce requirements',rfp:'Submit an RFI/RFP'};
  if(intent==='rfp'){location.replace('/project-enquiry/?offer=rfi');return;}
  if(Object.hasOwn(intents,intent))form.elements.intent.value=intents[intent];
  const endpoint=location.hostname==='sankalpmore.github.io'?'https://www.dockio.in/api/enquiries':'/api/enquiries';
@@ -23,5 +27,5 @@
   }catch(error){status.textContent=(error.message||'We could not save your requirement.')+' Your form is still here. Please retry, or email sankalp@dockio.in.';}
   finally{button.disabled=false;}
  });
- document.querySelector('#team-new-enquiry').addEventListener('click',()=>{form.reset();form.hidden=false;confirmation.hidden=true;status.textContent='';pendingKey=newId();form.elements.name.focus();});
+ document.querySelector('#team-new-enquiry').addEventListener('click',()=>{form.reset();form.elements.seniority.value='To be agreed';form.hidden=false;confirmation.hidden=true;status.textContent='';pendingKey=newId();form.elements.name.focus();});
 })();

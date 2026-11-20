@@ -2,7 +2,7 @@
 
 > Dockio Technosolutions Private Limited is an enterprise AI strategy, implementation and systems-integration company based in Mumbai, India. Dockio is an OpenAI Select Partner.
 
-Dockio builds workflows alongside its clients’ teams. Engagements cover value mapping, implementation, embedded specialists and rollout. A client’s maintainers receive the agreed code or configuration, tests and operating instructions.
+Dockio focuses exclusively on enterprise AI. It maps business processes into tasks that agents can perform with defined permissions and human review. Engagements cover value mapping, implementation, embedded specialists and adoption. A client’s maintainers receive the agreed code or configuration, tests and operating instructions.
 
 Dockio serves banking and financial services, pharma and life sciences, logistics and supply chain, IT and software, and retail and consumer goods.
 
@@ -10,8 +10,8 @@ Dockio serves banking and financial services, pharma and life sciences, logistic
 
 - [Enterprise AI services](https://www.dockio.in/services/): Strategy, implementation, embedded specialists and adoption support.
 - [AI implementation](https://www.dockio.in/services/integration/): AI workflows connected to enterprise information, tools and systems.
-- [Embedded AI teams](https://www.dockio.in/services/embedded-ai-teams/): AI engineering, architecture, product, evaluation and adoption specialists.
-- [AI strategy and prioritisation](https://www.dockio.in/services/strategy/): Opportunity assessment, operating readiness and implementation planning.
+- [Embedded AI teams](https://www.dockio.in/services/embedded-ai-teams/): AI business analysts, product managers, engineers, architects, evaluation and adoption specialists.
+- [AI strategy and prioritisation](https://www.dockio.in/services/strategy/): Opportunity assessment, a monthly capacity worksheet, operating readiness and rollout decisions.
 - [AI adoption and value](https://www.dockio.in/services/adoption/): Workflow improvement, adoption and operating performance.
 - [Agentic workflows](https://www.dockio.in/services/workflows/): Business workflows involving AI, information sources, tools and human review.
 - [Implementation sprint](https://www.dockio.in/services/implementation-sprint/): A scoped implementation engagement for a business workflow.
@@ -27,6 +27,7 @@ Dockio serves banking and financial services, pharma and life sciences, logistic
 - [Logistics and supply chain](https://www.dockio.in/industries/logistics-supply-chain/)
 - [IT and software](https://www.dockio.in/industries/it-software/)
 - [Retail and consumer goods](https://www.dockio.in/industries/retail-consumer-goods/)
+- [Global capability centres](https://www.dockio.in/global-capability-centres/)
 - [Private equity](https://www.dockio.in/industries/private-equity/)
 - [Enterprise operations](https://www.dockio.in/industries/enterprise-operations/)
 - [Professional services](https://www.dockio.in/industries/professional-services/)

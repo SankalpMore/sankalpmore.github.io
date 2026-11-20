@@ -88,7 +88,7 @@ function writeBundle(extension, files) {
 const stylesheetUrl = writeBundle('css', [
   'source/site.css','release.css','premium.css','seo.css','embedded.css','gsi-redesign.css','enterprise.css','project.css','delivery.css'
 ]);
-const scriptUrl = writeBundle('js',['release.js','team-enquiry.js','discussion-enquiry.js','project-enquiry.js']);
+const scriptUrl = writeBundle('js',['release.js','team-enquiry.js','discussion-enquiry.js','project-enquiry.js','capacity.js']);
 
 for (const [name, csv] of Object.entries(projectWorksheets())) {
   fs.writeFileSync(path.join(output,'downloads',name),csv);

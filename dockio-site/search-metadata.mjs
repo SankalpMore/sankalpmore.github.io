@@ -9,7 +9,7 @@ export const aliases = {
 export const address = route => route === '/' ? '/' : route + '/';
 export const escape = value => String(value).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 export const socialImage = '/assets/dockio-social.png';
-export const socialAlt = 'Dockio. Enterprise AI, built with your team. Three colleagues review an operations sheet together.';
+export const socialAlt = 'Dockio. Enterprise AI strategy and delivery. Three colleagues review an operations sheet together.';
 
 export function structuredData(origin, route, entry) {
   const url = origin + address(route);
