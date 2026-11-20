@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import { aliases, address } from './search-metadata.mjs';
 
 const root = path.resolve(process.argv[2] || 'dist');
@@ -13,6 +14,13 @@ const decode = value => value.replaceAll('&amp;', '&').replaceAll('&quot;', '"')
 const attr = (tag, name) => decode(tag.match(new RegExp(`\\b${name}="([^"]*)"`))?.[1] || '');
 const meta = (html, name) => [...html.matchAll(/<meta\b[^>]*>/g)].map(m=>m[0]).filter(tag=>attr(tag,'name')===name||attr(tag,'property')===name).map(tag=>attr(tag,'content'));
 const localFile = pathname => path.join(root, decodeURIComponent(pathname), pathname.endsWith('/') ? 'index.html' : '');
+const bundles = ['css','js'].map(extension => {
+  const content = fs.readFileSync(localFile('/assets/site.'+extension));
+  const digest = createHash('sha256').update(content).digest('hex').slice(0,16);
+  const url = `/assets/site.${digest}.${extension}`;
+  assert(fs.readFileSync(localFile(url)).equals(content), 'Bundle mismatch: '+url);
+  return url;
+});
 const titles = new Set(), descriptions = new Set(), canonicals = new Set();
 let checked = 0, fragments = 0, canonicalPages = 0;
 
@@ -25,6 +33,10 @@ for (const file of files) {
   const notFound = pathname === '/404.html';
   const links = [...html.matchAll(/<link\b[^>]*>/g)].map(m=>m[0]);
   const canonical = links.filter(t=>attr(t,'rel')==='canonical').map(t=>attr(t,'href'));
+  if (!redirect) {
+    assert(links.some(tag => attr(tag,'rel')==='stylesheet' && attr(tag,'href')===bundles[0]), 'Stale stylesheet: '+file);
+    assert([...html.matchAll(/<script\b[^>]*>/g)].some(match => attr(match[0],'src')===bundles[1]), 'Stale script: '+file);
+  }
   if (!redirect && !notFound) {
     canonicalPages++;
     const url = origin + pathname.replace(/index\.html$/, '');
