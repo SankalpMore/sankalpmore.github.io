@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { applySelectRelease } from './finalize-release.mjs';
 import { applyEmbeddedRelease } from './embedded-release.mjs';
@@ -51,7 +52,9 @@ function render(route, entry, { noindex = false } = {}) {
     .replace(/(<meta property="og:description" content=")[^"]*/, '$1' + escape(entry.description))
     .replace('</head>', searchHead + '</head>');
   let html = (head + '<main id="main" tabindex="-1">' + entry.body + '</main>' + after)
-    .replaceAll('{{BASE}}', '/').replaceAll('{{PAGE}}', route);
+    .replaceAll('{{BASE}}', '/').replaceAll('{{PAGE}}', route)
+    .replace('href="/assets/site.css"', `href="${stylesheetUrl}"`)
+    .replace('src="/assets/site.js"', `src="${scriptUrl}"`);
   html = html.replace(/<a\b([^>]*?)data-route="([^"]+)"([^>]*)>([\s\S]*?)<\/a>/g, (match, left, target, right, label) => {
     const rawPath = target.split(/[?#]/)[0];
     const pathname = aliases[rawPath] || rawPath;
@@ -72,6 +75,21 @@ fs.rmSync(output, { recursive: true, force: true });
 fs.mkdirSync(path.join(output, 'assets'), { recursive: true });
 const publicDirectory = path.resolve(root, '..', 'public');
 if (fs.existsSync(publicDirectory)) fs.cpSync(publicDirectory, output, { recursive: true });
+
+function writeBundle(extension, files) {
+  const content = files.map(file => fs.readFileSync(path.join(root,file),'utf8')).join('\n');
+  const digest = createHash('sha256').update(content).digest('hex').slice(0,16);
+  const name = `site.${digest}.${extension}`;
+  const directory = path.join(output,'assets');
+  fs.writeFileSync(path.join(directory,name),content);
+  fs.writeFileSync(path.join(directory,'site.'+extension),content);
+  return '/assets/'+name;
+}
+const stylesheetUrl = writeBundle('css', [
+  'source/site.css','release.css','premium.css','seo.css','embedded.css','gsi-redesign.css','enterprise.css','project.css','delivery.css'
+]);
+const scriptUrl = writeBundle('js',['release.js','team-enquiry.js','discussion-enquiry.js','project-enquiry.js']);
+
 for (const [name, csv] of Object.entries(projectWorksheets())) {
   fs.writeFileSync(path.join(output,'downloads',name),csv);
 }
@@ -80,9 +98,6 @@ for (const [route, entry] of Object.entries(routes)) {
   fs.mkdirSync(directory, { recursive: true });
   fs.writeFileSync(path.join(directory, 'index.html'), render(route, entry));
 }
-const css = fs.readFileSync(path.join(source,'site.css'),'utf8') + '\n' + ['release.css','premium.css','seo.css','embedded.css','gsi-redesign.css','enterprise.css','project.css','delivery.css'].map(file=>fs.readFileSync(path.join(root,file),'utf8')).join('\n');
-fs.writeFileSync(path.join(output,'assets/site.css'),css);
-fs.writeFileSync(path.join(output,'assets/site.js'),['release.js','team-enquiry.js','discussion-enquiry.js','project-enquiry.js'].map(file=>fs.readFileSync(path.join(root,file),'utf8')).join('\n'));
 for (const [alias, target] of Object.entries(aliases)) {
   const directory = path.join(output, alias.slice(1));
   fs.mkdirSync(directory, {recursive:true});
