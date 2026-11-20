@@ -32,8 +32,12 @@ async function rateLimit(bucket,request,env){
  }
  fail('Please retry in a moment.',429);
 }
+export const specialistRoles = [
+ 'AI business analyst', 'AI product manager', 'AI engineer', 'Solution architect', 'AI product lead',
+ 'Evaluation specialist', 'Adoption lead', 'Programme principal', 'Multiple roles / managed team', 'Help me define the roles'
+];
 const fields={name:100,email:180,company:180,requesterRole:120,specialistRole:100,seniority:60,location:180,arrangement:40,duration:120,environment:300,procurement:100,intent:80,message:5000};
-const enums={intent:['Request a team proposal','Request capability profiles','Discuss workforce requirements','Submit an RFI/RFP'],specialistRole:['AI engineer','Solution architect','AI product lead','Evaluation specialist','Adoption lead','Programme principal','Multiple roles / managed team','Help me define the roles'],seniority:['Mid-level','Senior','Lead / principal','Mixed team','To be agreed'],arrangement:['Remote','Hybrid','On-site','To be agreed'],procurement:['Exploring options','Budget / sponsor approval in progress','Supplier qualification','RFI stage','RFP stage','Ready to contract','Other / to be discussed']};
+const enums={intent:['Request a team proposal','Request capability profiles','Discuss workforce requirements','Submit an RFI/RFP'],specialistRole:specialistRoles,seniority:['Mid-level','Senior','Lead / principal','Mixed team','To be agreed'],arrangement:['Remote','Hybrid','On-site','To be agreed'],procurement:['Exploring options','Budget / sponsor approval in progress','Supplier qualification','RFI stage','RFP stage','Ready to contract','Other / to be discussed']};
 const discussionRequired={name:100,email:180,company:180,intent:80,message:5000};
 const discussionOptional={requesterRole:120,timeline:60,industry:100,location:180,environment:300,audience:60};
 const discussionEnums={intent:['AI implementation','Embedded AI teams','AI strategy','Adoption & value','RFI/RFP','Product / other enquiry'],timeline:['This month','This quarter','Planning ahead','Not sure'],industry:['Banking & financial services','Pharma & life sciences','Logistics & supply chain','IT & software','Retail & consumer goods','Other','To discuss'],audience:['Product or delivery','Executive','Procurement']};
@@ -46,6 +50,11 @@ function discussionData(form){
  const data={formType:'discussion'};
  for(const[key,max]of Object.entries(discussionRequired))data[key]=textField(form,key,max,true);
  for(const[key,max]of Object.entries(discussionOptional))data[key]=textField(form,key,max,false);
+ if(data.intent==='Embedded AI teams'){
+  const role=textField(form,'specialistRole',100,false);
+  if(role&&!specialistRoles.includes(role))fail('Please select a valid specialist role.');
+  if(role)data.specialistRole=role;
+ }
  for(const[key,values]of Object.entries(discussionEnums))if(data[key]&&!values.includes(data[key]))fail(`Please select a valid ${key}.`);
  return data;
 }

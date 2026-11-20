@@ -17,6 +17,23 @@ test('short discussion accepts a business brief without team fields and offers a
  response=await handleEnquiry(discussionPost({},id),env);assert.equal(response.status,200);assert.equal((await response.json()).reference,first.reference);assert.equal((await env.BUCKET.list({prefix:'enquiries/'})).objects.length,1);
  response=await handleEnquiry(discussionPost({message:'A different business requirement changes this same submission.'},id),env);assert.equal(response.status,409);
 });
+
+test('specialist requests retain the selected role in both briefs and drop it for unrelated discussions',async t=>{
+  for(const specialistRole of ['AI business analyst','AI product manager','AI product lead']){
+    const env=await context(t);
+    for(const request of [post({specialistRole}),discussionPost({intent:'Embedded AI teams',specialistRole})]){
+      const id=(await request.clone().formData()).get('requestId');
+      assert.equal((await handleEnquiry(request,env)).status,201);
+      const saved=await(await env.BUCKET.get(`enquiries/${id}.json`)).json();
+      assert.equal(saved.data.specialistRole,specialistRole);
+    }
+  }
+  const env=await context(t),id=crypto.randomUUID();
+  assert.equal((await handleEnquiry(discussionPost({intent:'Embedded AI teams',specialistRole:'Unknown'},undefined),env)).status,400);
+  assert.equal((await handleEnquiry(discussionPost({intent:'AI strategy',specialistRole:'AI business analyst'},id),env)).status,201);
+  const stored=await(await env.BUCKET.get(`enquiries/${id}.json`)).json();
+  assert(!Object.hasOwn(stored.data,'specialistRole'));
+});
 test('short discussion preserves optional context and PDF; enquiry privacy applies to both form types',async t=>{
  const env=await context(t),id=crypto.randomUUID(),file=new File(['%PDF-1.4\n synthetic discussion brief'],'discussion.pdf',{type:'application/pdf'});
  const response=await handleEnquiry(discussionPost({requesterRole:'Delivery manager',timeline:'This quarter',industry:'Pharma & life sciences',location:'Mumbai',environment:'Approved enterprise platform',audience:'Product or delivery'},id,file),env);assert.equal(response.status,201);

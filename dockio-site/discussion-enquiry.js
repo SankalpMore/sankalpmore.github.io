@@ -8,6 +8,18 @@
  const audiences={delivery:'Product or delivery',product:'Product or delivery',executive:'Executive',leadership:'Executive',procurement:'Procurement'};
  const context=[];
  const service=services[query.get('service')];if(service){form.elements.intent.value=service;context.push(service);}
+ const roleField=form.elements.specialistRole;
+ const roleGroup=document.querySelector('#discussion-role');
+ function showRole() {
+  const visible=form.elements.intent.value==='Embedded AI teams';
+  roleGroup.hidden=!visible;
+  roleField.disabled=!visible;
+  if(!visible)roleField.value='';
+ }
+ showRole();
+ const requestedRole=query.get('role');
+ if(!roleField.disabled && [...roleField.options].some(option=>option.value===requestedRole))roleField.value=requestedRole;
+ form.elements.intent.addEventListener('change',showRole);
  const industry=industries[query.get('industry')];if(industry){form.elements.industry.value=industry;context.push(industry);}
  const audience=audiences[query.get('audience')];if(audience)form.elements.audience.value=audience;
  if(context.length){const note=document.querySelector('#discussion-context');note.textContent='Your discussion: '+context.join(' / ');note.hidden=false;}
@@ -28,11 +40,11 @@
    const result=await response.json();if(!response.ok)throw Error(result.error||'We could not save your requirement.');
    form.hidden=true;confirmation.hidden=false;document.querySelector('#discussion-reference').textContent=result.reference;
    document.querySelector('#discussion-received').textContent=result.preview?'Preview only: this test brief was saved locally, not sent to Dockio.':'Your requirement has been saved for Dockio to review.';
-   meetingBrief=`Dockio discussion\nEnquiry reference: ${result.reference}\nCompany: ${String(data.get('company')).trim()}\nRequirement: ${data.get('intent')}\n${data.get('timeline')?'Timing: '+data.get('timeline')+'\n':''}${data.get('industry')?'Industry: '+data.get('industry')+'\n':''}\n${String(data.get('message')).trim()}`;
+   meetingBrief=`Dockio discussion\nEnquiry reference: ${result.reference}\nCompany: ${String(data.get('company')).trim()}\nRequirement: ${data.get('intent')}\n${data.get('specialistRole')?'Specialist: '+data.get('specialistRole')+'\n':''}${data.get('timeline')?'Timing: '+data.get('timeline')+'\n':''}${data.get('industry')?'Industry: '+data.get('industry')+'\n':''}\n${String(data.get('message')).trim()}`;
    confirmation.querySelector('h2').focus();confirmation.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});
   }catch(error){status.textContent=(error.message||'We could not save your requirement.')+' Your brief is still here. Please retry, or email sankalp@dockio.in.';}
   finally{button.disabled=false;}
  });
  document.querySelector('#discussion-copy-brief').addEventListener('click',async()=>{const copyStatus=document.querySelector('#discussion-copy-status');try{if(!navigator.clipboard?.writeText)throw Error('Clipboard unavailable');await navigator.clipboard.writeText(meetingBrief);copyStatus.textContent='Brief and reference copied. Paste them into the meeting details if useful.';}catch{copyStatus.textContent='Copy is unavailable in this browser. Keep the enquiry reference above for your discussion.';}});
- document.querySelector('#discussion-new-enquiry').addEventListener('click',()=>{form.reset();form.hidden=false;confirmation.hidden=true;status.textContent='';document.querySelector('#discussion-copy-status').textContent='';meetingBrief='';pendingKey=newId();document.querySelector('#discussion-context').hidden=true;form.elements.name.focus();});
+ document.querySelector('#discussion-new-enquiry').addEventListener('click',()=>{form.reset();showRole();form.hidden=false;confirmation.hidden=true;status.textContent='';document.querySelector('#discussion-copy-status').textContent='';meetingBrief='';pendingKey=newId();document.querySelector('#discussion-context').hidden=true;form.elements.name.focus();});
 })();

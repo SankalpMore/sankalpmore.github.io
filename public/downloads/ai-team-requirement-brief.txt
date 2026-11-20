@@ -10,7 +10,9 @@ Procurement contact:
 
 REQUIREMENT
 Business outcome and workflow:
-Roles and seniority:
+Role needed (e.g. AI business analyst, AI product manager or AI engineer):
+Skills to demonstrate in a work sample:
+Seniority, if specified:
 Individual specialist or managed team:
 Number of people:
 Location / countries:
@@ -23,12 +25,12 @@ ENVIRONMENT AND ACCEPTANCE
 Approved AI platforms / models / tools:
 Integration and source systems:
 Data, security and access restrictions:
-Expected work products:
+First deliverable and the person who will review it:
 Acceptance / performance review criteria:
 Client responsibilities and dependencies:
 
 PROCUREMENT
-Budget approval and procurement stage:
+Expected allocation, term and budget approval stage:
 RFI / RFP deadlines:
 Mandatory employment / background screening:
 Insurance requirements:

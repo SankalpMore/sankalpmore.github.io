@@ -157,8 +157,8 @@ def build():
     pdf.rect(MARGIN, HEIGHT - top - band_height, INNER, band_height, stroke=0, fill=1)
     label(pdf, "FEES AND TIMING", MARGIN + inset, top + 9, INNER - inset * 2)
     band_end = paragraph(
-        pdf, "The proposal sets the fee and schedule after reviewing access approvals, "
-        "the number of integrations, the evaluation sample and reviewer availability.",
+        pdf, "Your proposal lists the sprint fee, agreed outputs and schedule. Model usage, "
+        "hosting and production support are identified separately. You approve scope changes.",
         MARGIN + inset, top + 25, INNER - inset * 2,
     )
     if band_end + 6 > top + band_height:

@@ -60,30 +60,30 @@ function industryLinks() {
 
 export function projectHome() {
   return {
-    title:'Enterprise AI delivery and embedded specialists',
-    description:'Dockio engineers and delivery leads build enterprise AI with your team. Map the value of one workflow, test it in your systems and decide where to scale.',
+    title:'Enterprise AI strategy, consulting and delivery',
+    description:'Dockio helps you choose which work to give AI agents. Our business analysts, product managers and engineers build it with your team and support rollout.',
     body:`
       <section class="delivery-hero">
         <img class="delivery-hero-photo" src="/assets/team-at-work.webp" width="1774" height="887" alt="Three colleagues review an operations sheet at a shared workstation." fetchpriority="high">
-        <div class="wrap hero-inner"><div class="hero-message"><h1>Enterprise AI,<br>built with<br> your team.</h1>
-        <p>Our engineers and delivery leads join your team to build AI into one workflow. Together, we measure how it performs and decide where to scale.</p>
-        <div class="hero-actions"><a class="delivery-action light" href="/project-enquiry/">Discuss a project</a><a class="delivery-action outline" href="/services/embedded-ai-teams/">Find a specialist</a></div></div></div>
+        <div class="wrap hero-inner"><div class="hero-message"><h1>Enterprise AI<br>strategy and<br> delivery.</h1>
+        <p>We help you decide which tasks an AI agent can run. Our analysts, product managers and engineers work with your team to put those tasks into production.</p>
+        <div class="hero-actions"><a class="delivery-action light" href="/project-enquiry/">Discuss a project</a><a class="delivery-action outline" href="/services/embedded-ai-teams/">Build your AI team</a></div></div></div>
       </section>
       ${industryLinks()}
       ${bankingCaseSection()}
       <section class="home-people"><div class="wrap">
-        <h2>Specialists who build<br> with your team.</h2>
-        <div class="people-layout"><div class="people-intro"><p>Bring in one specialist or ask Dockio to lead a team. We agree what each person will deliver and who they will work with before they join.</p>
-          <a class="editorial-link" href="/services/embedded-ai-teams/">Meet the roles</a></div>
+        <h2>Who joins your team?</h2>
+        <div class="people-layout"><div class="people-intro"><p>Bring in one specialist or give Dockio a workstream to lead. Review a relevant work sample with the person we propose, then agree their first deliverable and who they’ll build it with.</p>
+          <a class="editorial-link" href="/services/embedded-ai-teams/">See the roles and work samples</a></div>
           <dl class="role-list">
-            <div><dt>Delivery lead</dt><dd>Works with your product owner to pick a workflow, establish the baseline and agree what success looks like.</dd></div>
-            <div><dt>AI engineer</dt><dd>Builds the integration with your developers and turns difficult cases into tests they can run again.</dd></div>
-            <div><dt>Platform engineer</dt><dd>Pairs with your platform team on deployment and monitoring, then rehearses recovery with the people on call.</dd></div>
+            <div><dt>AI business analyst</dt><dd>Traces a case with your operations team, identifies the tasks an agent can take on and writes tests for the exceptions.</dd></div>
+            <div><dt>AI product manager</dt><dd>Agrees the smallest useful release with your product owner and brings the evidence for the next investment decision.</dd></div>
+            <div><dt>AI engineer</dt><dd>Connects your systems, tests the agent’s actions and rehearses a release with the developers who will maintain it.</dd></div>
           </dl>
         </div>
       </div></section>
-      <section class="scale-panel"><div class="wrap scale-grid"><div><h2>What earns a wider rollout?</h2><p>Your workflow owner compares the pilot with how the team works today. We look at time, quality, rework and running costs. Together we decide whether to expand, revise the workflow or stop.</p><a class="editorial-link" href="/services/strategy/">See how we map value</a></div>
-        <div class="scale-operate"><h3>What your team keeps</h3><p>Your team keeps the agreed code or configuration, tests and runbook. Before handover, your maintainers release a change and handle an exception with us.</p><a class="editorial-link" href="${sprint}">Implementation sprint</a></div></div></section>
+      <section class="scale-panel"><div class="wrap scale-grid"><div><h2>Is the workflow worth scaling?</h2><p>Compare time per case before and after the pilot, including review and rework. Then weigh the capacity released against quality, running costs and what your team could do with that time.</p><a class="editorial-link" href="/services/strategy/#capacity">Estimate the capacity released</a></div>
+        <div class="scale-operate"><h3>After the first release</h3><p>Your people keep the code, tests and runbook. We help them investigate recurring exceptions, change the process and test the next release themselves.</p><a class="editorial-link" href="${sprint}">Implementation sprint</a></div></div></section>
       <section class="owned-product"><div class="wrap"><a class="product-photo" href="${example}" aria-label="Explore the ChangingBox storage marketplace"><img src="/assets/industry-logistics.webp" width="1440" height="960" alt="Storage bays and warehouse operations" loading="lazy"></a><div><p class="product-context">A Dockio product</p><h2>ChangingBox</h2><p>We own and operate a storage marketplace. Follow a warehouse search through listing terms, host enquiries and reservation requests.</p><a class="editorial-link" href="${example}">Explore ChangingBox</a></div></div></section>
       <section class="delivery-end"><div class="wrap"><h2>What are you working on?</h2><a class="delivery-action light" href="/project-enquiry/">Discuss a project</a></div></section>`
   };
@@ -91,6 +91,16 @@ export function projectHome() {
 
 export function implementationPages() {
   const pages = {};
+  pages['/services/workflows'] = page('/services/workflows/','Agent workflows','Business processes and AI agent implementation','Turn a business process into a set of agent tasks, with named owners, approved actions and tests for the exceptions.',
+    hero('Agent workflows','Which parts of a process can an agent run?','Start with one case your team handles today. We follow it through the queue, identify where an agent can act and agree who takes over when the case needs judgement.',
+      actions(link(project,'Discuss a workflow',true),link(banking+'#service-case','Explore a service case'))) +
+    section('What goes into an agent task',rows([
+      ['Trigger and source','Define which event starts the task, whose permissions apply and which records the agent may read. A missing or conflicting source goes to an owner.'],
+      ['Action and authority','Specify what the agent may prepare, record or change. In a banking service queue it can attach a policy-linked draft. The case handler decides what reaches the customer.'],
+      ['Exception and test','Use a case that should stop. Check that the agent records the reason, leaves the restricted action untouched and routes the case to the right person.'],
+      ['Owner and improvement','Your process owner reviews recurring exceptions with our analyst. Together they test a process change and add any newly accepted behaviour to the release tests.']
+    ])) + band('Before extending the workflow','Review handling time, correction rates and running costs with the team operating the first release. Check permissions and exception ownership again in each new business unit.',
+      actions(link('/services/adoption/','Adoption and rollout',true),link('/global-capability-centres/','Delivery across markets'))),true);
   pages[routeKey(sprint)] = page(sprint,'Implementation sprint','Paid AI Implementation & Value Sprint','Scope one paid AI implementation sprint with Dockio. Agree workflow access, integrations, acceptance tests, handover and the conditions for a production rollout.',
     hero('Paid engagement','AI Implementation &amp; Value Sprint','Commission a working implementation of one workflow in your approved environment. Your team receives the integration, test results and a recommendation on whether to release, revise or stop.',
       actions(link(project+'?offer=sprint','Scope a sprint',true),link(statement,'Project capability statement (PDF)'))) +
@@ -99,7 +109,7 @@ export function implementationPages() {
       ['Build and evaluation','Our engineer pairs with your maintainer to connect the approved sources and systems. Operations reviewers test everyday cases and exceptions and record where the workflow needs to change.'],
       ['Handover and decision','Your maintainer runs the tests, releases a reviewed change and rehearses recovery with us. The business and platform owners review the evidence and decide whether to extend the rollout, revise the workflow or stop.']
     ])) + section('Choose a starting workflow',offerCards()) +
-    band('Commercial terms and support','We quote the sprint after reviewing access approvals, systems to connect, test coverage and reviewer availability. Production rollout and ongoing support can be scoped separately, with service hours, escalation and change ownership agreed in writing.',actions(link(project+'?offer=sprint','Discuss scope and timing',true))),true);
+    band('Commercial terms and support','Your proposal names the workflow, integrations, acceptance tests and fee for the agreed sprint. It shows model and hosting costs separately. If scope changes, you review the cost before we proceed. Production rollout and support have their own terms.',actions(link(project+'?offer=sprint','Discuss scope and timing',true))),true);
 
   pages[routeKey(banking)] = page(banking,'Banking workflow implementation','Banking AI workflow implementation in India','Connect a banking service queue to approved policy with source-linked drafts, access controls, human review and an agreed acceptance test for a bank or GCC.',
     hero('Banking and financial services','AI workflow implementation for banking operations','Give service teams an answer they can check against the bank’s policy. Dockio connects one service queue to an approved policy collection inside your bank or global capability centre.',

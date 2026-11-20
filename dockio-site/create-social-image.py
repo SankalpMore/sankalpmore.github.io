@@ -32,6 +32,6 @@ draw = ImageDraw.Draw(image)
 mark(draw, 52, 40, 52, ORANGE, 4)
 draw.text((116, 44), 'dockio.', font=ImageFont.truetype(BOLD, 35), fill=CREAM)
 heading = ImageFont.truetype(BOLD, 67)
-for index, line in enumerate(('Enterprise AI,', 'built with', 'your team.')):
+for index, line in enumerate(('Enterprise AI', 'strategy and', 'delivery.')):
     draw.text((52, 218 + index * 71), line, font=heading, fill=CREAM)
 image.quantize(colors=200, method=Image.Quantize.MEDIANCUT).save(ASSETS / 'dockio-social.png', optimize=True)
