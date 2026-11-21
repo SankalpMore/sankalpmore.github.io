@@ -11,7 +11,7 @@ The public custom domain belongs to the Sites project returned by `get_site`. Th
 
 ## Build and edit
 
-`npm run build` generates 38 canonical content pages, five preserved-route redirects and a 404 page into `dist/`. `npm run dev` serves the build. The server accepts `--host` and `--port`.
+`npm run build` generates the canonical content pages, five preserved-route redirects and a 404 page into `dist/`. `npm run dev` serves the build. The server accepts `--host` and `--port`.
 
 - `dockio-site/source/`: retained page templates and base visual system.
 - `select-release.mjs`: engagement, partnership and industry content.
@@ -21,6 +21,7 @@ The public custom domain belongs to the Sites project returned by `get_site`. Th
 - `seo-content.mjs` and `seo.css`: page metadata, buyer FAQs, breadcrumbs and related-page links.
 - `search-metadata.mjs`: canonical aliases and grounded Organization, WebSite, WebPage, Service and breadcrumb data.
 - `enterprise-release.mjs` and `enterprise.css`: concise homepage, service destinations, industry directory, executive trust and navigation.
+- `consulting-design.mjs`, `business-functions.mjs` and `consulting.css` provide the public homepage, department workflows, production controls, delivery work samples and shared visual design.
 - `discussion-enquiry.mjs` and `.js`: short business requirement capture followed by Microsoft Bookings.
 - `build.mjs`: canonical URL rendering, social cards, sitemap and robots.txt generation; replaces only a dedicated `dist/` output.
 - `create-social-image.py`: reproduces Dockio’s PNG logo, favicon and social card with Pillow.

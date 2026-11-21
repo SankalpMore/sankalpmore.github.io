@@ -126,9 +126,17 @@ const why = read(path.join(root,'why-dockio/index.html'));
 assert(why.includes('OpenAI Select Partner'));
 const main = html => html.split('<main id="main" tabindex="-1">')[1].split('</main>')[0];
 const hero = main(home).split('</section>')[0];
-assert(hero.includes('team-at-work.webp'));
+assert(hero.includes('port-operations.webp'));
 for (const url of ['/project-enquiry/','/services/embedded-ai-teams/']) {
   assert(hero.includes('href="'+url+'"'), 'Missing first-screen route: '+url);
+}
+assert(main(home).includes('href="/services/embedded-ai-teams/#work-samples"'), 'Missing specialist work-sample route');
+for (const [page, focus] of Object.entries({'portfolio-delivery':'portfolio','service-operations':'operations','technology-operations':'technology'})) {
+  const route = '/functions/'+page+'/';
+  assert(main(home).includes('href="'+route+'"'));
+  const workflow = main(read(localFile(route)));
+  assert(workflow.includes('href="/project-enquiry/?offer='+focus+'"'));
+  assert(main(read(localFile('/project-enquiry/'))).includes('<option value="'+focus+'">'));
 }
 for (const url of ['/delivery-example/','/services/implementation-sprint/','/services/strategy/#capacity','/services/banking-ai-workflow-implementation/']) {
   assert(main(home).includes('href="'+url+'"'), 'Missing homepage route: '+url);

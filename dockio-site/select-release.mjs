@@ -6,7 +6,7 @@ const meet = (text='Discuss your AI initiative', cls='button primary') => `<a cl
 const badge = () => '<div class="opn-art"><img src="{{BASE}}assets/openai-select-partner.svg" alt="OpenAI Select Partner" width="176" height="85"></div>';
 const list = items => `<ul class="release-list">${items.map(i=>`<li>${i}</li>`).join('')}</ul>`;
 const section = (label,title,body,cls='') => `<section class="section wrap ${cls}"><span class="section-label">${label}</span><h2>${title}</h2>${body}</section>`;
-const end = (title='Bring us the work.<br>Let’s make AI useful.') => `<section class="release-end ink"><div class="wrap"><h2>${title}</h2><div><p>Tell us what needs to change. We’ll shape the next step around your priorities, systems and constraints.</p><div class="hero-actions">${meet('Book a conversation','button light')}${a('/contact?service=rfp','Share an RFI / RFP')}</div></div></div></section>`;
+const end = (title='Discuss a project with Dockio.') => `<section class="release-end ink"><div class="wrap"><h2>${title}</h2><div><p>Bring a workflow, a delivery deadline or a role you need to fill. We’ll discuss the scope, the people involved and what you need to decide next.</p><div class="hero-actions">${meet('Book a discussion','button light')}${a('/project-enquiry?offer=rfi','Share a project RFI or RFP')}</div></div></div></section>`;
 const page = (label,title,lead,body) => `<section class="release-page-head wrap"><span class="section-label">${label}</span><h1>${title}</h1><p class="lead">${lead}</p></section>${body}${end()}`;
 const entry = (title,description,body) => ({title,description,body});
 const facts = items => `<div class="release-facts">${items.map(([name,text])=>`<article><h3>${name}</h3><p>${text}</p></article>`).join('')}</div>`;

@@ -7,6 +7,7 @@ import { applyEmbeddedRelease } from './embedded-release.mjs';
 import { applyGsiRedesign } from './gsi-redesign.mjs';
 import { applyEnterpriseRelease } from './enterprise-release.mjs';
 import { applyDiscussionEnquiry } from './discussion-enquiry.mjs';
+import { applyConsultingDesign } from './consulting-design.mjs';
 import { addTeamEnquiry } from './team-enquiry.mjs';
 import { applySearchContent } from './seo-content.mjs';
 import { aliases, address, escape, structuredData, socialImage, socialAlt } from './search-metadata.mjs';
@@ -22,12 +23,13 @@ const config = JSON.parse(fs.readFileSync(path.join(root, 'site.config.json'), '
 const origin = (process.env.SITE_URL || config.origin).replace(/\/$/, '');
 if (!/^https:\/\//.test(origin)) throw new Error('SITE_URL must be an HTTPS origin');
 if (!/^https:\/\/outlook\.office\.com\/book\//.test(config.bookingUrl)) throw new Error('Expected the configured Microsoft Bookings destination');
-const {routes,before,after} = applyDiscussionEnquiry(applyEnterpriseRelease(applyGsiRedesign(addTeamEnquiry(applyEmbeddedRelease(applySearchContent(applySelectRelease({
+const site = applyDiscussionEnquiry(applyEnterpriseRelease(applyGsiRedesign(addTeamEnquiry(applyEmbeddedRelease(applySearchContent(applySelectRelease({
   routes: JSON.parse(fs.readFileSync(path.join(source, 'routes.json'), 'utf8')),
   before: fs.readFileSync(path.join(source, 'before.html'), 'utf8'),
   after: fs.readFileSync(path.join(source, 'after.html'), 'utf8')
 })))))));
-routes['/project-enquiry'] = projectEnquiryPage();
+site.routes['/project-enquiry'] = projectEnquiryPage();
+const {routes,before,after} = applyConsultingDesign(site);
 for (const alias of Object.keys(aliases)) delete routes[alias];
 function render(route, entry, { noindex = false } = {}) {
   const canonical = origin + address(route);
@@ -86,7 +88,7 @@ function writeBundle(extension, files) {
   return '/assets/'+name;
 }
 const stylesheetUrl = writeBundle('css', [
-  'source/site.css','release.css','premium.css','seo.css','embedded.css','gsi-redesign.css','enterprise.css','project.css','delivery.css'
+  'source/site.css','release.css','premium.css','seo.css','embedded.css','gsi-redesign.css','enterprise.css','project.css','delivery.css','consulting.css'
 ]);
 const scriptUrl = writeBundle('js',['release.js','team-enquiry.js','discussion-enquiry.js','project-enquiry.js','capacity.js']);
 

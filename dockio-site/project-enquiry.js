@@ -4,7 +4,6 @@
     google:'Google search', bing:'Bing search', chatgpt:'AI referral', openai:'OpenAI referral',
     perplexity:'AI referral', claude:'AI referral', gemini:'AI referral', copilot:'AI referral', linkedin:'LinkedIn', partner:'Partner link'
   };
-  const offers = {general:'AI implementation', sprint:'Implementation sprint', banking:'Banking workflow implementation', codex:'Enterprise Codex rollout', rfi:'Project RFI / RFP', partner:'Implementation partnership'};
   const parameters = new URLSearchParams(location.search);
 
   function entrySource() {
@@ -35,11 +34,8 @@
   const form = document.getElementById('project-enquiry');
   if (!form) return;
   const offer = parameters.get('offer');
-  if (offer && Object.hasOwn(offers,offer)) {
+  if (offer && [...form.elements.offer.options].some(option => option.value === offer)) {
     form.elements.offer.value = offer;
-    const context = document.getElementById('project-context');
-    context.textContent = offers[offer];
-    context.hidden = false;
   }
   const status = document.getElementById('project-status');
   const confirmation = document.getElementById('project-confirmation');

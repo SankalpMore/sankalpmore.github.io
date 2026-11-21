@@ -59,9 +59,11 @@ function discussionData(form){
  return data;
 }
 
-const projectOffers = {
+export const projectOffers = {
  general:'AI implementation', sprint:'Implementation sprint', banking:'Banking workflow implementation',
- codex:'Enterprise Codex rollout', rfi:'Project RFI / RFP', partner:'Implementation partnership'
+ codex:'Enterprise Codex rollout', rfi:'Project RFI / RFP', partner:'Implementation partnership',
+ portfolio:'Portfolio and programme delivery', operations:'Service operations', technology:'Technology operations',
+ finance:'Finance', people:'People operations', risk:'Risk and compliance', procurement:'Procurement', leadership:'Executive decisions'
 };
 const referralSources = new Set(['Direct / unknown','Google search','Bing search','AI referral','OpenAI referral','LinkedIn','Partner link','Other referral']);
 function projectData(form) {

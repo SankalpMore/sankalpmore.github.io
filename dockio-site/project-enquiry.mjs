@@ -1,3 +1,5 @@
+import { projectOffers } from './enquiry-worker.mjs';
+
 const booking = 'https://outlook.office.com/book/Sankalp@dockio.in/?ismsaljsauthenabled';
 const calendar = label => `<a class="project-link" data-booking href="${booking}" target="_blank" rel="noopener noreferrer">${label}</a>`;
 
@@ -9,10 +11,10 @@ export function projectEnquiryPage() {
     body:`<nav class="seo-breadcrumb wrap" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><span aria-current="page">Project enquiry</span></li></ol></nav>
     <section class="project-intro"><div class="wrap project-intro-grid"><h1>Discuss your project.</h1><p class="project-lead">Tell us what your team does today and what you want to improve. Send a short description or a PDF, then choose a time for a 30-minute discussion.</p></div></section>
     <div class="wrap project-enquiry-grid"><div><form id="project-enquiry" action="/api/enquiries" method="post" enctype="multipart/form-data">
-    <input type="hidden" name="formType" value="project"><input type="hidden" name="offer" value="general">
-    <p id="project-context" class="discussion-context" hidden></p>
+    <input type="hidden" name="formType" value="project">
     <div class="teams-form-grid"><label>Work email<input name="email" type="email" required autocomplete="email" maxlength="180"></label>
     <label>Company<input name="company" required autocomplete="organization" maxlength="180"></label></div>
+    <label class="project-focus">Project focus<select name="offer">${Object.entries(projectOffers).map(([key,label]) => `<option value="${key}">${label}</option>`).join('')}</select></label>
     <fieldset aria-describedby="project-brief-hint"><legend>Project brief</legend>
     <p id="project-brief-hint">Describe the workflow, attach a PDF, or include both. Keep customer records, credentials and confidential material for an agreed secure channel.</p>
     <label>Workflow or outcome<textarea name="message" rows="4" maxlength="5000" placeholder="What would you like to implement or improve?"></textarea></label>

@@ -13,6 +13,12 @@
   if(e.key==='Tab'&&document.body.classList.contains('nav-open')){const items=$$('.site-header a,.site-header button,.site-header summary').filter(n=>n.getClientRects().length&&!n.disabled);const first=items[0],last=items.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last?.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first?.focus();}}
  });
  window.addEventListener('resize',()=>{if(innerWidth>880)closeNav();});
+ function openLinkedFunction() {
+  const detail = document.getElementById(location.hash.slice(1));
+  if (detail?.matches('.function-details details')) detail.open = true;
+ }
+ openLinkedFunction();
+ window.addEventListener('hashchange',openLinkedFunction);
  const top=$('#back-to-top');window.addEventListener('scroll',()=>top?.classList.toggle('visible',scrollY>650),{passive:true});top?.addEventListener('click',()=>window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'instant':'smooth'}));
  $('.skip-link')?.addEventListener('click',e=>{e.preventDefault();$('#main')?.focus();$('#main')?.scrollIntoView();});
  function bindPage(){

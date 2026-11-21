@@ -38,10 +38,10 @@ export function serviceCase() {
 }
 
 export function bankingCaseSection(detail = false) {
-  const title = detail ? 'Where the agent stops' : 'From a service request to an agent task.';
+  const title = detail ? 'Where the agent stops' : 'Who can receive the statement?';
   const label = detail ? 'View the acceptance checklist' : 'Explore the banking implementation';
   const url = detail ? '#acceptance' : '/services/banking-ai-workflow-implementation/';
   return `<section class="case-section" id="service-case"><div class="wrap case-layout">
-    <div class="case-intro"><h2>${title}</h2><p>The customer has verified their identity. Change the email address they ask to use and see what the agent prepares for the case handler.</p>
+    <div class="case-intro"><p class="consult-kicker">Banking workflow example</p><h2>${title}</h2><p>The customer has verified their identity. Choose a delivery address to see what the agent prepares and what the case handler must approve.</p>
     <a class="editorial-link" href="${url}">${label}</a></div>${serviceCase()}</div></section>`;
 }
