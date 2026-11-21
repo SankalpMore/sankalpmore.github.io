@@ -72,6 +72,9 @@ test('project briefs accept either workflow text or a sanitised PDF without staf
  const pdfId=crypto.randomUUID();
  assert.equal((await handleEnquiry(projectPost({message:'',offer:'rfi'},pdfId,pdf),env)).status,201);
  assert.equal((await (await env.BUCKET.get('enquiries/'+pdfId+'.json')).json()).data.intent,'Project RFI / RFP');
+ const portfolioId=crypto.randomUUID();
+ assert.equal((await handleEnquiry(projectPost({offer:'portfolio'},portfolioId),env)).status,201);
+ assert.equal((await (await env.BUCKET.get('enquiries/'+portfolioId+'.json')).json()).data.intent,'Portfolio and programme delivery');
 });
 test('project briefs require a valid description or PDF and reject invalid contact information and consent',async t=>{
  const env=await context(t);

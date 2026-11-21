@@ -8,6 +8,9 @@ Dockio serves banking and financial services, pharma and life sciences, logistic
 
 ## Services
 
+- [AI by business function](https://www.dockio.in/functions/) covers workflows across eight departments, including detailed portfolio, operations and technology decisions.
+- [Agent controls](https://www.dockio.in/services/agent-controls/) covers connectors, tool permissions, approval, isolated execution, evaluation and recovery.
+- [Our work](https://www.dockio.in/our-work/) links to Dockio’s ChangingBox marketplace and enterprise AI work samples.
 - [Enterprise AI services](https://www.dockio.in/services/): Strategy, implementation, embedded specialists and adoption support.
 - [AI implementation](https://www.dockio.in/services/integration/): AI workflows connected to enterprise information, tools and systems.
 - [Embedded AI teams](https://www.dockio.in/services/embedded-ai-teams/): AI business analysts, product managers, engineers, architects, evaluation and adoption specialists.
